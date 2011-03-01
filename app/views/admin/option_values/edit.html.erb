@@ -1,0 +1,13 @@
+<%= render :partial => 'admin/shared/product_sub_menu' %>
+
+<%= render :partial => 'admin/shared/product_tabs', :locals => {:current => "Variants"} %>
+
+<%= render "shared/error_messages", :target => @variant %>
+
+<%= form_for(@variant, :url => object_url, :html => { :method => :put }) do |f| %>
+  <%= hook :admin_variant_edit_form, {:f => f} do %>
+    <%= render :partial => "form", :locals => { :f => f } %>
+  <% end %>
+
+  <%= render :partial => 'admin/shared/edit_resource_links' %>
+<% end %>

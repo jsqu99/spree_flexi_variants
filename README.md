@@ -1,13 +1,8 @@
 SpreeOnDemandVariants
 =====================
 
-Introduction goes here.
+This project is just getting started and DOES NOT WORK.
 
-
-Example
-=======
-
-Example goes here.
-
+This will be a [spree](http://spreecommerce.com) extension that solves the problem "I don't want to create thousands of variants for this product".
 
 Copyright (c) 2011 [name of extension creator], released under the New BSD License

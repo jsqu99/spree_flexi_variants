@@ -1,7 +1,16 @@
 Rails.application.routes.draw do
   namespace :admin do
     resources :products do
-      resources :option_values
+      resources :option_values do
+        member do
+          get :select
+          get :remove
+        end
+        collection do
+          get :available
+          get :selected
+        end
+      end
     end
   end
 end

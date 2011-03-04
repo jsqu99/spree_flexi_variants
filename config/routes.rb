@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :admin do
-    resources :products do
+    resources :product_option_types do
       resources :option_values do
         member do
           get :select

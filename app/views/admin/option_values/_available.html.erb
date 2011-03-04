@@ -1,0 +1,27 @@
+<h4><%= t("add_option_values") %></h4>
+<table class="index">
+  <tr>
+    <th><%= t("name") %></th>
+    <th><%= t("presentation") %></th>
+    <th></th>
+  </tr>
+  <% @available_option_values.each do |ov| %>
+  <tr>
+    <td><%=ov.name %></td>
+    <td><%=ov.presentation %></td>
+    <td class="actions"><%= link_to icon('add') + ' ' + t("select"),
+                            url_for(:controller => "admin/option_values",
+                                    :id => ov,
+                                    :product_option_type_id => @product_option_type.id,
+                                    :action => "select",
+                                    :option_value_id =>  ov),
+                           :remote => true, :class => 'iconlink' %>
+    </td>
+  </tr>
+  <% end %>
+  <% if @available_option_values.empty? %>
+  <tr>
+    <td colspan="3"><%= t('none_available') %></td>
+  </tr>
+  <% end %>
+</table>

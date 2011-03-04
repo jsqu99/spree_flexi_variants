@@ -1,0 +1,7 @@
+<%= render :partial => 'admin/shared/product_sub_menu' %>
+<%= render :partial => 'admin/shared/product_tabs', :locals => {:current => "Option Types"} %>
+
+<h3><%= @product_option_type.option_type.presentation %> </h3>
+<div id="selected-option-values">
+  <%= render 'selected' %>
+</div>

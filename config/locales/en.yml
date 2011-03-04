@@ -2,3 +2,6 @@
 en:
   has_on_demand_variants: "Has on-demand variants?"
   price_modifier_type: "What price modifier strategy does this option type use?"
+  add_option_values: "Add Option Values"
+  edit_option_values: "Edit Option Values"
+  option_value_removed: "Option Value Removed"

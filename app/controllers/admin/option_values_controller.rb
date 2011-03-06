@@ -41,9 +41,13 @@ class Admin::OptionValuesController < Admin::BaseController
 #  # AJAX method for selecting an existing option value and associating with the current product
   def select
     @product_option_type = ProductOptionType.find(params[:product_option_type_id])
-    product_option_type_option_value = ProductOptionTypeOptionValue.new(:product_option_type => @product_option_type, :option_value => OptionValue.find(params[:id]))
-    product_option_type_option_value.save
-    @product_option_type.reload
+
+    product_option_type_option_value = ProductOptionTypeOptionValue.create(
+                                                                           :product_option_type => @product_option_type, 
+                                                                           :option_value => OptionValue.find(params[:id]), 
+                                                                           :price_modifier => params[:price_modifier])
+
+    @product_option_type.reload # TODO: is this line necessary?
     @option_values=@product_option_type.product_option_type_option_values
     set_available_option_values
   end

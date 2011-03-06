@@ -2,10 +2,12 @@
   <tr>
     <th><%= t("name") %></th>
     <th><%= t("presentation") %></th>
+    <th><%= t("price_modifier") %></th>
     <th>&nbsp;</th>
   </tr>
   <% @option_values.each do |potov| %>
     <tr>
+      <td><%= potov.option_value.name %></td>
       <td><%= potov.option_value.presentation %></td>
       <td><%= potov.price_modifier %></td>
       <td class="actions">

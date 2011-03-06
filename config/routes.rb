@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :product_option_types do
       resources :option_values do
         member do
-          get :select
+          post :select
           get :remove
         end
         collection do

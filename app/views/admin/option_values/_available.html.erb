@@ -1,43 +1,35 @@
-<% content_for :head do %>
-  <%= javascript_tag do %>
-    function doAddOptionValue(domid) {
-      $(domid).submit();
-    }
-  <% end %>
-<% end %>
-
 <h4><%= t("add_option_values") %></h4>
 <table class="index">
   <tr>
     <th><%= t("name") %></th>
     <th><%= t("presentation") %></th>
-    <th><%= t("price_modifier") %></th>
+    <% if @product_option_type.has_price_modifier? %>
+      <th><%= t("price_modifier") %></th>
+    <% end %>
     <th>&nbsp;</th>
   </tr>
   <% @available_option_values.each do |ov| %>
   <tr>
     <td><%= ov.name %></td>
     <td><%= ov.presentation %></td>
+
+    <% if @product_option_type.has_price_modifier? %>
     <td>
-<%= form_tag select_admin_product_option_type_option_value_url(@product_option_type,ov), :method=>'post', :id=>dom_id(ov), :remote=>true do %>
-<!--        < %= hidden_field_tag :product_option_type,  @product_option_type.id % > 
-        < %= hidden_field_tag :option_value,  ov.id % >  -->
+      <%= form_tag select_admin_product_option_type_option_value_url(@product_option_type,ov), :method=>'post', :id=>dom_id(ov), :remote=>true do %>
         <%= text_field_tag :price_modifier %>
       <% end %>
-    </td>
-
-<!-- $("#option-values .actions a"). -->
+    </td
     <td class="actions"><%= link_to_function icon('add') + ' ' + t("select"), "$('##{dom_id(ov)}').submit();",:class => 'iconlink' %></td>
-<!--
+    <% else %>
+     <td class="actions"><%= link_to icon('add') + ' ' + t("select"),
                             url_for(:controller => "admin/option_values",
-
+                                    :product_option_type => @product_option_type,
                                     :id => ov,
-                                    :product_option_type_id => @product_option_type.id,
-                                    :action => "select",
-                                    :option_value_id =>  ov),
-                           :remote => true, :class => 'iconlink' % >
-    </td>
--->
+                                    :action => "select"),
+                           :remote => true, :class => 'iconlink' %>
+     </td>
+    <% end %>
+    
   </tr>
   <% end %>
   <% if @available_option_values.empty? %>

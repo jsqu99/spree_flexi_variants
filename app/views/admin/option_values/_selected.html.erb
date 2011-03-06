@@ -2,14 +2,19 @@
   <tr>
     <th><%= t("name") %></th>
     <th><%= t("presentation") %></th>
-    <th><%= t("price_modifier") %></th>
+    <% if @product_option_type.has_price_modifier? %>
+      <th><%= t("price_modifier") %></th>
+    <% end %>
     <th>&nbsp;</th>
   </tr>
   <% @option_values.each do |potov| %>
     <tr>
       <td><%= potov.option_value.name %></td>
       <td><%= potov.option_value.presentation %></td>
-      <td><%= potov.price_modifier %></td>
+
+      <% if @product_option_type.has_price_modifier? %>
+	<td><%= potov.price_modifier %></td>
+      <% end %>
       <td class="actions">
 <!-- 	< % = link_to_with_icon('edit', t("edit"), admin_product_option_value_url (@product, option_type)) % >  -->
 	<%= link_to_with_icon 'delete',  t("remove"), remove_admin_product_option_type_option_value_url(@product_option_type, potov.option_value) %> 

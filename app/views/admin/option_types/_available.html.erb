@@ -22,7 +22,7 @@
      </td>
      <td class="actions"><%= link_to_function icon('add') + ' ' + t("select"), "$('##{dom_id(ot)}').submit();",:class => 'iconlink' %></td>
    <% else%>
-j     <td class="actions"><%= link_to icon('add') + ' ' + t("select"),
+     <td class="actions"><%= link_to icon('add') + ' ' + t("select"),
                             url_for(:controller => "admin/option_types",
                                     :id => ot,
                                     :product_id => @product.permalink,

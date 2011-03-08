@@ -1,3 +1,14 @@
+<% content_for :head do %>
+  <%= javascript_tag do %>
+    function submitForm(tfDomId, formUrl) {
+      $('#price_modifier').val($('#' + tfDomId).val());
+      $('#price_modifier_form').attr('action', formUrl);
+      $('#price_modifier_form').submit();
+    }
+  <% end %>
+<% end %>
+
+
 <%= render :partial => 'admin/shared/product_sub_menu' %>
 <%= render :partial => 'admin/shared/product_tabs', :locals => {:current => "Option Types"} %>
 

@@ -17,8 +17,7 @@
   %>     
     <div>
          <%= f.label ot.name %>
-
-         <%= select_tag ot.name, options_for_select(on_demand_option_value_options(pot.product_option_type_option_values)), :class => 'on-demand-option-select' %>
+         <%= select_tag "product_option_types[#{pot.id}]", options_for_select(on_demand_option_value_options(pot.product_option_type_option_values)), :class => 'on-demand-option-select' %>
     </div>	 
        <% end %>
   <% elsif @product.has_variants? %>
@@ -46,7 +45,7 @@
     </div>
   <% end%>
   <% if @product.has_stock? || Spree::Config[:allow_backorders] %>
-    <%= text_field_tag ((@product.has_variants? || @product.has_on_demand_variants?) ? :quantity : "variants[#{@product.master.id}]"),
+    <%= text_field_tag ((@product.has_variants? && !@product.has_on_demand_variants?)? :quantity : "variants[#{@product.master.id}]"),
       1, :class => "title", :size => 3 %>
     &nbsp;
     <button type='submit' class='large primary'>

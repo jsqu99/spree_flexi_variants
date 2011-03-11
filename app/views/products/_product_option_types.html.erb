@@ -1,0 +1,45 @@
+<% content_for :head do %>
+  <%= javascript_tag do %>
+  var base_price=<%= @product.price %>;
+  var price_modifier_map={};
+
+  $().ready(function() {
+    $('.on-demand-option-select').change(function() {
+      // get _every_ option drop down and recalculate product price
+      updatePrice();
+    });
+
+    updatePrice();
+
+  });
+
+  function updatePrice() {
+    var cur_price=base_price;
+
+
+    $('.on-demand-option-select').each(function() {
+      cur_price+=price_modifier_map[$(this).val()];
+    });
+
+    $('.price').text('$' + cur_price); // TODO i8n
+  }
+
+  <% end %>
+<% end %>
+
+<%= javascript_tag do %>
+  <%  @product.product_option_types.each do |pot| %>
+    <% pot.product_option_type_option_values.each do |potov| %>
+      price_modifier_map[<%= potov.id %>]= <%= potov.price_modifier %>;
+    <% end %>
+  <% end %>
+<% end %>
+
+<% @product.product_option_types.each do |pot|
+  ot=pot.option_type
+%>     
+    <div>
+         <%= f.label ot.name %>
+         <%= select_tag "product_option_types[#{pot.id}]", options_for_select(on_demand_option_value_options(pot.product_option_type_option_values)), :class => 'on-demand-option-select' %>
+    </div>	 
+<% end %>

@@ -1,7 +1,12 @@
 Variant.class_eval do
-  def self.find_or_create_by_option_values(master_variant_id, option_values)
-debugger
-    ovids=option_values.map(&:id).flatten
+  def self.find_or_create_by_option_values(potovs) #potovs is short for product_option_type_option_values
+
+    # TODO are these 'flattens' below necessary?  
+    product          = potovs.first.product_option_type.product
+    option_values    = potovs.map(&:option_value).flatten
+    ovids            = option_values.map(&:id).flatten
+
+    cur_price = product.price + potovs.sum(&:price_modifier)
 
     sql= <<FINDSQL
       SELECT v.id 
@@ -19,12 +24,21 @@ FINDSQL
 
     results=ActiveRecord::Base.connection.select_rows sql
     
-    # do we need to create 
+    # do we need to create a new variant?  or reuse an existing one
     if results.size>0
-      return Variant.find(results[0][0])
+      # let's make sure the price doesn't need to be updated
+      variant=Variant.find(results[0][0])
+      if variant.price != cur_price
+        variant.price = cur_price
+        variant.save
+      end
+
+      return variant
     else
       # need to create a variant, then a bunch of option_values_variants
-      variant= Variant.create(:product_id => Variant.find(master_variant_id).product.id, :is_master => false) # TODO :price
+      price=option_values
+      # product= Variant.find(master_variant_id).product
+      variant= Variant.create(:product_id => product.id, :is_master => false, :price => cur_price) 
 
       option_values.each do |ov|
         variant.option_values << OptionValue.find(ov.id)

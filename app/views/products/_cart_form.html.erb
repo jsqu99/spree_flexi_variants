@@ -11,15 +11,8 @@
     <% end %>
   <% end %>
 
-  <% if @product.has_on_demand_variants?
-       @product.product_option_types.each do |pot|
-         ot=pot.option_type
-  %>     
-    <div>
-         <%= f.label ot.name %>
-         <%= select_tag "product_option_types[#{pot.id}]", options_for_select(on_demand_option_value_options(pot.product_option_type_option_values)), :class => 'on-demand-option-select' %>
-    </div>	 
-       <% end %>
+  <% if @product.has_on_demand_variants? %>
+       <%= render :partial => 'product_option_types', :locals => {:f=>f, :product_option_types => @product.product_option_types} %>
   <% elsif @product.has_variants? %>
     <div id="product-variants">
       <h2><%= t('variants') %></h2>

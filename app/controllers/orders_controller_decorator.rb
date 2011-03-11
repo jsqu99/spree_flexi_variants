@@ -24,23 +24,22 @@ OrdersController.class_eval do
       quantity = params[:quantity][variant_id].to_i if params[:quantity].is_a?(Hash)
       @order.add_variant(Variant.find(variant_id), quantity) if quantity > 0
     end if params[:products]
-debugger
 
     # variant_id is (usually? / always) the MASTER variant_id
     params[:variants].each do |variant_id, quantity|
 
       quantity = quantity.to_i
 
-      on_demand_option_values=[]
+      potov=[]  # potov = product_option_type_option_values
       # the incoming variant_id is the master variant.  Do we need to swap it out for an on-demand variant id?
       params[:product_option_types].each do |pot_id, pot_ov_id|
-        on_demand_option_values << ProductOptionTypeOptionValue.find(pot_ov_id).option_value
+        potov << ProductOptionTypeOptionValue.find(pot_ov_id)
       end if params[:product_option_types]
 
-      if on_demand_option_values.empty?
+      if potov.empty?
         variant=Variant.find(variant_id)
       else
-        variant=Variant.find_or_create_by_option_values(variant_id, on_demand_option_values)
+        variant=Variant.find_or_create_by_option_values(potov)
       end
 
       @order.add_variant(variant, quantity) if quantity > 0

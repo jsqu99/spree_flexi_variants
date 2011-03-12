@@ -1,6 +1,7 @@
 ---
 en:
   has_on_demand_variants: "Has on-demand variants?"
+  required: "Required?"
   price_modifier: "Price Adjustment"
   price_modifier_type: "What price modifier strategy does this option type use?"
   add_option_values: "Add Option Values"

@@ -8,13 +8,11 @@ ProductsController.class_eval do
         if pov.price_modifier>0
           plus_or_minus ="+"
         elsif pov.price_modifier<0
-          plus_or_minus ="-"
+          plus_or_minus ="" # the minus is built into the value
         end
                          
-        [(pov.price_modifier.nil? ? pov.option_value.presentation : "#{pov.option_value.presentation} (#{plus_or_minus}#{pov.price_modifier})"), pov.id.to_s]
+        [(pov.price_modifier.nil? ? pov.option_value.presentation : "#{pov.option_value.presentation} (#{plus_or_minus}#{number_to_currency pov.price_modifier})"), pov.id.to_s]
       end
-      
-      options
     end
   end
 end

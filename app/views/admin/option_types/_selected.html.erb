@@ -4,6 +4,7 @@
     <th><%= t("presentation") %></th>
     <% if @product.has_on_demand_variants? %>
       <th><%= t("price_modifier_type") %></th>
+      <th><%= t("required") %></th>
     <% end %>
     <th>&nbsp;</th>
   </tr>
@@ -15,6 +16,7 @@
 
       <% if @product.has_on_demand_variants? %>
         <td><%= product_option_type.price_modifier_type %></td>
+        <td><%= check_box_tag :is_required, '1', product_option_type.is_required, :disabled => true %></td>
       <% end %>
 
       <td class="actions">
@@ -29,7 +31,7 @@
 </table>
 
 <div id="option-types"></div>
-<% if @product.variants.empty? %>
+<% if @product.variants.empty? || @product.has_on_demand_variants? %>
   <span id="new_opt_link">
     <%= link_to icon('add') + ' ' + t("add_option_type"), available_admin_product_option_types_url(@product), :remote => :true, :class => 'iconlink' %>
   </span>

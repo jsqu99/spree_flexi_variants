@@ -13,15 +13,24 @@
 
   });
 
+  // stolen from http://stackoverflow.com/questions/18082/validate-numbers-in-javascript-isnumeric
+  function isNumeric(input) {
+    return (input - 0) == input && input.length > 0;
+  }
+
   function updatePrice() {
     var cur_price=base_price;
 
-
     $('.on-demand-option-select').each(function() {
-      cur_price+=price_modifier_map[$(this).val()];
+      // the :prompt=>'None' in the select tag yields an empty string, which I can't use in the price calcuation
+      var val=$(this).val();
+
+      if (isNumeric(val)) {
+        cur_price+=price_modifier_map[val];
+      }
     });
 
-    $('.price').text('$' + cur_price); // TODO i8n
+    $('.price').text('$' + cur_price.toFixed(2)); // TODO i8n
   }
 
   <% end %>
@@ -40,6 +49,6 @@
 %>     
     <div>
          <%= f.label ot.name %>
-         <%= select_tag "product_option_types[#{pot.id}]", options_for_select(on_demand_option_value_options(pot.product_option_type_option_values)), :class => 'on-demand-option-select' %>
+         <%= select_tag "product_option_types[#{pot.id}]", options_for_select(on_demand_option_value_options(pot.product_option_type_option_values)), :include_blank => (pot.is_required ? false: 'None'), :class => 'on-demand-option-select' %>
     </div>	 
 <% end %>

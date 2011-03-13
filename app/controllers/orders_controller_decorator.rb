@@ -33,6 +33,7 @@ OrdersController.class_eval do
       potov=[]  # potov = product_option_type_option_values
       # the incoming variant_id is the master variant.  Do we need to swap it out for an on-demand variant id?
       params[:product_option_types].each do |pot_id, pot_ov_id|
+        next if pot_ov_id.empty?
         potov << ProductOptionTypeOptionValue.find(pot_ov_id)
       end if params[:product_option_types]
 

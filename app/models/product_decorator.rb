@@ -1,5 +1,4 @@
 Product.class_eval do
-    calculated_adjustments # for customizations
     has_many :product_option_values	# component of allowed configurations.  These are the pool of POSSIBLE option values
     has_many :configuration_exclusions  # component of allowed configurations.  Each exclusion represents a disallowed combination of product_option_values
     has_many :customization_types  # allowed customizations

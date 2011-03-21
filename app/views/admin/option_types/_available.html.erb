@@ -17,7 +17,7 @@
     <% if @product.has_on_demand_variants? %>
       <td>
         <%= form_tag select_admin_product_option_type_url(@product, ot), :method=>'post', :id=>dom_id(ot), :remote=>true do %>
-          <%= select_tag :price_modifier_type, options_for_select([['None','none'],['Single','single'],['Multiple','multiple']]) %>
+          <%= select_tag :price_modifier_type, options_for_select([['None','none'],['Simple (+- amount per option value)','simple'],['Calculated(property)','property'],['Calculated(calculator)(not yet implemented)','calculator']]) %>
           <%= check_box_tag :is_required %>
         <% end %>
      </td>

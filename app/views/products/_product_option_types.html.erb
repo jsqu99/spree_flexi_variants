@@ -38,8 +38,8 @@
 
 <%= javascript_tag do %>
   <%  @product.product_option_types.each do |pot| %>
-    <% pot.product_option_type_option_values.each do |potov| %>
-      price_modifier_map[<%= potov.id %>]= <%= potov.price_modifier %>;
+    <% pot.option_value_configs.each do |ov_config| %>
+      price_modifier_map[<%= ov_config.id %>]= <%= ov_config.price_modifier %>;
     <% end %>
   <% end %>
 <% end %>
@@ -49,6 +49,6 @@
 %>     
     <div>
          <%= f.label ot.name %>
-         <%= select_tag "product_option_types[#{pot.id}]", options_for_select(on_demand_option_value_options(pot.product_option_type_option_values)), :include_blank => (pot.is_required ? false: 'None'), :class => 'on-demand-option-select' %>
+         <%= select_tag "product_option_types[#{pot.id}]", options_for_select(on_demand_option_value_options(pot.option_value_configs)), :include_blank => (pot.is_required ? false: 'None'), :class => 'on-demand-option-select' %>
     </div>	 
 <% end %>

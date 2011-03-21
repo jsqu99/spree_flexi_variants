@@ -30,17 +30,25 @@ OrdersController.class_eval do
 
       quantity = quantity.to_i
 
-      potov=[]  # potov = product_option_type_option_values
+      ov_config=[]  # ov_config = option_value_configs
       # the incoming variant_id is the master variant.  Do we need to swap it out for an on-demand variant id?
-      params[:product_option_types].each do |pot_id, pot_ov_id|
-        next if pot_ov_id.empty?
-        potov << ProductOptionTypeOptionValue.find(pot_ov_id)
+#      params[:product_option_types][:option_value_configs].each do |pot_id, ov_config_id|
+      params[:product_option_types].each do |pot_id, ov_config_id|
+        next if ov_config_id.empty?
+        ov_config << OptionValueConfig.find(ov_config_id)
       end if params[:product_option_types]
 
-      if potov.empty?
+      # params[:product_option_types][customization_values].each do |pot_id, customization_value|
+
+      if ov_config.empty? # and customization_values is empty?
         variant=Variant.find(variant_id)
+
+        # if we have a customization_value, then...what?
+
       else
-        variant=Variant.find_or_create_by_option_values(potov)
+
+        # now takes a hash?   :option_value_config{1=>4}, :customization_value=>{2=>"my dog has fleas"}
+        variant=Variant.find_or_create_by_option_values(ov_config)
       end
 
       @order.add_variant(variant, quantity) if quantity > 0

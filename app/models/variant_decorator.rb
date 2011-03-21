@@ -1,12 +1,15 @@
 Variant.class_eval do
-  def self.find_or_create_by_option_values(potovs) #potovs is short for product_option_type_option_values
+  
+#  has_many :customization_values ????
+
+  def self.find_or_create_by_option_values(ov_configs)
 
     # TODO are these 'flattens' below necessary?  
-    product          = potovs.first.product_option_type.product
-    option_values    = potovs.map(&:option_value).flatten
+    product          = ov_configs.first.product_option_type.product
+    option_values    = ov_configs.map(&:option_value).flatten
     ovids            = option_values.map(&:id).flatten
 
-    cur_price = product.price + potovs.sum(&:price_modifier)
+    cur_price = product.price + ov_configs.sum(&:price_modifier)
 
     sql= <<FINDSQL
       SELECT v.id 

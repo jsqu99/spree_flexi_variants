@@ -17,7 +17,7 @@
 	<td><%= text_field_tag :price_modifier, nil, :id=>dom_id(ov) %></td>
 	<td class="actions">
            <%= link_to_function icon('add') + ' ' + t("select"),
-               "submitForm('#{dom_id(ov)}', '#{select_admin_product_option_type_option_value_url(@product_option_type,ov)}')",
+               "submitForm('#{dom_id(ov)}', '#{select_admin_option_value_config_url(@product_option_type,ov)}')",
                :class => 'iconlink' %>
        </td>
       <% else %>

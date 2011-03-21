@@ -11,7 +11,7 @@ class Admin::OptionValuesController < Admin::BaseController
 
   def selected
     @product=@product_option_type.product
-    @option_values=@product_option_type.product_option_type_option_values
+    @option_values=@product_option_type.option_value_configs
     set_available_option_values
   end
 
@@ -19,7 +19,7 @@ class Admin::OptionValuesController < Admin::BaseController
     @product_option_type.option_values.delete(@option_value)
     @product_option_type.save
     flash.notice = I18n.t("notice_messages.option_value_removed")
-    redirect_to selected_admin_product_option_type_option_values_url(@product_option_type)
+    redirect_to selected_admin_option_value_configs_url(@product_option_type)
   end
 
   new_action.response do |wants|
@@ -42,13 +42,13 @@ class Admin::OptionValuesController < Admin::BaseController
   def select
     @product_option_type = ProductOptionType.find(params[:product_option_type_id])
 
-    product_option_type_option_value = ProductOptionTypeOptionValue.create(
+    option_value_config = OptionValueConfig.create(
                                                                            :product_option_type => @product_option_type, 
                                                                            :option_value => OptionValue.find(params[:id]), 
                                                                            :price_modifier => params[:price_modifier])
 
     @product_option_type.reload # TODO: is this line necessary?
-    @option_values=@product_option_type.product_option_type_option_values
+    @option_values=@product_option_type.option_value_configs
     set_available_option_values
   end
 

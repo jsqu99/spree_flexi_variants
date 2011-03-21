@@ -7,17 +7,17 @@
     <% end %>
     <th>&nbsp;</th>
   </tr>
-  <% @option_values.each do |potov| %>
+  <% @option_values.each do |ov_config| %>
     <tr>
-      <td><%= potov.option_value.name %></td>
-      <td><%= potov.option_value.presentation %></td>
+      <td><%= ov_config.option_value.name %></td>
+      <td><%= ov_config.option_value.presentation %></td>
 
       <% if @product_option_type.has_price_modifier? %>
-	<td><%= potov.price_modifier %></td>
+	<td><%= ov_config.price_modifier %></td>
       <% end %>
       <td class="actions">
 <!-- 	< % = link_to_with_icon('edit', t("edit"), admin_product_option_value_url (@product, option_type)) % >  -->
-	<%= link_to_with_icon 'delete',  t("remove"), remove_admin_product_option_type_option_value_url(@product_option_type, potov.option_value) %> 
+	<%= link_to_with_icon 'delete',  t("remove"), remove_admin_option_value_config_url(@product_option_type, ov_config.option_value) %> 
       </td>
     </tr>
   <% end %>
@@ -28,5 +28,5 @@
 
 <div id="option-values"></div>
   <span id="new_opt_val_link">
-    <%= link_to icon('add') + ' ' + t("add_option_value"), available_admin_product_option_type_option_values_url(@product_option_type), :remote => :true, :class => 'iconlink' %>
+    <%= link_to icon('add') + ' ' + t("add_option_value"), available_admin_option_value_configs_url(@product_option_type), :remote => :true, :class => 'iconlink' %>
   </span>

@@ -8,3 +8,13 @@ en:
   edit_option_values: "Edit Option Values"
   notice_messages:
     option_value_removed: "Option Value Removed"
+  customization_types: 'Customization Types'
+  customization_value_types: 'Customization Value Types'
+  new_customization_type: 'New Customization Type'
+  new_customization_value_type: 'New Customization Value Type'
+  add_customization_type: 'Add Customization Type'
+  add_customization_value_type: 'Add Customization Value Type'
+  editing_customization_type: 'Editing Customization Type'
+  form_label: 'HTML Form Label'
+  data_type: 'Data Type'
+  default_value: 'Default Value'

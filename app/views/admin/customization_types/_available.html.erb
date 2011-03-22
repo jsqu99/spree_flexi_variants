@@ -1,0 +1,25 @@
+<h4><%= t("add_customization_types") %></h4>
+<table class="index">
+  <tr>
+    <th><%= t("name") %></th>
+    <th></th>
+  </tr>
+  <% @available_customization_types.each do |ct| %>
+  <tr>
+    <td><%=ct.name %></td>
+    <td class="actions"><%= link_to icon('add') + ' ' + t("select"),
+                            url_for(:controller => "admin/customization_types",
+                                    :id => ct,
+                                    :product_id => @product.id,
+                                    :action => "select",
+                                    :customization_type_id =>  ct),
+                           :remote => true, :class => 'iconlink' %>
+    </td>
+  </tr>
+  <% end %>
+  <% if @available_customization_types.empty? %>
+  <tr>
+    <td colspan="3"><%= t('none_available') %></td>
+  </tr>
+  <% end %>
+</table>

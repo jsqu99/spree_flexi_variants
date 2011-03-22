@@ -3,6 +3,7 @@ class CreateCustomizationValues < ActiveRecord::Migration
     create_table "customization_values" do |t|
       t.integer :customization_id
       t.integer :customization_value_type_id
+      t.string :value
       t.timestamps
     end
   end

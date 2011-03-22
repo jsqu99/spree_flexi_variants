@@ -1,0 +1,41 @@
+<%= render :partial => 'admin/shared/product_sub_menu' %>
+<h1><%= t("editing_customization_type") %></h1>
+<%= render 'shared/error_messages', :target => @customization_type %>
+<%= form_for(@customization_type, :url => admin_customization_type_url(@customization_type), :html => { :method => :put }) do |f| %>
+<fieldset>
+  <legend><%= t("editing_customization_type") %></legend>
+  <%= render :partial => "form", :locals => { :f => f } %>
+  <h3><%= t("customization_value_types") %></h3>
+  <table class="index">
+    <thead>
+      <tr>
+        <th><%= t("name") %></th>
+        <th><%= t("form_label") %></th>
+        <th><%= t("default_value") %></th>
+        <th><%= t("description") %></th>
+        <th><%= t("data_type") %></th>
+        <th><%= t("required") %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="customization_value_types">
+      <tr id="none">
+        <td colspan="3"><%= @customization_type.customization_value_types.empty? ? t("none") : "" %></td>
+      </tr>
+      <% f.fields_for :customization_value_types do |customization_value_type_form| %>
+        <%= render "customization_value_type_fields", :f => customization_value_type_form %>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to_add_fields t("add_customization_value_type"), "tbody#customization_value_types", f, :customization_value_types %>
+
+
+<!-- b/c of r_c removal -->
+<p class="form-buttons">
+  <%= button t("update") %>
+  <%= t("or") %> <%= link_to t("cancel"), admin_customization_types_url %>
+</p>
+
+<!--   < %= # render :partial => 'admin/shared/edit_resource_links' % > -->
+</fieldset>
+<% end %>

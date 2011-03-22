@@ -1,0 +1,31 @@
+<%= render :partial => 'admin/shared/product_sub_menu' %>
+
+<div class='toolbar'>
+  <ul class='actions'>
+    <li id="new_cvt_link">
+      <%= button_link_to t("new_customization_type"), new_admin_customization_type_url, {:remote => true, :icon => 'add'} %>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
+
+<h1><%= t("customization_types") %></h1>
+
+<div id="new_customization_type"></div>
+
+<table class="index">
+  <tr>
+    <th><%= t("name") %></th>
+    <th></th>
+  </tr>
+<% @customization_types.each do |cvt| %>
+    <tr id="<%= dom_id cvt %>">
+      <td><%= cvt.name %></td>
+      <td class="actions">
+	<%= link_to_with_icon('edit', t("edit"), edit_admin_customization_type_url(cvt)) %>
+        &nbsp;
+        <%= link_to_delete(cvt, {:url=> admin_customization_type_url(cvt)}) %>
+      </td>
+    </tr>
+  <% end %>
+</table>

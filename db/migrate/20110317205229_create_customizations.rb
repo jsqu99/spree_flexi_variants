@@ -3,7 +3,6 @@ class CreateCustomizations < ActiveRecord::Migration
     create_table :customizations do |t|
       t.integer :line_item_id
       t.integer :customization_type_id
-      t.string :value
       t.timestamps
     end
   end

@@ -4,7 +4,6 @@ class CreateExcludedProductOptionValues < ActiveRecord::Migration
       t.integer :configuration_exclusion_id
       t.integer :product_option_value_id
     end
-
   end
 
   def self.down

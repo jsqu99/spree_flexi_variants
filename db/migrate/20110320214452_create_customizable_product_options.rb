@@ -1,7 +1,6 @@
-class CreateCustomizationValueTypes < ActiveRecord::Migration
+class CreateCustomizableProductOptions < ActiveRecord::Migration
   def self.up
-    create_table "customization_value_types" do |t|
-#      t.integer  :customization_values_types_join_id
+    create_table "customizable_product_options" do |t|
       t.integer  :customization_type_id
       t.integer  :position,     :null => true
       t.string   :label,       :null => false
@@ -15,6 +14,6 @@ class CreateCustomizationValueTypes < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table "customization_value_types"
+    drop_table "customizable_product_options"
   end
 end

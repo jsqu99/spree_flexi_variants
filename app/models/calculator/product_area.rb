@@ -1,5 +1,5 @@
 class Calculator::ProductArea < Calculator
-  preference :cost_per, :string
+  preference :cost_per, :decimal
 
   preference :min_width, :integer, :default=>0
   preference :max_width, :integer
@@ -16,14 +16,15 @@ class Calculator::ProductArea < Calculator
 
   def self.register
     super
-    ProductCustomizationType.register_calculator(self)
+    CustomizationType.register_calculator(self)
   end
 
   # as object we always get line items, as calculable we have Coupon, ShippingMethod
   def compute(product_customization)
-    product_customization.value
+    # TODO: what's the right way to differentiate inbound customized_product_options? e.g. which one is height, and which is width?
 
-      # self.preferred_discount_amount
-    
+#    product_customization.value
+    # self.preferred_discount_amount
+    0
   end
 end

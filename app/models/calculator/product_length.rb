@@ -1,10 +1,10 @@
 class Calculator::ProductLength < Calculator
-  preference :cost_per, :decimal
+  preference :multiplier, :decimal
 
   preference :min_length, :integer, :default=>0
   preference :max_length, :integer
   preference :measurement_units, :string, :default => 'inches'
-  preference :granularity, :string, :default => 'eighths'
+  preference :granularity, :string # , :default => 'eighths'
 
   def self.description
     I18n.t("product_length_calculator")
@@ -12,14 +12,18 @@ class Calculator::ProductLength < Calculator
 
   def self.register
     super
-    ProductCustomizationType.register_calculator(self)
+    CustomizationType.register_calculator(self)
   end
 
-  # as object we always get line items, as calculable we have Coupon, ShippingMethod
-  def compute(product_customization)
+  def compute(customization)
+    return 0 unless valid?
 
-    product_customization.value
-      # self.preferred_discount_amount
-    
+    # expecting only one CustomizedProductOption
+    value = customization.customized_product_options[0].value rescue 0.0
+    value * self.preferred_multiplier
+  end
+
+  def valid?(customization)
+    true
   end
 end

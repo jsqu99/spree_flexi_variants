@@ -2,7 +2,7 @@ class Calculator::Engraving < Calculator
   preference :price_per_letter, :decimal
 
   def self.description
-    I18n.t("engraving_calculator")
+    "Engraving Calculator"
   end
 
   def self.register
@@ -11,11 +11,11 @@ class Calculator::Engraving < Calculator
   end
 
   def compute(customization)
-    return 0 unless valid?
+    return 0 unless valid? customization
 
     # expecting only one CustomizedProductOption
-    value = customization.customized_product_options[0].value rescue 0.0
-    value * self.preferred_price_per_letter
+    value = customization.customized_product_options[0].value rescue ''
+    value.length * self.preferred_price_per_letter
   end
 
   def valid?(customization)

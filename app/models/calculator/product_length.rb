@@ -7,7 +7,7 @@ class Calculator::ProductLength < Calculator
   preference :granularity, :string # , :default => 'eighths'
 
   def self.description
-    I18n.t("product_length_calculator")
+    "Product Length Calculator"
   end
 
   def self.register
@@ -16,10 +16,11 @@ class Calculator::ProductLength < Calculator
   end
 
   def compute(customization)
-    return 0 unless valid?
+
+    return 0 unless valid? customization
 
     # expecting only one CustomizedProductOption
-    value = customization.customized_product_options[0].value rescue 0.0
+    value = customization.customized_product_options[0].value.to_f rescue 0.0
     value * self.preferred_multiplier
   end
 

@@ -1,6 +1,6 @@
 <!-- TODO: if has customizations? -->
 
-<div id="product-customizationss">
+<div id="product-customizations">
 
 <% @product.customization_types.each do |customization_type| %>
    <% # = render :partial => customization_type.name, :locals => {:customization_type=>customization_type} %> 
@@ -11,7 +11,7 @@
   
   <% customization_type.customizable_product_options.each do |option| %>
     <%= label_tag option.label %>
-    <%= text_field_tag "#{param_prefix}[#{option.name}]" %>
+    <%= text_field_tag "#{param_prefix}[#{option.id}]" %>
   <% end %>
 
 <% end %>

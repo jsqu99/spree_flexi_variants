@@ -1,0 +1,17 @@
+<div id="product-customizations">
+
+<% line_item.customizations.each do |customization| %>
+
+  <p>
+   <span style="text-decoration: bold;"><%=  customization.customization_type.name.humanize %></span>
+   <ul>
+   <% customization.customized_product_options.each do |option| %>
+       <li>(<%= option.customizable_product_option.label %> = <%= option.value %>)</li>
+  <% end %>
+  </ul>
+  </p>
+
+
+<% end %>
+
+</div> <!-- product-customizationss -->

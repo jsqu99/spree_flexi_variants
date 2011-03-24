@@ -11,7 +11,7 @@ class Calculator::ProductArea < Calculator
   preference :granularity, :string, :default => 'eighths'
 
   def self.description
-    I18n.t("product_area_calculator")
+    "Product Area Calculator"
   end
 
   def self.register

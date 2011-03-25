@@ -1,5 +1,3 @@
-<!-- TODO: if has customizations? -->
-
 <div id="product-customizations">
 
 <% @product.customization_types.each do |customization_type| %>
@@ -7,8 +5,8 @@
 
    <h2><%=  customization_type.presentation %></h2>
 
-  <% param_prefix = "customization_type[#{customization_type.id}]" %>
-  
+   <% param_prefix = "customizations[#{customization_type.id}]" %>
+
   <% customization_type.customizable_product_options.each do |option| %>
     <%= label_tag option.label %>
     <%= text_field_tag "#{param_prefix}[#{option.id}]" %>

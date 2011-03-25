@@ -1,17 +1,15 @@
 <div id="product-customizations">
-
-<% line_item.customizations.each do |customization| %>
-
-  <p>
-   <span style="text-decoration: bold;"><%=  customization.customization_type.name.humanize %></span>
-   <ul>
-   <% customization.customized_product_options.each do |option| %>
-       <li>(<%= option.customizable_product_option.label %> = <%= option.value %>)</li>
+  <% line_item.product_option_values.each do |pov| %>
+    <%= pov.option_value.option_type.presentation %> = <%= pov.option_value.presentation %> (<%= pov.price_modifier %>) 
+    <br/>
   <% end %>
-  </ul>
-  </p>
 
-
-<% end %>
-
-</div> <!-- product-customizationss -->
+  <% line_item.customizations.each do |customization| %>
+    <p>
+      <span style="text-decoration: bold;"><%=  customization.customization_type.name.humanize %></span>
+      <% customization.customized_product_options.each do |option| %>
+	<br/>(<%= option.customizable_product_option.label %> = <%= option.value %>)
+	<% end %>
+    </p>
+  <% end %>
+</div> <!-- product-customizations -->

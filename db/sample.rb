@@ -1,7 +1,7 @@
 # Create a 'Necklace" product
 necklace = Product.create(:name => 'Necklace', :price => 0, :available_on => Time.now)
 
-# A necklace can be one of many types of metals (e.g. gold, silver, etc.
+# A necklace can be one of many types of metals (e.g. gold, silver, etc.)
 metal_ot = OptionType.create(:name => 'metal', :presentation => 'Precious Metal')
 
 gold_ov   = OptionValue.create(:option_type => metal_ot, :name => 'gold'  , :presentation => 'Gold')
@@ -21,7 +21,7 @@ silver_variant.option_values << silver_ov
 
 ct= CustomizationType.create(:name => "necklace_length", :presentation => "Size your necklace")
 ct.products << necklace
-length_calc    = Calculator::ProductLength.new(:preferred_multiplier => 2.35,
+length_calc    = Calculator::ProductLength.new(:preferred_multiplier => 3.0,
  	                                          :preferred_max_length => 100)
 ct.calculator=length_calc
 ct.customizable_product_options << CustomizableProductOption.create(:name => "necklace_length", :label => 'Length (cm)', :default_value => '10', :data_type => :decimal)
@@ -29,6 +29,29 @@ ct.customizable_product_options << CustomizableProductOption.create(:name => "ne
 
 ct= CustomizationType.create(:name => "necklace_engraving", :presentation => "Say something romantic on the inside?")
 ct.products << necklace
-engraving_calc = Calculator::Engraving.new(:preferred_price_per_letter => 1.10)
+engraving_calc = Calculator::Engraving.new(:preferred_price_per_letter => 2.0)
 ct.calculator = engraving_calc
 ct.customizable_product_options << CustomizableProductOption.create(:name => "necklace_engraving", :label => 'Inscription', :data_type => :string)
+
+
+# Now for the 'product_option_values'
+bogus1_ot = OptionType.create(:name => 'bogus1', :presentation => 'Bogus1')
+
+bogus1_ov1   = OptionValue.create(:option_type => bogus1_ot, :name => 'bogus1_ov1'  , :presentation => 'Bogus Option1')
+bogus1_ov2   = OptionValue.create(:option_type => bogus1_ot, :name => 'bogus1_ov2', :presentation => 'Bogus Option2')
+
+bogus2_ot = OptionType.create(:name => 'bogus2', :presentation => 'Bogus2')
+
+bogus2_ov1   = OptionValue.create(:option_type => bogus2_ot, :name => 'bogus2_ov1'  , :presentation => 'Another Bogus Option1')
+bogus2_ov2   = OptionValue.create(:option_type => bogus2_ot, :name => 'bogus2_ov2', :presentation => 'Another Bogus Option2')
+
+
+pot1=ProductOptionType.create(:product_id => necklace.id, :option_type => bogus1_ot, :price_modifier_type => 'single') # TODO revist the relevance/naming of this field
+pot2=ProductOptionType.create(:product_id => necklace.id, :option_type => bogus2_ot, :price_modifier_type => 'single') 
+
+
+ProductOptionValue.create(:price_modifier => '1.11', :option_value => bogus1_ov1, :product_option_type=>pot1)
+ProductOptionValue.create(:price_modifier => '2.22', :option_value => bogus1_ov2, :product_option_type=>pot1)
+ProductOptionValue.create(:price_modifier => '3.33', :option_value => bogus2_ov1, :product_option_type=>pot2)
+ProductOptionValue.create(:price_modifier => '4.44', :option_value => bogus2_ov2, :product_option_type=>pot2)
+

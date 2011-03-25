@@ -1,16 +1,27 @@
 Order.class_eval do
-  def add_variant(variant, configurations, customizations, quantity = 1)
-    current_item = contains?(variant, configurations, customizations)
+  def add_variant(variant, configuration_ids, customizations, quantity = 1)
+    current_item = contains?(variant, configuration_ids, customizations)
     if current_item
       current_item.quantity += quantity
       current_item.save
     else
       current_item = LineItem.new(:quantity => quantity)
       current_item.variant = variant
-      debugger
 
+      # add the customizations, if any
+      # TODO: is this an unnecessary step?
       customizations.map(&:save) # it is now safe to save the customizations we created in the OrdersController.populate
+
       current_item.customizations = customizations
+
+      # find, and add the configurations, if any.  these have not been fetched from the db yet.  
+      # we postponed it (performance reasons) until we actaully knew we needed them
+      povs=[]
+      configuration_ids.each do |cid| 
+        povs << ProductOptionValue.find(cid)
+      end
+      current_item.product_option_values = povs
+      
       current_item.price   = variant.price + customizations.map(&:price).sum
       self.line_items << current_item
     end
@@ -31,11 +42,10 @@ Order.class_eval do
     current_item
   end
 
-  def contains?(variant, configurations, customizations)
-    debugger
+  def contains?(variant, configuration_ids, customizations)
     line_items.detect do |li| 
       li.variant_id == variant.id && 
-        matching_configurations(li.configurations,configurations) && 
+        matching_configurations(li.product_option_values,configuration_ids) && 
         matching_customizations(li.customizations,customizations)
     end
   end
@@ -51,16 +61,17 @@ Order.class_eval do
     Set.new pairs
   end
 
-  def matching_configurations(li,configurations)
-    true 
+  def matching_configurations(existing_povs,new_povs)
+    # if there aren't any povs, there's a 'match'
+    return true if existing_povs.empty? && new_povs.empty?
+
+    existing_povs.map(&:id).sort == new_povs.sort.map(&:to_i)
   end
 
   def matching_customizations(existing_customizations,new_customizations)
-    debugger
 
     # if there aren't any customizations, there's a 'match'
     return true if existing_customizations.empty? && new_customizations.empty?
-
 
     # exact match of all customization types? 
     return false unless existing_customizations.map(&:customization_type_id).sort == new_customizations.map(&:customization_type_id).sort

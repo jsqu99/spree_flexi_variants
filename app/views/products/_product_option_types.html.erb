@@ -4,13 +4,13 @@
   var price_modifier_map={};
 
   $().ready(function() {
-    $('.on-demand-option-select').change(function() {
+/*    $('.on-demand-option-select').change(function() {
       // get _every_ option drop down and recalculate product price
       updatePrice();
     });
 
     updatePrice();
-
+*/
   });
 
   // stolen from http://stackoverflow.com/questions/18082/validate-numbers-in-javascript-isnumeric
@@ -38,8 +38,8 @@
 
 <%= javascript_tag do %>
   <%  @product.product_option_types.each do |pot| %>
-    <% pot.option_value_configs.each do |ov_config| %>
-      price_modifier_map[<%= ov_config.id %>]= <%= ov_config.price_modifier %>;
+    <% pot.product_option_values.each do |pov| %>
+      price_modifier_map[<%= pov.id %>]= <%= pov.price_modifier %>;
     <% end %>
   <% end %>
 <% end %>
@@ -48,7 +48,7 @@
   ot=pot.option_type
 %>     
     <div>
-         <%= f.label ot.name %>
-         <%= select_tag "product_option_types[#{pot.id}]", options_for_select(on_demand_option_value_options(pot.option_value_configs)), :include_blank => (pot.is_required ? false: 'None'), :class => 'on-demand-option-select' %>
+         <%= label_tag ot.name %>
+         <%= select_tag "product_option_values[#{pot.id}]", options_for_select(on_demand_option_value_options(pot.product_option_values)), :include_blank => (pot.is_required ? false: 'None'), :class => 'on-demand-option-select' %>
     </div>	 
 <% end %>

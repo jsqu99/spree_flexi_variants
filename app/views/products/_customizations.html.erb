@@ -8,8 +8,17 @@
    <% param_prefix = "customizations[#{customization_type.id}]" %>
 
   <% customization_type.customizable_product_options.each do |option| %>
-    <%= label_tag option.label %>
-    <%= text_field_tag "#{param_prefix}[#{option.id}]" %>
+    <%= label_tag option.presentation %>
+
+    <% partial = option.partial %>
+
+    <!-- hate to use exception as flow control, b/c the 'rescue' is likelier to occur than the custom partial.
+         I used a File.exists? but didn't want to use Rails.root (as this is an extension. Alternative?  cwd? -->
+    <% begin %>
+      <%= render :partial => "products/custom_fields/#{partial}", :locals=>{:option => option, :param_prefix => param_prefix} %>
+    <% rescue %>	
+      <%= text_field_tag "#{param_prefix}[#{option.id}]" %>
+    <% end %>	
   <% end %>
 
 <% end %>

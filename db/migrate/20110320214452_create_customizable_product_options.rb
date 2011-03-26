@@ -2,13 +2,13 @@ class CreateCustomizableProductOptions < ActiveRecord::Migration
   def self.up
     create_table "customizable_product_options" do |t|
       t.integer  :customization_type_id
-      t.integer  :position,     :null => true
-      t.string   :label,       :null => false
+      t.integer  :position
+      t.string   :presentation,       :null => false
       t.string   :name,        :null => false
-      t.string   :description, :null => true
+      t.string   :description
       t.string   :default_value
-      t.string   :data_type
-      t.boolean  :required,    :default => false
+      t.boolean  :is_required, :default => false
+      t.string   :partial
       t.timestamps
     end
   end

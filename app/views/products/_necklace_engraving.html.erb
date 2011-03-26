@@ -1,7 +1,0 @@
-<% param_prefix = "customization_type[#{customization_type.id}]" %>
-
-<% customization_type.customizable_product_options.each do |option| %>
-  <%= label_tag option.name %>
-  <%= text_field_tag "#{param_prefix}[#{option.name}]" %>
-<% end %>
-

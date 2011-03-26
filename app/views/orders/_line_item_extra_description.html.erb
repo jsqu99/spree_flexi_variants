@@ -8,8 +8,19 @@
     <p>
       <span style="text-decoration: bold;"><%=  customization.customization_type.name.humanize %></span>
       <% customization.customized_product_options.each do |option| %>
-	<br/>(<%= option.customizable_product_option.label %> = <%= option.value %>)
-	<% end %>
+	<br/>
+
+	<% partial = option.customizable_product_option.partial %>
+
+    <!-- hate to use exception as flow control, b/c the 'rescue' is likelier to occur than the custom partial.
+         I used a File.exists? but didn't want to use Rails.root (as this is an extension. Alternative?  cwd? -->
+	<% begin %>
+	  <%= render :partial => "orders/custom_fields/#{partial}", :locals=>{:option => option} %>
+	<% rescue %>	
+	  <%= option.customizable_product_option.presentation %> = <%= option.value %>
+        <% end %>	
+
+     <% end %>
     </p>
   <% end %>
 </div> <!-- product-customizations -->

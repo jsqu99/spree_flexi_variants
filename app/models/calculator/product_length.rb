@@ -17,14 +17,14 @@ class Calculator::ProductLength < Calculator
 
   def compute(customization)
 
-    return 0 unless valid? customization
+    return 0 unless valid_configuration? customization
 
     # expecting only one CustomizedProductOption
     value = customization.customized_product_options[0].value.to_f rescue 0.0
     value * self.preferred_multiplier
   end
 
-  def valid?(customization)
+  def valid_configuration?(customization)
     true
   end
 end

@@ -24,14 +24,14 @@ ct.products << necklace
 length_calc    = Calculator::ProductLength.new(:preferred_multiplier => 3.0,
  	                                          :preferred_max_length => 100)
 ct.calculator=length_calc
-ct.customizable_product_options << CustomizableProductOption.create(:name => "necklace_length", :label => 'Length (cm)', :default_value => '10', :data_type => :decimal)
+ct.customizable_product_options << CustomizableProductOption.create(:name => "necklace_length", :presentation => 'Length (cm)', :default_value => '10')
 
 
 ct= CustomizationType.create(:name => "necklace_engraving", :presentation => "Say something romantic on the inside?")
 ct.products << necklace
 engraving_calc = Calculator::Engraving.new(:preferred_price_per_letter => 2.0)
 ct.calculator = engraving_calc
-ct.customizable_product_options << CustomizableProductOption.create(:name => "necklace_engraving", :label => 'Inscription', :data_type => :string)
+ct.customizable_product_options << CustomizableProductOption.create(:name => "necklace_engraving", :presentation => 'Inscription')
 
 
 # Now for the 'product_option_values'

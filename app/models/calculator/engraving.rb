@@ -11,14 +11,14 @@ class Calculator::Engraving < Calculator
   end
 
   def compute(customization)
-    return 0 unless valid? customization
+    return 0 unless valid_configuration? customization
 
     # expecting only one CustomizedProductOption
     value = customization.customized_product_options[0].value rescue ''
     value.length * self.preferred_price_per_letter
   end
 
-  def valid?(customization)
+  def valid_configuration?(customization)
     true
   end
 end

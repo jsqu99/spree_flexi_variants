@@ -1,2 +1,2 @@
-<b>custom</b><%= text_field_tag "#{param_prefix}[#{option.id}]" %>
-
+<!-- example of a per-customization partial -->
+<%= text_field_tag "#{param_prefix}[#{option.id}]", '', {:class=>'customization', :style=>'background: pink;'} %>

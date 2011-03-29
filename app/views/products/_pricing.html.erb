@@ -1,0 +1,136 @@
+<% content_for :head do %>
+  <%= javascript_tag do %>
+
+
+    // we start off the page w/ a known base price, a known set of 
+    // possible configurations (product_option_values), and no customizations
+
+    // 'updatePrice()' takes the base price + current 'configuration' adjustments + 'customization' adjustments
+
+    var base_price=<%= @product.price %>;
+    var price_modifier_map={};
+
+    $().ready(function() {
+
+
+      // 'watch' our configurations
+      $('.on-demand-option-select').change(function() {
+
+        // get _every_ option drop down and recalculate product price
+
+        /*// first handle exclusions
+	if ($(this.hasClass('has_exclusions'))) {
+	  //  the param 'pivot' signifies to the controller which 'select' is currently changing (and therefore given higher priority
+          $.post('/products/exclusions', $(form).serialize() + '&' + $.param({pivot: $(this).attr('id')}), function(data) {
+	    // TODO: update all the drop downs
+            updatePrice();
+          } );
+        } else {*/
+	  // do this immediately, since we are not waiting on the results of the exlusions post
+          updatePrice();
+        // }
+      });  
+
+      // 'watch' our customizations // TODO: need to make sure we cover all types of form inputs
+      $('.customization').live('change', function() {
+
+        // need to do the ajax call here to compute price, then put the results into the 
+        // corresponding 'customization_price' dom object
+    
+        // from http://stackoverflow.com/questions/991367/how-to-get-the-form-parent-of-an-input
+        var form = this.form;
+        var form_input = $(this);  // save for reference inside 'post' below
+
+        $('#product-customizations .notice').text('Computing price change (if any)');
+        $('#product-customizations .notice').show();
+
+
+        // we are going to serialize _all_ the form inputs, and send them to our 'price' controller method
+        $.post('/customizations/price', $(form).serialize(), function(data) {
+          $('#product-customizations .notice').hide();
+          $('#product-customizations .notice').text('');
+	  form_input.siblings('.customization_price').val(parseFloat(data).toFixed(2));
+        } );
+
+	updatePrice();
+      });
+
+      updatePrice(); // set the initial price
+    } // ready
+  ); // ready
+  
+  // stolen from http://stackoverflow.com/questions/18082/validate-numbers-in-javascript-isnumeric
+  function isNumeric(input) {
+    return (input - 0) == input && input.length > 0;
+  }
+
+  function compute_variant_price() {
+    var variant_price=0;
+
+    // need to grab the contents of the currently selected :                <span class="price diff">< % = variant_price_diff v % ></span>
+    // variant_price_diff has a string like: "(add: somenumber)", so grab the last part of the string to get the decimal
+
+    $("#product-variants input[type='radio']:checked").siblings('.price.diff').each (function() {
+      // extract the decimal portion of the variant_price_diff
+      var raw_val=$(this).text();
+      space_index= raw_val.indexOf(" ");
+      if (space_index != -1) {
+        var decimal_val=raw_val.substring(space_index+1).slice(1,-1);  // remove leading '$' and trailing ')' // TODO: il8n
+	variant_price+= parseFloat(decimal_val);
+      }
+    });
+
+    return variant_price;
+  }
+
+  function compute_configuration_price() {
+    var configuration_price=0;
+
+    $('.on-demand-option-select').each(function() {
+      // the :prompt=>'None' in the select tag yields an empty string, which I can't use in the price calcuation
+      var val=$(this).val();
+
+      if (isNumeric(val)) {
+        configuration_price+=price_modifier_map[val];
+      }
+    });
+
+    return configuration_price;
+  }
+
+  function compute_customization_price() {
+    // we simply return the 'data' attached to the dom element, since whenever we 
+    // 'mouseout'/'change' etc., we go to the server to get and cache this data
+
+    var customization_price=0;
+
+    $('.customization_price').each(function() {
+      customization_price+= parseFloat($(this).val());// .toFixed(2);
+    });
+
+    return customization_price;
+  }
+
+
+  function updatePrice() {
+
+    var cur_variant_price       = compute_variant_price();
+    var cur_configuration_price =  compute_configuration_price();
+    var cur_customization_price =  compute_customization_price();
+    var cur_price =base_price + cur_variant_price + cur_configuration_price + cur_customization_price;
+
+    $('.price.selling').text('$' + cur_price.toFixed(2)); // TODO il8n
+    // $("#price").val( cur_price );
+  }
+
+  <% end %>
+<% end %>
+
+<%= javascript_tag do %>
+  <%  @product.product_option_types.each do |pot| %>
+    <% pot.product_option_values.each do |pov| %>
+      price_modifier_map[<%= pov.id %>]= <%= pov.price_modifier %>;
+    <% end %>
+  <% end %>
+<% end %>
+

@@ -29,7 +29,6 @@ class Calculator::ProductArea < Calculator
 
   # as object we always get line items, as calculable we have Coupon, ShippingMethod
   def compute(product_customization)
-debugger
     return 0 unless valid_configuration? product_customization
 
     width,height = get_option(product_customization, self.preferred_width_field_name), get_option(product_customization, self.preferred_height_field_name)

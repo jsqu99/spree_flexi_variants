@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
+
+  match 'customizations/price', :to => 'customizations#price'
+
   namespace :admin do
+
 
     resources :configuration_exclusions
 

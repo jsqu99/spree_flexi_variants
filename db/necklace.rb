@@ -1,5 +1,5 @@
 # Create a 'Necklace" product
-necklace = Product.create(:name => 'Necklace', :price => 0, :available_on => Time.now)
+necklace = Product.create(:name => 'Necklace', :price => 5, :available_on => Time.now)
 
 # A necklace can be one of many types of metals (e.g. gold, silver, etc.)
 metal_ot = OptionType.create(:name => 'metal', :presentation => 'Precious Metal')

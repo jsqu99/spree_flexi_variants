@@ -1,6 +1,8 @@
 <div id="product-customizations">
-
+<!--   <div class="flash notice" style="display: none;"></div> -->
 <% @product.customization_types.each do |customization_type| %>
+
+   <%= hidden_field_tag customization_type, '0', {:class=>'customization_price'} %>  <!-- this is a critical field.  we use it to store pricing info returned from thhe server and later used by updatePrice() -->
    <% # = render :partial => customization_type.name, :locals => {:customization_type=>customization_type} %> 
 
    <h2><%=  customization_type.presentation %></h2>
@@ -16,9 +18,10 @@
          I used a File.exists? but didn't want to use Rails.root (as this is an extension. Alternative?  cwd? -->
     <% begin %>
       <%= render :partial => "products/custom_fields/#{partial}", :locals=>{:option => option, :param_prefix => param_prefix} %>
-    <% rescue %>	
-      <%= text_field_tag "#{param_prefix}[#{option.id}]" %>
+    <% rescue %>	 
+     <%= text_field_tag "#{param_prefix}[#{option.id}]", '', {:class=>'customization'} %>
     <% end %>	
+    <br/>
   <% end %>
 
 <% end %>

@@ -1,5 +1,5 @@
 # Create a 'Custom Frame" product
-frame = Product.create(:name => 'Custom Frame', :price => 0, :available_on => Time.now)
+frame = Product.create(:name => 'Custom Frame', :price => 10, :available_on => Time.now)
 
 # A frame can be one of many types of metals (e.g. gold, silver, etc.)
 finish_ot = OptionType.create(:name => 'finish', :presentation => 'Finish')

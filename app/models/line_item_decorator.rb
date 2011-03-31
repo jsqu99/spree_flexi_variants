@@ -1,4 +1,4 @@
 LineItem.class_eval do
-  has_and_belongs_to_many :product_option_values
-  has_many :customizations 
+  has_and_belongs_to_many :ad_hoc_variant_option_values
+  has_many :product_customizations 
 end

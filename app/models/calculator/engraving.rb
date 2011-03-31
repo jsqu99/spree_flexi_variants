@@ -7,18 +7,18 @@ class Calculator::Engraving < Calculator
 
   def self.register
     super
-    CustomizationType.register_calculator(self)
+    ProductCustomizationType.register_calculator(self)
   end
 
-  def compute(customization)
-    return 0 unless valid_configuration? customization
+  def compute(product_customization)
+    return 0 unless valid_configuration? product_customization
 
     # expecting only one CustomizedProductOption
-    value = customization.customized_product_options[0].value rescue ''
+    value = product_customization.customized_product_options[0].value rescue ''
     value.length * self.preferred_price_per_letter
   end
 
-  def valid_configuration?(customization)
+  def valid_configuration?(product_customization)
     true
   end
 end

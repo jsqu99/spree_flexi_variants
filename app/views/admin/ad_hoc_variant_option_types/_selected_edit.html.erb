@@ -1,0 +1,40 @@
+    <%= form_for(ahot, :url => admin_product_ad_hoc_variant_option_type_url(@product), :html => { :method => :put }) do |f| %>
+
+    <tr>
+      <td><%= ahot.option_type.name %></td>
+      <td><%= ahot.option_type.presentation %></td>
+<td>need a tf here</td>
+      <td class="actions">
+      <%= link_to_with_icon 'delete',  t("remove"), remove_admin_product_ad_hoc_variant_option_type_url(@product, ahot) %>
+      </td>
+    </tr>
+
+    
+    <tr>
+      <td colspan="4">
+        <!-- < % = render :partial => "form", :locals => { :f => f } % > -->
+        <h3><%= t("option_values") %></h3>
+        <table class="index">
+          <thead>
+            <tr>
+              <th><%= t("name") %></th>
+              <th><%= t("display") %></th>
+              <th><%= t("price_modifier") %></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="option_values">
+            <%= f.fields_for :option_values do |option_value_form| %>
+              <%= render :partial => "option_value_fields", :locals=>{:f => option_value_form} %>
+            <% end %>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+
+    <p class="form-buttons">
+      <%= button t("update") %>
+      <%= t("or") %> <%= link_to t("cancel"), admin_product_ad_hoc_variant_option_types_url(@product) %>
+    </p>
+    
+<% end %>

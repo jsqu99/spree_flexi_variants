@@ -24,7 +24,7 @@ class Calculator::ProductArea < Calculator
 
   def self.register
     super
-    CustomizationType.register_calculator(self)
+    ProductCustomizationType.register_calculator(self)
   end
 
   # as object we always get line items, as calculable we have Coupon, ShippingMethod

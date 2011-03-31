@@ -8,7 +8,7 @@ class CustomizableProductOption < ActiveRecord::Base
   #      t.string :partial, :null => true
   #      t.string   :default_value
 
-  belongs_to :customization_type
+  belongs_to :product_customization_type
 end
 
 

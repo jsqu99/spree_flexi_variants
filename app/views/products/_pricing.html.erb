@@ -3,7 +3,7 @@
 
 
     // we start off the page w/ a known base price, a known set of 
-    // possible configurations (product_option_values), and no customizations
+    // possible configurations (ad_hoc_variant_option_values), and no customizations
 
     // 'updatePrice()' takes the base price + current 'configuration' adjustments + 'customization' adjustments
 
@@ -41,14 +41,15 @@
         var form = this.form;
         var form_input = $(this);  // save for reference inside 'post' below
 
-        $('#product-customizations .notice').text('Computing price change (if any)');
-        $('#product-customizations .notice').show();
+        //$('#product-customizations .notice').text('Computing price change (if any)');
+        //$('#product-customizations .notice').show();
 
+	$('.price.selling').html('<img src="/images/ajax_loader.gif" style="float: none;"/>');
 
         // we are going to serialize _all_ the form inputs, and send them to our 'price' controller method
-        $.post('/customizations/price', $(form).serialize(), function(data) {
-          $('#product-customizations .notice').hide();
-          $('#product-customizations .notice').text('');
+        $.post('/product_customizations/price', $(form).serialize(), function(data) {
+          //$('#product-customizations .notice').hide();
+          //$('#product-customizations .notice').text('');
 	  form_input.siblings('.customization_price').val(parseFloat(data).toFixed(2));
         } );
 
@@ -127,8 +128,8 @@
 <% end %>
 
 <%= javascript_tag do %>
-  <%  @product.product_option_types.each do |pot| %>
-    <% pot.product_option_values.each do |pov| %>
+  <%  @product.ad_hoc_variant_option_types.each do |pot| %>
+    <% pot.option_values.each do |pov| %>
       price_modifier_map[<%= pov.id %>]= <%= pov.price_modifier %>;
     <% end %>
   <% end %>

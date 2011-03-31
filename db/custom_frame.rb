@@ -17,7 +17,7 @@ silver_variant = Variant.create(:product=>frame)
 silver_variant.option_values << silver_ov
 
 
-ct= CustomizationType.create(:name => "frame_dimensions", :presentation => "Enter Width/Height")
+ct= ProductCustomizationType.create(:name => "frame_dimensions", :presentation => "Enter Width/Height")
 ct.products << frame
 dim_calc    = Calculator::ProductArea.new(:preferred_multiplier => 3.0,
  	                                          :preferred_min_width => 4,

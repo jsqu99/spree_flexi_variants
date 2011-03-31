@@ -1,18 +1,18 @@
 # -*- coding: utf-8 -*-
 ProductsController.class_eval do
   helper do 
-    def on_demand_option_value_options(product_option_values)
-      options = product_option_values.map do |pov| 
+    def on_demand_option_value_options(ad_hoc_variant_option_values)
+      options = ad_hoc_variant_option_values.map do |ah_ov| 
         
         plus_or_minus=""
 
-        if pov.price_modifier>0
+        if ah_ov.price_modifier>0
           plus_or_minus ="+"
-        elsif pov.price_modifier<0
+        elsif ah_ov.price_modifier<0
           plus_or_minus ="" # the minus is built into the value
         end
                          
-        [(pov.price_modifier.nil? ? pov.option_value.presentation : "#{pov.option_value.presentation} (#{plus_or_minus}#{number_to_currency pov.price_modifier})"), pov.id.to_s]
+        [(ah_ov.price_modifier.nil? ? ah_ov.option_value.presentation : "#{ah_ov.option_value.presentation} (#{plus_or_minus}#{number_to_currency ah_ov.price_modifier})"), ah_ov.id.to_s]
       end
     end
 

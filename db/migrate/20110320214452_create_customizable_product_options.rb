@@ -1,7 +1,7 @@
 class CreateCustomizableProductOptions < ActiveRecord::Migration
   def self.up
     create_table "customizable_product_options" do |t|
-      t.integer  :customization_type_id
+      t.integer  :product_customization_type_id
       t.integer  :position
       t.string   :presentation,       :null => false
       t.string   :name,        :null => false

@@ -1,6 +1,6 @@
 Order.class_eval do
-  def add_variant(variant, configuration_ids, customizations, quantity = 1)
-    current_item = contains?(variant, configuration_ids, customizations)
+  def add_variant(variant, ad_hoc_variant_option_value_ids, product_customizations, quantity = 1)
+    current_item = contains?(variant, ad_hoc_variant_option_value_ids, product_customizations)
     if current_item
       current_item.quantity += quantity
       current_item.save
@@ -8,21 +8,21 @@ Order.class_eval do
       current_item = LineItem.new(:quantity => quantity)
       current_item.variant = variant
 
-      # add the customizations, if any
+      # add the product_customizations, if any
       # TODO: is this an unnecessary step?
-      customizations.map(&:save) # it is now safe to save the customizations we created in the OrdersController.populate
+      product_customizations.map(&:save) # it is now safe to save the customizations we created in the OrdersController.populate
 
-      current_item.customizations = customizations
+      current_item.product_customizations = product_customizations
 
       # find, and add the configurations, if any.  these have not been fetched from the db yet.  
       # we postponed it (performance reasons) until we actaully knew we needed them
       povs=[]
-      configuration_ids.each do |cid| 
-        povs << ProductOptionValue.find(cid)
+      ad_hoc_variant_option_value_ids.each do |cid| 
+        povs << AdHocVariantOptionValue.find(cid)
       end
-      current_item.product_option_values = povs
+      current_item.ad_hoc_variant_option_values = povs
       
-      current_item.price   = variant.price + customizations.map(&:price).sum
+      current_item.price   = variant.price + product_customizations.map(&:price).sum
       self.line_items << current_item
     end
 
@@ -42,19 +42,19 @@ Order.class_eval do
     current_item
   end
 
-  def contains?(variant, configuration_ids, customizations)
+  def contains?(variant, ad_hoc_variant_option_value_ids, product_customizations)
     line_items.detect do |li| 
       li.variant_id == variant.id && 
-        matching_configurations(li.product_option_values,configuration_ids) && 
-        matching_customizations(li.customizations,customizations)
+        matching_configurations(li.ad_hoc_variant_option_values,ad_hoc_variant_option_value_ids) && 
+        matching_customizations(li.product_customizations,product_customizations)
     end
   end
 
   private
 
   # produces a list of [customizable_product_option.id,value] pairs for subsequent comparison
-  def customization_pairs(customizations)
-    pairs= customizations.map(&:customized_product_options).flatten.map do |m|
+  def customization_pairs(product_customizations)
+    pairs= product_customizations.map(&:customized_product_options).flatten.map do |m|
         [m.customizable_product_option.id, m.value]
     end
 

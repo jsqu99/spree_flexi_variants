@@ -1,12 +1,12 @@
 <div id="product-customizations">
-  <% line_item.product_option_values.each do |pov| %>
+  <% line_item.ad_hoc_variant_option_values.each do |pov| %>
     <%= pov.option_value.option_type.presentation %> = <%= pov.option_value.presentation %> (<%= pov.price_modifier %>) 
     <br/>
   <% end %>
 
-  <% line_item.customizations.each do |customization| %>
+  <% line_item.product_customizations.each do |customization| %>
     <p>
-      <span style="text-decoration: bold;"><%=  customization.customization_type.name.humanize %></span>
+      <span style="text-decoration: bold;"><%=  customization.product_customization_type.name.humanize %></span>
       <% customization.customized_product_options.each do |option| %>
 	<br/>
 

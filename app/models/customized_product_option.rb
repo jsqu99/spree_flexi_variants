@@ -1,5 +1,5 @@
 class CustomizedProductOption < ActiveRecord::Base
-  belongs_to :customization
+  belongs_to :product_customization
   belongs_to :customizable_product_option
 
 

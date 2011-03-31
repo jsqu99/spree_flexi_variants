@@ -1,6 +1,5 @@
 ---
 en:
-  has_on_demand_variants: "Has on-demand variants?"
   required: "Required?"
   price_modifier: "Price Adjustment"
   price_modifier_type: "What price modifier strategy does this option type use?"
@@ -8,8 +7,8 @@ en:
   edit_option_values: "Edit Option Values"
   notice_messages:
     option_value_removed: "Option Value Removed"
-  customization_types: 'Customization Types'
-  customization_value_types: 'Customization Value Types'
+  product_customization_types: 'Customization Types'
+  product_customization_value_types: 'Customization Value Types'
   new_customization_type: 'New Customization Type'
   new_customization_value_type: 'New Customization Value Type'
   add_customization_type: 'Add Customization Type'
@@ -18,3 +17,4 @@ en:
   form_label: 'HTML Form Label'
   data_type: 'Data Type'
   default_value: 'Default Value'
+  ad_hoc_variant_option_types: 'Ad Hoc Variant Option Types'

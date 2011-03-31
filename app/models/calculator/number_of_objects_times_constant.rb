@@ -1,13 +1,11 @@
-class Calculator::ProductLength < Calculator
+class Calculator::NumberOfObjectsTimesConstant < Calculator
   preference :multiplier, :decimal
 
-  preference :min_length, :integer, :default=>0
-  preference :max_length, :integer
-  preference :measurement_units, :string, :default => 'inches'
-  preference :granularity, :string # , :default => 'eighths'
+  preference :min_amount, :integer, :default=>0
+  preference :max_amount, :integer
 
   def self.description
-    "Product Length Calculator"
+    "Number Of Objects Times Constant Calculator"
   end
 
   def self.register
@@ -21,7 +19,7 @@ class Calculator::ProductLength < Calculator
 
     # expecting only one CustomizedProductOption
     value = product_customization.customized_product_options[0].value.to_f rescue 0.0
-    value * self.preferred_multiplier
+    value.to_i * self.preferred_multiplier
   end
 
   def valid_configuration?(product_customization)

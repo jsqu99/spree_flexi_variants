@@ -3,3 +3,11 @@
   <%= f.text_field :name %>
   <%= f.error_message_on :name %>
 <% end %>
+
+<%= f.field_container :presentation do %>
+  <%= f.label :presentation, t("presentation") %><br />
+  <%= f.text_field :presentation %>
+  <%= f.error_message_on :presentation %>
+<% end %>
+
+<%= render "admin/shared/calculator_fields", :f => f %>

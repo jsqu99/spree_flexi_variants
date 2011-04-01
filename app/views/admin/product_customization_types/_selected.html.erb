@@ -3,20 +3,20 @@
     <th><%= t("name") %></th>
     <th>&nbsp;</th>
   </tr>
-  <% @customization_types.each do |customization_type| %>
+  <% @product_customization_types.each do |customization_type| %>
     <tr>
       <td><%= customization_type.name %></td>
       <td class="actions">
-      <%= link_to_with_icon 'delete',  t("remove"), remove_admin_product_customization_type_url(@product, customization_type) %>
+      <%= link_to_with_icon 'delete',  t("remove"), remove_admin_product_product_customization_type_url(@product, customization_type) %>
       </td>
     </tr>
   <% end %>
-  <% if @customization_types.empty? %>
+  <% if @product_customization_types.empty? %>
    <tr><td colspan="3"><%= t(:none) %></td></tr>
   <% end %>
 </table>
 
 <div id="customization-types"></div>
   <span id="new_ct_link">
-    <%= link_to icon('add') + ' ' + t("add_customization_type"), available_admin_product_customization_types_url(@product), :remote => :true, :class => 'iconlink' %>
+    <%= link_to icon('add') + ' ' + t("add_product_customization_type"), available_admin_product_product_customization_types_url(@product), :remote => :true, :class => 'iconlink' %>
   </span>

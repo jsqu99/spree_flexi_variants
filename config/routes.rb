@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     end
 
     resources :ad_hoc_variant_option_types
+    resources :product_customization_types
 
     resources :products do
       resources :ad_hoc_variant_option_types do

@@ -7,15 +7,20 @@ en:
   edit_option_values: "Edit Option Values"
   notice_messages:
     option_value_removed: "Option Value Removed"
+    product_customization_type_removed: "Product Customization Type Removed"
   product_customization_types: 'Customization Types'
-  product_customization_value_types: 'Customization Value Types'
-  new_customization_type: 'New Customization Type'
-  new_customization_value_type: 'New Customization Value Type'
-  add_customization_type: 'Add Customization Type'
-  add_customization_value_type: 'Add Customization Value Type'
-  editing_customization_type: 'Editing Customization Type'
+  product_customization_type: 'Product Customization Type'
+  product_customizable_product_options: 'Customizable Options'
+  new_product_customization_type: 'New Product Customization Type'
+  new_customizable_product_option: 'New Customizable Option'
+  add_product_customization_type: 'Add Product Customization Type'
+  add_product_customization_types: 'Add Product Customization Types'
+  add_customizable_product_option: 'Add Customizable Option'
+  editing_product_customization_type: 'Editing Product Customization Type'
   form_label: 'HTML Form Label'
   data_type: 'Data Type'
   default_value: 'Default Value'
   ad_hoc_variant_option_types: 'Ad Hoc Variant Option Types'
   ad_hoc_variant_option_type: 'Ad Hoc Variant Option Type'
+  partial: 'Optionally override the default partial'
+  price_per_letter: 'Price Per Letter'

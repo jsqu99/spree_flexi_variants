@@ -2,29 +2,32 @@
 
 <div class='toolbar'>
   <ul class='actions'>
-    <li id="new_cvt_link">
-      <%= button_link_to t("new_customization_type"), new_admin_customization_type_url, {:remote => true, :icon => 'add'} %>
+    <li id="new_product_customization_type_link">
+      <% # don't know why remote=> true is present on the option_type version i copied...ok, i know now....should show up above the list below...TODO%>
+      <%= button_link_to t("new_product_customization_type"), new_admin_product_customization_type_url, {:icon => 'add', :id => 'new_product_customization_type_link'} %>
     </li>
   </ul>
   <br class='clear' />
 </div>
 
-<h1><%= t("customization_types") %></h1>
+<h1><%= t("product_customization_types") %></h1>
 
-<div id="new_customization_type"></div>
+<div id="new_product_customization_type"></div>
 
-<table class="index">
+<table class="index sortable" id='listing_product_customization_types'>
   <tr>
     <th><%= t("name") %></th>
+    <th><%= t("presentation") %></th>
     <th></th>
   </tr>
-<% @customization_types.each do |cvt| %>
-    <tr id="<%= dom_id cvt %>">
-      <td><%= cvt.name %></td>
+  <% @product_customization_types.each do |product_customization_type| %>
+    <tr id="<%= dom_id product_customization_type %>">
+      <td><span class="handle"></span> <%= product_customization_type.name %></td>
+      <td class='presentation'><%= product_customization_type.presentation %></td>
       <td class="actions">
-	<%= link_to_with_icon('edit', t("edit"), edit_admin_customization_type_url(cvt)) %>
+        <%= link_to_edit(product_customization_type, :class => 'admin_edit_product_customization_type') %>
         &nbsp;
-        <%= link_to_delete(cvt, {:url=> admin_customization_type_url(cvt)}) %>
+        <%= link_to_delete(product_customization_type) %>
       </td>
     </tr>
   <% end %>

@@ -19,6 +19,8 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :ad_hoc_variant_option_types
+
     resources :products do
       resources :ad_hoc_variant_option_types do
         member do

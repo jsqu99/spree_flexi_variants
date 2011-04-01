@@ -34,7 +34,7 @@ OrdersController.class_eval do
 
     params[:ad_hoc_variant_option_values].each do |ignore,pov_id|
       # pov=ProductOptionValue.find(pov_id)   # we don't actually need to load these from the DB just yet.  We might already have them attached to the line item
-      ids << pov_id
+      ids << pov_id unless pov_id.empty?
     end if params[:ad_hoc_variant_option_values]
 
     ids

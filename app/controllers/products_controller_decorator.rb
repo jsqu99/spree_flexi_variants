@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ProductsController.class_eval do
   helper do 
-    def on_demand_option_value_options(ad_hoc_variant_option_values)
+    def ad_hoc_option_value_options(ad_hoc_variant_option_values)
       options = ad_hoc_variant_option_values.map do |ah_ov| 
         
         plus_or_minus=""

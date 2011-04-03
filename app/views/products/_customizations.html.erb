@@ -1,8 +1,10 @@
 <div id="product-customizations">
 <!--   <div class="flash notice" style="display: none;"></div> -->
+
+   <%= hidden_field_tag "customizations_price", 0 %>  <!-- this is a critical field.  we use it to store pricing info returned from thhe server and later used by updatePrice() -->
+
 <% @product.product_customization_types.each do |product_customization_type| %>
 
-   <%= hidden_field_tag product_customization_type, '0', {:class=>'customization_price'} %>  <!-- this is a critical field.  we use it to store pricing info returned from thhe server and later used by updatePrice() -->
    <% # = render :partial => product_customization_type.name, :locals => {:customization_type=>customization_type} %> 
 
    <h2><%=  product_customization_type.presentation %></h2>
@@ -12,7 +14,7 @@
 
    <% param_prefix = "product_customizations[#{product_customization_type.id}]" %>
 
-  <% product_customization_type.customizable_product_options.each do |option| %>
+   <% product_customization_type.customizable_product_options.each do |option| %>
     <%= label_tag option.presentation %>
 
     <% partial = option.partial %>
@@ -29,4 +31,4 @@
 
 <% end %>
 
-</div> <!-- product-customizationss -->
+</div> <!-- product-customizations -->

@@ -1,11 +1,11 @@
 <% @product.ad_hoc_variant_option_types.each do |pot|
   ot=pot.option_type
-  class_str='on-demand-option-select'
+  class_str='ad-hoc-option-select'
   class_str += ' has_exclusions' if !@product.ad_hoc_variant_option_types.empty?
 %>     
     <div>
          <%= label_tag ot.name %>
-         <%= select_tag "ad_hoc_variant_option_values[#{pot.id}]", options_for_select(on_demand_option_value_options(pot.option_values)), :include_blank => (pot.is_required ? false: 'None'), :class => class_str %>
+         <%= select_tag "ad_hoc_variant_option_values[#{pot.id}]", options_for_select(ad_hoc_option_value_options(pot.option_values)), :include_blank => (pot.is_required ? false: 'None'), :class => class_str %>
     </div>	 
 <% end %>
 

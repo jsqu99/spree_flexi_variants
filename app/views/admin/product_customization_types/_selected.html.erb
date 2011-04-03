@@ -1,11 +1,15 @@
 <table class="index">
   <tr>
     <th><%= t("name") %></th>
+    <th><%= t("presentation") %></th>
+    <th><%= t("description") %></th>
     <th>&nbsp;</th>
   </tr>
   <% @product_customization_types.each do |customization_type| %>
     <tr>
       <td><%= customization_type.name %></td>
+      <td><%= customization_type.presentation %></td>
+      <td><%= customization_type.description %></td>
       <td class="actions">
       <%= link_to_with_icon 'delete',  t("remove"), remove_admin_product_product_customization_type_url(@product, customization_type) %>
       </td>

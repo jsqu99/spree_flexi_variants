@@ -1,6 +1,10 @@
+<% 
+  # I wanted to put this in the hooks file but apparently the hooks get loaded so early in the process that the db connection hasn't yet been established
+  if Spree::Config[:use_ajax_pricing_updates]
+%>
+
 <% content_for :head do %>
   <%= javascript_tag do %>
-
 
     // we start off the page w/ a known base price, a known set of 
     // possible configurations (ad_hoc_variant_option_values), and no customizations
@@ -133,5 +137,8 @@
       price_modifier_map[<%= pov.id %>]= <%= pov.price_modifier %>;
     <% end %>
   <% end %>
+
 <% end %>
 
+<% # end if Spree::Config[:use_ajax_pricing_updates] %>
+<% end %> 

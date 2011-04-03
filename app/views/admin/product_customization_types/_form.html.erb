@@ -10,4 +10,10 @@
   <%= f.error_message_on :presentation %>
 <% end %>
 
+<%= f.field_container :description do %>
+  <%= f.label :description, t("description") %><br />
+  <%= f.text_field :description %>
+  <%= f.error_message_on :description %>
+<% end %>
+
 <%= render "admin/shared/calculator_fields", :f => f %>

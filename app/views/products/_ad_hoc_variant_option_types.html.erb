@@ -1,11 +1,3 @@
-<% content_for :head do %>
-  <%= javascript_tag do %>
-
-  $(function() {
-  });
-  <% end %>
-<% end %>
-
 <% @product.ad_hoc_variant_option_types.each do |pot|
   ot=pot.option_type
   class_str='on-demand-option-select'

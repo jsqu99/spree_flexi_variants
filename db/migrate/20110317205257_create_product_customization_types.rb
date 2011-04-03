@@ -3,6 +3,8 @@ class CreateProductCustomizationTypes < ActiveRecord::Migration
     create_table :product_customization_types do |t|
       t.string :name
       t.string :presentation
+      t.string :description
+
       t.timestamps
     end
 

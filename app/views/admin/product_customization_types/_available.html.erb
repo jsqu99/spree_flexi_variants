@@ -2,11 +2,15 @@
 <table class="index">
   <tr>
     <th><%= t("name") %></th>
-    <th></th>
+    <th><%= t("presentation") %></th>
+    <th><%= t("description") %></th>
+    <th>&nbsp;</th>
   </tr>
   <% @available_product_customization_types.each do |ct| %>
   <tr>
     <td><%=ct.name %></td>
+    <td><%=ct.presentation %></td>
+    <td><%=ct.description %></td>
     <td class="actions"><%= link_to icon('add') + ' ' + t("select"),
                             url_for(:controller => "admin/product_customization_types",
                                     :id => ct,

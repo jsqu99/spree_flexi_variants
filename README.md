@@ -63,5 +63,12 @@ Complex Examples
 Code-Level Detail
 -----------------
 
+Product Pricing Display Options
+-------------------------------
+
+By default, prices aren't updated automatically on the product display page.  If you set
+    Spree::Config[:use_ajax_pricing_updates]=true
+You'll get pricing changes every time a user changes a price-altering selection.  This option causes the 'products/pricing' partial to be included
+
 
 Copyright (c) 2011 Jeff Squires, released under the New BSD License

@@ -18,12 +18,14 @@
   <tr>
     <th><%= t("name") %></th>
     <th><%= t("presentation") %></th>
+    <th><%= t("description") %></th>
     <th></th>
   </tr>
   <% @product_customization_types.each do |product_customization_type| %>
     <tr id="<%= dom_id product_customization_type %>">
       <td><span class="handle"></span> <%= product_customization_type.name %></td>
       <td class='presentation'><%= product_customization_type.presentation %></td>
+      <td class='description'><%= product_customization_type.description %></td>
       <td class="actions">
         <%= link_to_edit(product_customization_type, :class => 'admin_edit_product_customization_type') %>
         &nbsp;

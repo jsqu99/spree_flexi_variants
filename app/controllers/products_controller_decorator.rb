@@ -7,12 +7,12 @@ ProductsController.class_eval do
         plus_or_minus=""
 
         if ah_ov.price_modifier>0
-          plus_or_minus ="+"
+          plus_or_minus = t("add")
         elsif ah_ov.price_modifier<0
-          plus_or_minus ="" # the minus is built into the value
+          plus_or_minus =t("subtract")
         end
                          
-        [(ah_ov.price_modifier.nil? ? ah_ov.option_value.presentation : "#{ah_ov.option_value.presentation} (#{plus_or_minus}#{number_to_currency ah_ov.price_modifier})"), ah_ov.id.to_s]
+        [(ah_ov.price_modifier.nil? ? ah_ov.option_value.presentation : "#{ah_ov.option_value.presentation} (#{plus_or_minus} #{format_price ah_ov.price_modifier.abs})"), ah_ov.id.to_s]
       end
     end
 

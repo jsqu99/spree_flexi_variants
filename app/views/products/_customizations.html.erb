@@ -6,6 +6,9 @@
    <% # = render :partial => product_customization_type.name, :locals => {:customization_type=>customization_type} %> 
 
    <h2><%=  product_customization_type.presentation %></h2>
+   <% if product_customization_type.description %>
+     <h3><%=  product_customization_type.description %></h3>
+   <% end %>
 
    <% param_prefix = "product_customizations[#{product_customization_type.id}]" %>
 

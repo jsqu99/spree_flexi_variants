@@ -1,26 +1,46 @@
+<% content_for :head do %>
+<style>
+    #line_items dl {
+      margin: 0;
+    }
+    #line_items dt {
+      font-weight: normal;
+    }
+</style>
+<% end %>
+
 <div id="product-customizations">
+  <dl>
   <% line_item.ad_hoc_variant_option_values.each do |pov| %>
-    <%= pov.option_value.option_type.presentation %> = <%= pov.option_value.presentation %> (<%= pov.price_modifier %>) 
-    <br/>
+    <dt><%= pov.option_value.option_type.presentation %></dt>
+    <dd><%= pov.option_value.presentation %> (<%= format_price pov.price_modifier %>)</dd>
   <% end %>
+  </dl>
 
   <% line_item.product_customizations.each do |customization| %>
-    <p>
-      <span style="text-decoration: bold;"><%=  customization.product_customization_type.name.humanize %></span>
+
+    <dl>
+      <dt><%=  customization.product_customization_type.presentation %> (<%= format_price customization.price %>)</dt>
+      <dd>
+    
       <% customization.customized_product_options.each do |option| %>
-	<br/>
 
 	<% partial = option.customizable_product_option.partial %>
 
-    <!-- hate to use exception as flow control, b/c the 'rescue' is likelier to occur than the custom partial.
+    <!-- TODO: hate to use exception as flow control, b/c the 'rescue' is likelier to occur than the custom partial.
          I used a File.exists? but didn't want to use Rails.root (as this is an extension. Alternative?  cwd? -->
 	<% begin %>
 	  <%= render :partial => "orders/custom_fields/#{partial}", :locals=>{:option => option} %>
 	<% rescue %>	
-	  <%= option.customizable_product_option.presentation %> = <%= option.value %>
+	  <dl>
+	    <dt><%= option.customizable_product_option.presentation %></dt>
+	    <dd><%= option.value %></dd>
+	  </dl>
         <% end %>	
 
      <% end %>
-    </p>
+      </dd>
+    </dl>
+
   <% end %>
 </div> <!-- product-customizations -->

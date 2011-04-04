@@ -8,7 +8,6 @@ class CreateCustomizableProductOptions < ActiveRecord::Migration
       t.string   :description
       t.string   :default_value
       t.boolean  :is_required, :default => false
-      t.string   :partial
       t.timestamps
     end
   end

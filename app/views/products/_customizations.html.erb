@@ -1,33 +1,39 @@
 <div id="product-customizations">
-<!--   <div class="flash notice" style="display: none;"></div> -->
+  <!--   <div class="flash notice" style="display: none;"></div> -->
 
-   <%= hidden_field_tag "customizations_price", 0 %>  <!-- this is a critical field.  we use it to store pricing info returned from thhe server and later used by updatePrice() -->
+  <%= hidden_field_tag "customizations_price", 0 %>  <!-- this is a critical field.  we use it to store pricing info returned from thhe server and later used by updatePrice() -->
 
 <% @product.product_customization_types.each do |product_customization_type| %>
 
-   <% # = render :partial => product_customization_type.name, :locals => {:customization_type=>customization_type} %> 
+  <!-- TODO: hate to use exception as flow control, b/c the 'rescue' is likelier to occur than the custom partial.
+       I used a File.exists? but didn't want to use Rails.root (as this is an extension. Alternative?  cwd? -->
 
-   <h2><%=  product_customization_type.presentation %></h2>
-   <% if product_customization_type.description %>
-     <h3><%=  product_customization_type.description %></h3>
-   <% end %>
+  <% # first attempt to render a custom partial based on the customization type name, otherwise, display the generice version %>
+  <% begin %>
+    <%= render :partial => product_customization_type.name, :locals => {:product_customization_type=>product_customization_type} %> 
+  <% rescue %>	 
+    <h2><%=  product_customization_type.presentation %></h2>
+    <% if product_customization_type.description %>
+      <h3><%=  product_customization_type.description %></h3>
+    <% end %>
 
-   <% param_prefix = "product_customizations[#{product_customization_type.id}]" %>
+    <% param_prefix = "product_customizations[#{product_customization_type.id}]" %>
 
-   <% product_customization_type.customizable_product_options.each do |option| %>
-    <%= label_tag option.presentation %>
+    <% product_customization_type.customizable_product_options.each do |option| %>
+      <%= label_tag option.presentation %>
 
-    <% partial = option.partial %>
+      <!-- TODO: hate to use exception as flow control, b/c the 'rescue' is likelier to occur than the custom partial.
+	   I used a File.exists? but didn't want to use Rails.root (as this is an extension. Alternative?  cwd? -->
+      <% # field level partial exists? %>
+      <% begin %>
+	<%= render :partial => "products/custom_fields/#{option.name}", :locals=>{:customizable_product_option => option, :param_prefix => param_prefix} %>
+      <% rescue %>	 
+	<%= text_field_tag "#{param_prefix}[#{option.id}]", '', {:class=>'customization'} %>
+      <% end %>	
+      <br/>
+    <% end %>
 
-    <!-- hate to use exception as flow control, b/c the 'rescue' is likelier to occur than the custom partial.
-         I used a File.exists? but didn't want to use Rails.root (as this is an extension. Alternative?  cwd? -->
-    <% begin %>
-      <%= render :partial => "products/custom_fields/#{partial}", :locals=>{:option => option, :param_prefix => param_prefix} %>
-    <% rescue %>	 
-     <%= text_field_tag "#{param_prefix}[#{option.id}]", '', {:class=>'customization'} %>
-    <% end %>	
-    <br/>
-  <% end %>
+  <% end %>	
 
 <% end %>
 

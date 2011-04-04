@@ -3,8 +3,8 @@ class Calculator::ProductLength < Calculator
 
   preference :min_length, :integer, :default=>0
   preference :max_length, :integer
-  preference :measurement_units, :string, :default => 'inches'
-  preference :granularity, :string # , :default => 'eighths'
+#  preference :measurement_units, :string, :default => 'inches'
+#  preference :granularity, :string # , :default => 'eighths'
 
   def self.description
     "Product Length Calculator"

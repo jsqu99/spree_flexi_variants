@@ -4,7 +4,6 @@ class CreateProductCustomizationTypes < ActiveRecord::Migration
       t.string :name
       t.string :presentation
       t.string :description
-
       t.timestamps
     end
 

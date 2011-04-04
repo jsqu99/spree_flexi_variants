@@ -94,7 +94,12 @@
       variant_price=variant_price_map[$(this).val()];
     });
 
-    return variant_price-base_price;
+    <% if @product.has_variants? %>
+      return variant_price-base_price;
+    <% else %>
+      return variant_price;  // don't return a negative number if we don't have any variants
+    <% end %>
+
   }
 
   function compute_configuration_price() {

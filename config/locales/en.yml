@@ -10,7 +10,7 @@ en:
     product_customization_type_removed: "Product Customization Type Removed"
   product_customization_types: 'Customization Types'
   product_customization_type: 'Product Customization Type'
-  product_customizable_product_options: 'Customizable Options'
+  customizable_product_options: 'Customizable Options'
   new_product_customization_type: 'New Product Customization Type'
   new_customizable_product_option: 'New Customizable Option'
   add_product_customization_type: 'Add Product Customization Type'
@@ -24,3 +24,7 @@ en:
   ad_hoc_variant_option_type: 'Ad Hoc Variant Option Type'
   partial: 'Optionally override the default partial'
   price_per_letter: 'Price Per Letter'
+  min_length: 'Min. Length'
+  multiplier: 'Multiplier'
+  max_length: 'Max. Length'
+  

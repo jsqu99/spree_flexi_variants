@@ -5,7 +5,7 @@
 <fieldset>
   <legend><%= t("editing_product_customization_type") %></legend>
   <%= render :partial => "form", :locals => { :f => f } %>
-  <h3><%= t("product_customization_types") %></h3>
+  <h3><%= t("customizable_product_options") %></h3>
   <table class="index">
     <thead>
       <tr>
@@ -13,7 +13,6 @@
         <th><%= t("presentation") %></th>
         <th><%= t("default_value") %></th>
         <th><%= t("description") %></th>
-        <th><%= t("partial") %></th>
         <th><%= t("required") %></th>
         <th></th>
       </tr>

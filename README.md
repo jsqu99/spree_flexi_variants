@@ -34,7 +34,7 @@ Create a product 'pizza', and add those option types.
 
 Create 3 variants for the sizes.
 
-From there, go into the *Ad Hoc Variant Option Types* tab on the right.
+From there, go into the *Ad Hoc Variant Option Types* tab on the bottom right.
 
 Add the 'toppings' option type, and you'll be redirected to a screen that displays all the possible toppings, with a price field.
 
@@ -54,7 +54,25 @@ You want the ability to provide a highly customized product e.g. "Cut to length 
 
 ### Simple Example
 
+Let's create a 'rope' product.  I only sell one type of rope, but I'll cut it any length.
+
 ### Administration
+
+Inside the admin app, click 'Products', then click the *Customization Types* sub-menu item..
+
+Create a new type called 'length_customization' with presentation 'Cut to length'.  Leave the description blank. Select the product length calculator.
+
+Once created, put in some options for the calculator and update.
+
+After updating, add some customizable options at the bottom.
+
+Now create the rope product then click the *Customization Types* tab on the bottom right.
+
+You'll see there are no customization types added to the product.
+
+Click the 'Add Product Customization Type' link and select the length_customization to the product.
+
+Now go to the store, select the rope, enter the desired length, and add to cart.
 
 
 Complex Examples

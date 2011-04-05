@@ -25,7 +25,7 @@
     
       <% customization.customized_product_options.each do |option| %>
 
-	<% partial = option.customizable_product_option.partial %>
+	<% partial = option.customizable_product_option.name %>
 
     <!-- TODO: hate to use exception as flow control, b/c the 'rescue' is likelier to occur than the custom partial.
          I used a File.exists? but didn't want to use Rails.root (as this is an extension. Alternative?  cwd? -->

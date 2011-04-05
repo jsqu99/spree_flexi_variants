@@ -10,12 +10,12 @@
     <td><%=ot.name %></td>
     <td><%=ot.presentation %></td>
     <td class="actions"><%= link_to icon('add') + ' ' + t("select"),
-                            url_for(:controller => "admin/ad_hoc_variant_option_types",
+                            url_for(:controller => "admin/option_types",
                                     :id => ot,
                                     :product_id => @product.permalink,
-                                    :action => "select",
+                                    :action => "select_ad_hoc",
                                     :option_type_id =>  ot),
-                           :class => 'iconlink' %>
+          :class => 'iconlink' %>
     </td>
   </tr>
   <% end %>

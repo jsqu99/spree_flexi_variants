@@ -19,21 +19,31 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :ad_hoc_variant_option_types
     resources :product_customization_types
 
+    resources :ad_hoc_variant_option_types do
+      member do
+        get :remove
+      end
+    end
+
+
     resources :products do
-      resources :ad_hoc_variant_option_types do
+      resources :option_types do
         member do
-          get :select
-          post :select
-          get :remove
+          get :select_ad_hoc
+          post :select_ad_hoc
         end
         collection do
-          get :available
+          get :available_ad_hoc
+        end
+      end
+      resources :ad_hoc_variant_option_types do
+        collection do
           get :selected
         end
       end
+
       resources :product_customization_types do
         member do
           get :select

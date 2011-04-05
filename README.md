@@ -20,8 +20,6 @@ I'll create 3 'traditional' spree variants for size (small, medium, and large). 
 
 Imagine numerous toppings options (pepperoni, sausage, onions, mushrooms, ham, pineapple).  Imagine also that each topping is priced differently (e.g. pepperoni is $2, mushrooms are $1.25).
 
-On the short list of features is the ability to make price adjustments dependent on outside factors (like pepperoni added to a small pizza is $2, and to a medium pizza $3, etc.).
-
 Let's now use the admin app to create these ad-hoc variants
 
 ### Administration
@@ -84,9 +82,9 @@ Code-Level Detail
 Product Pricing Display Options
 -------------------------------
 
-By default, prices aren't updated automatically on the product display page.  If you set
-    Spree::Config[:use_ajax_pricing_updates]=true
-You'll get pricing changes every time a user changes a price-altering selection.  This option causes the 'products/pricing' partial to be included.
+By default, prices are updated automatically on the product display page.  You can disable this by:
+      Spree::Config.set :use_ajax_pricing_updates => false in your activate method, 
+This option controls whether or not the 'products/pricing' partial is included.
 
 
 Copyright (c) 2011 Jeff Squires, released under the New BSD License

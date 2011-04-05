@@ -11,6 +11,8 @@ module SpreeOnDemandVariants
         Rails.env.production? ? require(c) : load(c)
       end
 
+      Spree::Config.set :use_ajax_pricing_updates => true
+
       [Calculator::Engraving, Calculator::NumberOfObjectsTimesConstant, Calculator::ProductArea,Calculator::ProductLength].each(&:register)
 
     end

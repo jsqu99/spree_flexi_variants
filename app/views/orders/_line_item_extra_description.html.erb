@@ -11,6 +11,7 @@
 
 <div id="product-customizations">
   <dl>
+    <% #TODO: group multi-select options (e.g. toppings) %>
   <% line_item.ad_hoc_variant_option_values.each do |pov| %>
     <dt><%= pov.option_value.option_type.presentation %></dt>
     <dd><%= pov.option_value.presentation %> (<%= format_price pov.price_modifier %>)</dd>

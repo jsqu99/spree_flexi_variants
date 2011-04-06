@@ -31,10 +31,14 @@ Rails.application.routes.draw do
     resources :products do
       resources :option_types do
         member do
+          get :select
+          get :remove
           get :select_ad_hoc
           post :select_ad_hoc
         end
         collection do
+          get :available
+          get :selected
           get :available_ad_hoc
         end
       end

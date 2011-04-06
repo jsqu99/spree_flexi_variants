@@ -28,7 +28,7 @@ Refer to the [spree documentation](http://spreecommerce.com/documentation/overvi
 
 You'll create option types 'size' and 'toppings', and add the associated option values.
 
-Create a product 'pizza', and add those option types.
+Create a product 'pizza', and add only 'size' using the *Option Types* tab on the right.
 
 Create 3 variants for the sizes.
 
@@ -38,7 +38,9 @@ Add the 'toppings' option type, and you'll be redirected to a screen that displa
 
 Give each a price (leave some of them 0.00 if you like).
 
-Now go into the store and see the toppings drop down for the pizza.  Add it to the cart and look at the description.
+Now go into the store and see the toppings drop down for the pizza.  You'll notice you can only add one topping.  If you want to change the default html (and provide a multi-list), simply create a partial with the same name you gave the option type (e.g. _toppings.html.erb)
+
+Add it to the cart and look at the description.
 
 ### Ad Hoc Variant Exclusions
 
@@ -83,7 +85,9 @@ Product Pricing Display Options
 -------------------------------
 
 By default, prices are updated automatically on the product display page.  You can disable this by:
-      Spree::Config.set :use_ajax_pricing_updates => false in your activate method, 
+      Spree::Config.set :use_ajax_pricing_updates => false 
+in your activate method.
+
 This option controls whether or not the 'products/pricing' partial is included.
 
 

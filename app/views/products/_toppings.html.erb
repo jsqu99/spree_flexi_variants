@@ -1,0 +1,9 @@
+<% 
+   class_str='ad-hoc-option-select'
+   class_str += ' has_exclusions' if !@product.ad_hoc_variant_option_types.empty?
+%>
+
+  <div>
+    <%= label_tag option_type.option_type.name %>
+    <%= select_tag "ad_hoc_variant_option_values[#{option_type.id}][]", options_for_select(ad_hoc_option_value_options(option_type.option_values)), :include_blank => (option_type.is_required ? false: 'None'), :multiple => "true", :size => "#{option_type.option_values.size}", :class => class_str %>
+  </div>	 

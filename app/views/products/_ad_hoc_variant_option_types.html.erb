@@ -1,22 +1,20 @@
-<% @product.ad_hoc_variant_option_types.each do |ahot|
-   ot=ahot.option_type
-   class_str='ad-hoc-option-select'
-   class_str += ' has_exclusions' if !@product.ad_hoc_variant_option_types.empty?
-%>     
+<% 
+lookup=ActionView::LookupContext.new(ActionController::Base.view_paths, {:formats => [:html]})
 
-<!-- TODO: hate to use exception as flow control, b/c the 'rescue' is likelier to occur than the custom partial.
-     I used a File.exists? but didn't want to use Rails.root (as this is an extension. Alternative?  cwd? -->
+@product.ad_hoc_variant_option_types.each do |ahot|
+  ot=ahot.option_type
+  class_str='ad-hoc-option-select'
+  class_str += ' has_exclusions' if !@product.ad_hoc_variant_option_types.empty? %>
+   <% # render a custom partial based on the option type name? %>
 
-<% # first attempt to render a custom partial based on the option type name, otherwise, display the generic version %>
-<% begin %>
-  <%= render :partial => ot.name, :locals => {:option_type=>ahot} %> 
-<% rescue %>	 
-
-  <div>
-    <%= label_tag ot.name %>
-    <%= select_tag "ad_hoc_variant_option_values[#{ahot.id}]", options_for_select(ad_hoc_option_value_options(ahot.option_values)), :include_blank => (ahot.is_required ? false: 'None'), :class => class_str %>
-  </div>	 
-<% end %>
-<% end %>
+   <% if lookup.exists?("products/#{ot.name}",nil,true) %>
+     <%= render :partial => ot.name, :locals => {:option_type=>ahot} %> 
+   <% else %>
+     <div>
+       <%= label_tag ot.name %>
+       <%= select_tag "ad_hoc_variant_option_values[#{ahot.id}]", options_for_select(ad_hoc_option_value_options(ahot.option_values)), :include_blank => (ahot.is_required ? false: 'None'), :class => class_str %>
+     </div>	 
+   <% end %>
+ <% end %>
 
 

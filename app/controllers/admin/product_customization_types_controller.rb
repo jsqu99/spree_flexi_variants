@@ -1,10 +1,27 @@
 class Admin::ProductCustomizationTypesController < Admin::ResourceController
   before_filter :load_product, :only => [:selected, :available, :remove]
-  before_filter :load_calculator, :only => [:new,:edit]
+  before_filter :load_calculators, :only => [:new, :edit]
 
-  def load_calculator
+  def load_calculators
     @calculators = ProductCustomizationType.calculators.sort_by(&:name)
   end
+
+  def edit
+    @product_customization_type= ProductCustomizationType.find(params[:id])
+    
+    # Is this an edit immediately after create?  If so, need to create 
+    # calculator-appropriate default options
+    if @product_customization_type.customizable_product_options.empty?
+      if !@product_customization_type.calculator.nil?
+        # for each mandatory input type
+        @product_customization_type.calculator.required_fields.each_pair do |key, val|
+          cpo= CustomizableProductOption.create(:name=>key, :presentation=>key.titleize, :is_required => true,:data_type=>val)
+          @product_customization_type.customizable_product_options << cpo
+        end
+      end
+    end
+  end
+
   def available
     set_available_product_customization_types
     render :layout => false
@@ -21,21 +38,10 @@ class Admin::ProductCustomizationTypesController < Admin::ResourceController
     redirect_to selected_admin_product_product_customization_types_url(@product)
   end
 
-#  def update_positions
-#    params[:positions].each do |id, index|
-#      ProductCustomizationType.update_all(['position=?', index], ['id=?', id])
-#    end
-#    
-#    respond_to do |format|
-#      format.html { redirect_to admin_product_variants_url(params[:product_id]) }
-#      format.js  { render :text => 'Ok' }
-#    end
-#  end
 
   # AJAX method for selecting an existing option type and associating with the current product
   def select
     @product = Product.find_by_param!(params[:product_id])
-#    product_product_customization_type = ProductProductCustomizationType.new(:product => @product, :product_customization_type => ProductCustomizationType.find(params[:id]))
 
     @product.product_customization_types << ProductCustomizationType.find(params[:id])
     @product.save 

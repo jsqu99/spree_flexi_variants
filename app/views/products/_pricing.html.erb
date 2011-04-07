@@ -60,7 +60,7 @@
       });  
 
       // 'watch' our customizations // TODO: need to make sure we cover all types of form inputs
-      $('.customization').live('change', function() {
+      $('.customization').change(function() {
 
         // need to do the ajax call here to compute price, then put the results into the 
         // corresponding 'customizations_price' dom object
@@ -105,7 +105,8 @@
   function compute_configuration_price() {
     var configuration_price=0;
 
-    $('.ad-hoc-option-select').each(function() {
+    // for selects or checkboxes
+    $("select.ad-hoc-option-select, input:checked.ad-hoc-option-select").each(function() {
       // the :prompt=>'None' in the select tag yields an empty string, which I can't use in the price calcuation
       var val=$(this).val();
 

@@ -11,12 +11,13 @@ class Calculator::ProductArea < Calculator
 
   preference :min_pricing_area, :integer  # the minimum size we'll use for pricing (we might sell you a 4x4, but we'll charge u for a 10x10
 
-  preference :width_field_name, :string # whatever you choose as CustomizableProductOption.name
-  preference :height_field_name, :string # whatever you choose as CustomizableProductOption.name
-
   # these can be reflected in the custom partials?
   #  preference :measurement_units, :string, :default => 'inches'
   #  preference :granularity, :string, :default => 'eighths'
+
+  def required_fields
+    {"width" => :decimal, "height" => :decimal}
+  end
 
   def self.description
     "Product Area Calculator"
@@ -31,7 +32,7 @@ class Calculator::ProductArea < Calculator
   def compute(product_customization)
     return 0 unless valid_configuration? product_customization
 
-    width,height = get_option(product_customization, self.preferred_width_field_name), get_option(product_customization, self.preferred_height_field_name)
+    width,height = get_option(product_customization, "width"), get_option(product_customization, "height")
 
     # here's the custom logic for this calculator:  min total width + height = 20.
 
@@ -44,10 +45,10 @@ class Calculator::ProductArea < Calculator
     all_opts = product_customization.customized_product_options.map {|cpo| cpo.customizable_product_option.name }
 
     # do we have the necessary inputs?
-    has_inputs = all_opts.include?(self.preferred_width_field_name) && all_opts.include?(self.preferred_height_field_name)
+    has_inputs = all_opts.include?("width") && all_opts.include?("height")
 
     # do the inputs meet the criteria?
-    width,height = get_option(product_customization, self.preferred_width_field_name), get_option(product_customization, self.preferred_height_field_name)
+    width,height = get_option(product_customization, "width"), get_option(product_customization, "height")
     
 #    return has_inputs && width && height && (width.value.to_f * height.value.to_f) >= self.preferred_min_area
 

@@ -1,5 +1,10 @@
-# -*- coding: utf-8 -*-
 ProductsController.class_eval do
+  # TODO: learn more about helpers and how to aggregate them all in a non-sucky fashion
+
+  helper do # is this even remotely correct and railsy?
+    include Admin::ProductCustomizationTypesHelper  # help w/ formatting thhe validation string
+  end
+
   helper do 
     def ad_hoc_option_value_options(ad_hoc_variant_option_values)
       options = ad_hoc_variant_option_values.map do |ah_ov| 
@@ -15,6 +20,7 @@ ProductsController.class_eval do
         [(ah_ov.price_modifier.nil? ? ah_ov.option_value.presentation : "#{ah_ov.option_value.presentation} (#{plus_or_minus} #{format_price ah_ov.price_modifier.abs})"), ah_ov.id.to_s]
       end
     end
+
 
 #    def variant_filters(product)
 #      product.configuration_exclusions.each do |ce|

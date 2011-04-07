@@ -1,3 +1,12 @@
+<% content_for :head do %>
+  <%= javascript_include_tag 'jquery.validate.min' %>
+  <%= javascript_tag do %>
+    $(function () {
+      $('form').validate();
+    });
+  <% end %>
+<% end %>
+
 <%= render :partial => 'admin/shared/product_sub_menu' %>
 <h1><%= t("editing_product_customization_type") %></h1>
 <%= render 'shared/error_messages', :target => @product_customization_type %>

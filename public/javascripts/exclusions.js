@@ -1,26 +1,12 @@
-/*
+/* before including this file, make sure you have a variable, exclusions, initialized like: 
 
-// assume every current choice is legal
-
-on select.change():
-  review the available options for each select (other than possibly 'this' one) that has the 'unselected' option
-
-  all-not-yet-selected.not(this).each   /// these are the ones that will have their options reset
-
-  get every currently selected value
-
+var exclusions = [{"s1": "1", "s2": "4", "s3": "7", "s4":"a"}, 
+		  {"s1": "1", "s2": "5", "s3": "8", "s4":"a"},
+		  {"s1": "2", "s2": "6", "s3": "8", "s4":"b"},
+		  {"s1": "2", "s2": "5", "s3": "*", "s4":"*"},
+		  {"s1": "*", "s2": "-1", "s3": "*", "s4":"*"}];
 
 */
-var exclusions = [{"s1": "1", "s2": "4", "s3": "8"}];
-/*var exclusions = [{"s1": "1", "s2": "4", "s3": "7", "s4":"a"},
-	          {"s1": "1", "s2": "5", "s3": "8", "s4":"a"},
-		  {"s1": "2", "s2": "6", "s3": "8", "s4":"b"},
-		  {"s1": "-1", "s2": "*", "s3": "*", "s4":"*"},
-		  {"s1": "*", "s2": "-1", "s3": "*", "s4":"*"},
-		  {"s1": "*", "s2": "*", "s3": "-1", "s4":"*"},
-		  {"s1": "*", "s2": "*", "s3": "*", "s4":"-1"}
-  ];*/
-
 
 function legalCombination(triggering_select, current_target, target_option) {
   // get every other drop down besides the two
@@ -39,25 +25,19 @@ function legalCombination(triggering_select, current_target, target_option) {
 
   var all_vals={};
 
-  // are we 'deselecting'?  If so, add the triggering select to the list of possibilites
-//  if ($(triggering_select).val() != "") {                                              
-//    $('.ad_hoc').not(triggering_select).not(current_target).each(function(i) { initRemainingMatrix(this); });
-//  } else {
-    $('.ad_hoc').not(current_target).each(function(i) { initRemainingMatrix(this); });
-//  }
-
-  function initRemainingMatrix(obj) {
+  $('.ad_hoc').not(current_target).each(function(i) { 
     var cur_opt_arr = [];
-    all_vals[$(obj).attr('id')] = cur_opt_arr;
+    all_vals[$(this).attr('id')] = cur_opt_arr;
 
-    if ($(obj).val() != "") {
+    if ($(this).val() != "") {
       // this select has already been 'selected', so preserve the item in our possibilites martix, and don't include all the options in this drop down
-      cur_opt_arr.push($(obj).val());
+      cur_opt_arr.push($(this).val());
     } else {
-      var opts=$(obj).data('options');
+      var opts=$(this).data('options');
       $.each(opts, function(i, opt) { if (opt.value != "") {cur_opt_arr.push(opt.value);} });
     }
-  }
+  });
+
  
   // set up an array to use as our input to possibleCombinations()
 
@@ -91,9 +71,6 @@ function legalCombination(triggering_select, current_target, target_option) {
     var found_violation = false; 
 
     $.each(exclusions, function(j, exclusion) {
-
-	     // TODO: come back here and update
-	     // TODO account for nil values in exclusions
 
   	     /* console.log('exclusion[' + $(triggering_select).attr('id') +']=>' + 
 			 exclusion[$(triggering_select).attr('id')] + 

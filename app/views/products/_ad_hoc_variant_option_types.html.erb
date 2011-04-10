@@ -1,10 +1,35 @@
 <% 
 lookup=ActionView::LookupContext.new(ActionController::Base.view_paths, {:formats => [:html]})
 
+if !@product.ad_hoc_variant_exclusions.empty? 
+%>
+
+<h4>*<%= t(:not_all_combinations_available) %></h4>
+ <% content_for :head do %>
+  <%= javascript_tag do %>
+    var exclusions = [
+     <% @product.ad_hoc_variant_exclusions.each do |excl| %>
+       {
+        <%= excl.excluded_ad_hoc_variant_option_values.map do |eov| 
+          "'ad_hoc_variant_option_values_#{eov.ad_hoc_variant_option_value.option_type.id}':'#{eov.ad_hoc_variant_option_value.id.to_s}'"
+        end.join(',') %>
+       }
+       <% unless excl== @product.ad_hoc_variant_exclusions.last %>
+    ,
+       <% end %>
+    <% end %>
+    ];
+  <% end # javascript_tag%>
+
+  <%= javascript_include_tag 'exclusions' %>
+<% end # content_for %>
+
+<% end # if exclusions
+
 @product.ad_hoc_variant_option_types.each do |ahot|
   ot=ahot.option_type
   class_str='ad-hoc-option-select'
-  class_str += ' has_exclusions' if !@product.ad_hoc_variant_option_types.empty? %>
+  class_str += ' ad_hoc' if !@product.ad_hoc_variant_exclusions.empty? %>
    <% # render a custom partial based on the option type name? %>
 
    <% if lookup.exists?("products/#{ot.name}",nil,true) %>
@@ -15,6 +40,5 @@ lookup=ActionView::LookupContext.new(ActionController::Base.view_paths, {:format
        <%= select_tag "ad_hoc_variant_option_values[#{ahot.id}]", options_for_select(ad_hoc_option_value_options(ahot.option_values)), :include_blank => (ahot.is_required ? false: 'None'), :class => class_str %>
      </div>	 
    <% end %>
- <% end %>
-
+<% end %>
 

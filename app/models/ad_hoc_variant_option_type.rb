@@ -11,4 +11,8 @@ class AdHocVariantOptionType < ActiveRecord::Base
   def has_price_modifier?
     !(price_modifier_type.nil? || price_modifier_type.downcase=~/none/)
   end
+
+  def presentation
+    option_type.presentation
+  end
 end

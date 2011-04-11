@@ -27,6 +27,7 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :ad_hoc_variant_exclusions
 
     resources :products do
       resources :option_types do
@@ -47,6 +48,8 @@ Rails.application.routes.draw do
           get :selected
         end
       end
+
+      resources :ad_hoc_variant_exclusions
 
       resources :product_customization_types do
         member do

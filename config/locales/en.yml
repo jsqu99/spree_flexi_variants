@@ -8,11 +8,15 @@ en:
   notice_messages:
     option_value_removed: "Option Value Removed"
     product_customization_type_removed: "Product Customization Type Removed"
+    ad_hoc_variant_exclusion_removed: "Exclusion Removed"
+  ad_hoc_variant_exclusion: 'Ad Hoc Variant Exclusion'
+  ad_hoc_variant_exclusions: 'Ad Hoc Variant Exclusions'
   product_customization_types: 'Customization Types'
   product_customization_type: 'Product Customization Type'
   customizable_product_options: 'Customizable Options'
   new_product_customization_type: 'New Product Customization Type'
   new_customizable_product_option: 'New Customizable Option'
+  new_ad_hoc_variant_exclusion: 'New Exclusion'
   add_product_customization_type: 'Add Product Customization Type'
   add_product_customization_types: 'Add Product Customization Types'
   add_customizable_product_option: 'Add Customizable Option'

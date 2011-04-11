@@ -4,4 +4,8 @@ class AdHocVariantOptionValue < ActiveRecord::Base
   belongs_to :option_value
   # price_modifier
   alias :option_type :ad_hoc_variant_option_type
+
+  def presentation
+    option_value.presentation
+  end
 end

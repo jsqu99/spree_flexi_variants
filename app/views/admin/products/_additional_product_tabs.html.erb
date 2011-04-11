@@ -1,6 +1,9 @@
 <li<%= ' class="active"' if current == "Ad Hoc Variant Option Types" %>>
   <%= link_to t(:ad_hoc_variant_option_types), selected_admin_product_ad_hoc_variant_option_types_url(@product) %>
 </li>
+<li<%= ' class="active"' if current == "Ad Hoc Variant Exclusions" %>>
+  <%= link_to t(:ad_hoc_variant_exclusions), admin_product_ad_hoc_variant_exclusions_url(@product) %>
+</li>
 <li<%= ' class="active"' if current == "Product Customization Types" %>>
   <%= link_to t(:product_customization_types), selected_admin_product_product_customization_types_url(@product) %>
 </li>

@@ -1,0 +1,47 @@
+<%= render :partial => 'admin/shared/product_sub_menu' %>
+
+<div class='toolbar'>
+  <ul class='actions'>
+    <li id="new_ot_link">
+      <%= button_link_to t("new_ad_hoc_variant_exclusion"), new_admin_product_ad_hoc_variant_exclusion_url, {:remote => true, :icon => 'add', :id => 'new_ad_hoc_variant_exclusion_link'} %>
+    </li>
+  </ul>
+  <br class='clear' />
+</div>
+
+<h1><%= t("ad_hoc_variant_exclusions") %></h1>
+
+<div id="new_ad_hoc_variant_exclusion"></div>
+
+<table class="index sortable" id='listing_ad_hoc_variant_exclusions'>
+  <tr>
+    <% # one column for each ad hoc option type %>
+    <% # get a sorted list of option types %>
+
+    <% sorted_ots = @product.ad_hoc_variant_option_types.sort {|x,y| x.presentation <=> y.presentation} %>
+
+    <% sorted_ots.each do |ot| %>
+      <th><%= t("option_value") %> for <%= t("option_type")%> <%= ot.presentation %> </th>
+    <% end %>
+    <th></th>
+  </tr>
+
+  <% @product.ad_hoc_variant_exclusions.each do |excl| %>
+  <% # each exclusion row has one column per option type %>
+
+  <tr id="<%= dom_id excl %>">
+
+  <% # account for every option type, even if empty %>
+
+  <% sorted_ots.each do |ot| %>
+    <% # find the exclusion ov associated w/ this ot, if any %>
+    <% ov=excl.excluded_ad_hoc_variant_option_values.detect { |eov| eov.ad_hoc_variant_option_value.option_type == ot } %>
+    <td>      <%= ov.nil? ? "<all>" : ov.ad_hoc_variant_option_value.presentation %> </td>
+  <% end # sorted_ots.each %>
+
+  <td class="actions">
+    <%= link_to_delete(excl) %>
+  </td>
+  </tr>
+  <% end # each exclusion %>
+</table>

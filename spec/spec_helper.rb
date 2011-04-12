@@ -4,6 +4,16 @@ ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../../config/environment", __FILE__)
 require 'rspec/rails'
 
+#include spree's factories
+require 'spree_core'
+require 'spree_core/testing_support/factories'
+
+# include local factories
+Dir["#{File.dirname(__FILE__)}/factories/**/*.rb"].each do |f|
+  fp =  File.expand_path(f)
+  require fp
+end
+
 # Requires supporting files with custom matchers and macros, etc,
 # in ./support/ and its subdirectories.
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}

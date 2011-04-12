@@ -15,6 +15,16 @@ module SpreeOnDemandVariants
 
       [Calculator::Engraving, Calculator::NumberOfObjectsTimesConstant, Calculator::ProductArea,Calculator::ProductLength].each(&:register)
 
+      # overwrite the spree helper to include our extension fields
+#      Spree::BaseHelper.module_eval do
+#        def variant_options(v, allow_back_orders = Spree::Config[:allow_backorders], include_style = true)
+#          list = "this the the new method!"
+#          #list = v.options_text
+#          #list = include_style ? "<span class =\"out-of-stock\">(" + t("out_of_stock") + ") #{list}</span>" : "#{t("out_of_stock")} #{list}" unless (allow_back_orders || v.in_stock?)
+#          list
+#        end
+#      end
+#
     end
 
     config.to_prepare &method(:activate).to_proc

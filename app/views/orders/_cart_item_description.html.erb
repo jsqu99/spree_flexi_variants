@@ -1,3 +1,6 @@
+<h4><%= link_to variant.product.name,  product_path(variant.product) %></h4>
+<%= variant_options variant %>
+<%= truncate(variant.product.description, :length => 100, :omission => "...") %>
 <% content_for :head do %>
 <style>
     #line_items dl {
@@ -28,20 +31,24 @@
 
 	<% partial = option.customizable_product_option.name %>
 
-    <!-- TODO: hate to use exception as flow control, b/c the 'rescue' is likelier to occur than the custom partial.
-         I used a File.exists? but didn't want to use Rails.root (as this is an extension. Alternative?  cwd? -->
-	<% begin %>
-	  <%= render :partial => "orders/custom_fields/#{partial}", :locals=>{:option => option} %>
-	<% rescue %>	
-	  <dl>
-	    <dt><%= option.customizable_product_option.presentation %></dt>
-	    <dd><%= option.value %></dd>
-	  </dl>
-        <% end %>	
 
-     <% end %>
+<% 
+lookup=ActionView::LookupContext.new(ActionController::Base.view_paths, {:formats => [:html]})
+%>
+
+   <% if lookup.exists?("products/#{ot.name}",nil,true) %>
+	  <%= render :partial => "orders/custom_fields/#{partial}", :locals=>{:option => option} %>
+  <% else %>	
+    <dl>
+      <dt><%= option.customizable_product_option.presentation %></dt>
+      <dd><%= option.value %></dd>
+    </dl>
+  <% end %>	
+  
+<% end %>
       </dd>
     </dl>
 
   <% end %>
 </div> <!-- product-customizations -->
+

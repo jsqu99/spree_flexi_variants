@@ -10,6 +10,8 @@
 
     <% if ahot.option_type.id.to_s == @last_selected_option_type_id %>  
       <% # do we need to do the 'first time' forced-edit/save of new option values? %>
+
+      <%= render :partial => "form", :locals => { :f => f } %>
       <%= render :partial => "selected_edit", :locals => { :ahot => ahot } %>
     <% else %>
       <tr>

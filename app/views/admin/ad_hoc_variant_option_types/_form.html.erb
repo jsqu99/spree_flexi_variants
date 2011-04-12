@@ -1,11 +1,11 @@
-<%= f.field_container :name do %>
-  <%= f.label :name, t("name") %> <span class="required">*</span><br />
-  <%= f.text_field :name %>
-  <%= f.error_message_on :name %>
+<% # first two are read only (come from opiton_type.rb) %>
+<h3><%= t("name") %>:<%= f.object.option_type.name%></h3>
+<h3><%= t("presentation") %>:<%= f.object.option_type.presentation%></h3>
+<%= f.field_container :is_required do %>
+  <%= f.label :is_required, t("required") %> <span class="required">*</span><br />
+  <%= f.check_box :is_required %>
+  <%= f.error_message_on :is_required %>
 <% end %>
 
-<%= f.field_container :presentation do %>
-  <%= f.label :presentation, t("presentation") %> <span class="required">*</span><br />
-  <%= f.text_field :presentation %>
-  <%= f.error_message_on :presentation %>
-<% end %>
+
+

@@ -1,6 +1,11 @@
 class Calculator::Engraving < Calculator
   preference :price_per_letter, :decimal
 
+  # TODO: this field shouldn't require a default value on the admin screen
+  def required_fields
+    {"inscription" => :string}
+  end
+
   def self.description
     "Engraving Calculator"
   end

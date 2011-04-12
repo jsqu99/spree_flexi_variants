@@ -23,7 +23,7 @@ large_variant.option_values << large_ov
 
 ct= ProductCustomizationType.create(:name => "cake_candles", :presentation => "Add candles?")
 ct.products << cake
-length_calc    = Calculator::NumberOfObjectsTimesConstant.new(:preferred_multiplier => 0.10)  # ten cents per candle
+length_calc    = Calculator::AmountTimesConstant.new(:preferred_multiplier => 0.10)  # ten cents per candle
 ct.calculator=length_calc
 ct.customizable_product_options << CustomizableProductOption.create(:name => "number_of_candles", :presentation => 'How Many Candles?')
 

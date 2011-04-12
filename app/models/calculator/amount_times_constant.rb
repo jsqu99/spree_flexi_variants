@@ -1,11 +1,15 @@
-class Calculator::NumberOfObjectsTimesConstant < Calculator
+class Calculator::AmountTimesConstant < Calculator
   preference :multiplier, :decimal
 
   preference :min_amount, :integer, :default=>0
   preference :max_amount, :integer
 
+  def required_fields
+    {"amount" => :decimal}
+  end
+
   def self.description
-    "Number Of Objects Times Constant Calculator"
+    "Amount Times Constant Calculator"
   end
 
   def self.register

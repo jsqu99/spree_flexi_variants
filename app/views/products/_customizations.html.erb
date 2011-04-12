@@ -1,11 +1,3 @@
-<% content_for :head do %>
-  <%= javascript_tag do %>
-    $(function () {
-      $("#cart-form form").validate(); // TODO I dont' want to do this twice...move to cart.html?
-    });
-  <% end %>
-<% end %>
-
 <div id="product-customizations">
 
   <% # this is a critical field (for ajax updates).  we use it to store pricing info returned from thhe server and later used by updatePrice() %>

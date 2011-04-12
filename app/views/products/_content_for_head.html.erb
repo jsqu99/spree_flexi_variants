@@ -1,0 +1,39 @@
+<% content_for :head do %>
+  <%= javascript_tag do %>
+    $(function () {
+    $("#cart-form form").validate();
+    });
+  <% end %>
+
+  <% if !@product.ad_hoc_variant_exclusions.empty? %>
+    <%= javascript_tag do %>
+      var exclusions = [
+      <% @product.ad_hoc_variant_exclusions.each do |excl| %>
+	{
+	<% # account for every option type, even if empty %>
+	<% @product.ad_hoc_variant_option_types.each do |ot| %>
+	  <% ov=excl.excluded_ad_hoc_variant_option_values.detect { |eov| eov.ad_hoc_variant_option_value.option_type == ot } %>
+	  
+	  <% ov_str = ov.nil? ? "*" : ov.ad_hoc_variant_option_value.id.to_s %>
+	  <%= "'ad_hoc_variant_option_values_#{ot.id}':'#{ov_str}'" %>
+	  <% unless ot == @product.ad_hoc_variant_option_types.last %>
+	    ,
+	  <% end %>
+	<% end %>
+	}
+	<% unless excl== @product.ad_hoc_variant_exclusions.last %>
+	  ,
+	<% end %>
+      <% end %>
+      ];
+    <% end # javascript_tag%>
+
+    <%= javascript_include_tag 'exclusions' %>
+
+  <% end # if exclusions %>
+<% end # content_for %> 
+
+
+
+
+

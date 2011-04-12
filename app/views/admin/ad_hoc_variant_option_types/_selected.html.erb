@@ -3,6 +3,7 @@
   <tr>
     <th><%= t("name") %></th>
     <th><%= t("presentation") %></th>
+    <th><%= t("required") %></th>
     <th>&nbsp;</th>
   </tr>
   <% @option_types.each do |ahot| %>
@@ -14,6 +15,7 @@
       <tr>
         <td><%= ahot.option_type.name %></td>
         <td><%= ahot.option_type.presentation %></td>
+        <td><%= ahot.is_required %></td>
         <td class="actions">
           <%= link_to_with_icon 'edit',  t("edit"), edit_admin_ad_hoc_variant_option_type_url(ahot) %>
           <%= link_to_with_icon 'delete',  t("remove"), remove_admin_ad_hoc_variant_option_type_url(ahot) %>

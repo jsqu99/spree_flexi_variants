@@ -6,7 +6,6 @@ class CreateCustomizableProductOptions < ActiveRecord::Migration
       t.string   :presentation,       :null => false
       t.string   :name,        :null => false
       t.string   :description
-      t.string   :default_value
       t.string   :data_type, :default => "string"
       t.boolean  :is_required, :default => false
       t.timestamps

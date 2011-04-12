@@ -21,10 +21,9 @@ silver_variant.option_values << silver_ov
 
 ct= ProductCustomizationType.create(:name => "necklace_length", :presentation => "Size your necklace")
 ct.products << necklace
-length_calc    = Calculator::ProductLength.new(:preferred_multiplier => 3.0,
- 	                                          :preferred_max_length => 100)
+length_calc    = Calculator::AmountTimesConstant.new(:preferred_multiplier => 3.0)
 ct.calculator=length_calc
-ct.customizable_product_options << CustomizableProductOption.create(:name => "necklace_length", :presentation => 'Length (cm)', :default_value => '10')
+ct.customizable_product_options << CustomizableProductOption.create(:name => "necklace_length", :presentation => 'Length (cm)')
 
 
 ct= ProductCustomizationType.create(:name => "necklace_engraving", :presentation => "Say something romantic on the inside?")

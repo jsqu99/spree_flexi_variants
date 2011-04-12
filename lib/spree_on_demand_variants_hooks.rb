@@ -8,4 +8,6 @@ class SpreeOnDemandVariantsHooks < Spree::ThemeSupport::HookListener
   replace :order_details_line_item_row, 'shared/order_details_line_item_row'
   replace :cart_item_description, 'orders/cart_item_description'
   replace :admin_order_form_line_item_row, 'admin/orders/admin_order_form_line_item_row'
+
+  insert_before :cart_form, 'products/content_for_head'
 end

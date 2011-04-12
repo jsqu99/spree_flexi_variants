@@ -3,7 +3,6 @@
 <tr class="customization_value type fields" id="<%= dom_id(f.object) %>">
   <td><%= f.text_field :name %></td>
   <td><%= f.text_field :presentation %></td>
-  <td><%= f.text_field :default_value, :class=> validation_string(f.object.data_type, f.object.is_required) %></td>
   <td><%= f.text_area :description, {:style=>'height: auto;', :rows => 3, :cols => 25} %></td>
   <td><%= f.check_box :is_required %></td>
 

@@ -26,7 +26,7 @@ dim_calc    = Calculator::ProductArea.new(:preferred_multiplier => 3.0,
  	                                          :preferred_max_height => 90
                                           )
 ct.calculator=dim_calc
-ct.customizable_product_options << CustomizableProductOption.create(:name => "frame_width", :presentation => 'Width (inches)', :default_value => '10')
-ct.customizable_product_options << CustomizableProductOption.create(:name => "frame_height", :presentation => 'Height (inches)', :default_value => '10')
+ct.customizable_product_options << CustomizableProductOption.create(:name => "frame_width", :presentation => 'Width (inches)')
+ct.customizable_product_options << CustomizableProductOption.create(:name => "frame_height", :presentation => 'Height (inches)')
 
 

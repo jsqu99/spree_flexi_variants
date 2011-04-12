@@ -1,41 +1,11 @@
-<% 
-lookup=ActionView::LookupContext.new(ActionController::Base.view_paths, {:formats => [:html]})
+<% lookup=ActionView::LookupContext.new(ActionController::Base.view_paths, {:formats => [:html]}) %>
 
-if !@product.ad_hoc_variant_exclusions.empty? 
-%>
+<%= "<h4>*#{t(:not_all_combinations_available)}</h4>" if !@product.ad_hoc_variant_exclusions.empty? %>
 
-<h4>*<%= t(:not_all_combinations_available) %></h4>
- <% content_for :head do %>
-  <%= javascript_tag do %>
-    var exclusions = [
-     <% @product.ad_hoc_variant_exclusions.each do |excl| %>
-       {
-         <% # account for every option type, even if empty %>
-	 <% @product.ad_hoc_variant_option_types.each do |ot| %>
-	   <% ov=excl.excluded_ad_hoc_variant_option_values.detect { |eov| eov.ad_hoc_variant_option_value.option_type == ot } %>
-	  
-	   <% ov_str = ov.nil? ? "*" : ov.ad_hoc_variant_option_value.id.to_s %>
-	   <%= "'ad_hoc_variant_option_values_#{ot.id}':'#{ov_str}'" %>
-	   <% unless ot == @product.ad_hoc_variant_option_types.last %>
-	     ,
-	   <% end %>
-	 <% end %>
-       }
-       <% unless excl== @product.ad_hoc_variant_exclusions.last %>
-    ,
-       <% end %>
-    <% end %>
-    ];
-  <% end # javascript_tag%>
-
-  <%= javascript_include_tag 'exclusions' %>
-<% end # content_for %>
-
-<% end # if exclusions
-
-@product.ad_hoc_variant_option_types.each do |ahot|
+<% @product.ad_hoc_variant_option_types.each do |ahot|
   ot=ahot.option_type
   class_str='ad-hoc-option-select'
+  class_str += ' required' if ahot.is_required
   class_str += ' ad_hoc' if !@product.ad_hoc_variant_exclusions.empty? %>
    <% # render a custom partial based on the option type name? %>
 
@@ -44,7 +14,9 @@ if !@product.ad_hoc_variant_exclusions.empty?
    <% else %>
      <div>
        <%= label_tag ot.name %>
-       <%= select_tag "ad_hoc_variant_option_values[#{ahot.id}]", options_for_select(ad_hoc_option_value_options(ahot.option_values)), :include_blank => (ahot.is_required ? false: 'None'), :class => class_str %>
+       <%= select_tag "ad_hoc_variant_option_values[#{ahot.id}]", 
+             options_for_select(ad_hoc_option_value_options(ahot.option_values)), 
+             :include_blank => 'None', :class => class_str %>
      </div>	 
    <% end %>
 <% end %>

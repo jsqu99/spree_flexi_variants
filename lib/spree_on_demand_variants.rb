@@ -13,7 +13,7 @@ module SpreeOnDemandVariants
 
 #      Spree::Config.set :use_ajax_pricing_updates => true
 
-      [Calculator::Engraving, Calculator::NumberOfObjectsTimesConstant, Calculator::ProductArea,Calculator::ProductLength].each(&:register)
+      [Calculator::Engraving, Calculator::AmountTimesConstant, Calculator::ProductArea].each(&:register)
 
       # overwrite the spree helper to include our extension fields
 #      Spree::BaseHelper.module_eval do

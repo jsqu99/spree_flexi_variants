@@ -22,7 +22,7 @@ en:
   add_customizable_product_option: 'Add Customizable Option'
   editing_product_customization_type: 'Editing Product Customization Type'
   form_label: 'HTML Form Label'
-  data_type: 'Data Type'
+  data_type: 'Data Type (for input validation)'
   default_value: 'Default Value'
   ad_hoc_variant_option_types: 'Ad Hoc Variant Option Types'
   ad_hoc_variant_option_type: 'Ad Hoc Variant Option Type'

@@ -22,7 +22,7 @@ class Calculator::AmountTimesConstant < Calculator
     return 0 unless valid_configuration? product_customization
 
     # expecting only one CustomizedProductOption
-    value = product_customization.customized_product_options[0].value.to_f rescue 0.0
+    value = product_customization.customized_product_options.detect {|cpo| cpo.customizable_product_option.name == "amount" } rescue 0.0
     value.to_i * self.preferred_multiplier
   end
 

@@ -19,8 +19,8 @@ class Calculator::Engraving < Calculator
     return 0 unless valid_configuration? product_customization
 
     # expecting only one CustomizedProductOption
-    value = product_customization.customized_product_options[0].value rescue ''
-    value.length * self.preferred_price_per_letter
+    opt = product_customization.customized_product_options.detect {|cpo| cpo.customizable_product_option.name == "inscription" } rescue ''
+    opt.value.length * preferred_price_per_letter
   end
 
   def valid_configuration?(product_customization)

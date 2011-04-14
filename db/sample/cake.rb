@@ -25,14 +25,14 @@ ct= ProductCustomizationType.create(:name => "cake_candles", :presentation => "A
 ct.products << cake
 length_calc    = Calculator::AmountTimesConstant.new(:preferred_multiplier => 0.10)  # ten cents per candle
 ct.calculator=length_calc
-ct.customizable_product_options << CustomizableProductOption.create(:name => "number_of_candles", :presentation => 'How Many Candles?', :data_type => "integer")
+ct.customizable_product_options << CustomizableProductOption.create(:name => "amount", :presentation => 'How Many Candles?', :data_type => "integer")
 
 
 ct= ProductCustomizationType.create(:name => "cake_quote", :presentation => "Write something on the cake?")
 ct.products << cake
 engraving_calc = Calculator::Engraving.new(:preferred_price_per_letter => 0.5)
 ct.calculator = engraving_calc
-ct.customizable_product_options << CustomizableProductOption.create(:name => "words_on_cake", :presentation => 'Write your message here')
+ct.customizable_product_options << CustomizableProductOption.create(:name => "inscription", :presentation => 'Write your message here')
 
 
 # Now for the 'product_option_values'

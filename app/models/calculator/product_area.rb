@@ -36,7 +36,7 @@ class Calculator::ProductArea < Calculator
 
     # here's the custom logic for this calculator:  min total width + height = 20.
 
-    [(width.value.to_f * height.value.to_f), (self.preferred_min_pricing_area || 0)].max * self.preferred_multiplier
+    [(width.value.to_f * height.value.to_f), (preferred_min_pricing_area || 0)].max * preferred_multiplier
   end
 
   def valid_configuration?(product_customization)
@@ -50,7 +50,7 @@ class Calculator::ProductArea < Calculator
     # do the inputs meet the criteria?
     width,height = get_option(product_customization, "width"), get_option(product_customization, "height")
     
-#    return has_inputs && width && height && (width.value.to_f * height.value.to_f) >= self.preferred_min_area
+#    return has_inputs && width && height && (width.value.to_f * height.value.to_f) >= preferred_min_area
 
 #    rescue false
     return true

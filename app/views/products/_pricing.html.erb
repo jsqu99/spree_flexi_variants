@@ -34,6 +34,14 @@
     <% end %>
 
 
+    var delay = (function(){
+      var timer = 0;
+      return function(callback, ms){
+        clearTimeout (timer);
+        timer = setTimeout(callback, ms);
+      };
+    })();
+
     $(function() {
 
       // watch for variant changes
@@ -45,38 +53,29 @@
       $('.ad-hoc-option-select').change(function() {
 
         // get _every_ option drop down and recalculate product price
-
-        /*// first handle exclusions
-	if ($(this).hasClass('has_exclusions')) {
-	  //  the param 'pivot' signifies to the controller which 'select' is currently changing (and therefore given higher priority
-          $.post('/products/exclusions', $(form).serialize() + '&' + $.param({pivot: $(this).attr('id')}), function(data) {
-	    // TODO: update all the drop downs
-            updatePrice();
-          } );
-        } else {*/
-	  // do this immediately, since we are not waiting on the results of the exlusions post
-          updatePrice();
-        // }
+        // do this immediately, since we are not waiting on the results of the exlusions post
+	updatePrice();
       });  
 
-      // 'watch' our customizations // TODO: need to make sure we cover all types of form inputs
-      $('.customization').change(function() {
+    // 'watch' our customizations // TODO: need to make sure we cover all types of form inputs
+    $('.customization').keyup(function() {
+        delay(function(){
 
-        // need to do the ajax call here to compute price, then put the results into the 
-        // corresponding 'customizations_price' dom object
-    
-        // from http://stackoverflow.com/questions/991367/how-to-get-the-form-parent-of-an-input
-        var form = this.form;
-        var form_input = $(this);  // save for reference inside 'post' below
-
-	$('.price.selling').html('<img src="/images/ajax_loader.gif" style="float: none;"/>');
-
-        // we are going to serialize _all_ the form inputs, and send them to our 'price' controller method
-        $.post('/product_customizations/price', $(form).serialize(), function(data) {
-	  $('#customizations_price').val(parseFloat(data).toFixed(2));
-	  updatePrice();
-        } );
-      });
+          // need to do the ajax call here to compute price, then put the results into the 
+          // corresponding 'customizations_price' dom object
+      
+	  if ($("#cart-form form").validate().form()) {  // don't attempt to compute price if we are in an invalid state
+  
+    	    $('.price.selling').html('<img src="/images/ajax_loader.gif" style="float: none;"/>');
+  
+            // we are going to serialize _all_ the form inputs, and send them to our 'price' controller method
+            $.post('/product_customizations/price', $("#cart-form form").serialize(), function(data) {
+  	      $('#customizations_price').val(parseFloat(data).toFixed(2));
+  	      updatePrice();
+            } );
+	  }
+        }, 1000 ); // delay
+      }); // keyup
 
       updatePrice(); // set the initial price
     } // ready

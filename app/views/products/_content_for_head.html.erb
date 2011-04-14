@@ -1,7 +1,8 @@
 <% content_for :head do %>
   <%= javascript_tag do %>
+    var cartFormValidator;
     $(function () {
-    $("#cart-form form").validate();
+      cartFormValidator = $("#cart-form form").validate();
     });
   <% end %>
 

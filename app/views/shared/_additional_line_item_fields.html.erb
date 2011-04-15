@@ -1,8 +1,8 @@
-<% unless item.ad_hoc_variant_option_values.empty? %>
+<% unless item.ad_hoc_option_values.empty? %>
   <% #TODO: group multi-select options (e.g. toppings) %>
-  <% item.ad_hoc_variant_option_values.each do |pov| %>
+  <% item.ad_hoc_option_values.each do |pov| %>
     <span style="font-weight: bold;"><%= pov.option_value.option_type.presentation %></span> - <span><%= pov.option_value.presentation %> (<%= format_price pov.price_modifier %>)</span>
-    <%= "," unless pov == item.ad_hoc_variant_option_values.last %>
+    <%= "," unless pov == item.ad_hoc_option_values.last %>
   <% end %>
 
   <% unless item.product_customizations.empty?

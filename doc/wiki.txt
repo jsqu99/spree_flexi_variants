@@ -1,0 +1,141 @@
+### Simple Ad Hoc Options Example
+
+Let's create an imaginary product called 'Spap'.  It has two option types - sizes and colors.  All the sizes alter the price, but none of the colors do.
+
+Let's now use the admin app to create these ad-hoc options
+
+### Administration
+
+Refer to the [spree documentation](http://spreecommerce.com/documentation/overview) for the details on how to add option types and option values.
+
+You'll create option types 'size' and 'colors', and add the associated option values.  The case to use this extension becomes more compelling as the number of options types/values grows.
+
+With that said, you can only create 2 or 3 option values for each to see the effects, so create sizes S,M, and L and colors red, green, and blue.
+
+Create a product 'Spap'.
+
+From there, go into the *Ad Hoc Variant Option Types* tab on the bottom right.
+
+Add both option types.  After adding each one, you'll be redirected to a screen that displays all the possible option values, along with a price field.
+
+Give each a price (leave some of them 0.00 if you like).
+
+Now go into the store and see the drop downs for the 'Spap'.
+
+Notice how the price changes according to your selections.
+
+Add the 'Spap' to the cart and look at the description.
+
+Note that Ad Hoc Options can coexist with 'traditional' variants.
+
+Also note that you can create a partial having the same name as the option type to override the display, possibly enabling **multiple option values** within an option type to be selected!
+
+### Ad Hoc Variant Exclusions
+
+You might have a small subset of unavailable option combinations.  This subset is called an *Ad Hoc Exclusion*.
+
+### Ad Hoc Options Example using Exclusions
+
+Let's create another product, called 'Gerfo', configured just like 'Spap'.
+
+Just to make the example more complex, add a third option type, "gloss", with values "dull", "shiny", and "annoying".
+
+Assume that color "blue" shouldn't be allowed with finish "annoying" (it doesn't matter what size).
+
+Another illegal combination is size=small, color=green, and gloss="dull".
+
+### Administration
+
+Configure the ad hoc option types as in the first example, then click the "Ad Hoc Exclusions" link on the right.
+
+Add the illegal combinations mentioned above, then go to the store and play with the drop-downs to see the effect.
+
+
+### Simple Product Customizations Example
+----------------------------------
+
+Let's create a 'rope' product.  I only sell one type of rope, but I'll cut it any length.
+
+### Administration
+
+Inside the admin app, click 'Products', then click the *Customization Types* sub-menu item..
+
+Create a new type called 'length_customization' with presentation 'Cut to length (inches)'.  Leave the description blank. Select the AmountTimesConstant calculator.
+
+Once created, fill in the options for the calculator and the customization option row at the bottom and update.
+
+Now create the rope product then click the *Customization Types* tab on the bottom right.
+
+You'll see there are no customization types added to the product.
+
+Click the 'Add Product Customization Type' link and select the length_customization to the product.
+
+Now go to the store, select the rope, enter the desired length, and add to cart.
+
+Note that customizations can be displayed in a custom fashion with partials, both at the 'customization' level, as well as the 'customizable option' level.
+
+### Other Customizations
+------------------------
+
+There are a couple other calculators provided (you can always add your own).  See the product_area calucator for a customization that has more than one customizable option.
+
+There is also an 'engraving' calculator.
+
+Code-Level Detail
+-----------------
+
+Product Pricing Display Options
+-------------------------------
+
+By default, prices are updated automatically on the product display page.  You can disable this by:
+      Spree::Config.set :use_ajax_pricing_updates => false 
+(NOT in your activate method!  I tried this and the preferences subsystem hadn't been 'initialized' yet.
+
+This option controls whether or not the 'products/pricing' partial is included.
+
+
+Copyright (c) 2011 Jeff Squires, released under the New BSD License
+
+
+
+This example below does not yet work, as exclusions aren't yet enabled for multi-select ad hoc options
+
+### Another Ad Hoc Options Example (using exclusions) NOT WORKING
+
+Let's create a pizza product.  There are several possible approaches. 
+
+Imagine numerous toppings options (pepperoni, sausage, onions, mushrooms, ham, pineapple).  
+
+Imagine also that each topping could be priced differently (e.g. pepperoni is $2, mushrooms are $1.25, etc.).
+
+Additionally, toppings cost more for larger sized pizzas.
+
+We are going to use exclusions to control which options are allowed to coexist.
+
+Note that this extension could have used (and might do so in the future) a differnet approach for the "toppings cost is depending on another option (size)" issue, but for now, exclusions will solve this problem easily.
+
+We are going to set up the following:
+
+#### Options
+
+       Size
+Value             Pricing Adjustment
+  S                  0
+  M                 $2
+  L                 $3
+
+       Toppings
+Value                   Pricing Adjustment
+ small_pepperoni               $2
+ medium_pepperoni              $3
+ large_pepperoni               $4.50
+ small_mushrooms               $1.25
+ medium_mushrooms              $2
+ large_mushrooms               $2.50
+ small_onions                  $0.75
+ medium_onions                 $1.00
+ large_onions                  $1.25
+
+Let's also say that the store owner hates it when people order vegetarian pizzas, so he forbids it.
+
+Let's now use the admin app to create these ad-hoc options

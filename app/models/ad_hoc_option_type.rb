@@ -1,10 +1,10 @@
-class AdHocVariantOptionType < ActiveRecord::Base
+class AdHocOptionType < ActiveRecord::Base
   belongs_to :option_type
   belongs_to :product
-  has_many :ad_hoc_variant_option_values
-  alias :option_values :ad_hoc_variant_option_values
+  has_many :ad_hoc_option_values
+  alias :option_values :ad_hoc_option_values
 
-  accepts_nested_attributes_for :ad_hoc_variant_option_values, :allow_destroy => true
+  accepts_nested_attributes_for :ad_hoc_option_values, :allow_destroy => true
 
   # price_modifier_type
   # is_required

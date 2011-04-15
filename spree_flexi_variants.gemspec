@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
-  s.name        = 'spree_on_demand_variants'
+  s.name        = 'spree_flexi_variants'
   s.version     = '1.0.0'
   s.summary     = 'Add gem summary here'
   #s.description = 'Add (optional) gem description here'

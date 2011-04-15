@@ -6,8 +6,8 @@ ProductsController.class_eval do
   end
 
   helper do 
-    def ad_hoc_option_value_options(ad_hoc_variant_option_values)
-      options = ad_hoc_variant_option_values.map do |ah_ov| 
+    def ad_hoc_option_value_options(ad_hoc_option_values)
+      options = ad_hoc_option_values.map do |ah_ov| 
         
         plus_or_minus=""
 

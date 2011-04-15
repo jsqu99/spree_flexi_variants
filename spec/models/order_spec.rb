@@ -16,17 +16,17 @@ describe Order do
       ov6=Factory(:option_value2, :option_type => ov5.option_type)
 
       # create the 3 ad hoc option types that correspond to the 3 option types above
-      ahot1=Factory(:ad_hoc_variant_option_type, :product => product, :option_type => ov1.option_type)
-      ahot2=Factory(:ad_hoc_variant_option_type, :product => product, :option_type => ov3.option_type)
-      ahot3=Factory(:ad_hoc_variant_option_type, :product => product, :option_type => ov5.option_type)
+      ahot1=Factory(:ad_hoc_option_type, :product => product, :option_type => ov1.option_type)
+      ahot2=Factory(:ad_hoc_option_type, :product => product, :option_type => ov3.option_type)
+      ahot3=Factory(:ad_hoc_option_type, :product => product, :option_type => ov5.option_type)
 
       # create the 6 ad hoc option values that correspond to the 6 option_values above
-      @ahov1=Factory(:ad_hoc_variant_option_value, :ad_hoc_variant_option_type => ahot1, :option_value => ov1)
-      @ahov2=Factory(:ad_hoc_variant_option_value, :ad_hoc_variant_option_type => ahot1, :option_value => ov2)
-      @ahov3=Factory(:ad_hoc_variant_option_value, :ad_hoc_variant_option_type => ahot2, :option_value => ov3)
-      @ahov4=Factory(:ad_hoc_variant_option_value, :ad_hoc_variant_option_type => ahot2, :option_value => ov4)
-      @ahov5=Factory(:ad_hoc_variant_option_value, :ad_hoc_variant_option_type => ahot3, :option_value => ov5)
-      @ahov6=Factory(:ad_hoc_variant_option_value, :ad_hoc_variant_option_type => ahot3, :option_value => ov6)
+      @ahov1=Factory(:ad_hoc_option_value, :ad_hoc_option_type => ahot1, :option_value => ov1)
+      @ahov2=Factory(:ad_hoc_option_value, :ad_hoc_option_type => ahot1, :option_value => ov2)
+      @ahov3=Factory(:ad_hoc_option_value, :ad_hoc_option_type => ahot2, :option_value => ov3)
+      @ahov4=Factory(:ad_hoc_option_value, :ad_hoc_option_type => ahot2, :option_value => ov4)
+      @ahov5=Factory(:ad_hoc_option_value, :ad_hoc_option_type => ahot3, :option_value => ov5)
+      @ahov6=Factory(:ad_hoc_option_value, :ad_hoc_option_type => ahot3, :option_value => ov6)
 
       @ov_ids = [@ahov1,@ahov2,@ahov3,@ahov4,@ahov5,@ahov6].map(&:id).map(&:to_s)
     end
@@ -39,13 +39,13 @@ describe Order do
       before do
         @existing_line_item = Factory.build(:line_item, :order=>order, :variant => product.master)
         [@ahov1,@ahov2,@ahov3,@ahov4,@ahov5,@ahov6].each do |a|
-          @existing_line_item.ad_hoc_variant_option_values << a
+          @existing_line_item.ad_hoc_option_values << a
         end
         @existing_line_item.product_customizations=[]
         @existing_line_item.save
 
 
-        puts "LI first::::::::::::#{@existing_line_item.ad_hoc_variant_option_values.map(&:inspect)}"
+        puts "LI first::::::::::::#{@existing_line_item.ad_hoc_option_values.map(&:inspect)}"
 
       end
 

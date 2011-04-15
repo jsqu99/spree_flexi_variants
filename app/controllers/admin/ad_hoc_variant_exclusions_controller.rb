@@ -4,13 +4,13 @@ class Admin::AdHocVariantExclusionsController < Admin::ResourceController
 
   def create
 
-    return unless params["ad_hoc_variant_option_type"]
+    return unless params["ad_hoc_option_type"]
 
     ave= AdHocVariantExclusion.new
 
-    params["ad_hoc_variant_option_type"].each_pair do |otid, ovid|
+    params["ad_hoc_option_type"].each_pair do |otid, ovid|
       next if ovid.empty?
-      eov=ExcludedAdHocVariantOptionValue.create(:ad_hoc_variant_exclusion => ave, :ad_hoc_variant_option_value_id => ovid)
+      eov=ExcludedAdHocOptionValue.create(:ad_hoc_variant_exclusion => ave, :ad_hoc_option_value_id => ovid)
     end
 
     ave.product=@product

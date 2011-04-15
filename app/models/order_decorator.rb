@@ -1,6 +1,6 @@
 Order.class_eval do
-  def add_variant(variant, ad_hoc_variant_option_value_ids, product_customizations, quantity = 1)
-    current_item = contains?(variant, ad_hoc_variant_option_value_ids, product_customizations)
+  def add_variant(variant, ad_hoc_option_value_ids, product_customizations, quantity = 1)
+    current_item = contains?(variant, ad_hoc_option_value_ids, product_customizations)
     if current_item
       current_item.quantity += quantity
       current_item.save
@@ -17,10 +17,10 @@ Order.class_eval do
       # find, and add the configurations, if any.  these have not been fetched from the db yet.  
       # we postponed it (performance reasons) until we actaully knew we needed them
       povs=[]
-      ad_hoc_variant_option_value_ids.each do |cid| 
-        povs << AdHocVariantOptionValue.find(cid)
+      ad_hoc_option_value_ids.each do |cid| 
+        povs << AdHocOptionValue.find(cid)
       end
-      current_item.ad_hoc_variant_option_values = povs
+      current_item.ad_hoc_option_values = povs
 
       current_item.price   = variant.price + povs.map(&:price_modifier).compact.sum + product_customizations.map(&:price).sum
       self.line_items << current_item
@@ -42,10 +42,10 @@ Order.class_eval do
     current_item
   end
 
-  def contains?(variant, ad_hoc_variant_option_value_ids, product_customizations)
+  def contains?(variant, ad_hoc_option_value_ids, product_customizations)
     line_items.detect do |li| 
       li.variant_id == variant.id && 
-        matching_configurations(li.ad_hoc_variant_option_values,ad_hoc_variant_option_value_ids) && 
+        matching_configurations(li.ad_hoc_option_values,ad_hoc_option_value_ids) && 
         matching_customizations(li.product_customizations,product_customizations)
     end
   end

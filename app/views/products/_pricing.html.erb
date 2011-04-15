@@ -18,7 +18,7 @@
 
 
     // we start off the page w/ a known base price, a known set of 
-    // possible configurations (ad_hoc_variant_option_values), and no customizations
+    // possible configurations (ad_hoc_option_values), and no customizations
 
     // 'updatePrice()' takes the base price + current 'configuration' adjustments + 'customization' adjustments
 
@@ -27,7 +27,7 @@
     // keep track of ad_hoc adjustments
     var price_modifier_map={};
 
-    <%  @product.ad_hoc_variant_option_types.each do |pot| %>
+    <%  @product.ad_hoc_option_types.each do |pot| %>
       <% pot.option_values.each do |pov| %>
 	price_modifier_map[<%= pov.id %>]= <%= pov.price_modifier %>;
       <% end %>

@@ -15,27 +15,27 @@ ov_3_1 = OptionValue.create(:option_type => ot3, :name => 'ov_3_1'  , :presentat
 ov_3_2 = OptionValue.create(:option_type => ot3, :name => 'ov_3_2', :presentation => 'OV_3_2')
 
 
-ahot1=AdHocVariantOptionType.create(:product => product, :option_type => ot1)
-ahot2=AdHocVariantOptionType.create(:product => product, :option_type => ot2)
-ahot3=AdHocVariantOptionType.create(:product => product, :option_type => ot3)
+ahot1=AdHocOptionType.create(:product => product, :option_type => ot1)
+ahot2=AdHocOptionType.create(:product => product, :option_type => ot2)
+ahot3=AdHocOptionType.create(:product => product, :option_type => ot3)
 
-ahov_1_1=AdHocVariantOptionValue.create(:ad_hoc_variant_option_type => ahot1, :option_value => ov_1_1, :price_modifier => 1)
-ahov_1_2=AdHocVariantOptionValue.create(:ad_hoc_variant_option_type => ahot1, :option_value => ov_1_2, :price_modifier => 2)
+ahov_1_1=AdHocOptionValue.create(:ad_hoc_option_type => ahot1, :option_value => ov_1_1, :price_modifier => 1)
+ahov_1_2=AdHocOptionValue.create(:ad_hoc_option_type => ahot1, :option_value => ov_1_2, :price_modifier => 2)
 
-ahov_2_1=AdHocVariantOptionValue.create(:ad_hoc_variant_option_type => ahot2, :option_value => ov_2_1, :price_modifier => 3)
-ahov_2_2=AdHocVariantOptionValue.create(:ad_hoc_variant_option_type => ahot2, :option_value => ov_2_2, :price_modifier => 4)
+ahov_2_1=AdHocOptionValue.create(:ad_hoc_option_type => ahot2, :option_value => ov_2_1, :price_modifier => 3)
+ahov_2_2=AdHocOptionValue.create(:ad_hoc_option_type => ahot2, :option_value => ov_2_2, :price_modifier => 4)
 
-ahov_3_1=AdHocVariantOptionValue.create(:ad_hoc_variant_option_type => ahot3, :option_value => ov_3_1, :price_modifier => 0)
-ahov_3_2=AdHocVariantOptionValue.create(:ad_hoc_variant_option_type => ahot3, :option_value => ov_3_2, :price_modifier => 5)
+ahov_3_1=AdHocOptionValue.create(:ad_hoc_option_type => ahot3, :option_value => ov_3_1, :price_modifier => 0)
+ahov_3_2=AdHocOptionValue.create(:ad_hoc_option_type => ahot3, :option_value => ov_3_2, :price_modifier => 5)
 
 
 ave= AdHocVariantExclusion.new
 ave.product=product
 ave.save
 [ahov_1_1,ahov_2_1,ahov_3_1].each do |ahov|
-  eov=ExcludedAdHocVariantOptionValue.new
+  eov=ExcludedAdHocOptionValue.new
   eov.ad_hoc_variant_exclusion = ave
-  eov.ad_hoc_variant_option_value = ahov
+  eov.ad_hoc_option_value = ahov
   eov.save
 end
 
@@ -43,9 +43,9 @@ ave= AdHocVariantExclusion.new
 ave.product=product
 ave.save
 [ahov_2_1,ahov_3_1].each do |ahov|
-  eov=ExcludedAdHocVariantOptionValue.new
+  eov=ExcludedAdHocOptionValue.new
   eov.ad_hoc_variant_exclusion = ave
-  eov.ad_hoc_variant_option_value = ahov
+  eov.ad_hoc_option_value = ahov
   eov.save
 end
 
@@ -53,9 +53,9 @@ ave= AdHocVariantExclusion.new
 ave.product=product
 ave.save
 [ahov_1_2,ahov_3_2].each do |ahov|
-  eov=ExcludedAdHocVariantOptionValue.new
+  eov=ExcludedAdHocOptionValue.new
   eov.ad_hoc_variant_exclusion = ave
-  eov.ad_hoc_variant_option_value = ahov
+  eov.ad_hoc_option_value = ahov
   eov.save
 end
 

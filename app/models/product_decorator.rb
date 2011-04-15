@@ -1,8 +1,8 @@
 Product.class_eval do
   # These are the pool of POSSIBLE option values
-  has_many :ad_hoc_variant_option_types
+  has_many :ad_hoc_option_types
 
-  # Each exclusion represents a disallowed combination of ad_hoc_variant_option_values
+  # Each exclusion represents a disallowed combination of ad_hoc_option_values
   has_many :ad_hoc_variant_exclusions
 
   # allowed customizations

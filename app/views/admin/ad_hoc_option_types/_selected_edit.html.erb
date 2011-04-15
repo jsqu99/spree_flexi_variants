@@ -1,11 +1,11 @@
-    <%= form_for(ahot, :url => admin_ad_hoc_variant_option_type_url(ahot), :html => { :method => :put }) do |f| %>
+    <%= form_for(ahot, :url => admin_ad_hoc_option_type_url(ahot), :html => { :method => :put }) do |f| %>
 
     <tr>
       <td><%= ahot.option_type.name %></td>
       <td><%= ahot.option_type.presentation %></td>
       <td><%= ahot.is_required %></td>
       <td class="actions">
-      <%= link_to_with_icon 'delete',  t("remove"), remove_admin_ad_hoc_variant_option_type_url(ahot) %>
+      <%= link_to_with_icon 'delete',  t("remove"), remove_admin_ad_hoc_option_type_url(ahot) %>
       </td>
     </tr>
 
@@ -33,7 +33,7 @@
 
     <p class="form-buttons">
       <%= button t("update") %>
-      <%= t("or") %> <%= link_to t("cancel"), selected_admin_ad_hoc_variant_option_types_url(@product) %>
+      <%= t("or") %> <%= link_to t("cancel"), selected_admin_ad_hoc_option_types_url(@product) %>
     </p>
     
 <% end %>

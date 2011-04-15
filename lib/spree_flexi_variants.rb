@@ -1,7 +1,7 @@
 require 'spree_core'
-require 'spree_on_demand_variants_hooks'
+require 'spree_flexi_variants_hooks'
 
-module SpreeOnDemandVariants
+module SpreeFlexiVariants
   class Engine < Rails::Engine
 
     config.autoload_paths += %W(#{config.root}/lib)

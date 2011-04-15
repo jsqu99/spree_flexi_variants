@@ -18,7 +18,7 @@
     <% # one column for each ad hoc option type %>
     <% # get a sorted list of option types %>
 
-    <% sorted_ots = @product.ad_hoc_variant_option_types.sort {|x,y| x.presentation <=> y.presentation} %>
+    <% sorted_ots = @product.ad_hoc_option_types.sort {|x,y| x.presentation <=> y.presentation} %>
 
     <% sorted_ots.each do |ot| %>
       <th><%= t("option_value") %> for <%= t("option_type")%> <%= ot.presentation %> </th>
@@ -35,8 +35,8 @@
 
   <% sorted_ots.each do |ot| %>
     <% # find the exclusion ov associated w/ this ot, if any %>
-    <% ov=excl.excluded_ad_hoc_variant_option_values.detect { |eov| eov.ad_hoc_variant_option_value.option_type == ot } %>
-    <td>      <%= ov.nil? ? "<all>" : ov.ad_hoc_variant_option_value.presentation %> </td>
+    <% ov=excl.excluded_ad_hoc_option_values.detect { |eov| eov.ad_hoc_option_value.option_type == ot } %>
+    <td>      <%= ov.nil? ? "<all>" : ov.ad_hoc_option_value.presentation %> </td>
   <% end # sorted_ots.each %>
 
   <td class="actions">

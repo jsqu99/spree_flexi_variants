@@ -45,12 +45,12 @@ bogus2_ov1   = OptionValue.create(:option_type => bogus2_ot, :name => 'bogus2_ov
 bogus2_ov2   = OptionValue.create(:option_type => bogus2_ot, :name => 'bogus2_ov2', :presentation => 'Another Bogus Option2')
 
 
-pot1=AdHocVariantOptionType.create(:product_id => necklace.id, :option_type => bogus1_ot, :price_modifier_type => 'single') # TODO revist the relevance/naming of this field
-pot2=AdHocVariantOptionType.create(:product_id => necklace.id, :option_type => bogus2_ot, :price_modifier_type => 'single') 
+pot1=AdHocOptionType.create(:product_id => necklace.id, :option_type => bogus1_ot, :price_modifier_type => 'single') # TODO revist the relevance/naming of this field
+pot2=AdHocOptionType.create(:product_id => necklace.id, :option_type => bogus2_ot, :price_modifier_type => 'single') 
 
 
-AdHocVariantOptionValue.create(:price_modifier => '1.11', :option_value => bogus1_ov1, :ad_hoc_variant_option_type=>pot1)
-AdHocVariantOptionValue.create(:price_modifier => '2.22', :option_value => bogus1_ov2, :ad_hoc_variant_option_type=>pot1)
-AdHocVariantOptionValue.create(:price_modifier => '3.33', :option_value => bogus2_ov1, :ad_hoc_variant_option_type=>pot2)
-AdHocVariantOptionValue.create(:price_modifier => '4.44', :option_value => bogus2_ov2, :ad_hoc_variant_option_type=>pot2)
+AdHocOptionValue.create(:price_modifier => '1.11', :option_value => bogus1_ov1, :ad_hoc_option_type=>pot1)
+AdHocOptionValue.create(:price_modifier => '2.22', :option_value => bogus1_ov2, :ad_hoc_option_type=>pot1)
+AdHocOptionValue.create(:price_modifier => '3.33', :option_value => bogus2_ov1, :ad_hoc_option_type=>pot2)
+AdHocOptionValue.create(:price_modifier => '4.44', :option_value => bogus2_ov2, :ad_hoc_option_type=>pot2)
 

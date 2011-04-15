@@ -21,7 +21,7 @@ Rails.application.routes.draw do
 
     resources :product_customization_types
 
-    resources :ad_hoc_variant_option_types do
+    resources :ad_hoc_option_types do
       member do
         get :remove
       end
@@ -43,7 +43,7 @@ Rails.application.routes.draw do
           get :available_ad_hoc
         end
       end
-      resources :ad_hoc_variant_option_types do
+      resources :ad_hoc_option_types do
         collection do
           get :selected
         end

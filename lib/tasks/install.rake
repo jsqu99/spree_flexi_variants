@@ -1,8 +1,8 @@
-namespace :spree_on_demand_variants do
+namespace :spree_flexi_variants do
   desc "Copies all migrations and assets (NOTE: This will be obsolete with Rails 3.1)"
   task :install do
-    Rake::Task['spree_on_demand_variants:install:migrations'].invoke
-    Rake::Task['spree_on_demand_variants:install:assets'].invoke
+    Rake::Task['spree_flexi_variants:install:migrations'].invoke
+    Rake::Task['spree_flexi_variants:install:assets'].invoke
   end
 
   namespace :install do

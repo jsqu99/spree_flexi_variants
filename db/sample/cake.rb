@@ -48,13 +48,13 @@ vanilla_icing_ov     = OptionValue.create(:option_type => icing_ot, :name => 'va
 strawberry_icing_ov  = OptionValue.create(:option_type => icing_ot, :name => 'strawberry', :presentation => 'Strawberry')
 
 
-sprinkles_pot=AdHocVariantOptionType.create(:product_id => cake.id, :option_type => sprinkles_ot, :price_modifier_type => 'single') # TODO revist the relevance/naming of this field
-icing_pot=AdHocVariantOptionType.create(:product_id => cake.id, :option_type => icing_ot, :price_modifier_type => 'single') 
+sprinkles_pot=AdHocOptionType.create(:product_id => cake.id, :option_type => sprinkles_ot, :price_modifier_type => 'single') # TODO revist the relevance/naming of this field
+icing_pot=AdHocOptionType.create(:product_id => cake.id, :option_type => icing_ot, :price_modifier_type => 'single') 
 
 
-AdHocVariantOptionValue.create(:price_modifier => '1.11', :option_value => chocolate_ov, :ad_hoc_variant_option_type=>sprinkles_pot)
-AdHocVariantOptionValue.create(:price_modifier => '2.22', :option_value => rainbow_ov, :ad_hoc_variant_option_type=>sprinkles_pot)
-AdHocVariantOptionValue.create(:price_modifier => '3.33', :option_value => chocolate_icing_ov, :ad_hoc_variant_option_type=>icing_pot)
-AdHocVariantOptionValue.create(:price_modifier => '4.44', :option_value => vanilla_icing_ov, :ad_hoc_variant_option_type=>icing_pot)
-AdHocVariantOptionValue.create(:price_modifier => '5.55', :option_value => strawberry_icing_ov, :ad_hoc_variant_option_type=>icing_pot)
+AdHocOptionValue.create(:price_modifier => '1.11', :option_value => chocolate_ov, :ad_hoc_option_type=>sprinkles_pot)
+AdHocOptionValue.create(:price_modifier => '2.22', :option_value => rainbow_ov, :ad_hoc_option_type=>sprinkles_pot)
+AdHocOptionValue.create(:price_modifier => '3.33', :option_value => chocolate_icing_ov, :ad_hoc_option_type=>icing_pot)
+AdHocOptionValue.create(:price_modifier => '4.44', :option_value => vanilla_icing_ov, :ad_hoc_option_type=>icing_pot)
+AdHocOptionValue.create(:price_modifier => '5.55', :option_value => strawberry_icing_ov, :ad_hoc_option_type=>icing_pot)
 

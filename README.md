@@ -41,3 +41,4 @@ Use these when you want the ability to provide a highly customized product e.g. 
 
 See the wiki for more detail
 
+Copyright (c) 2011 Jeff Squires, released under the New BSD License

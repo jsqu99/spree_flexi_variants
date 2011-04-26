@@ -1,3 +1,8 @@
+### Fine-grained view customizations
+
+You can easily modify the way the **Ad Hoc Options** are displayed by creating partials based on the option type name.  
+
+
 ### Simple Ad Hoc Options Example
 
 Let's create an imaginary product called 'Spap'.  It has two option types - sizes and colors.  All the sizes alter the price, but none of the colors do.
@@ -139,3 +144,14 @@ Value                   Pricing Adjustment
 Let's also say that the store owner hates it when people order vegetarian pizzas, so he forbids it.
 
 Let's now use the admin app to create these ad-hoc options
+
+
+
+
+
+
+Build a 'Frame'  product using **Product Customizations**
+![Picture Frame](/jsqu99/spree-flexi-variants/raw/master/doc/frame.jpg)
+
+Build a bogus product using **Ad Hoc Options** and **Exclusions**.  
+![Exclusions](/jsqu99/spree-flexi-variants/raw/master/doc/exclusions.jpg)

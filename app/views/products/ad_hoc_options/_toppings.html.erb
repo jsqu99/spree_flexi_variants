@@ -3,8 +3,7 @@
    class_str += ' has_exclusions' if !@product.ad_hoc_variant_exclusions.empty?
 %>
 
-  <div>
-    <h2><%= option_type.option_type.name.titleize %></h2>
+  <label><%= option_type.presentation %></label>
     <% option_type.option_values.each do |ah_ov| %>
 
       <% 
@@ -22,6 +21,4 @@
       <span class="variant-description"><%= "#{ah_ov.option_value.presentation}"%></span>
       <span class="price diff"><%= "(#{plus_or_minus} #{format_price ah_ov.price_modifier.abs})"%></span>
       </label>
-      <br/>
     <% end %>
-  </div>	 

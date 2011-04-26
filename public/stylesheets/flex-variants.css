@@ -1,0 +1,42 @@
+fieldset{
+	background-color:#dddddd;
+	
+	border-width:1px;
+	border-style:solid;
+	border-color:#666;
+	
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:12px;
+		
+	margin:20px 0px 20px 0px;
+	/*width:250px;*/
+	position:relative;
+	display:block;
+	padding: 0px 10px 10px 10px;
+}
+
+fieldset label {
+/* font-size:80%;
+ float:left;width:80px;text-align:right;*/
+    margin-top: 10px;
+ display:block;
+}
+
+fieldset legend{	
+	background-color:#2e6ab1;
+	
+	border-width:1px;
+	border-style:solid;
+	border-color:#666;
+	
+	color:#ddd;
+	font-weight:bold;
+	font-variant:small-caps;
+	font-size:110%;
+		
+	padding:2px 5px;
+	margin:0px 0px 10px 0px;
+	position:relative;
+	top: -12px;
+	
+}

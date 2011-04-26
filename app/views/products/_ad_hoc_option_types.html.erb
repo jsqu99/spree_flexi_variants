@@ -1,6 +1,10 @@
+<% if @product.ad_hoc_option_types && !@product.ad_hoc_option_types.empty? %>
 <% lookup=ActionView::LookupContext.new(ActionController::Base.view_paths, {:formats => [:html]}) %>
 
+<div id="ad_hoc_options" style="overflow: auto;">
 <%= "<h4>*#{t(:not_all_combinations_available)}</h4>".html_safe if !@product.ad_hoc_variant_exclusions.empty? %>
+
+<%= field_set_tag t(:select_variant_options) do %>
 
 <% @product.ad_hoc_option_types.each do |ahot|
   ot=ahot.option_type
@@ -9,15 +13,15 @@
   class_str += ' ad_hoc' if !@product.ad_hoc_variant_exclusions.empty? %>
    <% # render a custom partial based on the option type name? %>
 
-   <% if lookup.exists?("products/#{ot.name}",nil,true) %>
-     <%= render :partial => ot.name, :locals => {:option_type=>ahot} %> 
+   <% if lookup.exists?("products/ad_hoc_options/#{ot.name}",nil,true) %>
+     <%= render :partial => "products/ad_hoc_options/#{ot.name}", :locals => {:option_type=>ahot} %> 
    <% else %>
-     <div>
-       <%= label_tag ot.name %>
-       <%= select_tag "ad_hoc_option_values[#{ahot.id}]", 
+     <label><%= ot.presentation %></label>
+     <%= select_tag "ad_hoc_option_values[#{ahot.id}]",
              options_for_select(ad_hoc_option_value_options(ahot.option_values)), 
              :include_blank => 'None', :class => class_str %>
-     </div>	 
    <% end %>
 <% end %>
-
+<% end # field set%> 
+</div>
+<% end %>

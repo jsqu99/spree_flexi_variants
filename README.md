@@ -3,11 +3,24 @@ SpreeFlexiVariants
 
 This is a [spree](http://spreecommerce.com) extension that solves two use cases related to variants.  I call them **Ad Hoc Options** and **Product Customizations**.  
 
+Ad Hoc Options
+--------------
+
+Use these when have numerous (possibly price-altering) product options and you don't want to create variants for each combination.
+
+You can also restrict certain combinations of options from coexisting.  These are called **Ad Hoc Exclusions** and are described in more detail in the wiki.
+
+
+Product Customizations
+----------------------
+
+Use these when you want the ability to provide a highly customized product e.g. "Cut to length 5.82cm", "Engrave 'thanks for the memories, Sarah'".  Full control over pricing is provided by the Spree calculator mechanism.
+
+
 Installation
 ------------
     rails new myapp
     cd myapp
-
 
 Add to Gemfile:
 
@@ -20,25 +33,18 @@ Add to Gemfile:
 
 If you choose 'yes' to install the sample data, the contents of db/sample will be loaded with some sample products that take advantage of this extension.
 
-Ad Hoc Options
-----------------------
-
-Use these when have numerous (possibly price-altering) product options and you don't want to create variants for each combination.
-
-Product Customizations
-----------------------
-
-Use these when you want the ability to provide a highly customized product e.g. "Cut to length 5.82cm", "Engrave 'thanks for the memories, Sarah'".
-
-
 ## Examples
 
-![Cake](/jsqu99/spree-flexi-variants/raw/master/doc/cake.jpg)
-![Necklace](/jsqu99/spree-flexi-variants/raw/master/doc/necklace.jpg)
-![Pizza](/jsqu99/spree-flexi-variants/raw/master/doc/pizza.jpg)
-![Picture Frame](/jsqu99/spree-flexi-variants/raw/master/doc/frame.jpg)
 
+Build a 'Cake'  product using **Ad Hoc Options** and **Product Customizations**
+![Cake](/jsqu99/spree-flexi-variants/raw/master/doc/cake_screenshot.jpg)
 
-See the wiki for more detail
+Build a 'Necklace'  product using **Ad Hoc Options** and **Product Customizations**
+![Necklace](/jsqu99/spree-flexi-variants/raw/master/doc/necklace_screenshot.jpg)
+
+Build a 'Pizza' product using **Ad Hoc Options**.  
+![Picture Frame](/jsqu99/spree-flexi-variants/raw/master/doc/pizza_screenshot.png)
+
+See the wiki for more detail (coming soon)
 
 Copyright (c) 2011 Jeff Squires, released under the New BSD License

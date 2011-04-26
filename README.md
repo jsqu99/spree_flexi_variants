@@ -37,13 +37,13 @@ If you choose 'yes' to install the sample data, the contents of db/sample will b
 
 
 Build a 'Cake'  product using **Ad Hoc Options** and **Product Customizations**
-![Cake](/jsqu99/spree-flexi-variants/raw/master/doc/cake_screenshot.jpg)
+![Cake](/jsqu99/spree_flexi_variants/raw/master/doc/cake_screenshot.png)
 
 Build a 'Necklace'  product using **Ad Hoc Options** and **Product Customizations**
-![Necklace](/jsqu99/spree-flexi-variants/raw/master/doc/necklace_screenshot.jpg)
+![Necklace](/jsqu99/spree_flexi_variants/raw/master/doc/necklace_screenshot.png)
 
 Build a 'Pizza' product using **Ad Hoc Options**.  
-![Picture Frame](/jsqu99/spree-flexi-variants/raw/master/doc/pizza_screenshot.png)
+![Picture Frame](/jsqu99/spree_flexi_variants/raw/master/doc/pizza_screenshot.png)
 
 See the wiki for more detail (coming soon)
 

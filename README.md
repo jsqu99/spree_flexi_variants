@@ -37,14 +37,19 @@ If you choose 'yes' to install the sample data, the contents of db/sample will b
 
 
 Build a 'Cake'  product using **Ad Hoc Options** and **Product Customizations**
+
 ![Cake](/jsqu99/spree_flexi_variants/raw/master/doc/cake_screenshot.png)
 
 Build a 'Necklace'  product using **Ad Hoc Options** and **Product Customizations**
+
 ![Necklace](/jsqu99/spree_flexi_variants/raw/master/doc/necklace_screenshot.png)
 
 Build a 'Pizza' product using **Ad Hoc Options**.  
+
 ![Picture Frame](/jsqu99/spree_flexi_variants/raw/master/doc/pizza_screenshot.png)
 
 See the wiki for more detail (coming soon)
+
+Many, many thanks to ![Brian Quinn](https://github.com/BDQ) for selflessly volunteering his time to mentor me throughout the development process.
 
 Copyright (c) 2011 Jeff Squires, released under the New BSD License

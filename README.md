@@ -50,6 +50,6 @@ Build a 'Pizza' product using **Ad Hoc Options**.
 
 See the wiki for more detail (coming soon)
 
-Many, many thanks to ![Brian Quinn](https://github.com/BDQ) for selflessly volunteering his time to mentor me throughout the development process.
+Many, many thanks to [Brian Quinn](https://github.com/BDQ) for selflessly volunteering his time to mentor me throughout the development process.
 
 Copyright (c) 2011 Jeff Squires, released under the New BSD License

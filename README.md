@@ -48,7 +48,7 @@ Build a 'Pizza' product using **Ad Hoc Options**.
 
 ![Picture Frame](/jsqu99/spree_flexi_variants/raw/master/doc/pizza_screenshot.png)
 
-See the wiki for more detail (coming soon)
+See the [wiki](https://github.com/jsqu99/spree_flexi_variants/wiki) for more detail.
 
 Many, many thanks to [Brian Quinn](https://github.com/BDQ) for selflessly volunteering his time to mentor me throughout the development process.
 

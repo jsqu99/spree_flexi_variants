@@ -24,7 +24,8 @@ Installation
 
 Add to Gemfile:
 
-    gem 'spree'
+    # Important! - see disclaimer about edge code
+    gem 'spree', :git => 'git://github.com/spree/spree.git'
     gem 'spree_flexi_variants', :git=>'git@github.com:jsqu99/spree_flexi_variants.git'
 
     bundle install

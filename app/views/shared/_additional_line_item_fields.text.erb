@@ -1,0 +1,23 @@
+<% unless item.ad_hoc_option_values.empty? %>
+  <% #TODO: group multi-select options (e.g. toppings) %>
+
+  <% item.ad_hoc_option_values.each do |pov| %>
+    <%= pov.option_value.option_type.presentation %> = <%= pov.option_value.presentation %> (<%= format_price pov.price_modifier %>) <%= "," unless pov == item.ad_hoc_option_values.last %>
+    <% end %>
+  <% end # unless empty? %>
+
+  <% unless item.product_customizations.empty? %>
+    <% item.product_customizations.each do |customization| %>
+    <%=  customization.product_customization_type.presentation %> (<%= format_price customization.price %>)
+      <% customization.customized_product_options.each do |option| %>
+
+  	     <% partial = option.customizable_product_option.name %>
+         <% lookup=ActionView::LookupContext.new(ActionController::Base.view_paths, {:formats => [:html]}) %>
+         <% if lookup.exists?("products/#{partial}",nil,true) %>
+            <%= render :partial => "orders/custom_fields/#{partial}", :locals=>{:option => option} %>
+         <% else %>
+          <%= option.customizable_product_option.presentation %>=<%= option.value %>
+         <% end %>
+      <% end # each option %>
+     <% end # each customization %>
+<% end # unless empty? %>

@@ -45,7 +45,7 @@ Build a 'Necklace'  product using **Ad Hoc Options** and **Product Customization
 
 ![Necklace](/jsqu99/spree_flexi_variants/raw/master/doc/necklace_screenshot.png)
 
-Build a 'Pizza' product using **Ad Hoc Options**.  
+Build a 'Pizza' product using **Ad Hoc Options**. Note that the 'multi' option checkboxes come from a partial named after the option name (see app/views/products/ad_hoc_options/_toppings.html.erb) 
 
 ![Picture Frame](/jsqu99/spree_flexi_variants/raw/master/doc/pizza_screenshot.png)
 

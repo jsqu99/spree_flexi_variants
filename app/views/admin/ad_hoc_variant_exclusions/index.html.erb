@@ -1,5 +1,9 @@
 <%= render :partial => 'admin/shared/product_sub_menu' %>
 
+<% if @product.ad_hoc_option_types.size <= 1 %>
+  <h2><%= t("ad_hoc_variant_exclusions_unavailable") %></h2>
+<% else %>
+
 <div class='toolbar'>
   <ul class='actions'>
     <li id="new_ot_link">
@@ -45,3 +49,5 @@
   </tr>
   <% end # each exclusion %>
 </table>
+
+<% end %>

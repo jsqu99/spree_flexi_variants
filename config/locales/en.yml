@@ -11,6 +11,7 @@ en:
     ad_hoc_variant_exclusion_removed: "Exclusion Removed"
   ad_hoc_variant_exclusion: 'Ad Hoc Variant Exclusion'
   ad_hoc_variant_exclusions: 'Ad Hoc Variant Exclusions'
+  ad_hoc_variant_exclusions_unavailable: "You only need to configure exclusions when you have more than one ad hoc option type"
   product_customization_types: 'Customization Types'
   product_customization_type: 'Product Customization Type'
   customizable_product_options: 'Customizable Options'

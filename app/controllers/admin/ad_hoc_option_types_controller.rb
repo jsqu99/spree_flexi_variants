@@ -7,6 +7,9 @@ class Admin::AdHocOptionTypesController < Admin::ResourceController
   end
 
   def remove
+    # TODO: when removing an option type, we need to check if removing the option type from an
+    # associated exclusion causes the exclusion to only have one member.  If so, we'll need to
+    # remove the entire exclusion
     @product=@ad_hoc_option_type.product
     @ad_hoc_option_type.destroy
     flash.notice = I18n.t("notice_messages.option_type_removed")

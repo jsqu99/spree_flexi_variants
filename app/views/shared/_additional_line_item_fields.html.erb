@@ -13,36 +13,27 @@ tbody dl dd {
 </style>
 <% end %>
 
-<% unless item.ad_hoc_option_values.empty? %>
+<dl>
   <% #TODO: group multi-select options (e.g. toppings) %>
-  <dl>
   <% item.ad_hoc_option_values.each do |pov| %>
-    <dt><%= pov.option_value.option_type.presentation %></dt>
-    <dd><%= pov.option_value.presentation %> (<%= format_price pov.price_modifier %>)</dd>
-    <% end %>
-  </dl>
-  <% end # unless empty? %>
+    <dt><%= pov.option_value.option_type.presentation %> (<%= format_price pov.price_modifier %>)</dt>
+    <dd><%= pov.option_value.presentation %></dd>
+  <% end %>
 
-  <% unless item.product_customizations.empty? %>
-    <dl>
-    <% item.product_customizations.each do |customization| %>
-    <dt>
-    <%=  customization.product_customization_type.presentation %> (<%= format_price customization.price %>)
-    </dt>
+  <% item.product_customizations.each do |customization| %>
+    <% next if customization.customized_product_options.all? {|cpo| cpo.value.empty? } %>
+
+    <dt><%= customization.product_customization_type.presentation %> (<%= format_price customization.price %>)</dt>
     <dd>
-      <dl>
-      <% customization.customized_product_options.each do |option| %>
-  	     <% partial = option.customizable_product_option.name %>
-         <% lookup=ActionView::LookupContext.new(ActionController::Base.view_paths, {:formats => [:html]}) %>
-         <% if lookup.exists?("products/#{partial}",nil,true) %>
-            <%= render :partial => "orders/custom_fields/#{partial}", :locals=>{:option => option} %>
-         <% else %>
-          <dt><%= option.customizable_product_option.presentation %></dt>
-          <dd><%= option.value %></dd>
-         <% end %>
-      <% end # each option %>
-      </dl>
-     </dd>
-     <% end # each customization %>
-    </dl>
-<% end # unless empty? %>
+          <% customization.customized_product_options.each do |option| %>
+	          <% partial = option.customizable_product_option.name %>
+            <% lookup=ActionView::LookupContext.new(ActionController::Base.view_paths, {:formats => [:html]}) %>
+            <% if lookup.exists?("orders/custom_fields/#{partial}",nil,true) %>
+              <%= render :partial => "orders/custom_fields/#{partial}", :locals=>{:option => option} %>
+            <% else %>
+              <span><%= option.customizable_product_option.presentation %> = <%= option.value %></span>
+            <% end %>
+          <% end # each option %>
+    </dd>
+    <% end # each customization %>
+</dl>

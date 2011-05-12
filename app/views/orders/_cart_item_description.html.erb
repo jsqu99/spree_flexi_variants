@@ -1,54 +1,5 @@
 <h4><%= link_to variant.product.name,  product_path(variant.product) %></h4>
 <%= variant_options variant %>
 <%= truncate(variant.product.description, :length => 100, :omission => "...") %>
-<% content_for :head do %>
-<style>
-    #line_items dl {
-      margin: 0;
-    }
-    #line_items dt {
-      font-weight: normal;
-    }
-</style>
-<% end %>
 
-<div id="product-customizations">
-  <dl>
-    <% #TODO: group multi-select options (e.g. toppings) %>
-  <% line_item.ad_hoc_option_values.each do |pov| %>
-    <dt><%= pov.option_value.option_type.presentation %></dt>
-    <dd><%= pov.option_value.presentation %> (<%= format_price pov.price_modifier %>)</dd>
-  <% end %>
-  </dl>
-
-  <% line_item.product_customizations.each do |customization| %>
-
-    <dl>
-      <dt><%=  customization.product_customization_type.presentation %> (<%= format_price customization.price %>)</dt>
-      <dd>
-
-      <% customization.customized_product_options.each do |option| %>
-
-	<% partial = option.customizable_product_option.name %>
-
-
-<%
-lookup=ActionView::LookupContext.new(ActionController::Base.view_paths, {:formats => [:html]})
-%>
-
-   <% if lookup.exists?("orders/custom_fields/#{partial}",nil,true) %>
-	  <%= render :partial => "orders/custom_fields/#{partial}", :locals=>{:option => option} %>
-  <% else %>
-    <dl>
-      <dt><%= option.customizable_product_option.presentation %></dt>
-      <dd><%= option.value %></dd>
-    </dl>
-  <% end %>
-
-<% end %>
-      </dd>
-    </dl>
-
-  <% end %>
-</div> <!-- product-customizations -->
-
+<%= render :partial => 'shared/additional_line_item_fields', :locals=>{:item => line_item} %>

@@ -1,6 +1,6 @@
 <% content_for :head do %>
 
-  <%= stylesheet_link_tag 'flex-variants' %>
+  <%= stylesheet_link_tag 'flexi-variants' %>
 
   <%= javascript_tag do %>
     var cartFormValidator;
@@ -17,7 +17,7 @@
 	<% # account for every option type, even if empty %>
 	<% @product.ad_hoc_option_types.each do |ot| %>
 	  <% ov=excl.excluded_ad_hoc_option_values.detect { |eov| eov.ad_hoc_option_value.option_type == ot } %>
-	  
+
 	  <% ov_str = ov.nil? ? "*" : ov.ad_hoc_option_value.id.to_s %>
 	  <%= "'ad_hoc_option_values_#{ot.id}':'#{ov_str}'" %>
 	  <% unless ot == @product.ad_hoc_option_types.last %>
@@ -35,7 +35,7 @@
     <%= javascript_include_tag 'exclusions' %>
 
   <% end # if exclusions %>
-<% end # content_for %> 
+<% end # content_for %>
 
 
 

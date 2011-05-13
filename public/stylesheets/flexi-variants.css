@@ -15,11 +15,9 @@ fieldset{
 	padding: 0px 10px 10px 10px;
 }
 
-fieldset label {
-/* font-size:80%;
- float:left;width:80px;text-align:right;*/
-    margin-top: 10px;
- display:block;
+#ad_hoc_options fieldset label {
+  margin-top: 10px;
+  display:block;
 }
 
 fieldset legend{

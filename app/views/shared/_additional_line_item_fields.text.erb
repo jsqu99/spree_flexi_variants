@@ -10,6 +10,7 @@
     <% item.product_customizations.each do |customization| %>
     <%=  customization.product_customization_type.presentation %> (<%= format_price customization.price %>)
       <% customization.customized_product_options.each do |option| %>
+         <% next if option.value.empty? %>
 
   	     <% partial = option.customizable_product_option.name %>
          <% lookup=ActionView::LookupContext.new(ActionController::Base.view_paths, {:formats => [:html]}) %>

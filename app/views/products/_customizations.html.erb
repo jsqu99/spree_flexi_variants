@@ -1,41 +1,43 @@
 <% if @product.product_customization_types %>
 
-<div id="product-customizations">
+  <div id="product-customizations">
 
-  <% # this is a critical field (for ajax updates).  we use it to store pricing info returned from thhe server and later used by updatePrice() %>
-  <%= hidden_field_tag "customizations_price", 0 %>  
+    <% # this is a critical field (for ajax updates).  we use it to store pricing info returned from thhe server and later used by updatePrice() %>
+    <%= hidden_field_tag "customizations_price", 0 %>
 
-  <% # for finding optional partials %>
-  <% lookup=ActionView::LookupContext.new(ActionController::Base.view_paths, {:formats => [:html]}) %>
+    <% # for finding optional partials %>
+    <% lookup=ActionView::LookupContext.new(ActionController::Base.view_paths, {:formats => [:html]}) %>
 
-  <% @product.product_customization_types.each do |product_customization_type| %>
+    <% @product.product_customization_types.each do |product_customization_type| %>
 
-    <% # render a custom partial based on the customization name? %>
+      <% # render a custom partial based on the customization name? %>
 
-    <% if lookup.exists?("products/#{product_customization_type.name}",nil,true) %>
-      <%= render :partial => product_customization_type.name, :locals => {:product_customization_type=>product_customization_type} %> 
-    <% else %>	 
+      <% if lookup.exists?("products/#{product_customization_type.name}",nil,true) %>
+        <%= render :partial => product_customization_type.name, :locals => {:product_customization_type=>product_customization_type} %>
+      <% else %>
 
-      <%= field_set_tag product_customization_type.presentation do %>
+        <%= field_set_tag product_customization_type.presentation do %>
 
-	<% if product_customization_type.description && !product_customization_type.description.empty? %>
-	  <p><%=  product_customization_type.description %></p>
-	<% end %>
-	
-	<% param_prefix = "product_customizations[#{product_customization_type.id}]" %>
+	        <% if product_customization_type.description && !product_customization_type.description.empty? %>
+	          <p><%=  product_customization_type.description %></p>
+	        <% end %>
 
-	  <% product_customization_type.customizable_product_options.each do |option| %>
-	    <label><%= option.presentation %></label>
+	        <% param_prefix = "product_customizations[#{product_customization_type.id}]" %>
+
+	        <% product_customization_type.customizable_product_options.each do |option| %>
+            <p>
+	          <label><%= option.presentation %></label>
             <% # field level partial exists? %>
             <% if lookup.exists?("products/custom_fields/#{option.name}",nil,true) %>
-	      <%= render :partial => "products/custom_fields/#{option.name}", :locals=>{:customizable_product_option => option, :param_prefix => param_prefix} %>
-            <% else %>	 
-	      <%= text_field_tag "#{param_prefix}[#{option.id}]", '', {:style=>"float: left;", :class=>"customization #{validation_string(option.data_type, option.is_required)}"} %>
-	    <% end %>	
+	            <%= render :partial => "products/custom_fields/#{option.name}", :locals=>{:customizable_product_option => option, :param_prefix => param_prefix} %>
+            <% else %>
+	            <%= text_field_tag "#{param_prefix}[#{option.id}]", '', {:style=>"float: left;", :class=>"customization #{validation_string(option.data_type, option.is_required)}"} %>
+	          <% end %>
+            </p>
           <% end # options.each %>
 
-        <% end # field_set_tag %>	
-      <% end # else %>	
+        <% end # field_set_tag %>
+      <% end # else %>
     <% end # each customization type %>
-</div> <!-- product-customizations -->
+  </div> <!-- product-customizations -->
 <% end %>

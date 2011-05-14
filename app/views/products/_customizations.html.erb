@@ -1,7 +1,6 @@
 <% if @product.product_customization_types %>
 
   <div id="product-customizations">
-
     <% # this is a critical field (for ajax updates).  we use it to store pricing info returned from thhe server and later used by updatePrice() %>
     <%= hidden_field_tag "customizations_price", 0 %>
 
@@ -24,18 +23,19 @@
 
 	        <% param_prefix = "product_customizations[#{product_customization_type.id}]" %>
 
-	        <% product_customization_type.customizable_product_options.each do |option| %>
-            <p>
-	          <label><%= option.presentation %></label>
-            <% # field level partial exists? %>
-            <% if lookup.exists?("products/custom_fields/#{option.name}",nil,true) %>
-	            <%= render :partial => "products/custom_fields/#{option.name}", :locals=>{:customizable_product_option => option, :param_prefix => param_prefix} %>
-            <% else %>
-	            <%= text_field_tag "#{param_prefix}[#{option.id}]", '', {:style=>"float: left;", :class=>"customization #{validation_string(option.data_type, option.is_required)}"} %>
-	          <% end %>
-            </p>
-          <% end # options.each %>
-
+          <ol>
+	          <% product_customization_type.customizable_product_options.each do |option| %>
+              <li>
+	              <label><%= option.presentation %></label>
+                <% # field level partial exists? %>
+                <% if lookup.exists?("products/custom_fields/#{option.name}",nil,true) %>
+	                <%= render :partial => "products/custom_fields/#{option.name}", :locals=>{:customizable_product_option => option, :param_prefix => param_prefix} %>
+                <% else %>
+	                <%= text_field_tag "#{param_prefix}[#{option.id}]", '', {:style=>"float: left;", :class=>"customization #{validation_string(option.data_type, option.is_required)}"} %>
+	              <% end %>
+              </li>
+            <% end # options.each %>
+          </ol>
         <% end # field_set_tag %>
       <% end # else %>
     <% end # each customization type %>

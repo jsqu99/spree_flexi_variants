@@ -7,17 +7,32 @@ fieldset{
 
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 	font-size:12px;
-
-	margin:20px 0px 20px 0px;
 	/*width:250px;*/
+
+/*	margin:20px 0px 20px 0px;
 	position:relative;
-	display:block;
+	display:block;*/
 	padding: 0px 10px 10px 10px;
 }
 
+fieldset ol {
+  margin: 0;
+  padding: 0;
+}
+
+fieldset li {
+  list-style: none;
+  padding: 5px;
+  margin: 0;
+}
+
+fieldset label {
+  display: inline-block;
+  width: 120px;
+}
 #ad_hoc_options fieldset label {
-  margin-top: 10px;
-  display:block;
+/*  margin-top: 10px;
+  display:block;*/
 }
 
 fieldset legend{

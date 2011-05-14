@@ -1,2 +1,1 @@
-# see the google groups announce where I discuss the fact that this currently only works on edge
-# "0.50.2" => { :branch => "master" }
+"0.60.x" => { :branch => "master" }

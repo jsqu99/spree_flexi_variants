@@ -15,8 +15,9 @@
 
           <% # render a custom partial based on the option type name? %>
 
-          <% if lookup.exists?("products/ad_hoc_options/#{ot.name}",nil,true) %>
-            <%= render :partial => "products/ad_hoc_options/#{ot.name}", :locals => {:option_type=>ahot} %>
+          <% partial_name = "products/ad_hoc_options/#{ot.name}" %>
+          <% if lookup.exists?(partial_name,nil,true) %>
+            <%= render :partial => partial_name, :locals => {:option_type=>ahot} %>
           <% else %>
             <label><%= ot.presentation %></label>
             <%= select_tag "ad_hoc_option_values[#{ahot.id}]",

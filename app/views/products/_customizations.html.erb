@@ -11,8 +11,9 @@
 
       <% # render a custom partial based on the customization name? %>
 
-      <% if lookup.exists?("products/#{product_customization_type.name}",nil,true) %>
-        <%= render :partial => product_customization_type.name, :locals => {:product_customization_type=>product_customization_type} %>
+      <% partial_name = "products/customizations/#{product_customization_type.name}" %>
+      <% if lookup.exists?(partial_name,nil,true) %>
+        <%= render :partial => partial_name, :locals => {:product_customization_type=>product_customization_type} %>
       <% else %>
 
         <%= field_set_tag product_customization_type.presentation do %>
@@ -28,8 +29,9 @@
               <li>
 	              <label><%= option.presentation %></label>
                 <% # field level partial exists? %>
-                <% if lookup.exists?("products/custom_fields/#{option.name}",nil,true) %>
-	                <%= render :partial => "products/custom_fields/#{option.name}", :locals=>{:customizable_product_option => option, :param_prefix => param_prefix} %>
+                <% partial_name = "products/customizations/#{product_customization_type.name}/#{option.name}" %>
+                <% if lookup.exists?(partial_name,nil,true) %>
+	                <%= render :partial => partial_name, :locals=>{:customizable_product_option => option, :param_prefix => param_prefix} %>
                 <% else %>
 	                <%= text_field_tag "#{param_prefix}[#{option.id}]", '', {:style=>"float: left;", :class=>"customization #{validation_string(option.data_type, option.is_required)}"} %>
 	              <% end %>

@@ -1,4 +1,4 @@
-<% 
+<%
   # I wanted to put this in the hooks file but apparently the hooks get loaded so early in the process that the db connection hasn't yet been established
   if Spree::Config[:use_ajax_pricing_updates]
 %>
@@ -17,7 +17,7 @@
     <% end %>
 
 
-    // we start off the page w/ a known base price, a known set of 
+    // we start off the page w/ a known base price, a known set of
     // possible configurations (ad_hoc_option_values), and no customizations
 
     // 'updatePrice()' takes the base price + current 'configuration' adjustments + 'customization' adjustments
@@ -55,19 +55,19 @@
         // get _every_ option drop down and recalculate product price
         // do this immediately, since we are not waiting on the results of the exlusions post
 	updatePrice();
-      });  
+      });
 
     // 'watch' our customizations // TODO: need to make sure we cover all types of form inputs
     $('.customization').keyup(function() {
         delay(function(){
 
-          // need to do the ajax call here to compute price, then put the results into the 
+          // need to do the ajax call here to compute price, then put the results into the
           // corresponding 'customizations_price' dom object
-      
+
 	  if ($("#cart-form form").validate().form()) {  // don't attempt to compute price if we are in an invalid state
-  
+
     	    $('.price.selling').html('<img src="/images/ajax_loader.gif" style="float: none;"/>');
-  
+
             // we are going to serialize _all_ the form inputs, and send them to our 'price' controller method
             $.post('/product_customizations/price', $("#cart-form form").serialize(), function(data) {
   	      $('#customizations_price').val(parseFloat(data).toFixed(2));
@@ -80,7 +80,7 @@
       updatePrice(); // set the initial price
     } // ready
   ); // ready
-  
+
   // stolen from http://stackoverflow.com/questions/18082/validate-numbers-in-javascript-isnumeric
   function isNumeric(input) {
     return (input - 0) == input && input.length > 0;
@@ -118,9 +118,9 @@
   }
 
   function compute_customization_price() {
-    // we simply return the 'data' attached to the dom element, since whenever we 
+    // we simply return the 'data' attached to the dom element, since whenever we
     // 'mouseout'/'change' etc., we go to the server to get and cache this data
-    return parseFloat($('#customizations_price').val());   
+    return parseFloat($('#customizations_price').val());
   }
 
 
@@ -131,7 +131,7 @@
     var cur_customization_price =  compute_customization_price();
     var cur_price =base_price + cur_variant_price_diff + cur_configuration_price + cur_customization_price;
 
-    $('.price.selling').text('$' + cur_price.toFixed(2)); // TODO il8n
+    $('.price.selling').text('$' + cur_price.toFixed(2)); // TODO i18n
     // $("#price").val( cur_price );
   }
 
@@ -140,4 +140,4 @@
 
 
 <% # end if Spree::Config[:use_ajax_pricing_updates] %>
-<% end %> 
+<% end %>

@@ -8,16 +8,19 @@ class Admin::ProductCustomizationTypesController < Admin::ResourceController
 
   def edit
     @product_customization_type= ProductCustomizationType.find(params[:id])
-    
-    # Is this an edit immediately after create?  If so, need to create 
+
+    # Is this an edit immediately after create?  If so, need to create
     # calculator-appropriate default options
     if @product_customization_type.customizable_product_options.empty?
       if !@product_customization_type.calculator.nil?
+
+        @product_customization_type.customizable_product_options.concat @product_customization_type.calculator.create_options
+
         # for each mandatory input type
-        @product_customization_type.calculator.required_fields.each_pair do |key, val|
-          cpo= CustomizableProductOption.create(:name=>key, :presentation=>key.titleize, :is_required => true,:data_type=>val)
-          @product_customization_type.customizable_product_options << cpo
-        end
+        #        @product_customization_type.calculator.required_fields.each_pair do |key, val|
+        #          cpo= CustomizableProductOption.create(:name=>key, :presentation=>key.titleize, :is_required => true,:data_type=>val)
+        #          @product_customization_type.customizable_product_options << cpo
+        #        end
       end
     end
   end
@@ -44,13 +47,13 @@ class Admin::ProductCustomizationTypesController < Admin::ResourceController
     @product = Product.find_by_param!(params[:product_id])
 
     @product.product_customization_types << ProductCustomizationType.find(params[:id])
-    @product.save 
+    @product.save
     @product_customization_types = @product.product_customization_types
     set_available_product_customization_types
   end
 
   protected
-    
+
     def location_after_save
       if params[:action] == "update"
         admin_product_customization_types_url
@@ -64,7 +67,7 @@ class Admin::ProductCustomizationTypesController < Admin::ResourceController
     def load_product
       @product = Product.find_by_param!(params[:product_id])
     end
-  
+
     def set_available_product_customization_types
       @available_product_customization_types = ProductCustomizationType.all
       selected_product_customization_types = []

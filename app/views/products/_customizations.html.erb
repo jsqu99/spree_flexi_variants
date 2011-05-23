@@ -1,7 +1,7 @@
 <% if @product.product_customization_types %>
 
   <div id="product-customizations">
-    <% # this is a critical field (for ajax updates).  we use it to store pricing info returned from thhe server and later used by updatePrice() %>
+    <% # this is a critical field (for ajax updates).  we use it to store pricing info returned from the server and later used by updatePrice() %>
     <%= hidden_field_tag "customizations_price", 0 %>
 
     <% # for finding optional partials %>
@@ -33,7 +33,7 @@
                 <% if lookup.exists?(partial_name,nil,true) %>
 	                <%= render :partial => partial_name, :locals=>{:customizable_product_option => option, :param_prefix => param_prefix} %>
                 <% else %>
-	                <%= text_field_tag "#{param_prefix}[#{option.id}]", '', {:style=>"float: left;", :class=>"customization #{validation_string(option.data_type, option.is_required)}"} %>
+	                <%= text_field_tag "#{param_prefix}[#{option.id}]","", custom_html_options(option) %>
 	              <% end %>
               </li>
             <% end # options.each %>

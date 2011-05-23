@@ -1,11 +1,6 @@
 class Calculator::Engraving < Calculator
   preference :price_per_letter, :decimal
 
-  # TODO: this field shouldn't require a default value on the admin screen
-  def required_fields
-    {"inscription" => :string}
-  end
-
   def self.description
     "Engraving Calculator"
   end
@@ -13,6 +8,17 @@ class Calculator::Engraving < Calculator
   def self.register
     super
     ProductCustomizationType.register_calculator(self)
+  end
+
+  def create_options
+    # This calculator knows that it needs one CustomizableOption named inscription
+    [
+     CustomizableProductOption.create(:name=>"inscription", :presentation=>"Inscription" ,
+                                      :data_validation=>(
+                                                         {:type => :string,
+                                                           :required => false}).to_json
+                                      )
+    ]
   end
 
   def compute(product_customization)

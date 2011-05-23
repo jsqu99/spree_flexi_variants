@@ -1,23 +1,19 @@
 class Calculator::ProductArea < Calculator
   preference :multiplier, :decimal
 
-  preference :min_width, :integer, :default=>0
-  preference :max_width, :integer
-
-  preference :min_height, :integer, :default=>0
-  preference :max_height, :integer
-
-  preference :min_area, :integer  # the minimum sized frame we'll sell
-
   preference :min_pricing_area, :integer  # the minimum size we'll use for pricing (we might sell you a 4x4, but we'll charge u for a 10x10
+
+  preference :min_width, :integer, :default => 0
+  preference :max_width, :integer, :default => 100
+
+  preference :min_height, :integer, :default => 0
+  preference :max_height, :integer, :default => 100
+
+  # preference :min_area, :integer  # the minimum sized frame we'll sell
 
   # these can be reflected in the custom partials?
   #  preference :measurement_units, :string, :default => 'inches'
   #  preference :granularity, :string, :default => 'eighths'
-
-  def required_fields
-    {"width" => :decimal, "height" => :decimal}
-  end
 
   def self.description
     "Product Area Calculator"
@@ -28,6 +24,22 @@ class Calculator::ProductArea < Calculator
     ProductCustomizationType.register_calculator(self)
   end
 
+  def create_options
+    # This calculator knows that it needs two CustomizableOptions, width & height
+    [
+     CustomizableProductOption.create(:name=>"width", :presentation=>"Width"   ,
+                                      :data_validation=>(
+                                                         {:type => :decimal, :min => :min_width, :max => :max_width,
+                                                         :required => true}).to_json
+                                      ),
+     CustomizableProductOption.create(:name=>"height", :presentation=>"Height" ,
+                                      :data_validation=>(
+                                                         {:type => :decimal, :min => :min_height, :max => :max_height,
+                                                           :required => true}).to_json
+                                      )
+    ]
+  end
+
   # as object we always get line items, as calculable we have Coupon, ShippingMethod
   def compute(product_customization)
     return 0 unless valid_configuration? product_customization
@@ -35,7 +47,6 @@ class Calculator::ProductArea < Calculator
     width,height = get_option(product_customization, "width"), get_option(product_customization, "height")
 
     # here's the custom logic for this calculator:  min total width + height = 20.
-
     [(width.value.to_f * height.value.to_f), (preferred_min_pricing_area || 0)].max * preferred_multiplier
   end
 
@@ -49,7 +60,7 @@ class Calculator::ProductArea < Calculator
 
     # do the inputs meet the criteria?
     width,height = get_option(product_customization, "width"), get_option(product_customization, "height")
-    
+
 #    return has_inputs && width && height && (width.value.to_f * height.value.to_f) >= preferred_min_area
 
 #    rescue false

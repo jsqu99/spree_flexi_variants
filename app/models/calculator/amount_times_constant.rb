@@ -2,11 +2,7 @@ class Calculator::AmountTimesConstant < Calculator
   preference :multiplier, :decimal
 
   preference :min_amount, :integer, :default=>0
-  preference :max_amount, :integer
-
-  def required_fields
-    {"amount" => :decimal}
-  end
+  preference :max_amount, :integer, :default=>100
 
   def self.description
     "Amount Times Constant Calculator"
@@ -15,6 +11,17 @@ class Calculator::AmountTimesConstant < Calculator
   def self.register
     super
     ProductCustomizationType.register_calculator(self)
+  end
+
+  def create_options
+    # This calculator knows that it needs one CustomizableOption named amount
+    [
+     CustomizableProductOption.create(:name=>"amount", :presentation=>"Amount" ,
+                                      :data_validation=>(
+                                                         {:type => :decimal, :min => :min_amount, :max => :max_amount,
+                                                           :required => false}).to_json
+                                      )
+    ]
   end
 
   def compute(product_customization)

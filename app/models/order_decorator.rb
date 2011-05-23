@@ -14,10 +14,10 @@ Order.class_eval do
 
       current_item.product_customizations = product_customizations
 
-      # find, and add the configurations, if any.  these have not been fetched from the db yet.  
+      # find, and add the configurations, if any.  these have not been fetched from the db yet.              line_items.first.variant_id
       # we postponed it (performance reasons) until we actaully knew we needed them
       povs=[]
-      ad_hoc_option_value_ids.each do |cid| 
+      ad_hoc_option_value_ids.each do |cid|
         povs << AdHocOptionValue.find(cid)
       end
       current_item.ad_hoc_option_values = povs
@@ -43,9 +43,9 @@ Order.class_eval do
   end
 
   def contains?(variant, ad_hoc_option_value_ids, product_customizations)
-    line_items.detect do |li| 
-      li.variant_id == variant.id && 
-        matching_configurations(li.ad_hoc_option_values,ad_hoc_option_value_ids) && 
+    line_items.detect do |li|
+      li.variant_id == variant.id &&
+        matching_configurations(li.ad_hoc_option_values,ad_hoc_option_value_ids) &&
         matching_customizations(li.product_customizations,product_customizations)
     end
   end
@@ -65,7 +65,7 @@ Order.class_eval do
     # if there aren't any povs, there's a 'match'
     return true if existing_povs.empty? && new_povs.empty?
 
-    existing_povs.map(&:id).sort == new_povs.sort.map(&:to_i)
+    existing_povs.map(&:id).sort == new_povs.map(&:to_i).sort
   end
 
   def matching_customizations(existing_customizations,new_customizations)
@@ -73,7 +73,7 @@ Order.class_eval do
     # if there aren't any customizations, there's a 'match'
     return true if existing_customizations.empty? && new_customizations.empty?
 
-    # exact match of all customization types? 
+    # exact match of all customization types?
     return false unless existing_customizations.map(&:product_customization_type_id).sort == new_customizations.map(&:product_customization_type_id).sort
 
     # get a list of [customizable_product_option.id,value] pairs
@@ -89,7 +89,7 @@ end
 
 
 #def ignore
-#    
+#
 #
 #    # if neither is empty, we need to do a deeper inspection
 #    if !li.customizations.empty? && !new_customizations.empty?
@@ -109,7 +109,7 @@ end
 #            # cur_new_customization.customized_product_options
 #
 #
-#        cur_li_customization.all?  
+#        cur_li_customization.all?
 #        cur_new_customization.all?
 #      end
 #    else

@@ -5,6 +5,7 @@ Factory.define(:line_item2, :class=>LineItem) do |record|
   # associations:
   record.association(:order, :factory => :order)
   record.association(:variant, :factory => :variant)
+  record.product_customizations []
 end
 
 Factory.define(:line_item_with_ad_hoc_options, :parent => :line_item2) do |li|

@@ -93,25 +93,25 @@ describe Order do
       end
     end
 
-    context "with existing configuration" do
-
-      before do
-        @new_customization = Factory(:product_customization, :product_customization_type => @cust_type)
-        @new_height_cust =  Factory(:customized_product_option, :value => 10, :product_customization => @new_customization, :customizable_product_option => @height_opt_type)
-        @new_width_cust = Factory(:customized_product_option,   :value => 10, :product_customization => @new_customization, :customizable_product_option => @width_opt_type)
-
-        @existing_line_item = Factory(:line_item2, :order=>order, :variant => product.master, :product_customizations => [@new_customization])
-
-        # let's add the 'same' configuration down below (without the foreign key attached)
-        @customization.line_item = @existing_line_item
-      end
-
-      it "should return existing line item" do
-        orig_qty = @existing_line_item.quantity
-        li= order.add_variant(product.master, [], [@new_customization], 1)
-        li.id.should == @existing_line_item.id
-        li.quantity.should == orig_qty+1
-      end
-    end
+#    context "with existing configuration" do
+#
+#      before do
+#        @new_customization = Factory(:product_customization, :product_customization_type => @cust_type)
+#        @new_height_cust =  Factory(:customized_product_option, :value => 10, :product_customization => @new_customization, :customizable_product_option => @height_opt_type)
+#        @new_width_cust = Factory(:customized_product_option,   :value => 10, :product_customization => @new_customization, :customizable_product_option => @width_opt_type)
+#
+#        @existing_line_item = Factory(:line_item2, :order=>order, :variant => product.master, :product_customizations => [@new_customization])
+#
+#        # let's add the 'same' configuration down below (without the foreign key attached)
+#        @customization.line_item = @existing_line_item
+#      end
+#
+#      it "should return existing line item" do
+#        orig_qty = @existing_line_item.quantity
+#        li= order.add_variant(product.master, [], [@new_customization], 1)
+#        li.id.should == @existing_line_item.id
+#        li.quantity.should == orig_qty+1
+#      end
+#    end
   end # context
 end # add customizable product

@@ -13,7 +13,7 @@
           <% class_str += ' required' if ahot.is_required %>
           <% class_str += ' ad_hoc' if !@product.ad_hoc_variant_exclusions.empty? %>
 
-          <% # render a custom partial based on the option type name? %>
+          <%# render a custom partial based on the option type name? %>
 
           <% partial_name = "products/ad_hoc_options/#{ot.name}" %>
           <% if lookup.exists?(partial_name,nil,true) %>

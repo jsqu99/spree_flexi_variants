@@ -1,15 +1,15 @@
 <% if @product.product_customization_types %>
 
   <div id="product-customizations">
-    <% # this is a critical field (for ajax updates).  we use it to store pricing info returned from the server and later used by updatePrice() %>
+    <%# this is a critical field (for ajax updates).  we use it to store pricing info returned from the server and later used by updatePrice() %>
     <%= hidden_field_tag "customizations_price", 0 %>
 
-    <% # for finding optional partials %>
+    <%# for finding optional partials %>
     <% lookup=ActionView::LookupContext.new(ActionController::Base.view_paths, {:formats => [:html]}) %>
 
     <% @product.product_customization_types.each do |product_customization_type| %>
 
-      <% # render a custom partial based on the customization name? %>
+      <%# render a custom partial based on the customization name? %>
 
       <% partial_name = "products/customizations/#{product_customization_type.name}" %>
       <% if lookup.exists?(partial_name,nil,true) %>
@@ -28,7 +28,7 @@
 	          <% product_customization_type.customizable_product_options.each do |option| %>
               <li>
 	              <label><%= option.presentation %></label>
-                <% # field level partial exists? %>
+                <%# field level partial exists? %>
                 <% partial_name = "products/customizations/#{product_customization_type.name}/#{option.name}" %>
                 <% if lookup.exists?(partial_name,nil,true) %>
 	                <%= render :partial => partial_name, :locals=>{:customizable_product_option => option, :param_prefix => param_prefix} %>

@@ -1,3 +1,9 @@
+Version Notes
+=============
+The master branch is currently not functioning correct as we've just begun attempting to integrate with the deface work in spree edge.  
+
+See the pre-deface-stable branch for a working spree 0.60.x  version
+
 SpreeFlexiVariants
 ==================
 
@@ -24,9 +30,13 @@ Installation
 
 Add to Gemfile:
 
-    # Important! - see disclaimer about edge code in the spree groups announce: http://groups.google.com/group/spree-user/browse_thread/thread/2002a5a8e38d71aa#
+    # see the notes above regarding the fact that edge currently doesn't work (the price doesn't update due to a deface integration issue that we are currently working)
     gem 'spree', :git => 'git://github.com/spree/spree.git'
     gem 'spree_flexi_variants', :git=>'git@github.com:jsqu99/spree_flexi_variants.git'
+
+    # alternatively, if you want to use a stable, spree 0.60.x version:
+    # gem 'spree', '0.60.0'
+    # gem 'spree_flexi_variants', :git=>'git@github.com:jsqu99/spree_flexi_variants.git', :branch => 'pre-deface-stable'
 
     bundle install
 

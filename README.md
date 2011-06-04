@@ -1,8 +1,8 @@
 Version Notes
 =============
-The master branch is currently not functioning correct as we've just begun attempting to integrate with the deface work in spree edge.  
+The master branch has just been updated to work with edge spree (deface)
 
-See the pre-deface-stable branch for a working spree 0.60.x  version
+See the pre-deface-stable branch for a working spree 0.60.x version
 
 SpreeFlexiVariants
 ==================

@@ -1,6 +1,8 @@
 Version Notes
 =============
-The master branch has just been updated to work with edge spree (deface)
+The master branch has just been updated to work with edge spree (deface).
+
+Per Brian's comment at http://groups.google.com/group/spree-user/browse_thread/thread/1def893dbde0ceaa#, if you plan on using the spree_flexi_variants master branch, you should probably use a commit around the 7ccb313a6d281ba18fb1 time frame for spree, until all the major changes are committed and I am able to sync those changes with this extension.
 
 See the pre-deface-stable branch for a working spree 0.60.x version
 

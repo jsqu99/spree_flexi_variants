@@ -1,2 +1,2 @@
-$("#customization-types").html("<%= escape_javascript(render('available')) %>");
+$("#customization-types").html("<%= raw escape_javascript(render('available')) %>");
 $("#new_ct_link").hide();

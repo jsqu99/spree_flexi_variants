@@ -1,5 +1,6 @@
 ProductsHelper.module_eval do
 
+  require 'json'
   # help w/ formatting the validation string
 
   def custom_html_options(option)

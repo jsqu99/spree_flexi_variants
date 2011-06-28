@@ -4,6 +4,9 @@ class CustomizedProductOption < ActiveRecord::Base
 
   mount_uploader :customization_image, CustomizationImageUploader
 
+  def empty?
+    value.empty? && customization_image.nil?
+  end
   # in populate, params[:customization] contains all the fields supplied by the customization_type_view.
   # those values are saved here
 

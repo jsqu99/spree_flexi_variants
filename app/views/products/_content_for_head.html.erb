@@ -5,6 +5,7 @@
   <%= javascript_tag do %>
     var cartFormValidator;
     $(function () {
+      $("#cart-form form").attr("enctype","multipart/form-data");  // for image customizations
       cartFormValidator = $("#cart-form form").validate();
     });
   <% end %>

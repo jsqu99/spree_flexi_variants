@@ -55,7 +55,7 @@ Order.class_eval do
   # produces a list of [customizable_product_option.id,value] pairs for subsequent comparison
   def customization_pairs(product_customizations)
     pairs= product_customizations.map(&:customized_product_options).flatten.map do |m|
-        [m.customizable_product_option.id, m.value]
+        [m.customizable_product_option.id, m.value.present? ? m.value : m.customization_image.to_s ]
     end
 
     Set.new pairs
@@ -80,41 +80,7 @@ Order.class_eval do
     existing_vals = customization_pairs existing_customizations
     new_vals      = customization_pairs new_customizations
 
-
     # do a set-compare here
     existing_vals == new_vals
   end
 end
-
-
-
-#def ignore
-#
-#
-#    # if neither is empty, we need to do a deeper inspection
-#    if !li.customizations.empty? && !new_customizations.empty?
-#
-#      li.customizations.each do |cur_li_customization|
-#
-#        # find the matching customization in 'new_customizations', by 'type
-#        cur_new_customization = new_customizations.detect { |nc| nc.customization_type_id == cur_li_customization.customization_type_id }
-#
-#        return false unless cur_new_customization
-#
-#        # at this point, the types are the same (e.g. we currently have an 'engraving' in the cart, and we are adding the same variant, which also has an 'engraving'.
-#        # BUT, let's see ifi they are identical engravings, by looking at the customization values
-#
-#        # We need to an exact compare of these two:
-#            # cur_li_customization.customized_product_options
-#            # cur_new_customization.customized_product_options
-#
-#
-#        cur_li_customization.all?
-#        cur_new_customization.all?
-#      end
-#    else
-#      # exactly one is empty, meaning NO MATCH
-#      return false
-#    end
-#
-#end

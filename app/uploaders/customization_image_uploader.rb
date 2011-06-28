@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 class CustomizationImageUploader < CarrierWave::Uploader::Base
+  include CarrierWave::RMagick
 
   # Include RMagick or ImageScience support:
   # include CarrierWave::RMagick
@@ -20,6 +21,10 @@ class CustomizationImageUploader < CarrierWave::Uploader::Base
   # def default_url
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # end
+
+  version :thumb do
+    process :resize_to_fill => [50, 50]
+  end
 
   # Process files as they are uploaded:
   # process :scale => [200, 300]

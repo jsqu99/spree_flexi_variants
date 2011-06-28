@@ -27,6 +27,10 @@
               <%= render :partial => "orders/custom_fields/#{partial}", :locals=>{:option => option} %>
             <% else %>
               <p><%= option.customizable_product_option.presentation %> = <%= option.value %></p>
+<% debugger %>
+              <% if option.customization_image? %>
+                <p><%= option.customizable_product_option.presentation %> = <%= image_tag(option.customization_image_url) %></p>
+              <% end %>
             <% end %>
           <% end # each option %>
     </dd>

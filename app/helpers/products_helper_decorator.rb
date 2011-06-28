@@ -8,7 +8,7 @@ ProductsHelper.module_eval do
     h = {:style=>"float: left;", :class=>"customization #{validation_classes(option)}"}
     va = validation_attributes(option)
 
-    h.merge! va
+    h.merge! va if va
     h
   end
 
@@ -42,7 +42,6 @@ ProductsHelper.module_eval do
   end
 
   def validation_classes(option)
-
     return unless option.data_validation
 
     validation_str=[]
@@ -56,7 +55,7 @@ ProductsHelper.module_eval do
                       when "integer" then "digits" # that's what jquery.validate uses
                       when "decimal" then "number" # that's what jquery.validate uses
                       else ""
-                      end
+                      end if data_validation["type"]
 
     validation_str << "required" if data_validation["required"]
     validation_str.join(" ")

@@ -23,15 +23,15 @@
 	        <% end %>
 
 	        <% param_prefix = "product_customizations[#{product_customization_type.id}]" %>
-
           <ol>
 	          <% product_customization_type.customizable_product_options.each do |option| %>
+
               <li>
 	              <label><%= option.presentation %></label>
                 <% # field level partial exists? %>
                 <% partial_name = "products/customizations/#{product_customization_type.name}/#{option.name}" %>
                 <% if lookup.exists?(partial_name,nil,true) %>
-	                <%= render :partial => partial_name, :locals=>{:customizable_product_option => option, :param_prefix => param_prefix} %>
+	                <%= render :partial => partial_name, :locals=>{:option => option, :param_prefix => param_prefix} %>
                 <% else %>
 	                <%= text_field_tag "#{param_prefix}[#{option.id}]","", custom_html_options(option) %>
 	              <% end %>

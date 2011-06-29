@@ -1,0 +1,8 @@
+<% content_for :head do %>
+
+  <%= javascript_tag do %>
+    $(function () {
+      alert('pref price p l: ' + <%= calculator.preferred_price_per_letter %>);
+    });
+  <% end %>
+<% end %>

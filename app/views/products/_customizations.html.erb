@@ -9,14 +9,25 @@
 
     <% @product.product_customization_types.each do |product_customization_type| %>
 
+      <% param_prefix = "product_customizations[#{product_customization_type.id}]" %>
+
       <% # render a custom partial based on the customization name? %>
 
-      <% partial_name = "products/customizations/#{product_customization_type.name}" %>
+      <% partial_name = "products/customizations/customization_type/#{product_customization_type.name}" %>
+
       <% if lookup.exists?(partial_name,nil,true) %>
-        <%= render :partial => partial_name, :locals => {:product_customization_type=>product_customization_type} %>
+        <%= render :partial => partial_name, :locals => {:product_customization_type => product_customization_type, :param_prefix => param_prefix} %>
       <% else %>
 
-        <%= field_set_tag product_customization_type.presentation do %>
+        <% # render a custom partial based on the calculator name? %>
+
+        <% partial_name = "products/customizations/calculator_type/#{calculator_name(product_customization_type)}" %>
+
+        <% if lookup.exists?(partial_name,nil,true) %>
+          <%= render :partial => partial_name, :locals => {:product_customization_type=>product_customization_type, :param_prefix => param_prefix} %>
+        <% else %>
+
+          <%= field_set_tag product_customization_type.presentation do %>
 
 	        <% if product_customization_type.description && !product_customization_type.description.empty? %>
 	          <p><%=  product_customization_type.description %></p>
@@ -28,17 +39,12 @@
 
               <li>
 	              <label><%= option.presentation %></label>
-                <% # field level partial exists? %>
-                <% partial_name = "products/customizations/#{product_customization_type.name}/#{option.name}" %>
-                <% if lookup.exists?(partial_name,nil,true) %>
-	                <%= render :partial => partial_name, :locals=>{:option => option, :param_prefix => param_prefix} %>
-                <% else %>
 	                <%= text_field_tag "#{param_prefix}[#{option.id}]","", custom_html_options(option) %>
-	              <% end %>
               </li>
             <% end # options.each %>
           </ol>
         <% end # field_set_tag %>
+      <% end # else %>
       <% end # else %>
     <% end # each customization type %>
   </div> <!-- product-customizations -->

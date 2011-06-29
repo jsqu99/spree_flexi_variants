@@ -3,4 +3,7 @@ class ProductCustomizationType < ActiveRecord::Base
   has_and_belongs_to_many :products
   has_many :customizable_product_options
   accepts_nested_attributes_for :customizable_product_options, :allow_destroy => true
+
+  # make it prettier to get the only calculator
+
 end

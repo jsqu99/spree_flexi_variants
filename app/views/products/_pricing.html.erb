@@ -66,39 +66,12 @@
           // corresponding 'customizations_price' dom object
 
 	        if ($("#cart-form form").validate().form()) {  // don't attempt to compute price if we are in an invalid state
-
-    	    $('.price.selling').html('<img src="/images/ajax_loader.gif" style="float: none;"/>');
-
-            // we are going to serialize _all_ the form inputs, and send them to our 'price' controller method
-            $.post('/product_customizations/price', $("#cart-form form").serialize(), function(data) {
-              $('#customizations_price').val(parseFloat(data).toFixed(2));
               updatePrice();
-            });
           }
         }, 1000 ); // delay
       }); // keyup
 
-
-    // and now for the file inputs
-      $('input[type=file]').change(function(e) {
-        if ($("#cart-form form").validate().form()) {  // don't attempt to compute price if we are in an invalid state
-          $('.price.selling').html('<img src="/images/ajax_loader.gif" style="float: none;"/>');
-
-          var theData = $("#cart-form form").serializeArray();
-          theData.push({name: "jeffy", value: "pie"});
-
-          // we are going to serialize _all_ the form inputs, and send them to our 'price' controller method
-          $.ajax({
-            type: "POST",
-            url: "/product_customizations/price",
-            data: theData,
-            success: function(data) {
-              $('#customizations_price').val(parseFloat(data).toFixed(2));
-              updatePrice();
-            }
-          }); // ajax
-         } // validate().form()
-      }); // change()
+/**** moved customization section  */
 
       updatePrice(); // set the initial price
     } // ready
@@ -141,9 +114,18 @@
   }
 
   function compute_customization_price() {
-    // we simply return the 'data' attached to the dom element, since whenever we
-    // 'mouseout'/'change' etc., we go to the server to get and cache this data
-    return parseFloat($('#customizations_price').val());
+    var price=0;
+
+    // for selects or checkboxes
+    $(".customization_price").each(function() {
+      var val=$(this).val();
+
+      if (isNumeric(val)) {
+        price  +=  parseFloat(val);
+      }
+    });
+
+    return price;
   }
 
 

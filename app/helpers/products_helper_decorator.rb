@@ -75,4 +75,8 @@ ProductsHelper.module_eval do
       [(ah_ov.price_modifier.nil? ? ah_ov.option_value.presentation : "#{ah_ov.option_value.presentation} (#{plus_or_minus} #{format_price ah_ov.price_modifier.abs})"), ah_ov.id.to_s]
     end
   end
+
+  def calculator_name(product_customization_type)
+    product_customization_type.calculator.class.name.demodulize.underscore rescue ""
+  end
 end

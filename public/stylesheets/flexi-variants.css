@@ -57,3 +57,9 @@ fieldset legend{
 .error {
   color: #d33;
 }
+
+/* for customization images in the line items */
+
+#cart-detail dd p img {
+  float: none;
+}

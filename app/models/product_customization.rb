@@ -8,4 +8,8 @@ class ProductCustomization < ActiveRecord::Base
   def price
     amount = product_customization_type.calculator.compute(self)
   end
+
+  def calculator
+    product_customization_type.calculator
+  end
 end

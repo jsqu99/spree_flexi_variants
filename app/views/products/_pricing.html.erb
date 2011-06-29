@@ -13,7 +13,7 @@
 
     <% if @product.has_variants? %>
       <% @product.variants.active.each_with_index do |v,index| %>
-	variant_price_map[<%= v.id %>]= <%= v.price %>;
+        variant_price_map[<%= v.id %>]= <%= v.price %>;
       <% end %>
     <% end %>
 
@@ -30,7 +30,7 @@
 
     <%  @product.ad_hoc_option_types.each do |pot| %>
       <% pot.option_values.each do |pov| %>
-	price_modifier_map[<%= pov.id %>]= <%= pov.price_modifier %>;
+        price_modifier_map[<%= pov.id %>]= <%= pov.price_modifier %>;
       <% end %>
     <% end %>
 
@@ -55,28 +55,50 @@
 
         // get _every_ option drop down and recalculate product price
         // do this immediately, since we are not waiting on the results of the exlusions post
-	updatePrice();
+        updatePrice();
       });
 
-    // 'watch' our customizations // TODO: need to make sure we cover all types of form inputs
-    $('.customization').keyup(function() {
+      // 'watch' our customizations // TODO: need to make sure we cover all types of form inputs
+      $('.customization').keyup(function() {
         delay(function(){
 
           // need to do the ajax call here to compute price, then put the results into the
           // corresponding 'customizations_price' dom object
 
-	  if ($("#cart-form form").validate().form()) {  // don't attempt to compute price if we are in an invalid state
+	        if ($("#cart-form form").validate().form()) {  // don't attempt to compute price if we are in an invalid state
 
     	    $('.price.selling').html('<img src="/images/ajax_loader.gif" style="float: none;"/>');
 
             // we are going to serialize _all_ the form inputs, and send them to our 'price' controller method
             $.post('/product_customizations/price', $("#cart-form form").serialize(), function(data) {
-  	      $('#customizations_price').val(parseFloat(data).toFixed(2));
-  	      updatePrice();
-            } );
-	  }
+              $('#customizations_price').val(parseFloat(data).toFixed(2));
+              updatePrice();
+            });
+          }
         }, 1000 ); // delay
       }); // keyup
+
+
+    // and now for the file inputs
+      $('input[type=file]').change(function(e) {
+        if ($("#cart-form form").validate().form()) {  // don't attempt to compute price if we are in an invalid state
+          $('.price.selling').html('<img src="/images/ajax_loader.gif" style="float: none;"/>');
+
+          var theData = $("#cart-form form").serializeArray();
+          theData.push({name: "jeffy", value: "pie"});
+
+          // we are going to serialize _all_ the form inputs, and send them to our 'price' controller method
+          $.ajax({
+            type: "POST",
+            url: "/product_customizations/price",
+            data: theData,
+            success: function(data) {
+              $('#customizations_price').val(parseFloat(data).toFixed(2));
+              updatePrice();
+            }
+          }); // ajax
+         } // validate().form()
+      }); // change()
 
       updatePrice(); // set the initial price
     } // ready

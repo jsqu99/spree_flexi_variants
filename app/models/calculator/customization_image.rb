@@ -23,7 +23,11 @@ class Calculator::CustomizationImage < Calculator
     # expecting only one CustomizedProductOption
     opt = product_customization.customized_product_options.detect {|cpo| cpo.customizable_product_option.name == "customization_image" } rescue ''
 
-    preferred_price
+    if opt && opt.customization_image?
+      preferred_price
+    else
+      0.00   # no image was uploaded
+    end
   end
 
   def valid_configuration?(product_customization)

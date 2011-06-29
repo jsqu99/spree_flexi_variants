@@ -7,7 +7,6 @@ module ProductCustomizations
     # do we have any customizations?
     params[:product_customizations].each do |ct_id,cv_pair|  # customization_type_id =>
       # {customized_product_option_id => <user input>,  etc.}
-
       next if cv_pair.empty?
       # create a product_customization based on ct_id
       pc=ProductCustomization.new(:product_customization_type_id => ct_id)

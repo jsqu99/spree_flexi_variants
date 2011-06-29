@@ -13,11 +13,7 @@ class Calculator::Engraving < Calculator
   def create_options
     # This calculator knows that it needs one CustomizableOption named inscription
     [
-     CustomizableProductOption.create(:name=>"inscription", :presentation=>"Inscription" ,
-                                      :data_validation=>(
-                                                         {:type => :string,
-                                                           :required => false}).to_json
-                                      )
+     CustomizableProductOption.create(:name=>"inscription", :presentation=>"Inscription")
     ]
   end
 

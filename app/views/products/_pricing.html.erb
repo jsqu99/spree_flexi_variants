@@ -58,21 +58,6 @@
         updatePrice();
       });
 
-      // 'watch' our customizations // TODO: need to make sure we cover all types of form inputs
-      $('.customization').keyup(function() {
-        delay(function(){
-
-          // need to do the ajax call here to compute price, then put the results into the
-          // corresponding 'customizations_price' dom object
-
-	        if ($("#cart-form form").validate().form()) {  // don't attempt to compute price if we are in an invalid state
-              updatePrice();
-          }
-        }, 1000 ); // delay
-      }); // keyup
-
-/**** moved customization section  */
-
       updatePrice(); // set the initial price
     } // ready
   ); // ready

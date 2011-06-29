@@ -16,11 +16,11 @@ class Calculator::AmountTimesConstant < Calculator
   def create_options
     # This calculator knows that it needs one CustomizableOption named amount
     [
-     CustomizableProductOption.create(:name=>"amount", :presentation=>"Amount" ,
-                                      :data_validation=>(
-                                                         {:type => :decimal, :min => :min_amount, :max => :max_amount,
-                                                           :required => false}).to_json
-                                      )
+     CustomizableProductOption.create(:name=>"amount", :presentation=>"Amount") #,
+#                                      :data_validation=>(
+#                                                         {:type => :decimal, :min => :min_amount, :max => :max_amount,
+#                                                           :required => false}).to_json
+
     ]
   end
 

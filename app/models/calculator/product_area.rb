@@ -27,16 +27,18 @@ class Calculator::ProductArea < Calculator
   def create_options
     # This calculator knows that it needs two CustomizableOptions, width & height
     [
-     CustomizableProductOption.create(:name=>"width", :presentation=>"Width"   ,
-                                      :data_validation=>(
-                                                         {:type => :decimal, :min => :min_width, :max => :max_width,
-                                                         :required => true}).to_json
-                                      ),
-     CustomizableProductOption.create(:name=>"height", :presentation=>"Height" ,
-                                      :data_validation=>(
-                                                         {:type => :decimal, :min => :min_height, :max => :max_height,
-                                                           :required => true}).to_json
-                                      )
+     CustomizableProductOption.create(:name=>"width", :presentation=>"Width"), #,
+#                                      :data_validation=>(
+#                                                         {:type => :decimal, :min => :min_width, :max => :max_width,
+#                                                         :required => true}).to_json
+#                                      ),
+
+
+     CustomizableProductOption.create(:name=>"height", :presentation=>"Height") # ,
+#                                      :data_validation=>(
+#                                                         {:type => :decimal, :min => :min_height, :max => :max_height,
+#                                                           :required => true}).to_json
+#                                      )
     ]
   end
 

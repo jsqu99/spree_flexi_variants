@@ -3,7 +3,7 @@ ProductsHelper.module_eval do
   require 'json'
 
   # help w/ formatting the validation string
-
+  # this method will likely be removed as we move everything to the client
   def custom_html_options(option)
     h = {:style=>"float: left;", :class=>"customization #{validation_classes(option)}"}
     va = validation_attributes(option)

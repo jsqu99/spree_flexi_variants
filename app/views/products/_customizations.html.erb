@@ -39,7 +39,7 @@
 
               <li>
 	              <label><%= option.presentation %></label>
-	                <%= text_field_tag "#{param_prefix}[#{option.id}]","", custom_html_options(option) %>
+	                <%= text_field_tag "#{param_prefix}[#{option.id}]","",:style=>"float: left;", :class=>"customization" %>
               </li>
             <% end # options.each %>
           </ol>

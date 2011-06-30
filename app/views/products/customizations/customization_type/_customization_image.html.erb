@@ -48,6 +48,7 @@ $("#myform").validate({
 
 
       <%= file_field_tag "#{param_prefix}[#{product_customization_type.customizable_product_options.first.id}][customization_image]", :class=>"customization", :id => cust_dom_id%>
+      <%= link_to t("reset"),"" %>
 
       <% # the price is stored here on change, and later collected by the product-wide updatePrice() %>
       <%= hidden_field_tag "customization_price", "0", :class => "customization_price" %>

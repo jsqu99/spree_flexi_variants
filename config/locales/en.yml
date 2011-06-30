@@ -42,3 +42,4 @@ en:
   min_pricing_area: 'Min. Area to Price (possbily has smaller area, but will be priced as if this area)'
   not_all_combinations_available: 'Note that not all option combinations are available'
   select_variant_options: 'Options'
+  customize: 'Customize'

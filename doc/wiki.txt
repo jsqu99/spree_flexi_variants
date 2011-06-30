@@ -1,6 +1,6 @@
 ### Fine-grained view customizations
 
-You can easily modify the way the **Ad Hoc Options** are displayed by creating partials based on the option type name.  
+You can easily modify the way the **Ad Hoc Options** are displayed by creating partials based on the option type name.
 
 
 ### Simple Ad Hoc Options Example
@@ -93,7 +93,7 @@ Product Pricing Display Options
 -------------------------------
 
 By default, prices are updated automatically on the product display page.  You can disable this by:
-      Spree::Config.set :use_ajax_pricing_updates => false 
+      Spree::Config.set :use_javascript_pricing_updates => false
 (NOT in your activate method!  I tried this and the preferences subsystem hadn't been 'initialized' yet.
 
 This option controls whether or not the 'products/pricing' partial is included.
@@ -107,9 +107,9 @@ This example below does not yet work, as exclusions aren't yet enabled for multi
 
 ### Another Ad Hoc Options Example (using exclusions) NOT WORKING
 
-Let's create a pizza product.  There are several possible approaches. 
+Let's create a pizza product.  There are several possible approaches.
 
-Imagine numerous toppings options (pepperoni, sausage, onions, mushrooms, ham, pineapple).  
+Imagine numerous toppings options (pepperoni, sausage, onions, mushrooms, ham, pineapple).
 
 Imagine also that each topping could be priced differently (e.g. pepperoni is $2, mushrooms are $1.25, etc.).
 
@@ -153,5 +153,5 @@ Let's now use the admin app to create these ad-hoc options
 Build a 'Frame'  product using **Product Customizations**
 ![Picture Frame](/jsqu99/spree-flexi-variants/raw/master/doc/frame.jpg)
 
-Build a bogus product using **Ad Hoc Options** and **Exclusions**.  
+Build a bogus product using **Ad Hoc Options** and **Exclusions**.
 ![Exclusions](/jsqu99/spree-flexi-variants/raw/master/doc/exclusions.jpg)

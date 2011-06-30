@@ -7,7 +7,6 @@ class ProductCustomizationsController < Spree::BaseController
 
     # now grab the file-upload params.
     # We send in customizable_product_option ids that have pending file uploads
-debugger
     # CustomizableProductOption
     respond_to do |format|
       format.js {render :text=>"#{c.map(&:price).sum}" }

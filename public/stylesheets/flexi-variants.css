@@ -58,8 +58,10 @@ fieldset legend{
   color: #d33;
 }
 
-/* for customization images in the line items */
+/* for customization images in the line items
+we've got two versions line items: line_items & line-items
+*/
 
-#cart-detail dd p img {
+tbody#line_items dd p img, tbody#line-items dd p img {
   float: none;
 }

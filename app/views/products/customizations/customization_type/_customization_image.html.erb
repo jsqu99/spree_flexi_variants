@@ -27,8 +27,27 @@
   	  <label><%= option.presentation %></label>
 
       <% # create a slightly shorter dom_id field below.  I wish I could make use of dom_id for all strings that had [ && ] %>
-      <%= file_field_tag "#{param_prefix}[#{product_customization_type.customizable_product_options.first.id}][customization_image]",
-                         :id => cust_dom_id%>
+
+<!--  TODO:
+
+Probably want to account for file type validation e.g.  I don't believe I can do this inline.
+
+from: http://stackoverflow.com/questions/651700/how-to-have-jquery-restrict-file-types-on-upload
+
+http://docs.jquery.com/Plugins/Validation/Methods/accept#extension
+
+$("#myform").validate({
+  rules: {
+    field: {
+      required: true,
+      accept: "png|jpg|jpeg|gif"    // etc.
+    }
+  }
+});
+-->
+
+
+      <%= file_field_tag "#{param_prefix}[#{product_customization_type.customizable_product_options.first.id}][customization_image]", :class=>"customization", :id => cust_dom_id%>
 
       <% # the price is stored here on change, and later collected by the product-wide updatePrice() %>
       <%= hidden_field_tag "customization_price", "0", :class => "customization_price" %>

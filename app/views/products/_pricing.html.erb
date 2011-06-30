@@ -1,6 +1,6 @@
 <%
   # I wanted to put this in the hooks file but apparently the hooks get loaded so early in the process that the db connection hasn't yet been established
-  if Spree::Config[:use_ajax_pricing_updates]
+  if Spree::Config[:use_javascript_pricing_updates]
 %>
 
 <% content_for :head do %>
@@ -128,5 +128,5 @@
 <% end %>
 
 
-<% # end if Spree::Config[:use_ajax_pricing_updates] %>
+<% # end if Spree::Config[:use_javascript_pricing_updates] %>
 <% end %>

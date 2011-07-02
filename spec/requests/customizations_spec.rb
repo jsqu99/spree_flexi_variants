@@ -2,15 +2,14 @@ require 'spec_helper'
 
 describe "Customizations" do #, :js=>true
 
-  let(:product) { Factory(:product_with_engraving) }
   before(:each) do
-#    product = Factory(:product_with_engraving)
-    visit product_path(product)
+    @product = Factory(:product_with_engraving)
+    visit product_path(@product)
   end
 
   describe "GET /product/my_engraveable_product" do
     it "displays the product along with the ability to customize" do
-      page.should have_content(product.product_customization_types.first.presentation)
+      page.should have_content(@product.product_customization_types.first.presentation)
     end
   end
 
@@ -27,27 +26,25 @@ describe "Customizations" do #, :js=>true
     end
 
 
-    # TODO: figure out how to fire the keyup event in javascript after filling in the Inscription
-#    it "#causes a price change" do
-#      fill_in 'Inscription', :with => user_input
-#
-#
-#      Spree::Config.set :use_javascript_pricing_updates => true
-#
-#      orig_price = product.price
-#      puts "prod price: #{orig_price}"
-#
-#      # this part will trigger the pricing update
-#      fill_in 'Inscription', :with => user_input
-#
-#      expected_new_price = orig_price + (product.product_customization_types.first.calculator.preferred_price_per_letter * user_input.size)
-#
-#      # wait...hopefully I won't have to modify: Capybara.default_wait_time
-#      new_price = page.find('.price.selling').value
-#      new_price.should == "$#{expected_new_price}"
-#    end
+    # TODO: figure out how to fire the keyup event in javascript
+    # after filling in the Inscription
+    it "#causes a price change", :js => true do
+      fill_in 'Inscription', :with => user_input
+#      page.find('input[type=text].customization').trigger('keyup')
 
+      Spree::Config.set :use_javascript_pricing_updates => true
 
+      orig_price = @product.price
+      puts "prod price: #{orig_price}"
+
+      # this part will trigger the pricing update
+      expected_new_price = orig_price + (@product.product_customization_types.first.calculator.preferred_price_per_letter.to_f * user_input.size)
+
+      # wait...hopefully I won't have to modify: Capybara.default_wait_time
+      sleep(2)
+      new_price = page.find('.price.selling').text
+      new_price.should == "$#{expected_new_price}"
+    end
 
   end # describe
 end

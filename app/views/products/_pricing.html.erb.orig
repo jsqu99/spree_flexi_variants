@@ -125,8 +125,17 @@
     $('.price.selling').text(cur_price.toFixed(2)).formatCurrency();
   }
 
+<<<<<<< HEAD
+   //]]>
+  </script>
+<% end %>
+
+
+<%# end if Spree::Config[:use_ajax_pricing_updates] %>
+=======
   //]]>
   </script>
 <% end %>
 <% # end if Spree::Config[:use_javascript_pricing_updates] %>
+>>>>>>> image-customization
 <% end %>

@@ -63,6 +63,10 @@
 
   <% end %> <%# if exclusions %>
 <% end %> <%# content_for %>
+<<<<<<< HEAD
+
+=======
+>>>>>>> image-customization
 
 
 

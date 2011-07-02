@@ -46,7 +46,11 @@ describe Order do
 
     let (:customization) { Factory(:engraving_customization) }
 
-    context "with a unique customization" do
+    context "with a unique, uploaded-image customization" do
+      pending
+    end
+
+    context "with a unique, string-based customization" do
       it "returns a new line item" do
         orig_items = order.line_items.clone
 
@@ -56,7 +60,11 @@ describe Order do
       end
     end
 
-    context "with a customization identical to that of one already added to cart" do
+    context "with an uploaded-image customization identical to that of one already added to cart" do
+      pending
+    end
+
+    context "with a string-based customization identical to that of one already added to cart" do
       it "returns existing line item" do
         orig_li = order.line_items[0]
         orig_li.variant_id = product.master.id # ensure we are attempting to add the same variant

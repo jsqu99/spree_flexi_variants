@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+<%= render :partial => 'shared/additional_line_item_fields', :locals=>{:item => line_item} %>
+=======
+<%= render :partial => 'shared/additional_line_item_fields', :locals=>{:item => line_item} %>
+>>>>>>> image-customization

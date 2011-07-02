@@ -14,19 +14,30 @@
   <% end %>
 
   <% item.product_customizations.each do |customization| %>
-    <% next if customization.customized_product_options.all? {|cpo| cpo.value.empty? } %>
+
+    <% next if customization.customized_product_options.all? {|cpo| cpo.empty? } %>
 
     <dt><%= customization.product_customization_type.presentation %> (<%= format_price customization.price %>)</dt>
     <dd>
           <% customization.customized_product_options.each do |option| %>
-            <% next if option.value.empty? %>
+
+            <% next if option.empty? %>
 
 	          <% partial = option.customizable_product_option.name %>
             <% lookup=ActionView::LookupContext.new(ActionController::Base.view_paths, {:formats => [:html]}) %>
+
             <% if lookup.exists?("orders/custom_fields/#{partial}",nil,true) %>
+
               <%= render :partial => "orders/custom_fields/#{partial}", :locals=>{:option => option} %>
+
             <% else %>
-              <p><%= option.customizable_product_option.presentation %> = <%= option.value %></p>
+
+              <% if option.customization_image? %>
+                <p><%= option.customizable_product_option.presentation %> = <%= image_tag(option.customization_image.thumb.url) %></p>
+              <% else %>
+                <p><%= option.customizable_product_option.presentation %> = <%= option.value %></p>
+              <% end %>
+
             <% end %>
           <% end %> <%# each option %>
     </dd>

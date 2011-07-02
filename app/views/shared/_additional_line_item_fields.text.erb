@@ -10,14 +10,18 @@
     <% item.product_customizations.each do |customization| %>
     <%=  customization.product_customization_type.presentation %> (<%= format_price customization.price %>)
       <% customization.customized_product_options.each do |option| %>
-         <% next if option.value.empty? %>
+         <% next if option.empty? %>
 
   	     <% partial = option.customizable_product_option.name %>
          <% lookup=ActionView::LookupContext.new(ActionController::Base.view_paths, {:formats => [:html]}) %>
          <% if lookup.exists?("products/#{partial}",nil,true) %>
             <%= render :partial => "orders/custom_fields/#{partial}", :locals=>{:option => option} %>
          <% else %>
-          <%= option.customizable_product_option.presentation %>=<%= option.value %>
+              <% if option.customization_image? %>
+                <p><%= option.customizable_product_option.presentation %> = <%= File.basename option.customization_image.url %></p>
+              <% else %>
+                <p><%= option.customizable_product_option.presentation %> = <%= option.value %></p>
+              <% end %>
          <% end %>
       <% end # each option %>
      <% end # each customization %>

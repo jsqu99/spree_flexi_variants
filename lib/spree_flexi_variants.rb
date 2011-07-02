@@ -11,9 +11,10 @@ module SpreeFlexiVariants
         Rails.env.production? ? require(c) : load(c)
       end
 
-#      Spree::Config.set :use_ajax_pricing_updates => true
+      Spree::Config.set :use_javascript_pricing_updates => true
+      Spree::Config.set :use_separate_customizations_page => false
 
-      [Calculator::Engraving, Calculator::AmountTimesConstant, Calculator::ProductArea].each(&:register)
+      [Calculator::Engraving, Calculator::AmountTimesConstant, Calculator::ProductArea, Calculator::CustomizationImage].each(&:register)
 
       # overwrite the spree helper to include our extension fields
 #      Spree::BaseHelper.module_eval do

@@ -1,5 +1,1 @@
-<h4><%= link_to variant.product.name,  product_path(variant.product) %></h4>
-<%= variant_options variant %>
-<%= truncate(variant.product.description, :length => 100, :omission => "...") %>
-
 <%= render :partial => 'shared/additional_line_item_fields', :locals=>{:item => line_item} %>

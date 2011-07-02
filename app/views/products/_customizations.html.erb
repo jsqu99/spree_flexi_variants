@@ -2,7 +2,7 @@
 
   <div id="product-customizations">
 
-    <% # for finding optional partials %>
+    <%# for finding optional partials %>
     <% lookup=ActionView::LookupContext.new(ActionController::Base.view_paths, {:formats => [:html]}) %>
 
     <% @product.product_customization_types.each do |product_customization_type| %>

@@ -7,7 +7,7 @@
 <% end %>
 
 <dl>
-  <% #TODO: group multi-select options (e.g. toppings) %>
+  <%# TODO: group multi-select options (e.g. toppings) %>
   <% item.ad_hoc_option_values.each do |pov| %>
     <dt><%= pov.option_value.option_type.presentation %> (<%= format_price pov.price_modifier %>)</dt>
     <dd><%= pov.option_value.presentation %></dd>
@@ -39,7 +39,7 @@
               <% end %>
 
             <% end %>
-          <% end # each option %>
+          <% end %> <%# each option %>
     </dd>
-    <% end # each customization %>
+    <% end %> <%# each customization %>
 </dl>

@@ -5,8 +5,9 @@
 
 <% content_for :head do %>
   <%= javascript_include_tag 'jquery.formatCurrency-1.4.0.min' %>
-  <%= javascript_tag do %>
-
+  <%# didn't use javascript_tag here so we don't confuse deface %>
+  <script type="text/javascript">
+    //<![CDATA[
     // First I need to set up a mapping for the variants on the screen so I can easily grab their prices
 
     var variant_price_map={};
@@ -124,9 +125,8 @@
     $('.price.selling').text(cur_price.toFixed(2)).formatCurrency();
   }
 
-  <% end %>
+  //]]>
+  </script>
 <% end %>
-
-
 <% # end if Spree::Config[:use_javascript_pricing_updates] %>
 <% end %>

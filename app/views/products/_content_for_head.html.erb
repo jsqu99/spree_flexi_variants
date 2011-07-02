@@ -41,7 +41,7 @@
       var exclusions = [
       <% @product.ad_hoc_variant_exclusions.each do |excl| %>
 	{
-	<% # account for every option type, even if empty %>
+	<%# account for every option type, even if empty %>
 	<% @product.ad_hoc_option_types.each do |ot| %>
 	  <% ov=excl.excluded_ad_hoc_option_values.detect { |eov| eov.ad_hoc_option_value.option_type == ot } %>
 
@@ -61,9 +61,8 @@
 
     <%= javascript_include_tag 'exclusions' %>
 
-  <% end # if exclusions %>
-<% end # content_for %>
-
+  <% end %> <%# if exclusions %>
+<% end %> <%# content_for %>
 
 
 

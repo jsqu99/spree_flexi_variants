@@ -1,7 +1,9 @@
 Version Notes
 =============
 
-NOTE: July 2, 2011 - Just made some major updates to master.  Still testing.  
+NOTE: July 2, 2011 - Just made some major updates to master.  I attempted to test against spree master with no luck.
+
+Spree 0.60.* is the only known working version ATM.  Stay tuned.
 
 SpreeFlexiVariants
 ==================

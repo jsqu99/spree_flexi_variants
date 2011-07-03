@@ -11,6 +11,12 @@ module SpreeFlexiVariants
         Rails.env.production? ? require(c) : load(c)
       end
 
+      AppConfiguration.class_eval do
+        preference :use_ajax_pricing_updates, :boolean, :default => true
+      end
+
+      Spree::Config.set :use_ajax_pricing_updates => true
+
       [Calculator::Engraving, Calculator::AmountTimesConstant, Calculator::ProductArea, Calculator::CustomizationImage].each(&:register)
     end
 

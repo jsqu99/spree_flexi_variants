@@ -43,6 +43,9 @@ Add to Gemfile:
     # gem 'spree', '0.60.0'
     # gem 'spree_flexi_variants', :git=>'git@github.com:jsqu99/spree_flexi_variants.git', :branch => 'pre-deface-stable'
 
+
+    # Also, you might need to add 'carrierwave', 'rmagick', and possibly 'json' to the Gemfile while I learn more about gemspecs and the right way to include dependent gems.
+
     bundle install
 
     rake db:create && rails g spree:site && rake spree:install && rake spree_flexi_variants:install && rake db:bootstrap

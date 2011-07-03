@@ -16,9 +16,6 @@ module SpreeFlexiVariants
         preference :use_separate_customizations_page, :boolean, :default => false
       end
 
-      Spree::Config.set :use_javascript_pricing_updates => true
-      Spree::Config.set :use_separate_customizations_page => false
-
       [Calculator::Engraving, Calculator::AmountTimesConstant, Calculator::ProductArea, Calculator::CustomizationImage].each(&:register)
 
       # overwrite the spree helper to include our extension fields

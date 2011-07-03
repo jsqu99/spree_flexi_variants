@@ -11,8 +11,13 @@ module SpreeFlexiVariants
         Rails.env.production? ? require(c) : load(c)
       end
 
-#      Spree::Config.set :use_javascript_pricing_updates => true
-#      Spree::Config.set :use_separate_customizations_page => false
+      AppConfiguration.class_eval do
+        preference :use_javascript_pricing_updates, :boolean, :default => true
+        preference :use_separate_customizations_page, :boolean, :default => false
+      end
+
+      Spree::Config.set :use_javascript_pricing_updates => true
+      Spree::Config.set :use_separate_customizations_page => false
 
       [Calculator::Engraving, Calculator::AmountTimesConstant, Calculator::ProductArea, Calculator::CustomizationImage].each(&:register)
 

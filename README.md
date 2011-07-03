@@ -5,6 +5,10 @@ NOTE: July 2, 2011 - Just made some major updates to master.  I attempted to tes
 
 Spree 0.60.* is the only known working version ATM.  Stay tuned.
 
+The pre-deface-stable branch is the most stable.
+
+The master branch has many more features (include image customization).  I'm working on writing some more tests and this will soon be the winner.
+
 SpreeFlexiVariants
 ==================
 

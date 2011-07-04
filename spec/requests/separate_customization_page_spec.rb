@@ -10,7 +10,7 @@ describe "Products Page" do
 
       it "#displays the product with no cart form, and a link to customize" do
 
-        Spree::Config.set :use_separate_customizations_page => true
+        Spree::FlexiVariants::Config.set :use_separate_customizations_page => true
 
         visit product_path(product)
 
@@ -22,7 +22,7 @@ describe "Products Page" do
     describe "#customize product on main page configured" do
       it "#displays the product with cart form with customizations" do
 
-        Spree::Config.set :use_separate_customizations_page => false
+        Spree::FlexiVariants::Config.set :use_separate_customizations_page => false
 
         visit product_path(product)
 

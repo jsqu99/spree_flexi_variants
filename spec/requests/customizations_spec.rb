@@ -32,7 +32,7 @@ describe "Customizations" do #, :js=>true
       fill_in 'Inscription', :with => user_input
 #      page.find('input[type=text].customization').trigger('keyup')
 
-      Spree::Config.set :use_javascript_pricing_updates => true
+      Spree::FlexiVariants::Config.set :use_javascript_pricing_updates => true
 
       orig_price = @product.price
       puts "prod price: #{orig_price}"

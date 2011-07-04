@@ -16,7 +16,7 @@
         delay(function(){
 
           // update the hidden price field for this file input
-          $(tf).next(".customization_price").val(calculate_engraving_price(tf));
+          $(tf).siblings(".customization_price").val(calculate_engraving_price(tf));
 
           updatePrice();
         }, 1000 ); // delay

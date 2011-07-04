@@ -12,7 +12,7 @@
       $('#<%= cust_dom_id %>').live('change', function(e) {
 
         // update the hidden price field for this file input
-        $(this).next(".customization_price").val(calculate_customization_image_price(this));
+        $(this).siblings(".customization_price").val(calculate_customization_image_price(this));
 
         updatePrice();
 
@@ -48,10 +48,9 @@ $("#myform").validate({
 
 
       <%= file_field_tag "#{param_prefix}[#{product_customization_type.customizable_product_options.first.id}][customization_image]", :class=>"customization", :id => cust_dom_id%>
-      <%= link_to t("reset"),"" %>
-
       <% # the price is stored here on change, and later collected by the product-wide updatePrice() %>
       <%= hidden_field_tag "customization_price", "0", :class => "customization_price" %>
+      <%= link_to t("reset"),"" %>
     </li>
   </ol>
 <% end # field_set_tag %>

@@ -1,6 +1,8 @@
 <% if @product.product_customization_types %>
 
   <div id="product-customizations">
+    <%# this is a critical field (for javascript pricing updates).  we use it to store pricing info to be used by updatePrice() %>
+    <%= hidden_field_tag "customizations_price", 0 %>
 
     <%# for finding optional partials %>
     <% lookup=ActionView::LookupContext.new(ActionController::Base.view_paths, {:formats => [:html]}) %>

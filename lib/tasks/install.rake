@@ -3,6 +3,16 @@ namespace :spree_flexi_variants do
   task :install do
     Rake::Task['spree_flexi_variants:install:migrations'].invoke
     Rake::Task['spree_flexi_variants:install:assets'].invoke
+
+    # had to get these out of the activate method because Spree::Config didn't yet exist
+    str= <<-eos
+
+    Spree::Config.set :use_javascript_pricing_updates => true
+    Spree::Config.set :use_separate_customizations_page => false
+    eos
+
+    filename = Rails.root.join("db/seeds.rb")
+    File.open(filename, 'a+') {|f| f.write(str) }
   end
 
   namespace :install do

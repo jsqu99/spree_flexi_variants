@@ -20,7 +20,7 @@ describe "Administration of Customizations" do
 
     DatabaseCleaner.strategy = :truncation
     DatabaseCleaner.start
-#    DatabaseCleaner.clean  # ensure start w/ a clean DB
+    DatabaseCleaner.clean  # ensure start w/ a clean DB
 
     Factory(:admin_user, :email => 'spree2@example.com', :password => "spree123", :password_confirmation => "spree123")
 

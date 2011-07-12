@@ -6,7 +6,7 @@ describe "Administration of Customizations" do
 
   # config.use_transactional_fixtures = false
 
-  # I want finer grained control over the truncation of the DB (so I dont' affect 'all' or 'none' of the tests.
+  # I want finer grained control over the truncation of the DB (so I dont' affect 'all' or 'none' of the tests).
   # That's why I put these DBcleaner calls here.
 
   # I'm not going to lie.  I got confused as hell during this whole process, and below is the only way

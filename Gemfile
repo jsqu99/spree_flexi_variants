@@ -35,7 +35,7 @@ group :cucumber do
   end
 end
 
-gem 'spree', 'git://github.com/spree/spree.git'
+gem 'spree', :git => 'git://github.com/spree/spree.git'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'sqlite3-ruby'

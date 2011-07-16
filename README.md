@@ -4,7 +4,7 @@ Version Notes
 NOTE: July 16, 2011 - I'm having some issues w/ master ATM.  If you are ok w/ living on the edge, use master, as it is more feature-rich.
 
 I'm having a problem w/ including carrierwave correctly (for image customizations).  Hopefully I'll have this resolved in the next 24 hours,
-so if you are not deploying immediately and want to check the extension out, use master. 
+so if you are not deploying immediately and want to check the extension out, use master.
 
 Spree 0.60.* is the only known working version ATM.  Stay tuned.
 
@@ -38,16 +38,19 @@ Installation
 
 Add to Gemfile:
 
-    # see the notes above regarding the fact that edge currently doesn't work (the price doesn't update due to a deface integration issue that we are currently working)
+    # for master
     gem 'spree', :git => 'git://github.com/spree/spree.git'
+    gem 'json'
+    gem 'rmagick'
+    gem 'carrierwave'
     gem 'spree_flexi_variants', :git=>'git@github.com:jsqu99/spree_flexi_variants.git'
 
     # alternatively, if you want to use a stable, spree 0.60.x version:
     # gem 'spree', '0.60.0'
+    # gem 'json'
+    # gem 'rmagick'
+    # gem 'carrierwave'
     # gem 'spree_flexi_variants', :git=>'git@github.com:jsqu99/spree_flexi_variants.git', :branch => 'pre-deface-stable'
-
-
-    # Also, you might need to add 'carrierwave', 'rmagick', and possibly 'json' to the Gemfile while I learn more about gemspecs and the right way to include dependent gems.
 
     bundle install
 

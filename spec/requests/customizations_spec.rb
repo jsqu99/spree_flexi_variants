@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "Customizations" do #, :js=>true
+describe "Customizations", :js=>true do
 
   before(:each) do
     @product = Factory(:product_with_engraving)
@@ -41,7 +41,7 @@ describe "Customizations" do #, :js=>true
       expected_new_price = orig_price + (@product.product_customization_types.first.calculator.preferred_price_per_letter.to_f * user_input.size)
 
       # wait...hopefully I won't have to modify: Capybara.default_wait_time
-      sleep(2)
+      sleep(5)
       new_price = page.find('.price.selling').text
       new_price.should == "$#{expected_new_price}"
     end

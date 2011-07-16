@@ -36,8 +36,7 @@ task :test_app do
 
     def install_gems
       inside "test_app" do
-        run 'bundle exec rake spree_core:install'
-        run 'bundle exec rake spree_auth:install'
+        run 'bundle exec rake spree:install'
         run 'bundle exec rake spree_flexi_variants:install:migrations'
       end
     end
@@ -49,8 +48,7 @@ task :test_app do
     protected
     def full_path_for_local_gems
       <<-gems
-gem 'spree_core', :path => \'#{File.join(SPREE_PATH, "core")}\'
-gem 'spree_auth', :path => \'#{File.join(SPREE_PATH, "auth")}\'
+gem 'spree', :path => \'#{SPREE_PATH}\'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'spree_flexi_variants', :path => \'#{File.expand_path('..', __FILE__)}\'

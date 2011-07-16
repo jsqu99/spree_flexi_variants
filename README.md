@@ -25,7 +25,7 @@ You can also restrict certain combinations of options from coexisting.  These ar
 Product Customizations
 ----------------------
 
-Use these when you want the ability to provide a highly customized product e.g. "Cut to length 5.82cm", "Engrave 'thanks for the memories, Sarah'".  Full control over pricing is provided by the Spree calculator mechanism.
+Use these when you want the ability to provide a highly customized product e.g. "Cut to length 5.82cm", "Engrave 'thanks for the memories'".  Full control over pricing is provided by the Spree calculator mechanism.
 
 
 Installation
@@ -48,7 +48,7 @@ Add to Gemfile:
 
     bundle install
 
-    rake db:create && rails g spree:site && rake spree:install && rake spree_flexi_variants:install && rake db:bootstrap
+    bundle exec rake db:create && bundle exec rails g spree:site && bundle exec rake spree:install && bundle exec rake spree_flexi_variants:install && bundle exec rake db:bootstrap
 
 ## Examples
 

@@ -9,14 +9,14 @@
 
       <% param_prefix = "product_customizations[#{product_customization_type.id}]" %>
 
-      <% # render a custom partial based on the customization name? %>
+      <%# render a custom partial based on the customization name? %>
 
       <% partial_name = "products/customizations/customization_type/#{product_customization_type.name}" %>
       <% if lookup.exists?(partial_name,nil,true) %>
         <%= render :partial => partial_name, :locals => {:product_customization_type => product_customization_type, :param_prefix => param_prefix} %>
       <% else %>
 
-        <% # render a custom partial based on the calculator name? %>
+        <%# render a custom partial based on the calculator name? %>
         <% partial_name = "products/customizations/calculator_type/#{calculator_name(product_customization_type)}" %>
 
         <% if lookup.exists?(partial_name,nil,true) %>
@@ -39,9 +39,9 @@
               </li>
             <% end # options.each %>
           </ol>
-        <% end # field_set_tag %>
-      <% end # else %>
-      <% end # else %>
-    <% end # each customization type %>
+        <% end %> <%# field_set_tag %>
+      <% end %> <%# else %>
+      <% end %> <%# else %>
+    <% end %> <%# each customization type %>
   </div> <!-- product-customizations -->
 <% end %>

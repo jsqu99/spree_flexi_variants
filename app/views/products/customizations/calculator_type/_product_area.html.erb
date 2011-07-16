@@ -1,0 +1,54 @@
+<% # render the (possibly shared) calculator %>
+
+<% width_dom_id = "product_area_input_#{product_customization_type.customizable_product_options.first.id}" %>
+<% height_dom_id = "product_area_input_#{product_customization_type.customizable_product_options.second.id}" %>
+
+<%= render :partial => "products/customizations/calculator/#{calculator_name(product_customization_type)}",
+           :locals => {:calculator=>product_customization_type.calculator} %>
+
+  <% # add the 'change' listener for this particular file input, which will make use of the calculator above %>
+
+  <% content_for :head do %>
+    <%= javascript_tag do %>
+      $('#<%= width_dom_id %> , #<%= height_dom_id %>').live('keyup', function(e) {
+
+        var tf = $(this);
+
+        delay(function(){
+
+          // update the hidden price field for this file input
+          $(tf).parent().parent().find(".customization_price").val(calculate_product_area_price(tf));
+          updatePrice();
+        }, 1000 ); // delay
+      }); // keyup
+    <% end %>
+  <% end %>
+
+<%= field_set_tag product_customization_type.presentation do %>
+  <ol>
+    <li>
+      <% option = product_customization_type.customizable_product_options.first %>
+
+  	  <label for="<%= width_dom_id %>"><%= option.presentation %></label>
+      <% # create a slightly shorter dom_id field below.  I wish I could make use of dom_id for all strings that had [ && ] %>
+	    <%= text_field_tag "#{param_prefix}[#{option.id}]",
+                         "",
+                         :id => width_dom_id ,:style=>"float: left;", :class=>"customization" %>
+
+    </li>
+
+
+    <li>
+      <% option = product_customization_type.customizable_product_options.second %>
+
+  	  <label for="<%= height_dom_id %>"><%= option.presentation %></label>
+	    <%= text_field_tag "#{param_prefix}[#{option.id}]",
+                         "",
+                         :id => height_dom_id ,:style=>"float: left;", :class=>"customization" %>
+    </li>
+
+    <% # the price is stored here on change, and later collected by the product-wide updatePrice() %>
+    <%= hidden_field_tag "customization_price", "0", :class => "customization_price" %>
+
+  </ol>
+<% end # field_set_tag %>

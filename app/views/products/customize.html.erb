@@ -1,17 +1,14 @@
 <% @body_id = 'product-details' %>
 <h1><%= t('Customize') %> <%= accurate_title %></h1>
 
-<div id="product-images">
-  <%= hook :product_images do %>
+<div id="product-images" data-hook="product_images">
   <div id="main-image">
     <%= render 'image' %>
   </div>
   <% end %>
 </div>
 
-<%= hook :cart_form do %>
-  <div id="cart-form">
-    <%= render 'cart_form' %>
-  </div>
-<% end %>
+<div id="cart-form" data-hook="cart_form">
+  <%= render 'cart_form' %>
+</div>
 

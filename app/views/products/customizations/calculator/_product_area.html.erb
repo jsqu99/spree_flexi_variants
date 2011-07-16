@@ -1,0 +1,33 @@
+<% content_for :head do %>
+
+  <%= javascript_tag do %>
+    function calculate_product_area_price(obj) {
+
+      // right now, assuming width & height are interchangeable
+
+      var fields = $.makeArray($(obj).parent().parent().find('input[type=text]'));
+
+      if (fields.length != 2) {
+        return 0;
+      }
+
+      var area = $(fields[0]).val() * $(fields[1]).val();
+
+      // from http://stackoverflow.com/questions/18082/validate-numbers-in-javascript-isnumeric
+
+      if (isNaN(parseFloat(area)) || !isFinite(area)) {
+        return 0;
+      }
+
+      var min_area=<%= calculator.preferred_min_pricing_area %>;
+
+      if (min_area > area) {
+        area = min_area;
+      }
+
+      var mult=<%= calculator.preferred_multiplier %>;
+
+      return area * mult;
+    }
+  <% end %>
+<% end %>

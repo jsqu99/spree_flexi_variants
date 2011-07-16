@@ -6,7 +6,7 @@ describe ProductsController do
   describe "GET /product/my_product" do
     before(:each) do
       @product = Factory(:product)
-      # avoid capybara 'bug?' http://www.ruby-forum.com/topic/216322
+      # avoid capybara 'feature' http://www.ruby-forum.com/topic/216322
       # visit product_path(@product)
       get product_path(@product)
     end

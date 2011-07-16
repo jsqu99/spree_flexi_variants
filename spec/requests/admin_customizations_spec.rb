@@ -32,8 +32,6 @@ describe "Administration of Customizations" do
     fill_in "Email", :with => "spree2@example.com"
     fill_in "Password", :with => "spree123"
     click_button "Log In"
-
-    save_and_open_page
   end
 
   after(:all) do
@@ -59,8 +57,6 @@ describe "Administration of Customizations" do
       # update and go back to listings
       page.find('.form-buttons button[type=submit]').click
       page.should have_content "successfully updated"
-      save_and_open_page
-
     end
   end
 

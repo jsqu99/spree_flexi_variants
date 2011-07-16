@@ -25,20 +25,10 @@ Gem::PackageTask.new(spec) do |p|
   p.gem_spec = spec
 end
 
-desc "Release to gemcutter"
-task :release => :package do
-  require 'rake/gemcutter'
-  Rake::Gemcutter::Tasks.new(spec).define
-  Rake::Task['gem:push'].invoke
-end
-
-desc "Default Task"
-task :default => [ :spec ]
-
 desc "Regenerates a rails 3 app for testing"
 task :test_app do
   SPREE_PATH = ENV['SPREE_PATH']
-  raise "SPREE_PATH should be specified" unless SPREE_PATH
+  raise "SPREE_PATH should be specified (where is your source code for spree?)" unless SPREE_PATH
 
   require File.join(SPREE_PATH, 'lib/generators/spree/test_app_generator')
 

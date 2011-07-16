@@ -1,1 +1,2 @@
-"0.60.x" => { :branch => "pre-deface-stable" }
+"0.60.x" => { :branch => "master" }
+"0.70.x" => { :branch => "master" }

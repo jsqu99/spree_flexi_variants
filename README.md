@@ -1,7 +1,10 @@
 Version Notes
 =============
 
-NOTE: July 2, 2011 - Just made some major updates to master.  I attempted to test against spree master with no luck.
+NOTE: July 16, 2011 - I'm having some issues w/ master ATM.  If you are ok w/ living on the edge, use master, as it is more feature-rich.
+
+I'm having a problem w/ including carrierwave correctly (for image customizations).  Hopefully I'll have this resolved in the next 24 hours,
+so if you are not deploying immediately and want to check the extension out, use master. 
 
 Spree 0.60.* is the only known working version ATM.  Stay tuned.
 

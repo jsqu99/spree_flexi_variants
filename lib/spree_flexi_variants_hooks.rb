@@ -46,6 +46,16 @@ class SpreeFlexiVariantsHooks < Spree::ThemeSupport::HookListener
                          :insert_before => "[data-hook='cart_form'], #cart_form[data-hook]",
                          :partial => "products/content_for_head",
                          :disabled => false)
+    Deface::Override.new(:virtual_path => "admin/option_types/_option_value_fields",
+                         :name => "option_value_price_1",
+                         :insert_after => ".option_value.fields .presentation",
+                         :partial => "admin/option_types/option_value_price",
+                         :disabled => false)
+    Deface::Override.new(:virtual_path => "admin/option_types/edit",
+                         :name => "option_value_price_2",
+                         :insert_after => "table.index thead tr th[2]",
+                         :text => "<th>price</th>",
+                         :disabled => false)
   end
 
   # detect if we have Deface support

@@ -1,5 +1,5 @@
 Admin::OptionTypesController.class_eval do
-  # not sure if I have to repeat the 'before_filter' for the original option_types account 
+  # not sure if I have to repeat the 'before_filter' for the original option_types account
   before_filter :load_product_decorator, :only => [:select_ad_hoc, :available_ad_hoc]
 
   def available_ad_hoc
@@ -9,8 +9,9 @@ Admin::OptionTypesController.class_eval do
 
   # AJAX method for selecting an existing option type and associating with the current product
   def select_ad_hoc
-    @product.ad_hoc_option_types << AdHocOptionType.new(:option_type => OptionType.find(params[:id]))
-    ad_hoc_option_type = @product.ad_hoc_option_types.last
+    ad_hoc_option_type = AdHocOptionType.new(:option_type => OptionType.find(params[:id]))
+
+    @product.ad_hoc_option_types << ad_hoc_option_type
 
     redirect_to edit_admin_ad_hoc_option_type_url(ad_hoc_option_type)
   end

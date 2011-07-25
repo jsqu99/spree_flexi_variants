@@ -1,16 +1,7 @@
 Version Notes
 =============
 
-NOTE: July 16, 2011 - I'm having some issues w/ master ATM.  If you are ok w/ living on the edge, use master, as it is more feature-rich.
-
-I'm having a problem w/ including carrierwave correctly (for image customizations).  Hopefully I'll have this resolved in the next 24 hours,
-so if you are not deploying immediately and want to check the extension out, use master.
-
-Spree 0.60.* is the only known working version ATM.  Stay tuned.
-
-The pre-deface-stable branch is the most stable.
-
-The master branch has many more features (include image customization).  I'm working on writing some more tests and this will soon be the winner.
+Give the master branch a try first.  It is more feature rich and currently the only branch under development.  If you are on spree 0.60 and have any trouble with master, drop me a note, and then give the pre-deface-stable branch a try.
 
 SpreeFlexiVariants
 ==================
@@ -28,7 +19,7 @@ You can also restrict certain combinations of options from coexisting.  These ar
 Product Customizations
 ----------------------
 
-Use these when you want the ability to provide a highly customized product e.g. "Cut to length 5.82cm", "Engrave 'thanks for the memories'".  Full control over pricing is provided by the Spree calculator mechanism.
+Use these when you want the ability to provide a highly customized product e.g. "Cut to length 5.82cm", "Engrave 'thanks for the memories'", "Upload my image".  Full control over pricing is provided by the Spree calculator mechanism.
 
 
 Installation
@@ -45,7 +36,7 @@ Add to Gemfile:
     gem 'carrierwave'
     gem 'spree_flexi_variants', :git=>'git@github.com:jsqu99/spree_flexi_variants.git'
 
-    # alternatively, if you want to use a stable, spree 0.60.x version:
+    # alternatively, if you want spree 0.60.x version:
     # gem 'spree', '0.60.0'
     # gem 'json'
     # gem 'rmagick'

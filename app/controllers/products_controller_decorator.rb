@@ -12,7 +12,7 @@ ProductsController.class_eval do
 
     referer = request.env['HTTP_REFERER']
 
-    if referer && referer.match(HTTP_REFERER_REGEXP)
+    if referer && referer.match(/^https?:\/\/[^\/]+\/t\/([a-z0-9\-\/]+)$/)
       @taxon = Taxon.find_by_permalink($1)
     end
 

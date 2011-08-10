@@ -4,13 +4,13 @@ OrdersController.class_eval do
 
 
   # the inbound variant is determined either from products[pid]=vid or variants[master_vid], depending on whether or not the product has_variants, or not
-  # 
-  # Currently, we are assuming the inbound ad_hoc_option_values and customizations apply to the entire inbound product/variant 'group', as more surgery 
-  # needs to occur in the cart partial for this to be done 'right' 
+  #
+  # Currently, we are assuming the inbound ad_hoc_option_values and customizations apply to the entire inbound product/variant 'group', as more surgery
+  # needs to occur in the cart partial for this to be done 'right'
   #
   def populate
     @order = current_order(true)
-
+debugger
     params[:products].each do |product_id,variant_id|
       quantity = params[:quantity].to_i if !params[:quantity].is_a?(Hash)
       quantity = params[:quantity][variant_id].to_i if params[:quantity].is_a?(Hash)
@@ -37,7 +37,7 @@ OrdersController.class_eval do
       # pov=ProductOptionValue.find(pov_id)   # we don't actually need to load these from the DB just yet.  We might already have them attached to the line item
 
       # when it's a multi-select
-      if pov_id.is_a?(Array)      
+      if pov_id.is_a?(Array)
         pov_id.each do |p|
           ids << p unless p.empty?
         end

@@ -12,7 +12,8 @@ ProductsController.class_eval do
 
     referer = request.env['HTTP_REFERER']
 
-    if referer && referer.match(HTTP_REFERER_REGEXP)
+    # HTTP_REFERER_REGEXP (from spree) is unknown constant sometimes.  not sure why.
+    if referer && referer.match(/^https?:\/\/[^\/]+\/t\/([a-z0-9\-\/]+)$/)
       @taxon = Taxon.find_by_permalink($1)
     end
 

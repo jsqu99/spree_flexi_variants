@@ -43,9 +43,10 @@ class SpreeFlexiVariantsHooks < Spree::ThemeSupport::HookListener
                          :disabled => false)
     Deface::Override.new(:virtual_path => "products/show",
                          :name => "converted_cart_form_594755007",
-                         :insert_before => "[data-hook='cart_form'], #cart_form[data-hook]",
+                         :insert_before => "[data-hook='cart_form'], #cart-form[data-hook]",
                          :partial => "products/content_for_head",
                          :disabled => false)
+
   end
 
   # detect if we have Deface support

@@ -1,7 +1,8 @@
 Version Notes
 =============
 
-Give the master branch a try first.  It is more feature rich and currently the only branch under development.  If you are on spree 0.60 and have any trouble with master, drop me a note, and then give the pre-deface-stable branch a try.
+This is the rails 3.1-compatible version.  It is bleeding edge, but there are no known issues at this point.
+
 
 SpreeFlexiVariants
 ==================
@@ -29,23 +30,19 @@ Installation
 
 Add to Gemfile:
 
-    # for master
     gem 'spree', :git => 'git://github.com/spree/spree.git'
-    gem 'json'
     gem 'rmagick'
     gem 'carrierwave'
-    gem 'spree_flexi_variants', :git=>'git@github.com:jsqu99/spree_flexi_variants.git'
-
-    # alternatively, if you want spree 0.60.x version:
-    # gem 'spree', '0.60.0'
-    # gem 'json'
-    # gem 'rmagick'
-    # gem 'carrierwave'
-    # gem 'spree_flexi_variants', :git=>'git@github.com:jsqu99/spree_flexi_variants.git', :branch => 'pre-deface-stable'
+    gem 'spree_flexi_variants', :git=>'git@github.com:jsqu99/spree_flexi_variants.git', :branch => 'rails31'
 
     bundle install
 
-    bundle exec rake db:create && bundle exec rails g spree:site && bundle exec rake spree:install && bundle exec rake spree_flexi_variants:install && bundle exec rake db:bootstrap
+    # I'm still figuring out how to correctly bootstrap the edge-spree version.  Unsure of this below:
+
+    bundle exec rake db:create
+    bundle exec rails g spree:site
+    bundle exec rails g spree_flexi_variants:install    # this is the important step to integrate this extension
+    bundle exec rake db:bootstrap
 
 ## Examples
 

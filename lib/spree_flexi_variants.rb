@@ -1,5 +1,4 @@
 require 'spree_core'
-require 'spree_flexi_variants_hooks'
 
 module SpreeFlexiVariants
   class Engine < Rails::Engine
@@ -10,7 +9,9 @@ module SpreeFlexiVariants
       Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|
         Rails.env.production? ? require(c) : load(c)
       end
-
+      Dir.glob(File.join(File.dirname(__FILE__), "../app/overrides/**/*.rb")) do |c|
+        Rails.env.production? ? require(c) : load(c)
+      end
       [Calculator::Engraving, Calculator::AmountTimesConstant, Calculator::ProductArea, Calculator::CustomizationImage].each(&:register)
     end
 

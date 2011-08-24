@@ -1,0 +1,70 @@
+  <% artwork_option= product_customization_type.customizable_product_options.detect {|cpo| cpo.name == 'artwork_file_path' } %>
+  <% artwork2_option= product_customization_type.customizable_product_options.detect {|cpo| cpo.name == 'artwork_file_path2' } %>
+
+  <%= hidden_field_tag "#{param_prefix}[#{artwork_option.id}]", '', :class => 'artwork_file_name' %>
+
+  <% if artwork2_option %>
+    <%= hidden_field_tag "#{param_prefix}[#{artwork2_option.id}]", '', :class => 'artwork2_file_name' %><!-- look at the class name here TODO -->
+  <% end %>
+
+  <fieldset>
+    <div id="flash_upload_field">
+
+      <%= raw s3_swf_upload_tag(
+        :fileTypes                => '*.*',
+        :fileTypeDescs          => 'All files.',
+        :keyPrefix                => "artworks/#{Spree::Config[:s3_site_prefix]}/#{@order.number}/#{@variant.id}/",
+        :fileSizeLimit            => 52428800,
+        :selectMultipleFiles      => false,
+        :buttonWidth              => 248,
+        :buttonHeight             => 44,
+        :buttonUpPath             => image_path('buttons/select-file-up.png'),
+        :buttonOverPath           => image_path('buttons/select-file-over.png'),
+        :buttonDownPath           => image_path('buttons/select-file-down.png'),
+        :signaturePath            => '/s3_uploads.xml?',
+        :onFileNotInQueue         => "alert('File not found in the queue');",
+        :onFileSizeLimitReached   => "alert('That file is too big');",
+        :onQueueChange            => "queueChangeHandler(queue);",
+        :onQueueSizeLimitReached  => "alert('There are too many files in the queue');",
+        :onQueueEmpty             => "alert('You gotta have at least one file selected');",
+        :onQueueClear             => "queueClearHandler(queue);",
+        :onUploadingStart         => "uploadingStartHandler();",
+        :onUploadingFinish        => "uploadingFinishHandler();",
+        :onSignatureIOError       => "alert('There was an error. Please skip this step to continue.');disableSubmit();",
+        :onSignatureXMLError      => "alert('There was an error. Please skip this step to continue.');disableSubmit();",
+        :onSignatureSecurityError => "alert('There was an error. Please skip this step to continue.');disableSubmit();",
+        :onUploadError            => "alert('There was an error. Please skip this step to continue.');disableSubmit();",
+        :onUploadIOError          => "alert('There was an error. Please skip this step to continue.');disableSubmit();",
+        :onUploadSecurityError    => "alert('There was an error. Please skip this step to continue.');disableSubmit();",
+        :onUploadProgress         => "progressHandler(progress_event);",
+        :onUploadComplete         => "uploadCompleteHandler(upload_options,event);"
+
+      ).html_safe %>
+    </div>
+
+    <p id="filename">No file chosen </p>
+      <p id="maximum_size">(Maximum size: 50mb)</p>
+
+    <div id="progress_bar"><img id="progress_bar_pbImage" title=" 0%" alt=" 0%" src="<%= image_path('progress/surround.png') %>" width="490"></div>
+    <a id="cancel-upload" href="#" onclick="s3_swf_1_object.stopUploading();s3_swf_1_object.clearQueue();" >
+      <img src="<%= image_path('pbhq/upload/buttons/remove.png') %>" />
+    </a>
+
+    <br/>
+
+    <%# we know we should have one instructions field %>
+    <p id='additional_instructions' style="display:none;">
+      <% instructions_option= product_customization_type.customizable_product_options.detect {|cpo| cpo.name == 'artwork_instructions' } %>
+
+      <% unless instructions_option.nil? %>
+        <label><%= instructions_option.presentation %></label>
+           <%= text_area_tag "#{param_prefix}[#{instructions_option.id}]", '', 'data-placeholder' => 'Let us know if you have special instructions (optional)...', :class=>'artwork_instructions'%>
+      <% end %> <%# unless %>
+    </p>
+
+    <p id="upload_status_message"></p>
+
+  </fieldset>
+
+
+<%= javascript_include_tag 'swfupload.js' %>

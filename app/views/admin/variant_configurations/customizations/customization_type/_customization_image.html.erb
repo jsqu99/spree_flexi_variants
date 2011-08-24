@@ -1,0 +1,11 @@
+<%= field_set_tag product_customization_type.presentation do %>
+  <% option = product_customization_type.customizable_product_options.first %>
+   <ol style="list-style: none;">
+    <li>
+  	  <label><%= option.presentation %></label>
+
+      <% # create a slightly shorter dom_id field below.  I wish I could make use of dom_id for all strings that had [ && ] %>
+      <%= file_field_tag "#{param_prefix}[#{product_customization_type.customizable_product_options.first.id}][customization_image]", :class=>"customization"%>
+    </li>
+  </ol>
+<% end # field_set_tag %>

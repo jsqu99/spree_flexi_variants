@@ -67,4 +67,7 @@ Rails.application.routes.draw do
     end #products
 
   end # namespace :admin
+
+  match 'admin/variant_configurations/:variant_id', :to => 'admin/variant_configurations#configure'
+
 end #draw

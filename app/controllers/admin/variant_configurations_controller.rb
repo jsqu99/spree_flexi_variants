@@ -4,7 +4,7 @@ class Admin::VariantConfigurationsController < Admin::BaseController
     @variant = Variant.find(params[:variant_id])
 
     respond_to do |wants|
-      wants.js
+      wants.js { render '/shared/variant_configurations/configure' }
     end
   end
 end

@@ -14,7 +14,7 @@
 
       <%# render a custom partial based on the customization name? %>
 
-      <% partial_name = "admin/variant_configurations/customizations/customization_type/#{product_customization_type.name}" %>
+      <% partial_name = "/shared/variant_configurations/customizations/customization_type/#{product_customization_type.name}" %>
       <% if lookup.exists?(partial_name,nil,true) %>
         <%= render :partial => partial_name, :locals => {:product_customization_type => product_customization_type, :param_prefix => param_prefix} %>
       <% else %>

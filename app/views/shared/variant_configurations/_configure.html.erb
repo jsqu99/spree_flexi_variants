@@ -1,9 +1,9 @@
   <% session_key = Rails.application.config.session_options[:key] %>
 
   <%# right now, we don't have any ad-hoc options, but this _should_ work out of the box if we add them %>
-  <%= render 'ad_hoc_option_types' %>
+  <%= render '/shared/variant_configurations/ad_hoc_option_types' %>
 
   <%= hidden_field_tag :session_id, u(cookies[session_key]), :name => session_key %>
 
-  <%= render 'customizations' %>
+  <%= render '/shared/variant_configurations/customizations' %>
 

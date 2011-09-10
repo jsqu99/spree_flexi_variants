@@ -1,0 +1,2 @@
+"add to cart" causes creation of a new variant, if necessary
+

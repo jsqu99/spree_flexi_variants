@@ -2,6 +2,7 @@ require 'spree_core'
 
 module SpreeFlexiVariants
   class Engine < Rails::Engine
+    engine_name 'spree_flexi_variants'
 
     config.autoload_paths += %W(#{config.root}/lib)
 

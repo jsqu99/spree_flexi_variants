@@ -15,7 +15,9 @@ module SpreeFlexiVariants
         preference :use_ajax_pricing_updates, :boolean, :default => true
       end
 
-      Spree::Config.set :use_ajax_pricing_updates => true
+      if Spree::Config.instance
+        Spree::Config.set :use_ajax_pricing_updates => true
+      end
 
       [Calculator::Engraving, Calculator::AmountTimesConstant, Calculator::ProductArea].each(&:register)
 

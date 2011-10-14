@@ -1,9 +1,0 @@
-<% content_for :head do %>
-
-  <%= javascript_tag do %>
-  function calculate_customization_image_price(obj) {
-    // alert('pref price: ' + <%= calculator.preferred_price %>);
-    return <%= calculator.preferred_price %>;
-  }
-  <% end %>
-<% end %>

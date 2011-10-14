@@ -1,5 +1,4 @@
 OptionValue.class_eval do
-  # in addition/replacement-of presentation, we can have an attachment
-
-  # type    # normal, user_text, user_file
+  # name,presentation
+  # allow_custom_text, #allow_upload
 end

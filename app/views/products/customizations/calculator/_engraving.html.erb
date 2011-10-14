@@ -1,8 +1,0 @@
-<% content_for :head do %>
-
-  <%= javascript_tag do %>
-    function calculate_engraving_price(obj) {
-      return <%= calculator.preferred_price_per_letter %> * $(obj).val().length;
-    }
-  <% end %>
-<% end %>

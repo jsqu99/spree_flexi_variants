@@ -1,1 +1,0 @@
-git rm app/views/admin/products/_additional_product_sub_menu.html.erb

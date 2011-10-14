@@ -1,73 +1,23 @@
 Rails.application.routes.draw do
-
-  match 'product_customizations/price', :to => 'product_customizations#price'
-
-  match 'customize/:product_id', :to => 'products#customize', :as => 'customize'
+  # Add your extension routes here
 
   namespace :admin do
-
-    # resources :configuration_exclusions
-    resources :product_customization_types do
-      resources :customizable_product_options do
-        member do
-          get :select
-          post :select
-          get :remove
-        end
-        collection do
-          get :available
-          get :selected
-        end
-      end
-    end
-
-    resources :product_customization_types
-
-    resources :ad_hoc_option_types do
+    resources :product_option_values do
       member do
         get :remove
       end
     end
-
-    resources :ad_hoc_variant_exclusions
-
-    resources :products do
-      resources :option_types do
-        member do
-          get :select
-          get :remove
-          get :select_ad_hoc
-          post :select_ad_hoc
-        end
-        collection do
-          get :available
-          get :selected
-          get :available_ad_hoc
-        end
+    resources :option_types do
+      member do
+        get :select
+        get :configure
+        get :edit_configuration
+        get :remove
       end
-      resources :ad_hoc_option_types do
-        collection do
-          get :selected
-        end
+      collection do
+        get :available
+        get :selected
       end
-
-      resources :ad_hoc_variant_exclusions
-
-      resources :product_customization_types do
-        member do
-          get :select
-          post :select
-          get :remove
-        end
-        collection do
-          get :available
-          get :selected
-        end
-      end
-    end #products
-
-  end # namespace :admin
-
-  match 'admin/variant_configurations/:variant_id', :to => 'admin/variant_configurations#configure'
-
-end #draw
+    end
+  end
+end

@@ -1,0 +1,28 @@
+<%= form_for([:admin, @option_type]) do |f| %>
+<fieldset>
+  <legend><%= t("configure_option_values",:option_type => @option_type.presentation) %></legend>
+  <table class="index">
+    <thead data-hook="option_header">
+      <tr>
+        <th><%= t("display") %></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="option_values">
+      <tr id="none" data-hook="option_none">
+        <td colspan="3"><%= @option_type.option_values.empty? ? t("none") : "" %></td>
+      </tr>
+      <% for option_value in @option_values %>
+      <tr class="option_value fields" id="<%= dom_id(option_value) %>">
+        <td class="presentation"><%= option_value.presentation %></td>
+        <td class="actions"><%= link_to_with_icon 'delete', t("remove"), remove_admin_product_option_value_url(option_value), :remote => true %></td>
+      </tr>
+      <% end %>
+
+    </tbody>
+  </table>
+
+  <%= render :partial => 'admin/shared/edit_resource_links' %>
+</fieldset>
+<% end %>
+

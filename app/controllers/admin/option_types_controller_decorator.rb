@@ -1,33 +1,31 @@
 Admin::OptionTypesController.class_eval do
-  # not sure if I have to repeat the 'before_filter' for the original option_types account
-  before_filter :load_product_decorator, :only => [:select_ad_hoc, :available_ad_hoc]
 
-  def available_ad_hoc
-    set_available_ad_hoc_option_types
-    render :layout => false
-  end
+  def configure
+    # AJAX method for configuring an existing option type and associating with the current product
+    @product = Product.find_by_param!(params[:product_id])
+    @option_type = OptionType.find(params[:id])
+    @product.option_types << @option_type
 
-  # AJAX method for selecting an existing option type and associating with the current product
-  def select_ad_hoc
-    ad_hoc_option_type = AdHocOptionType.new(:option_type => OptionType.find(params[:id]))
+    @option_values=[]
 
-    @product.ad_hoc_option_types << ad_hoc_option_type
-
-    redirect_to edit_admin_ad_hoc_option_type_url(ad_hoc_option_type)
-  end
-
-  private
-    def set_available_ad_hoc_option_types
-      @available_option_types = OptionType.all
-      selected_option_types = []
-      @product.ad_hoc_option_types.each do |option|
-        selected_option_types << option.option_type
-      end
-      @available_option_types.delete_if {|ot| selected_option_types.include? ot}
+    @option_type.option_values.each do |ov|
+      @option_values << @product.product_option_values.create!(:option_value_id => ov.id)
     end
 
-    def load_product_decorator
-      load_product
-    end
+    @product.reload
+
+    @option_types = @product.option_types
+
+    set_available_option_types
+  end
+
+  def edit_configuration
+    # method for configuring an existing option type that has already been associated with the current product
+    @product = Product.find_by_param!(params[:product_id])
+    @option_type = OptionType.find(params[:id])
+
+    @option_types = @product.option_types
+    set_available_option_types
+  end
 
 end

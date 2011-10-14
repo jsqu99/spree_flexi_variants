@@ -1,23 +1,15 @@
-# encoding: utf-8
-require 'rubygems'
 require 'rake'
 require 'rake/testtask'
 require 'rake/packagetask'
 require 'rubygems/package_task'
+require 'rspec/core/rake_task'
+require 'cucumber/rake/task'
+require 'spree_core/testing_support/common_rake'
 
-gemfile = File.expand_path('../spec/test_app/Gemfile', __FILE__)
-if File.exists?(gemfile) && (%w(spec cucumber).include?(ARGV.first.to_s) || ARGV.size == 0)
-  require 'bundler'
-  ENV['BUNDLE_GEMFILE'] = gemfile
-  Bundler.setup
+RSpec::Core::RakeTask.new
+Cucumber::Rake::Task.new
 
-  require 'rspec'
-  require 'rspec/core/rake_task'
-  RSpec::Core::RakeTask.new
-end
-
-desc "Default Task"
-task :default => [:spec ]
+task :default => [:spec, :cucumber ]
 
 spec = eval(File.read('spree_flexi_variants.gemspec'))
 
@@ -25,43 +17,15 @@ Gem::PackageTask.new(spec) do |p|
   p.gem_spec = spec
 end
 
-desc "Regenerates a rails 3 app for testing"
-task :test_app do
-  SPREE_PATH = ENV['SPREE_PATH']
-  raise "SPREE_PATH should be specified (where is your source code for spree?)" unless SPREE_PATH
-
-  require File.join(SPREE_PATH, 'lib/generators/spree/test_app_generator')
-
-  class SpreeFlexiVariantsTestAppGenerator < Spree::Generators::TestAppGenerator
-
-    def install_gems
-      inside "test_app" do
-        run 'bundle exec rake spree:install'
-        run 'bundle exec rake spree_flexi_variants:install:migrations'
-      end
-    end
-
-    def migrate_db
-      run_migrations
-    end
-
-    protected
-    def full_path_for_local_gems
-      <<-gems
-gem 'spree', :path => \'#{SPREE_PATH}\'
-gem 'carrierwave'
-gem 'rmagick'
-gem 'spree_flexi_variants', :path => \'#{File.expand_path('..', __FILE__)}\'
-      gems
-    end
-
-  end
-  SpreeFlexiVariantsTestAppGenerator.start
+desc "Release to gemcutter"
+task :release => :package do
+  require 'rake/gemcutter'
+  Rake::Gemcutter::Tasks.new(spec).define
+  Rake::Task['gem:push'].invoke
 end
 
-namespace :test_app do
-  desc 'Rebuild test database'
-  task :rebuild_dbs do
-    system("cd spec/test_app && bundle exec rake db:drop db:migrate RAILS_ENV=test")
-  end
+desc "Generates a dummy app for testing"
+task :test_app do
+  ENV['LIB_NAME'] = 'spree_flexi_variants'
+  Rake::Task['common:test_app'].invoke
 end

@@ -7,11 +7,17 @@ Rails.application.routes.draw do
         get :remove
       end
     end
+    resources :option_values do
+      member do
+        get :remove
+      end
+    end
     resources :option_types do
       member do
         get :select
-        get :configure
-        get :edit_configuration
+        get :configure_dynamic_option_values
+        get :configure_dynamic_option_values_for_product
+        get :edit_dynamic_option_values_for_product
         get :remove
       end
       collection do

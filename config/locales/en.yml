@@ -1,5 +1,6 @@
 ---
 en:
   configure_option_type: Configure option type for use in a dynamic variant
-  configure_option_values: Option values for %{option_type} are currently set up as show below.  Further configure if desired
+  configure_dynamic_option_values: Option values for %{option_type} are currently set up as shown below.  Further configure if desired
+  configure_dynamic_option_values_for_product: Option values for %{product}:%{option_type} are currently set up as shown below.  Further configure if desired
 

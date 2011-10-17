@@ -11,7 +11,14 @@ module SpreeFlexiVariants
         Rails.env.production? ? require(c) : load(c)
       end
 
-      [Calculator::Engraving, Calculator::AmountTimesConstant, Calculator::ProductArea, Calculator::CustomizationImage].each(&:register)
+      initializer "spree.register.calculators" do |app|
+        app.config.spree.calculators.product_customization_types = [
+          Calculator::Engraving,
+          Calculator::AmountTimesConstant,
+          Calculator::ProductArea,
+          Calculator::CustomizationImage
+        ]
+      end
     end
 
     config.to_prepare &method(:activate).to_proc

@@ -1,5 +1,6 @@
 class OptionValuePricingDependency < ActiveRecord::Base
-  belongs_to :dependent_option_pricing_configuration
-  belongs_to :option_value, :as => :dependent_option_value
-  belongs_to :option_value, :as => :independent_option_value
+  belongs_to :dependent_option_pricing_configuration,:class_name => 'OptionPricingConfiguration::DependentOptionPricingConfiguration'
+
+  belongs_to :dependent_option_value, :polymorphic => true
+  belongs_to :independent_option_value, :polymorphic => true
 end

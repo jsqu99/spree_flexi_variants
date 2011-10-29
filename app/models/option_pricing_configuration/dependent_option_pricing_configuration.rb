@@ -2,7 +2,8 @@
 class OptionPricingConfiguration::DependentOptionPricingConfiguration  < OptionPricingConfiguration
   has_many :option_value_pricing_dependencies
 
-  def compute(line_item, option_value)
+#  def compute(dependent_option_value, variant) # the variant that is currently being formed
+  def compute(dependent_option_value, *all_other_option_values)
     # implement strategy here
   end
 end

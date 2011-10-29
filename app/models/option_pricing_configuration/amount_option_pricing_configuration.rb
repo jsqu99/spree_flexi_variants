@@ -4,7 +4,7 @@ class OptionPricingConfiguration::AmountOptionPricingConfiguration < OptionPrici
   # we'll prolly want to do something like product_option_value_amounts, maybe polymorphicly
   has_many :option_value_amounts
 
-  def compute(line_item,option_value)
+  def compute(option_value)
     # find the pricing info for the option value
     obj = option_value_amounts.detect{|ova| ova.option_value_id == option_value.id}
 

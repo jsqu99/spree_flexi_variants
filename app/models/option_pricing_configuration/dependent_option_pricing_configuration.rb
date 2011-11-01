@@ -2,8 +2,13 @@
 class OptionPricingConfiguration::DependentOptionPricingConfiguration  < OptionPricingConfiguration
   has_many :option_value_pricing_dependencies
 
-#  def compute(dependent_option_value, variant) # the variant that is currently being formed
-  def compute(dependent_option_value, *all_other_option_values)
+  # javascript will exist in a 'configuration-aware partial' to handle this hash
+  def all_combinations
+    # implement strategy here
+    # {option_value_id: {other_option_value_id : amount}}
+  end
+
+  def compute(option_value, *other_option_values)
     # implement strategy here
   end
 end

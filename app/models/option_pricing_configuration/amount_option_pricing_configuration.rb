@@ -4,7 +4,14 @@ class OptionPricingConfiguration::AmountOptionPricingConfiguration < OptionPrici
   # we'll prolly want to do something like product_option_value_amounts, maybe polymorphicly
   has_many :option_value_amounts
 
-  def compute(option_value)
+
+  # javascript will exist in a 'configuration-aware partial' to handle this hash
+  def all_combinations
+    # implement strategy here
+    # {option_value_id: amount}
+  end
+
+  def compute(option_value, *other_option_values) # last arg is ignored by this configuration
     # find the pricing info for the option value
     obj = option_value_amounts.detect{|ova| ova.option_value_id == option_value.id}
 

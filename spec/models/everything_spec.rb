@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Lineitem do
+describe LineItem do
   it "needs to be configurable once in the cart"
 end
 
@@ -49,11 +49,27 @@ describe "An OptionPricingConfiguration" do
 end
 
 describe OptionPricingConfiguration::AmountOptionPricingConfiguration do
-  it "retrieves the amount configured for a given option value"
+  context "configuration of a product before adding to the cart" do
+    it "retrieves all possible amounts for all of this option type's values in a hash e.g. {option_value_id: amount}"
+  end
+
+  context "variant creation / retrieval phase" do
+    it "retrieves the amount configured for a given option value"
+  end
 end
 
 describe OptionPricingConfiguration::DependentOptionPricingConfiguration do
-  it "retrieves the amount configured for a given option value"
+
+  context "configuration of a product before adding to the cart" do
+    it "retrieves all possible combinations in a dependency hash e.g. {option_value_id: {other_option_value_id : amount}}"
+  end
+
+  context "variant creation / retrieval phase" do
+    it "retrieves the amount configured for a given option value" do
+      pending "by taking into consideration all of the selected option values in the variant"
+    end
+  end
+
 end
 
 describe "A dynamic option value" do

@@ -50,6 +50,12 @@ Use these when you want the ability to provide a highly customized product e.g. 
 
 Installation
 ------------
+
+
+NOTE: there is currently an issue w/ the 0-70-stable branch of spree.  I have an outstanding question: http://groups.google.com/group/spree-user/browse_thread/thread/80810dc0d907d6ac
+
+Once I figure this out I'll update the README.
+
     rails new myapp
     cd myapp
 
@@ -63,11 +69,11 @@ Add to Gemfile (NOTE: spree master is currently unsupported!  The namespace chan
 
     # I'm still figuring out how to correctly bootstrap the edge-spree version.  Unsure of this below:
 
-    bundle exec rake db:create
+#    bundle exec rails g spree:site
+#    bundle exec rake spree_flexi_variants:install:assets
+
+#    bundle exec rake railties:install:migrations
     bundle exec rake db:bootstrap
-    bundle exec rails g spree:site
-    bundle exec rails g spree_flexi_variants:install    # this is the important step to integrate this extension
-    bundle exec rake db:migrate
 
 ## Examples
 

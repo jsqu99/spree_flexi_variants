@@ -3,18 +3,18 @@ Version Notes
 
 This is the rails 3.1-compatible version.  It is bleeding edge, but there are no known issues at this point.
 
-I'm excited to announce that I'm working feverishly on a complete rewrite (currently in the v2 branch (and highly pre-alpha), if you are curious).  
+I'm excited to announce that I'm working feverishly on a complete rewrite (currently in the v2 branch (and highly pre-alpha), if you are curious).
 
-After using this extension in a few projects, I discovered some areas for improvement.  
+After using this extension in a few projects, I discovered some areas for improvement.
 
 The goal with the next version is to:
 
-* Allow the extension to play nicely with all other extensions.  
+* Allow the extension to play nicely with all other extensions.
 
 The current version does major surgery on (and changes the parameters of) Order#add_variant.  This interferes with some other extensions.
 Version 2  will be far less intrusive on the existing spree models
 
-* Keep the notion of a *variant*. 
+* Keep the notion of a *variant*.
 
 The current version does not allow you to later look up the variant and be able to reconstruct its state.  This is all at the LineItem level now.
 
@@ -53,9 +53,8 @@ Installation
     rails new myapp
     cd myapp
 
-Add to Gemfile:
-
-    gem 'spree', :git => 'git://github.com/spree/spree.git'
+Add to Gemfile (NOTE: spree master is currently unsupported!  The namespace changes are not yet reflected in this extension).
+    gem 'spree', :git => 'git://github.com/spree/spree.git', :branch => '0-70-stable'
     gem 'rmagick'
     gem 'carrierwave'
     gem 'spree_flexi_variants', :git=>'git@github.com:jsqu99/spree_flexi_variants.git', :branch => 'rails31'
@@ -65,9 +64,10 @@ Add to Gemfile:
     # I'm still figuring out how to correctly bootstrap the edge-spree version.  Unsure of this below:
 
     bundle exec rake db:create
+    bundle exec rake db:bootstrap
     bundle exec rails g spree:site
     bundle exec rails g spree_flexi_variants:install    # this is the important step to integrate this extension
-    bundle exec rake db:bootstrap
+    bundle exec rake db:migrate
 
 ## Examples
 

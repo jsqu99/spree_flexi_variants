@@ -24,6 +24,11 @@ Rails.application.routes.draw do
     resources :product_customization_types
 
     resources :ad_hoc_option_types do
+      resources :ad_hoc_option_values do
+        collection do
+          post :update_positions
+        end
+      end
       member do
         get :remove
       end

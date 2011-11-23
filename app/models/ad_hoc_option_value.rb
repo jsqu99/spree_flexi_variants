@@ -4,6 +4,8 @@ class AdHocOptionValue < ActiveRecord::Base
   belongs_to :option_value
   # price_modifier
   alias :option_type :ad_hoc_option_type
+  acts_as_list :scope => :ad_hoc_option_type
+  default_scope order("position asc")
 
   def presentation
     option_value.presentation

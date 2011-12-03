@@ -56,6 +56,8 @@ NOTE: there is currently an issue w/ the 0-70-stable branch of spree.  I have an
 
 Once I figure this out I'll update the README.
 
+In the meantime, follow the instructions below and you _should_ be ok
+
     rails new myapp
     cd myapp
 
@@ -63,16 +65,35 @@ Add to Gemfile (NOTE: spree master is currently unsupported!  The namespace chan
     gem 'spree', :git => 'git://github.com/spree/spree.git', :branch => '0-70-stable'
     gem 'rmagick'
     gem 'carrierwave'
-    gem 'spree_flexi_variants', :git=>'git@github.com:jsqu99/spree_flexi_variants.git', :branch => 'rails31'
+    gem 'spree_flexi_variants', :git=>'git@github.com:jsqu99/spree_flexi_variants.git'
 
     bundle install
 
     # I'm still figuring out how to correctly bootstrap the edge-spree version.  Unsure of this below:
 
-#    bundle exec rails g spree:site
-#    bundle exec rake spree_flexi_variants:install:assets
+    # bundle exec rails g spree:site
+    # bundle exec rake spree_flexi_variants:install:assets
+    bundle exec rake railties:install:migrations
 
-#    bundle exec rake railties:install:migrations
+Temporarily work around the issue where the migrations are copied over to your app's db/migrate from the extension's db/migrate but remamed w/ different timestamps, causing them to be mistakenly run twice.  I believe the railties:install:migrations is necessary b/c you get a missing 'countries' error if you don't.  My apologies, I don't fully understand the engine asset/migration mechanism in rails 3.1 just yet.
+
+So, remove these by hand from you app's db/migrate dir:
+
+    rm db/migrate/*_create_ad_hoc_option_types.rb
+    rm db/migrate/*_create_ad_hoc_option_values.rb
+    rm db/migrate/*_create_product_customizations.rb
+    rm db/migrate/*_create_product_customization_types.rb
+    rm db/migrate/*_create_ad_hoc_variant_exclusions.rb
+    rm db/migrate/*_create_customized_product_options.rb
+    rm db/migrate/*_create_customizable_product_options.rb
+    rm db/migrate/*_create_excluded_ad_hoc_option_values.rb
+    rm db/migrate/*_create_ad_hoc_option_values_line_items.rb
+    rm db/migrate/*_customization_validations.rb
+    rm db/migrate/*_add_carrierwave_fields.rb
+    rm db/migrate/*_remove_data_validation_string.rb
+    rm db/migrate/*_add_id_to_ad_hoc_option_values_line_items.rb
+    rm db/migrate/*_add_position_to_ad_hoc_option_values.rb
+
     bundle exec rake db:bootstrap
 
 ## Examples

@@ -62,7 +62,7 @@ Add to Gemfile (NOTE: spree master is currently unsupported!  The namespace chan
 
     bundle install
 
-    bundle exec rails g spree:site                                 # this installs flexi's migrations as well!
+    bundle exec rails g spree:site                                 # this installs flexi's migrations as well!, via railties:install:migrations
     bundle exec rails g spree_flexi_variants:install               # copies the assets
     bundle exec rake db:bootstrap
 

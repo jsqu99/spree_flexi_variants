@@ -54,6 +54,7 @@ Installation
     cd myapp
 
 Add to Gemfile (NOTE: spree master is currently unsupported!  The namespace changes are not yet reflected in this extension).
+
     gem 'spree', :git => 'git://github.com/spree/spree.git', :branch => '0-70-stable'
     gem 'rmagick'
     gem 'carrierwave'

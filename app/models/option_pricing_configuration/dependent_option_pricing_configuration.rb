@@ -2,6 +2,10 @@
 class OptionPricingConfiguration::DependentOptionPricingConfiguration  < OptionPricingConfiguration
   has_many :option_value_pricing_dependencies
 
+  def self.description
+    "Price is dependent on other option value(s)"
+  end
+
   # javascript will exist in a 'configuration-aware partial' to handle this hash
   def all_combinations
     # implement strategy here

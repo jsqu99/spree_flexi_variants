@@ -4,6 +4,9 @@ class OptionPricingConfiguration::AmountOptionPricingConfiguration < OptionPrici
   # we'll prolly want to do something like product_option_value_amounts, maybe polymorphicly
   has_many :option_value_amounts
 
+  def self.description
+    "Price adjustment (amount) per option value"
+  end
 
   # javascript will exist in a 'configuration-aware partial' to handle this hash
   def all_combinations

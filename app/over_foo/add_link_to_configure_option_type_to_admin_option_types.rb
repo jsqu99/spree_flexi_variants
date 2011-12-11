@@ -6,7 +6,7 @@
     <%= link_to icon('add') + ' ' + t('configure_option_type'),
                             url_for(:controller => "admin/option_types",
                                     :id => option_type.id,
-                                    :action => "configure_dynamic",
+                                    :action => "configure_dynamic_option_values",
                                     :option_type_id =>  option_type.id),
                                     :remote => true,
                                     :class => 'iconlink' %>
@@ -33,7 +33,7 @@
                             url_for(:controller => "admin/option_types",
                                     :id => ot.id,
                                     :product_id => @product.permalink,
-                                    :action => "configure_dynamic_for_product",
+                                    :action => "configure_dynamic_option_values_for_product",
                                     :option_type_id =>  ot.id),
                                     :remote => true,
                                     :class => 'iconlink' %>
@@ -55,7 +55,7 @@
                             url_for(:controller => "admin/option_types",
                                     :id => option_type.id,
                                     :product_id => @product.permalink,
-                                    :action => "edit_dynamic_for_product",
+                                    :action => "edit_dynamic_option_values_for_product",
                                     :option_type_id =>  option_type.id),
                                     :class => 'iconlink' %>
 )

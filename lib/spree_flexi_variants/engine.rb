@@ -17,6 +17,9 @@ module SpreeFlexiVariant
       Dir.glob(File.join(File.dirname(__FILE__), "../../app/overrides/*.rb")) do |c|
         Rails.application.config.cache_classes ? require(c) : load(c)
       end
+
+      [OptionPricingConfiguration::AmountOptionPricingConfiguration, OptionPricingConfiguration::DependentOptionPricingConfiguration].map(&:register)
+
     end
 
     config.to_prepare &method(:activate).to_proc

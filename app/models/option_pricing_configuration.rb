@@ -10,4 +10,12 @@ class OptionPricingConfiguration < ActiveRecord::Base
   def compute(option_value, *other_option_values)
     raise "this is an abstract class man, override!"
   end
+
+  def self.description
+    "need a description for me"
+  end
+
+  def self.register
+   OptionType.register_option_pricing_configuration(self)
+  end
 end

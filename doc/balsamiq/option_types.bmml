@@ -1,0 +1,59 @@
+<mockup version="1.0" skin="sketch" measuredW="1287" measuredH="567" mockupW="1273" mockupH="558">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::DataGrid" x="14" y="42" w="-1" h="-1" measuredW="721" measuredH="145" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Name%2CPresentation%2CPricing%20Strategy%2CSku%20Strategy%2CInventory%20Strategy%2CSelect%20Multiple%3F%0Atshirt_color%2CColor%2CN/A%2CTShirtColorSkuStrategy%2CN/A%2C%5B%5D%0Atshirt_size%2CSize%2CFixed%20Amount%2CTShirtSizeSkuStrategy%2CN/A%2C%5B%5D%0Apizza_size%2CSize%2CFixed%20Amount%2CN/A%2CN/A%2C%5B%5D%0Apizza_topping%2C%20Toppings%2CDependent%28pizza_size%29%2CN/A%2CN/A%2C%5Bx%5D%0A%7B25L%2C%202L%2C%200C%2C%200C%2C0C%2C0C%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::DataGrid" x="14" y="230" w="464" h="147" measuredW="249" measuredH="145" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Name%2CPresentation%2CSKU%20Component%0Ared%2CRed%2CRED%0Agreen%2CGreen%2CGRN%0Ablue%2CBlue%2CBLU%0Ablack%2CBlack%2CBLK%0A%7B25L%2C%2025L%2C4C%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Title" x="48" y="197" w="-1" h="-1" measuredW="319" measuredH="33" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>24</size>
+        <text>Option%20Values%20for%20TShirt%20Color</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Title" x="258" y="9" w="-1" h="-1" measuredW="146" measuredH="33" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>24</size>
+        <text>Option%20Types</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::DataGrid" x="567" y="230" w="464" h="295" measuredW="333" measuredH="295" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Name%2CPresentation%2Cpizza_size%3A%2CPrice%20%0Apepperoni%2CPepperoni%2Csmall%2C%241.49%0A%2C%2Cmedium%2C%241.99%0A%2C%2Clarge%2C%242.29%0Asausage%2CSausage%2Csmall%2C%241.49%0A%2C%2Cmedium%2C%241.99%0A%2C%2Clarge%2C%242.29%0Aextra_cheese%2CExtra%20Cheese%2Csmall%2C%242.00%0A%2C%2Cmedium%2C%243.15%0A%2C%2Clarge%2C%244.29%0A%7B25L%2C%2025L%2C10C%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Title" x="614" y="197" w="-1" h="-1" measuredW="352" measuredH="33" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>24</size>
+        <text>Option%20Values%20for%20Pizza%20Toppings</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::DataGrid" x="14" y="418" w="464" h="149" measuredW="380" measuredH="145" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Name%2CPresentation%2CPrice%2CSKU%20Component%0Atshirt_small%2CS%2C%2410.00%2CS%0Atshirt_mediuml%2CM%2C%2412.00%2CM%0Atshirt_large%2CL%2C%2414.00%2CL%0Atshirt_extra_large%2CXL%2C%2416.00%2CX%0A%7B25L%2C%2025L%2C10C%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Title" x="33" y="385" w="-1" h="-1" measuredW="311" measuredH="33" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>24</size>
+        <text>Option%20Values%20for%20TShirt%20Size</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::DataGrid" x="823" y="48" w="464" h="113" measuredW="272" measuredH="115" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Name%2CPresentation%2CPrice%0Apizza_medium%2CM%2C%2412.00%0Apizza_large%2CL%2C%2414.00%0Apizza_extra_large%2CXL%2C%2416.00%0A%7B25L%2C%2010L%2C10C%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Title" x="879" y="21" w="-1" h="-1" measuredW="305" measuredH="33" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>24</size>
+        <text>Option%20Values%20for%20Pizza%20Size</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

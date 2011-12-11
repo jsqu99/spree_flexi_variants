@@ -1,0 +1,243 @@
+<mockup version="1.0" skin="sketch" measuredW="671" measuredH="719" mockupW="660" mockupH="719">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::Title" x="19" y="397" w="152" h="-1" measuredW="152" measuredH="33" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>24</size>
+        <text>Option%20Values</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Title" x="26" y="141" w="210" h="-1" measuredW="210" measuredH="33" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>24</size>
+        <text>Editing%20Option%20Type</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="34" y="174" w="51" h="38" measuredW="40" measuredH="21" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Name</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::TextInput" x="181" y="204" w="255" h="-1" measuredW="65" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Toppings</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::TextInput" x="181" y="170" w="255" h="-1" measuredW="95" measuredH="27" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>pizza_topping</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::ComboBox" x="181" y="276" w="247" h="-1" measuredW="61" measuredH="23" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>None</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::ComboBox" x="181" y="238" w="255" h="-1" measuredW="165" measuredH="23" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>false</bold>
+        <text>Dependent%28Pizza%20Size%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Label" x="34" y="204" w="127" h="18" measuredW="78" measuredH="21" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Presentation</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Label" x="34" y="238" w="124" h="26" measuredW="97" measuredH="21" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Pricing%20Strategy</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Label" x="34" y="276" w="131" h="21" measuredW="81" measuredH="21" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Sku%20Strategy</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="34" y="314" w="145" h="26" measuredW="114" measuredH="21" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Inventory%20Strategy</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Label" x="40" y="350" w="111" h="47" measuredW="168" measuredH="21" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Allow%20Multiple%20Option%20Values%3F</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::ComboBox" x="181" y="315" w="247" h="-1" measuredW="61" measuredH="23" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>None</text>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::CheckBox" x="188" y="354" w="83" h="29" measuredW="26" measuredH="22" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>selected</state>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::Button" x="41" y="685" w="-1" h="-1" measuredW="104" measuredH="34" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <href>70_option_types_index_2%26bm%3B70_option_types_index_2.bmml%26bm%3B70_option_types_index_2.bmml%26bm%3B70_option_types_index_2.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2230%2C685%2C134%2C719%22%20href%3D%2270_option_types_index_2.bmml%22%20alt%3D%2270_option_types_index_2%22%20id%3D%2214%22/%3E</map>
+        <size>24</size>
+        <text>Update</text>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::Label" x="163" y="692" w="18" h="21" measuredW="18" measuredH="21" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>or</text>
+      </controlProperties>
+    </control>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::Link" x="196" y="694" w="-1" h="-1" measuredW="43" measuredH="21" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>cancel</text>
+      </controlProperties>
+    </control>
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::FieldSet" x="11" y="121" w="660" h="564" measuredW="200" measuredH="170" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <backgroundAlpha>0</backgroundAlpha>
+        <text>Editing%20Option%20Type</text>
+      </controlProperties>
+    </control>
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::Link" x="26" y="646" w="-1" h="-1" measuredW="103" measuredH="21" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Add%20Option%20Value</text>
+      </controlProperties>
+    </control>
+    <control controlID="21" controlTypeID="com.balsamiq.mockups::DataGrid" x="19" y="431" w="543" h="28" measuredW="262" measuredH="25" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Name%2CPresentation%2CPizza%20Size%2CPrice%0A%7B75L%2C%2075L%2C40C%2C75C%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="22" controlTypeID="com.balsamiq.mockups::Label" x="33" y="459" w="51" h="21" measuredW="35" measuredH="21" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>None</text>
+      </controlProperties>
+    </control>
+    <control controlID="23" controlTypeID="com.balsamiq.mockups::TextInput" x="19" y="486" w="142" h="-1" measuredW="72" measuredH="27" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>pepperoni</text>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::TextInput" x="166" y="485" w="142" h="-1" measuredW="73" measuredH="27" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Pepperoni</text>
+      </controlProperties>
+    </control>
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::TextInput" x="435" y="477" w="75" h="-1" measuredW="48" measuredH="27" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%241.49</text>
+      </controlProperties>
+    </control>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::TextInput" x="435" y="507" w="75" h="-1" measuredW="47" measuredH="27" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%241.99</text>
+      </controlProperties>
+    </control>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::TextInput" x="435" y="535" w="75" h="-1" measuredW="51" measuredH="27" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%242.49</text>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::Icon" x="562" y="480" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13369344</color>
+        <icon>XIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::Icon" x="562" y="510" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13369344</color>
+        <icon>XIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="41" controlTypeID="com.balsamiq.mockups::Icon" x="562" y="538" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13369344</color>
+        <icon>XIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="43" controlTypeID="com.balsamiq.mockups::Label" x="333" y="486" w="23" h="26" measuredW="25" measuredH="21" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>10%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="44" controlTypeID="com.balsamiq.mockups::Label" x="333" y="507" w="23" h="26" measuredW="25" measuredH="21" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>14%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="45" controlTypeID="com.balsamiq.mockups::Label" x="333" y="531" w="23" h="26" measuredW="25" measuredH="21" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>18%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="46" controlTypeID="com.balsamiq.mockups::TextInput" x="19" y="578" w="142" h="-1" measuredW="49" measuredH="27" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>onions</text>
+      </controlProperties>
+    </control>
+    <control controlID="47" controlTypeID="com.balsamiq.mockups::TextInput" x="166" y="577" w="142" h="-1" measuredW="51" measuredH="27" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Onions</text>
+      </controlProperties>
+    </control>
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::Icon" x="562" y="572" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13369344</color>
+        <icon>XIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="52" controlTypeID="com.balsamiq.mockups::Icon" x="562" y="602" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13369344</color>
+        <icon>XIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="53" controlTypeID="com.balsamiq.mockups::Icon" x="562" y="630" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13369344</color>
+        <icon>XIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="54" controlTypeID="com.balsamiq.mockups::Label" x="333" y="578" w="23" h="26" measuredW="25" measuredH="21" zOrder="37" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>10%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="55" controlTypeID="com.balsamiq.mockups::Label" x="333" y="599" w="23" h="26" measuredW="25" measuredH="21" zOrder="38" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>14%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="56" controlTypeID="com.balsamiq.mockups::Label" x="333" y="623" w="23" h="26" measuredW="25" measuredH="21" zOrder="39" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>18%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="57" controlTypeID="com.balsamiq.mockups::TextInput" x="435" y="567" w="75" h="-1" measuredW="48" measuredH="27" zOrder="40" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%241.29</text>
+      </controlProperties>
+    </control>
+    <control controlID="58" controlTypeID="com.balsamiq.mockups::TextInput" x="435" y="597" w="75" h="-1" measuredW="48" measuredH="27" zOrder="41" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%241.79</text>
+      </controlProperties>
+    </control>
+    <control controlID="59" controlTypeID="com.balsamiq.mockups::TextInput" x="435" y="625" w="75" h="-1" measuredW="51" measuredH="27" zOrder="42" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%242.29</text>
+      </controlProperties>
+    </control>
+    <control controlID="60" controlTypeID="com.balsamiq.mockups::Component" x="11" y="0" w="612" h="110" measuredW="612" measuredH="110" zOrder="43" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="11" y="89" w="448" h="21"/>
+        <override controlID="1" x="11" y="68" w="601" h="24"/>
+        <override controlID="2" x="0" y="0" w="176" h="73"/>
+        <override controlID="3" x="191" y="32" w="207" h="23"/>
+        <src>./assets/symbols.bmml#spree_top_nav</src>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

@@ -1,0 +1,161 @@
+<mockup version="1.0" skin="sketch" measuredW="622" measuredH="405" mockupW="612" mockupH="398">
+  <controls>
+    <control controlID="0" controlTypeID="__group__" x="10" y="7" w="612" h="121" measuredW="612" measuredH="121" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>spree_top_nav</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::LinkBar" x="11" y="100" w="-1" h="-1" measuredW="448" measuredH="21" zOrder="0" locked="false" isInGroup="0">
+          <controlProperties>
+            <selectedIndex>1</selectedIndex>
+            <text>Products%2C%20Option%20Types%2CProperties%2CPrototypes%2CProduct%20Groups</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::LinkBar" x="11" y="76" w="-1" h="-1" measuredW="601" measuredH="24" zOrder="1" locked="false" isInGroup="0">
+          <controlProperties>
+            <selectedIndex>2</selectedIndex>
+            <size>16</size>
+            <text>Overview%2COrders%2CProducts%2CReports%2CConfiguration%2CUsers%2CPromotions</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Image" x="0" y="0" w="-1" h="-1" measuredW="176" measuredH="82" zOrder="2" locked="false" isInGroup="0">
+          <controlProperties>
+            <src>./assets/spree_50-b8d1371e33a6d2001dda4a8bd64c3bc5.png</src>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="191" y="36" w="207" h="25" measuredW="152" measuredH="33" zOrder="3" locked="false" isInGroup="0">
+          <controlProperties>
+            <color>6989903</color>
+            <size>24</size>
+            <text>Administration</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="1" controlTypeID="__group__" x="60" y="20" w="211" h="35" measuredW="211" measuredH="35" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>spree_create_or_cancel</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Button" x="0" y="1" w="-1" h="-1" measuredW="120" measuredH="34" zOrder="0" locked="false" isInGroup="1">
+          <controlProperties>
+            <bold>true</bold>
+            <href>30_edit_tshirt_size_option_type%26bm%3B30_edit_tshirt_size_option_type.bmml%26bm%3B30_edit_tshirt_size_option_type.bmml%26bm%3B30_edit_tshirt_size_option_type.bmml</href>
+            <menuIcon>true</menuIcon>
+            <size>24</size>
+            <text>Create</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="135" y="0" w="-1" h="-1" measuredW="18" measuredH="21" zOrder="1" locked="false" isInGroup="1">
+          <controlProperties>
+            <text>or</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Link" x="168" y="1" w="-1" h="-1" measuredW="43" measuredH="21" zOrder="2" locked="false" isInGroup="1">
+          <controlProperties>
+            <text>cancel</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="2" controlTypeID="__group__" x="60" y="80" w="203" h="34" measuredW="203" measuredH="34" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>spree_update_or_cancel</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Button" x="0" y="0" w="-1" h="-1" measuredW="104" measuredH="34" zOrder="0" locked="false" isInGroup="2">
+          <controlProperties>
+            <bold>true</bold>
+            <href>40_option_types_index%26bm%3B40_option_types_index.bmml%26bm%3B40_option_types_index.bmml%26bm%3B40_option_types_index.bmml</href>
+            <size>24</size>
+            <text>Update</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="127" y="7" w="-1" h="-1" measuredW="18" measuredH="21" zOrder="1" locked="false" isInGroup="2">
+          <controlProperties>
+            <text>or</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Link" x="160" y="9" w="-1" h="-1" measuredW="43" measuredH="21" zOrder="2" locked="false" isInGroup="2">
+          <controlProperties>
+            <text>cancel</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="3" controlTypeID="__group__" x="60" y="140" w="402" h="265" measuredW="402" measuredH="265" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>spree_edit_option_type</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Title" x="3" y="0" w="-1" h="-1" measuredW="210" measuredH="33" zOrder="0" locked="false" isInGroup="3">
+          <controlProperties>
+            <size>24</size>
+            <text>Editing%20Option%20Type</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="0" y="45" w="51" h="38" measuredW="40" measuredH="21" zOrder="1" locked="false" isInGroup="3">
+          <controlProperties>
+            <text>Name</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::TextInput" x="147" y="75" w="255" h="-1" measuredW="39" measuredH="27" zOrder="2" locked="false" isInGroup="3">
+          <controlProperties>
+            <text>Size</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::TextInput" x="147" y="41" w="255" h="-1" measuredW="75" measuredH="27" zOrder="3" locked="false" isInGroup="3">
+          <controlProperties>
+            <text>tshirt_size</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="com.balsamiq.mockups::ComboBox" x="147" y="146" w="247" h="-1" measuredW="162" measuredH="23" zOrder="4" locked="false" isInGroup="3">
+          <controlProperties>
+            <text>TShirtSizeSkuStrategy</text>
+          </controlProperties>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::ComboBox" x="147" y="108" w="255" h="-1" measuredW="108" measuredH="23" zOrder="5" locked="false" isInGroup="3">
+          <controlProperties>
+            <bold>false</bold>
+            <text>Fixed%20Amount</text>
+          </controlProperties>
+        </control>
+        <control controlID="6" controlTypeID="com.balsamiq.mockups::Label" x="0" y="75" w="127" h="18" measuredW="78" measuredH="21" zOrder="6" locked="false" isInGroup="3">
+          <controlProperties>
+            <text>Presentation</text>
+          </controlProperties>
+        </control>
+        <control controlID="7" controlTypeID="com.balsamiq.mockups::Label" x="0" y="108" w="124" h="26" measuredW="97" measuredH="21" zOrder="7" locked="false" isInGroup="3">
+          <controlProperties>
+            <text>Pricing%20Strategy</text>
+          </controlProperties>
+        </control>
+        <control controlID="8" controlTypeID="com.balsamiq.mockups::Label" x="0" y="146" w="131" h="21" measuredW="81" measuredH="21" zOrder="8" locked="false" isInGroup="3">
+          <controlProperties>
+            <text>Sku%20Strategy</text>
+          </controlProperties>
+        </control>
+        <control controlID="9" controlTypeID="com.balsamiq.mockups::Label" x="0" y="184" w="145" h="26" measuredW="114" measuredH="21" zOrder="9" locked="false" isInGroup="3">
+          <controlProperties>
+            <text>Inventory%20Strategy</text>
+          </controlProperties>
+        </control>
+        <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="6" y="219" w="111" h="46" measuredW="168" measuredH="21" zOrder="10" locked="false" isInGroup="3">
+          <controlProperties>
+            <text>Allow%20Multiple%20Option%20Values%3F</text>
+          </controlProperties>
+        </control>
+        <control controlID="11" controlTypeID="com.balsamiq.mockups::ComboBox" x="147" y="185" w="247" h="-1" measuredW="61" measuredH="23" zOrder="11" locked="false" isInGroup="3">
+          <controlProperties>
+            <text>None</text>
+          </controlProperties>
+        </control>
+        <control controlID="12" controlTypeID="com.balsamiq.mockups::CheckBox" x="154" y="223" w="83" h="29" measuredW="26" measuredH="22" zOrder="12" locked="false" isInGroup="3">
+          <controlProperties>
+            <text/>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>

@@ -1,0 +1,27 @@
+<mockup version="1.0" skin="sketch" measuredW="792" measuredH="287" mockupW="791" mockupH="284">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::DataGrid" x="22" y="202" w="-1" h="-1" measuredW="742" measuredH="85" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Name%2CPresentation%2CPricing%20Strategy%2CSku%20Strategy%2CInventory%20Strategy%2CSelect%20Multiple%3F%2C%0Apizza_size%2CSize%2CFixed%20Amount%2CN/A%2CN/A%2C%5B%5D%2CEdit%20%7C%20Delete%0Atshirt_size%2CSize%2CFixed%20Amount%2CTShirtSizeSkuStrategy%2CN/A%2C%5B%5D%2CEdit%20%7C%20Delete%0A%7B25L%2C%202L%2C%200C%2C%200C%2C0C%2C0C%2C0C%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Title" x="22" y="154" w="-1" h="-1" measuredW="146" measuredH="33" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>24</size>
+        <text>Option%20Types</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="669" y="156" w="-1" h="-1" measuredW="123" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>50_new_pizza_topping_option_type%26bm%3B50_new_pizza_topping_option_type.bmml%26bm%3B50_new_pizza_topping_option_type.bmml%26bm%3B50_new_pizza_topping_option_type.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22668%2C153%2C791%2C180%22%20href%3D%2250_new_pizza_topping_option_type.bmml%22%20alt%3D%2250_new_pizza_topping_option_type%22%20id%3D%224%22/%3E</map>
+        <text>New%20Option%20Type</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Component" x="1" y="3" w="612" h="121" measuredW="612" measuredH="121" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#spree_top_nav</src>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

@@ -1,0 +1,247 @@
+<mockup version="1.0" skin="sketch" measuredW="1412" measuredH="787" mockupW="1401" mockupH="753">
+  <controls>
+    <control controlID="1" controlTypeID="__group__" x="277" y="86" w="235" h="70" measuredW="235" measuredH="70" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Tab%20Multi-line%20Selected</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="235" h="63" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="1">
+          <controlProperties>
+            <markup>false</markup>
+            <shape>rectangle</shape>
+            <text>Tab%20Label%0Aon%20two%20lines</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="60" w="233" h="10" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="1">
+          <controlProperties>
+            <borderStyle>none</borderStyle>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="2" controlTypeID="__group__" x="33" y="86" w="235" h="63" measuredW="235" measuredH="63" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Tab%20Multi-line</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="235" h="63" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="2">
+          <controlProperties>
+            <color>13421772</color>
+            <markup>false</markup>
+            <shape>rectangle</shape>
+            <text>Tab%20Label%0Aon%20two%20lines</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::SubTitle" x="33" y="34" w="-1" h="-1" measuredW="253" measuredH="33" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>2848996</color>
+        <text>Horizontal%20Tab%20Symbols</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::SubTitle" x="33" y="196" w="-1" h="-1" measuredW="107" measuredH="33" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>2848996</color>
+        <text>Examples</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::StickyNote" x="1109" y="360" w="303" h="427" measuredW="109" measuredH="123" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <size>14</size>
+        <text>%7Bcolor%3A%23ff0000%7DAbout%7Bcolor%7D%0AThis%20is%20a%20symbol%20library%20for%20creating%20multi-line%20tabs.%20%0A%20%0ATo%20use%2C%20add%20tabs%20to%20your%20canvas.%20Override%20colors%20as%20necessary.%20Align%20all%20tabs%20to%20top.%20To%20create%20a%20bottom%20border%20on%20the%20tab%20bar%2C%20position%20a%20horizontal%20rule%20BEHIND%20the%20set%20of%20tabs.%20%0A%20%0A%7Bcolor%3A%23ff0000%7DInstallation%7Bcolor%7D%0ATo%20use%20as%20a%20symbol%20library%2C%20add%20to%20your%20account%20assets%20or%20to%20a%20project%20assets%20folder.%0A%20%0A%7Bcolor%3A%23ff0000%7DVersion%20History%7Bcolor%7D%0ACreated%20by%20Balsamiq%20on%208%20Mar%202011.</text>
+      </controlProperties>
+    </control>
+    <control controlID="18" controlTypeID="__group__" x="773" y="87" w="245" h="63" measuredW="245" measuredH="63" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Tab%20Vertical%20Multi-line%20Selected</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="242" h="63" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="18">
+          <controlProperties>
+            <align>left</align>
+            <markup>false</markup>
+            <shape>rectangle</shape>
+            <text>Tab%20Label%0Aon%20two%20lines</text>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Canvas" x="235" y="0" w="10" h="63" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="18">
+          <controlProperties>
+            <borderStyle>none</borderStyle>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="22" controlTypeID="__group__" x="11" y="233" w="1401" h="78" measuredW="1401" measuredH="78" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Horizontal%20Tab%20Bar</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::HRule" x="0" y="66" w="1401" h="-1" measuredW="100" measuredH="5" zOrder="0" locked="false" isInGroup="22"/>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::RoundButton" x="961" y="0" w="235" h="70" measuredW="32" measuredH="32" zOrder="1" locked="false" isInGroup="22">
+          <controlProperties>
+            <color>13421772</color>
+            <markup>false</markup>
+            <shape>rectangle</shape>
+            <text>Tab%20Label%0Aon%20two%20lines</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::RoundButton" x="491" y="0" w="235" h="70" measuredW="32" measuredH="32" zOrder="2" locked="false" isInGroup="22">
+          <controlProperties>
+            <color>13421772</color>
+            <markup>false</markup>
+            <shape>rectangle</shape>
+            <text>Tab%20Label%0Aon%20two%20lines</text>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::RoundButton" x="726" y="0" w="235" h="70" measuredW="32" measuredH="32" zOrder="3" locked="false" isInGroup="22">
+          <controlProperties>
+            <color>13421772</color>
+            <markup>false</markup>
+            <shape>rectangle</shape>
+            <text>Tab%20Label%0Aon%20two%20lines</text>
+          </controlProperties>
+        </control>
+        <control controlID="4" controlTypeID="__group__" x="256" y="0" w="235" h="78" measuredW="235" measuredH="78" zOrder="4" locked="false" isInGroup="22">
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="235" h="70" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="4">
+              <controlProperties>
+                <markup>false</markup>
+                <shape>rectangle</shape>
+                <text>Tab%20Label%0Aon%20two%20lines</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Canvas" x="0" y="67" w="233" h="11" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="4">
+              <controlProperties>
+                <borderStyle>none</borderStyle>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="5" controlTypeID="com.balsamiq.mockups::RoundButton" x="22" y="0" w="235" h="70" measuredW="32" measuredH="32" zOrder="5" locked="false" isInGroup="22">
+          <controlProperties>
+            <color>13421772</color>
+            <markup>false</markup>
+            <shape>rectangle</shape>
+            <text>Tab%20Label%0Aon%20two%20lines</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="23" controlTypeID="__group__" x="33" y="351" w="245" h="376" measuredW="245" measuredH="376" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Vertical%20Tab%20Bar</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="__group__" x="0" y="29" w="235" h="64" measuredW="235" measuredH="64" zOrder="0" locked="false" isInGroup="23">
+          <controlProperties>
+            <controlName/>
+          </controlProperties>
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="235" h="64" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="0">
+              <controlProperties>
+                <align>left</align>
+                <color>13421772</color>
+                <markup>false</markup>
+                <shape>rectangle</shape>
+                <text>Tab%20Label%0Aon%20two%20lines</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="1" controlTypeID="__group__" x="0" y="157" w="235" h="64" measuredW="235" measuredH="64" zOrder="1" locked="false" isInGroup="23">
+          <controlProperties>
+            <controlName/>
+          </controlProperties>
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="235" h="64" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="1">
+              <controlProperties>
+                <align>left</align>
+                <color>13421772</color>
+                <markup>false</markup>
+                <shape>rectangle</shape>
+                <text>Tab%20Label%0Aon%20two%20lines</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="2" controlTypeID="__group__" x="0" y="221" w="235" h="64" measuredW="235" measuredH="64" zOrder="2" locked="false" isInGroup="23">
+          <controlProperties>
+            <controlName/>
+          </controlProperties>
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="235" h="64" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="2">
+              <controlProperties>
+                <align>left</align>
+                <color>13421772</color>
+                <markup>false</markup>
+                <shape>rectangle</shape>
+                <text>Tab%20Label%0Aon%20two%20lines</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::VRule" x="230" y="0" w="-1" h="376" measuredW="5" measuredH="100" zOrder="3" locked="false" isInGroup="23"/>
+        <control controlID="4" controlTypeID="__group__" x="0" y="284" w="235" h="64" measuredW="235" measuredH="64" zOrder="4" locked="false" isInGroup="23">
+          <controlProperties>
+            <controlName/>
+          </controlProperties>
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="235" h="64" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="4">
+              <controlProperties>
+                <align>left</align>
+                <color>13421772</color>
+                <markup>false</markup>
+                <shape>rectangle</shape>
+                <text>Tab%20Label%0Aon%20two%20lines</text>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="5" controlTypeID="__group__" x="0" y="93" w="245" h="64" measuredW="245" measuredH="64" zOrder="5" locked="false" isInGroup="23">
+          <controlProperties>
+            <controlName/>
+          </controlProperties>
+          <groupChildrenDescriptors>
+            <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="242" h="64" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="5">
+              <controlProperties>
+                <align>left</align>
+                <markup>false</markup>
+                <shape>rectangle</shape>
+                <text>Tab%20Label%0Aon%20two%20lines</text>
+              </controlProperties>
+            </control>
+            <control controlID="1" controlTypeID="com.balsamiq.mockups::Canvas" x="235" y="0" w="10" h="64" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="5">
+              <controlProperties>
+                <borderStyle>none</borderStyle>
+              </controlProperties>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="24" controlTypeID="__group__" x="533" y="86" w="235" h="63" measuredW="235" measuredH="63" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Tab%20Vertical%20Multi-line</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="235" h="63" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="24">
+          <controlProperties>
+            <align>left</align>
+            <color>13421772</color>
+            <markup>false</markup>
+            <shape>rectangle</shape>
+            <text>Tab%20Label%0Aon%20two%20lines</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::SubTitle" x="533" y="34" w="-1" h="-1" measuredW="231" measuredH="33" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>2848996</color>
+        <text>Vertical%20Tab%20Symbols</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

@@ -1,0 +1,71 @@
+<mockup version="1.0" skin="sketch" measuredW="1083" measuredH="677" mockupW="1082" mockupH="676">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::Component" x="1" y="1" w="612" h="121" measuredW="612" measuredH="121" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#spree_top_nav</src>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Title" x="61" y="171" w="-1" h="-1" measuredW="309" measuredH="33" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>24</size>
+        <text>Editing%20Product%20Funky%20T-Shirt</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="__group__" x="767" y="614" w="304" h="63" measuredW="304" measuredH="63" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <controlName>Tab%20Vertical%20Multi-line</controlName>
+      </controlProperties>
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::RoundButton" x="0" y="0" w="304" h="63" measuredW="32" measuredH="32" zOrder="0" locked="false" isInGroup="9">
+          <controlProperties>
+            <align>left</align>
+            <color>13421772</color>
+            <markup>false</markup>
+            <shape>rectangle</shape>
+            <text>Taxons</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Component" x="767" y="171" w="316" h="475" measuredW="316" measuredH="475" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <override controlID="0" x="0" y="118" w="303" h="81"/>
+        <override controlID="1" x="0" y="198" w="303" h="81"/>
+        <override controlID="2" x="0" y="37" w="303" h="81"/>
+        <override controlID="3" x="297" y="0" w="5" h="475"/>
+        <override controlID="4" x="0" y="361" w="303" h="81"/>
+        <override controlID="5" x="0" y="279" w="316" h="81"/>
+        <override controlID="5:0" x="0" y="0" w="312" h="81">
+          <text>Option%20Types</text>
+        </override>
+        <override controlID="5:1" x="303" y="0" w="13" h="81"/>
+        <override controlID="0:0" x="0" y="0" w="303" h="81">
+          <text>Images</text>
+        </override>
+        <override controlID="4:0" x="0" y="0" w="303" h="81"/>
+        <override controlID="2:0" x="0" y="0" w="303" h="81">
+          <text>Product%20Details</text>
+        </override>
+        <override controlID="1:0" x="0" y="0" w="303" h="81"/>
+        <src>./assets/symbols.bmml#Product Detail Tab Bar</src>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::DataGrid" x="46" y="204" w="349" h="25" measuredW="138" measuredH="25" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Name%2CPresentation%0A%7B25L%2C%2025L%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::Label" x="61" y="237" w="45" h="25" measuredW="35" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>None</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::Link" x="60" y="268" w="-1" h="-1" measuredW="101" measuredH="21" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <href>93_select_product_funky_tshirt_option_types%26bm%3B93_select_product_funky_tshirt_option_types.bmml%26bm%3B93_select_product_funky_tshirt_option_types.bmml%26bm%3B93_select_product_funky_tshirt_option_types.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2259%2C267%2C160%2C288%22%20href%3D%2293_select_product_funky_tshirt_option_types.bmml%22%20alt%3D%2293_select_product_funky_tshirt_option_types%22%20id%3D%2214%22/%3E</map>
+        <text>Add%20Option%20Type</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

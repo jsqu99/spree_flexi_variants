@@ -1,8 +1,8 @@
 <mockup version="1.0" skin="sketch" measuredW="808" measuredH="232" mockupW="779" mockupH="229">
   <controls>
-    <control controlID="0" controlTypeID="com.balsamiq.mockups::DataGrid" x="38" y="197" w="681" h="35" measuredW="587" measuredH="25" zOrder="0" locked="false" isInGroup="-1">
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::DataGrid" x="38" y="197" w="681" h="35" measuredW="713" measuredH="25" zOrder="0" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Name%2CPresentation%2CPricing%20Strategy%2CSku%20Strategy%2CInventory%20Strategy%2CSelect%20Multiple%3F%2C%0A%7B25L%2C%202L%2C%200C%2C%200C%2C0C%2C0C%2C0C%7D</text>
+        <text>Name%2CPresentation%2CPricing%20Strategy%2CSku%20Strategy%2CInventory%20Strategy%2CMultiple%3F%2CCust%20Text%3F%2C%20Cust%20Image%3F%0A%7B25L%2C%202L%2C%200C%2C%200C%2C0C%2C0C%2C0C%2C0C%2C0C%7D</text>
       </controlProperties>
     </control>
     <control controlID="1" controlTypeID="com.balsamiq.mockups::Title" x="38" y="149" w="-1" h="-1" measuredW="146" measuredH="33" zOrder="1" locked="false" isInGroup="-1">

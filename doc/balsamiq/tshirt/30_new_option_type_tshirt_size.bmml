@@ -1,4 +1,4 @@
-<mockup version="1.0" skin="sketch" measuredW="939" measuredH="640" mockupW="939" mockupH="627">
+<mockup version="1.0" skin="sketch" measuredW="939" measuredH="699" mockupW="939" mockupH="686">
   <controls>
     <control controlID="6" controlTypeID="com.balsamiq.mockups::Title" x="26" y="149" w="-1" h="-1" measuredW="146" measuredH="33" zOrder="0" locked="false" isInGroup="-1">
       <controlProperties>
@@ -67,7 +67,7 @@
         <text/>
       </controlProperties>
     </control>
-    <control controlID="39" controlTypeID="com.balsamiq.mockups::FieldSet" x="36" y="189" w="504" h="408" measuredW="200" measuredH="170" zOrder="14" locked="false" isInGroup="-1">
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::FieldSet" x="26" y="201" w="504" h="426" measuredW="200" measuredH="170" zOrder="14" locked="false" isInGroup="-1">
       <controlProperties>
         <backgroundAlpha>0</backgroundAlpha>
         <text>New%20Option%20Type</text>
@@ -78,9 +78,9 @@
         <src>./assets/symbols.bmml#spree_top_nav</src>
       </controlProperties>
     </control>
-    <control controlID="50" controlTypeID="com.balsamiq.mockups::Component" x="220" y="605" w="211" h="35" measuredW="211" measuredH="35" zOrder="13" locked="false" isInGroup="-1">
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::Component" x="162" y="664" w="211" h="35" measuredW="211" measuredH="35" zOrder="13" locked="false" isInGroup="-1">
       <controlProperties>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22220%2C593%2C340%2C627%22%20href%3D%2233_edit_tshirt_size_option_type.bmml%22%20alt%3D%2233_edit_tshirt_size_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22220%2C593%2C340%2C627%22%20href%3D%2230_edit_tshirt_size_option_type.bmml%22%20alt%3D%2230_edit_tshirt_size_option_type%22%20id%3D%220%22/%3E</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22162%2C652%2C282%2C686%22%20href%3D%2233_edit_tshirt_size_option_type.bmml%22%20alt%3D%2233_edit_tshirt_size_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22162%2C652%2C282%2C686%22%20href%3D%2233_edit_tshirt_size_option_type.bmml%22%20alt%3D%2233_edit_tshirt_size_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22162%2C652%2C282%2C686%22%20href%3D%2233_edit_tshirt_size_option_type.bmml%22%20alt%3D%2233_edit_tshirt_size_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22162%2C652%2C282%2C686%22%20href%3D%2233_edit_tshirt_size_option_type.bmml%22%20alt%3D%2233_edit_tshirt_size_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22162%2C652%2C282%2C686%22%20href%3D%2233_edit_tshirt_size_option_type.bmml%22%20alt%3D%2233_edit_tshirt_size_option_type%22%20id%3D%220%22/%3E</map>
         <override controlID="0">
           <href>33_edit_tshirt_size_option_type%26bm%3B33_edit_tshirt_size_option_type.bmml%26bm%3B33_edit_tshirt_size_option_type.bmml%26bm%3B33_edit_tshirt_size_option_type.bmml</href>
           <text>Create</text>
@@ -88,11 +88,36 @@
         <src>./assets/symbols.bmml#spree_create_or_cancel</src>
       </controlProperties>
     </control>
-    <control controlID="51" controlTypeID="com.balsamiq.mockups::StickyNote" x="739" y="290" w="200" h="59" measuredW="109" measuredH="123" zOrder="16" locked="false" isInGroup="-1">
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::StickyNote" x="739" y="290" w="200" h="60" measuredW="109" measuredH="123" zOrder="16" locked="false" isInGroup="-1">
       <controlProperties>
         <text>This%20option%20affects%20price</text>
       </controlProperties>
     </control>
     <control controlID="52" controlTypeID="com.balsamiq.mockups::Arrow" x="463" y="315" w="279" h="10" measuredW="150" measuredH="100" zOrder="17" locked="false" isInGroup="-1"/>
+    <control controlID="53" controlTypeID="com.balsamiq.mockups::Label" x="61" y="582" w="111" h="46" measuredW="170" measuredH="21" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Allow%20Custom%20Option%20Values%3F</text>
+      </controlProperties>
+    </control>
+    <control controlID="58" controlTypeID="com.balsamiq.mockups::CheckBox" x="208" y="581" w="83" h="29" measuredW="26" measuredH="22" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="59" controlTypeID="com.balsamiq.mockups::CheckBox" x="335" y="580" w="83" h="29" measuredW="26" measuredH="22" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="60" controlTypeID="com.balsamiq.mockups::Label" x="231" y="583" w="51" h="24" measuredW="30" measuredH="21" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>text</text>
+      </controlProperties>
+    </control>
+    <control controlID="61" controlTypeID="com.balsamiq.mockups::Label" x="357" y="583" w="51" h="24" measuredW="40" measuredH="21" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>image</text>
+      </controlProperties>
+    </control>
   </controls>
 </mockup>

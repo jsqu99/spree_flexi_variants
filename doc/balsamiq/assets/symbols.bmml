@@ -85,7 +85,7 @@
         </control>
       </groupChildrenDescriptors>
     </control>
-    <control controlID="3" controlTypeID="__group__" x="60" y="140" w="402" h="265" measuredW="402" measuredH="265" zOrder="3" locked="false" isInGroup="-1">
+    <control controlID="3" controlTypeID="__group__" x="60" y="140" w="402" h="306" measuredW="402" measuredH="306" zOrder="3" locked="false" isInGroup="-1">
       <controlProperties>
         <controlName>spree_edit_option_type</controlName>
       </controlProperties>
@@ -147,14 +147,39 @@
             <text>Allow%20Multiple%20Option%20Values%3F</text>
           </controlProperties>
         </control>
-        <control controlID="12" controlTypeID="com.balsamiq.mockups::CheckBox" x="154" y="223" w="83" h="29" measuredW="26" measuredH="22" zOrder="11" locked="false" isInGroup="3">
+        <control controlID="14" controlTypeID="com.balsamiq.mockups::ComboBox" x="147" y="187" w="247" h="-1" measuredW="227" measuredH="23" zOrder="11" locked="false" isInGroup="3">
+          <controlProperties>
+            <text>TShirtSizeColorInventoryStrategy</text>
+          </controlProperties>
+        </control>
+        <control controlID="17" controlTypeID="com.balsamiq.mockups::Label" x="3" y="260" w="111" h="46" measuredW="170" measuredH="21" zOrder="12" locked="false" isInGroup="3">
+          <controlProperties>
+            <text>Allow%20Custom%20Option%20Values%3F</text>
+          </controlProperties>
+        </control>
+        <control controlID="18" controlTypeID="com.balsamiq.mockups::CheckBox" x="150" y="259" w="83" h="29" measuredW="26" measuredH="22" zOrder="13" locked="false" isInGroup="3">
           <controlProperties>
             <text/>
           </controlProperties>
         </control>
-        <control controlID="14" controlTypeID="com.balsamiq.mockups::ComboBox" x="147" y="187" w="247" h="-1" measuredW="227" measuredH="23" zOrder="12" locked="false" isInGroup="3">
+        <control controlID="19" controlTypeID="com.balsamiq.mockups::CheckBox" x="277" y="258" w="83" h="29" measuredW="26" measuredH="22" zOrder="14" locked="false" isInGroup="3">
           <controlProperties>
-            <text>TShirtSizeColorInventoryStrategy</text>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="20" controlTypeID="com.balsamiq.mockups::Label" x="173" y="261" w="51" h="24" measuredW="30" measuredH="21" zOrder="15" locked="false" isInGroup="3">
+          <controlProperties>
+            <text>text</text>
+          </controlProperties>
+        </control>
+        <control controlID="21" controlTypeID="com.balsamiq.mockups::Label" x="299" y="261" w="51" h="24" measuredW="40" measuredH="21" zOrder="16" locked="false" isInGroup="3">
+          <controlProperties>
+            <text>image</text>
+          </controlProperties>
+        </control>
+        <control controlID="22" controlTypeID="com.balsamiq.mockups::CheckBox" x="147" y="225" w="-1" h="-1" measuredW="26" measuredH="22" zOrder="17" locked="false" isInGroup="3">
+          <controlProperties>
+            <text/>
           </controlProperties>
         </control>
       </groupChildrenDescriptors>

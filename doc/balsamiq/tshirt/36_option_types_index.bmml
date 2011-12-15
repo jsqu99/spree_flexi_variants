@@ -1,8 +1,8 @@
-<mockup version="1.0" skin="sketch" measuredW="990" measuredH="287" mockupW="989" mockupH="284">
+<mockup version="1.0" skin="sketch" measuredW="1122" measuredH="287" mockupW="1121" mockupH="284">
   <controls>
-    <control controlID="0" controlTypeID="com.balsamiq.mockups::DataGrid" x="22" y="202" w="-1" h="-1" measuredW="968" measuredH="85" zOrder="0" locked="false" isInGroup="-1">
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::DataGrid" x="22" y="202" w="-1" h="-1" measuredW="1100" measuredH="85" zOrder="0" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Name%2CPresentation%2CPricing%20Strategy%2CSku%20Strategy%2CInventory%20Strategy%2CSelect%20Multiple%3F%2C%0Atshirt_color%2CColor%2CN/A%2CTShirtColorSkuStrategy%2CTShirtSizeColorInventoryStrategy%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2CNo%2CEdit%20%7C%20Delete%0Atshirt_size%2CSize%2CFixed%20Amount%2CTShirtSizeSkuStrategy%2CTShirtSizeColorInventoryStrategy%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2CNo%2CEdit%20%7C%20Delete%0A%7B25L%2C%202L%2C%200C%2C%200C%2C40L%2C0C%2C0C%7D</text>
+        <text>Name%2CPresentation%2CPricing%20Strategy%2CSku%20Strategy%2CInventory%20Strategy%2CMultiple%3F%2CCust%20Text%3F%2CCust%20Image%3F%2C%0Atshirt_color%2CColor%2CN/A%2CTShirtColorSkuStrategy%2CTShirtSizeColorInventoryStrategy%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2CNo%2CNo%2CNo%2CEdit%20%7C%20Delete%0Atshirt_size%2CSize%2CFixed%20Amount%2CTShirtSizeSkuStrategy%2CTShirtSizeColorInventoryStrategy%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2CNo%2CNo%2CNo%2CEdit%20%7C%20Delete%0A%7B25L%2C%202L%2C%200C%2C%200C%2C40L%2C0C%2C0C%2C0C%2C0C%7D</text>
       </controlProperties>
     </control>
     <control controlID="1" controlTypeID="com.balsamiq.mockups::Title" x="22" y="154" w="-1" h="-1" measuredW="146" measuredH="33" zOrder="1" locked="false" isInGroup="-1">
@@ -18,12 +18,22 @@
     </control>
     <control controlID="5" controlTypeID="com.balsamiq.mockups::Component" x="1" y="3" w="612" h="121" measuredW="612" measuredH="121" zOrder="3" locked="false" isInGroup="-1">
       <controlProperties>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2211%2C100%2C67%2C121%22%20href%3D%2250_listing_products_1.bmml%22%20alt%3D%2250_listing_products_1%22%20id%3D%220_0%22/%3E%0A%3Carea%20shape%3D%22rect%22%20coords%3D%2211%2C100%2C67%2C121%22%20href%3D%2250_listing_products_1.bmml%22%20alt%3D%2250_listing_products_1%22%20id%3D%220_0%22/%3E%0A</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2211%2C100%2C67%2C121%22%20href%3D%2250_listing_products_1.bmml%22%20alt%3D%2250_listing_products_1%22%20id%3D%220_0%22/%3E%0A%3Carea%20shape%3D%22rect%22%20coords%3D%2211%2C100%2C67%2C121%22%20href%3D%2250_listing_products_1.bmml%22%20alt%3D%2250_listing_products_1%22%20id%3D%220_0%22/%3E%0A%3Carea%20shape%3D%22rect%22%20coords%3D%2211%2C100%2C67%2C121%22%20href%3D%2250_listing_products_1.bmml%22%20alt%3D%2250_listing_products_1%22%20id%3D%220_0%22/%3E%0A%3Carea%20shape%3D%22rect%22%20coords%3D%2211%2C100%2C67%2C121%22%20href%3D%2250_listing_products_1.bmml%22%20alt%3D%2250_listing_products_1%22%20id%3D%220_0%22/%3E%0A%3Carea%20shape%3D%22rect%22%20coords%3D%2211%2C100%2C67%2C121%22%20href%3D%2250_listing_products_1.bmml%22%20alt%3D%2250_listing_products_1%22%20id%3D%220_0%22/%3E%0A%3Carea%20shape%3D%22rect%22%20coords%3D%2211%2C100%2C67%2C121%22%20href%3D%2250_listing_products_1.bmml%22%20alt%3D%2250_listing_products_1%22%20id%3D%220_0%22/%3E%0A%3Carea%20shape%3D%22rect%22%20coords%3D%2211%2C100%2C67%2C121%22%20href%3D%2250_listing_products_1.bmml%22%20alt%3D%2250_listing_products_1%22%20id%3D%220_0%22/%3E%0A%3Carea%20shape%3D%22rect%22%20coords%3D%2211%2C100%2C67%2C121%22%20href%3D%2250_listing_products_1.bmml%22%20alt%3D%2250_listing_products_1%22%20id%3D%220_0%22/%3E%0A%3Carea%20shape%3D%22rect%22%20coords%3D%2211%2C100%2C67%2C121%22%20href%3D%2250_listing_products_1.bmml%22%20alt%3D%2250_listing_products_1%22%20id%3D%220_0%22/%3E%0A%3Carea%20shape%3D%22rect%22%20coords%3D%2211%2C100%2C67%2C121%22%20href%3D%2250_listing_products_1.bmml%22%20alt%3D%2250_listing_products_1%22%20id%3D%220_0%22/%3E%0A</map>
         <override controlID="0">
           <hrefs>50_listing_products_1%26bm%3B50_listing_products_1.bmml%26bm%3B50_listing_products_1.bmml%26bm%3B50_listing_products_1.bmml%2C%2C%2C%2C</hrefs>
           <text>Products%2C%20Option%20Types%2CProperties%2CPrototypes%2CProduct%20Groups</text>
         </override>
         <src>./assets/symbols.bmml#spree_top_nav</src>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Link" x="742" y="226" w="-1" h="-1" measuredW="57" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>configure</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Link" x="742" y="259" w="-1" h="-1" measuredW="57" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>configure</text>
       </controlProperties>
     </control>
   </controls>

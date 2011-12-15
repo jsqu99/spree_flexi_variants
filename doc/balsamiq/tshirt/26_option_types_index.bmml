@@ -13,8 +13,8 @@
     </control>
     <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="669" y="156" w="-1" h="-1" measuredW="123" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
       <controlProperties>
-        <href>option_types_new_pizza_topping%26bm%3Boption_types_new_pizza_topping.bmml%26bm%3Boption_types_new_pizza_topping.bmml%26bm%3Boption_types_new_pizza_topping.bmml</href>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22668%2C153%2C791%2C180%22%20href%3D%22option_types_new_pizza_topping.bmml%22%20alt%3D%22option_types_new_pizza_topping%22%20id%3D%224%22/%3E</map>
+        <href>30_new_option_type_tshirt_size%26bm%3B30_new_option_type_tshirt_size.bmml%26bm%3B30_new_option_type_tshirt_size.bmml%26bm%3B30_new_option_type_tshirt_size.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22668%2C153%2C791%2C180%22%20href%3D%2230_new_option_type_tshirt_size.bmml%22%20alt%3D%2230_new_option_type_tshirt_size%22%20id%3D%224%22/%3E</map>
         <text>New%20Option%20Type</text>
       </controlProperties>
     </control>

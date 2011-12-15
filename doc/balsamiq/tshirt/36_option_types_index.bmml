@@ -13,19 +13,17 @@
     </control>
     <control controlID="4" controlTypeID="com.balsamiq.mockups::Button" x="669" y="156" w="-1" h="-1" measuredW="123" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
       <controlProperties>
-        <href>option_types_new_pizza_topping%26bm%3Boption_types_new_pizza_topping.bmml%26bm%3Boption_types_new_pizza_topping.bmml%26bm%3Boption_types_new_pizza_topping.bmml</href>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22668%2C153%2C791%2C180%22%20href%3D%22option_types_new_pizza_topping.bmml%22%20alt%3D%22option_types_new_pizza_topping%22%20id%3D%224%22/%3E</map>
         <text>New%20Option%20Type</text>
       </controlProperties>
     </control>
     <control controlID="5" controlTypeID="com.balsamiq.mockups::Component" x="1" y="3" w="612" h="121" measuredW="612" measuredH="121" zOrder="3" locked="false" isInGroup="-1">
       <controlProperties>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2211%2C100%2C67%2C121%22%20href%3D%2250_listing_products_1.bmml%22%20alt%3D%2250_listing_products_1%22%20id%3D%220_0%22/%3E%0A%3Carea%20shape%3D%22rect%22%20coords%3D%2211%2C100%2C67%2C121%22%20href%3D%2250_listing_products_1.bmml%22%20alt%3D%2250_listing_products_1%22%20id%3D%220_0%22/%3E%0A</map>
+        <override controlID="0">
+          <hrefs>50_listing_products_1%26bm%3B50_listing_products_1.bmml%26bm%3B50_listing_products_1.bmml%26bm%3B50_listing_products_1.bmml%2C%2C%2C%2C</hrefs>
+          <text>Products%2C%20Option%20Types%2CProperties%2CPrototypes%2CProduct%20Groups</text>
+        </override>
         <src>./assets/symbols.bmml#spree_top_nav</src>
-      </controlProperties>
-    </control>
-    <control controlID="6" controlTypeID="com.balsamiq.mockups::Link" x="735" y="258" w="-1" h="-1" measuredW="57" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>configure</text>
       </controlProperties>
     </control>
   </controls>

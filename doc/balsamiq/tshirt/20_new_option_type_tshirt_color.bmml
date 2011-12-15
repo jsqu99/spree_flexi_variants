@@ -80,7 +80,10 @@
     </control>
     <control controlID="50" controlTypeID="com.balsamiq.mockups::Component" x="220" y="605" w="211" h="35" measuredW="211" measuredH="35" zOrder="13" locked="false" isInGroup="-1">
       <controlProperties>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22220%2C593%2C340%2C627%22%20href%3D%2230_edit_tshirt_size_option_type.bmml%22%20alt%3D%2230_edit_tshirt_size_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22220%2C593%2C340%2C627%22%20href%3D%2230_edit_tshirt_size_option_type.bmml%22%20alt%3D%2230_edit_tshirt_size_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22220%2C593%2C340%2C627%22%20href%3D%2230_edit_tshirt_size_option_type.bmml%22%20alt%3D%2230_edit_tshirt_size_option_type%22%20id%3D%220%22/%3E</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22220%2C593%2C340%2C627%22%20href%3D%2223_edit_tshirt_color_option_type.bmml%22%20alt%3D%2223_edit_tshirt_color_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22220%2C593%2C340%2C627%22%20href%3D%2223_edit_tshirt_color_option_type.bmml%22%20alt%3D%2223_edit_tshirt_color_option_type%22%20id%3D%220%22/%3E</map>
+        <override controlID="0">
+          <href>23_edit_tshirt_color_option_type%26bm%3B23_edit_tshirt_color_option_type.bmml%26bm%3B23_edit_tshirt_color_option_type.bmml%26bm%3B23_edit_tshirt_color_option_type.bmml</href>
+        </override>
         <src>./assets/symbols.bmml#spree_create_or_cancel</src>
       </controlProperties>
     </control>

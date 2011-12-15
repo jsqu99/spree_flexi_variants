@@ -30,26 +30,26 @@
     </control>
     <control controlID="11" controlTypeID="com.balsamiq.mockups::Component" x="484" y="171" w="316" h="475" measuredW="316" measuredH="475" zOrder="3" locked="false" isInGroup="-1">
       <controlProperties>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22483%2C449%2C786%2C530%22%20href%3D%2291_edit_funky_product_option_types.bmml%22%20alt%3D%2291_edit_funky_product_option_types%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22483%2C449%2C786%2C530%22%20href%3D%2291_edit_funky_product_option_types.bmml%22%20alt%3D%2291_edit_funky_product_option_types%22%20id%3D%220%22/%3E</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22483%2C449%2C786%2C530%22%20href%3D%2254_edit_funky_product_option_types.bmml%22%20alt%3D%2254_edit_funky_product_option_types%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22483%2C449%2C786%2C530%22%20href%3D%2254_edit_funky_product_option_types.bmml%22%20alt%3D%2254_edit_funky_product_option_types%22%20id%3D%220%22/%3E</map>
         <override controlID="0" x="0" y="118" w="303" h="81"/>
         <override controlID="1" x="0" y="198" w="303" h="81"/>
         <override controlID="2" x="0" y="279" w="303" h="81"/>
         <override controlID="3" x="297" y="0" w="5" h="475"/>
         <override controlID="4" x="0" y="361" w="303" h="81"/>
         <override controlID="5" x="0" y="37" w="316" h="81"/>
-        <override controlID="5:0" x="0" y="0" w="312" h="81">
-          <text>Product%20Details</text>
-        </override>
         <override controlID="5:1" x="303" y="0" w="13" h="81"/>
         <override controlID="0:0" x="0" y="0" w="303" h="81">
           <text>Images</text>
         </override>
-        <override controlID="4:0" x="0" y="0" w="303" h="81"/>
         <override controlID="2:0" x="0" y="0" w="303" h="81">
-          <href>91_edit_funky_product_option_types%26bm%3B91_edit_funky_product_option_types.bmml%26bm%3B91_edit_funky_product_option_types.bmml%26bm%3B91_edit_funky_product_option_types.bmml</href>
+          <href>54_edit_funky_product_option_types%26bm%3B54_edit_funky_product_option_types.bmml%26bm%3B54_edit_funky_product_option_types.bmml%26bm%3B54_edit_funky_product_option_types.bmml</href>
           <text>Option%20Types</text>
         </override>
+        <override controlID="5:0" x="0" y="0" w="312" h="81">
+          <text>Product%20Details</text>
+        </override>
         <override controlID="1:0" x="0" y="0" w="303" h="81"/>
+        <override controlID="4:0" x="0" y="0" w="303" h="81"/>
         <src>./assets/symbols.bmml#Product Detail Tab Bar</src>
       </controlProperties>
     </control>

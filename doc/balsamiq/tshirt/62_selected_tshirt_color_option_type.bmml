@@ -29,18 +29,18 @@
         <override controlID="3" x="154" y="0" w="5" h="475"/>
         <override controlID="4" x="0" y="361" w="157" h="81"/>
         <override controlID="5" x="0" y="279" w="164" h="81"/>
-        <override controlID="5:0" x="0" y="0" w="162" h="81">
-          <text>Option%20Types</text>
-        </override>
         <override controlID="5:1" x="157" y="0" w="7" h="81"/>
         <override controlID="0:0" x="0" y="0" w="157" h="81">
           <text>Images</text>
         </override>
-        <override controlID="4:0" x="0" y="0" w="157" h="81"/>
         <override controlID="2:0" x="0" y="0" w="157" h="81">
           <text>Product%20Details</text>
         </override>
+        <override controlID="5:0" x="0" y="0" w="162" h="81">
+          <text>Option%20Types</text>
+        </override>
         <override controlID="1:0" x="0" y="0" w="157" h="81"/>
+        <override controlID="4:0" x="0" y="0" w="157" h="81"/>
         <src>./assets/symbols.bmml#Product Detail Tab Bar</src>
       </controlProperties>
     </control>
@@ -64,9 +64,14 @@
     </control>
     <control controlID="23" controlTypeID="com.balsamiq.mockups::Component" x="730" y="628" w="65" h="18" measuredW="65" measuredH="18" zOrder="6" locked="false" isInGroup="-1">
       <controlProperties>
-        <override controlID="0" x="0" y="0" w="65" h="18"/>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22729%2C627%2C794%2C645%22%20href%3D%2266_selected_tshirt_size_option_type.bmml%22%20alt%3D%2266_selected_tshirt_size_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22753%2C628%2C794%2C649%22%20href%3D%2266_selected_tshirt_size_option_type.bmml%22%20alt%3D%2266_selected_tshirt_size_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22729%2C627%2C794%2C645%22%20href%3D%2266_selected_tshirt_size_option_type.bmml%22%20alt%3D%2266_selected_tshirt_size_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22753%2C628%2C794%2C649%22%20href%3D%2266_selected_tshirt_size_option_type.bmml%22%20alt%3D%2266_selected_tshirt_size_option_type%22%20id%3D%220%22/%3E</map>
+        <override controlID="0" x="0" y="0" w="65" h="18">
+          <href>66_selected_tshirt_size_option_type%26bm%3B66_selected_tshirt_size_option_type.bmml%26bm%3B66_selected_tshirt_size_option_type.bmml%26bm%3B66_selected_tshirt_size_option_type.bmml</href>
+        </override>
         <override controlID="0:1" x="0" y="0" w="24" h="24"/>
-        <override controlID="0:0" x="24" y="1" w="41" h="21"/>
+        <override controlID="0:0" x="24" y="1" w="41" h="21">
+          <href>66_selected_tshirt_size_option_type%26bm%3B66_selected_tshirt_size_option_type.bmml%26bm%3B66_selected_tshirt_size_option_type.bmml%26bm%3B66_selected_tshirt_size_option_type.bmml</href>
+        </override>
         <src>./assets/symbols.bmml#select</src>
       </controlProperties>
     </control>
@@ -119,6 +124,8 @@
     </control>
     <control controlID="40" controlTypeID="com.balsamiq.mockups::Link" x="341" y="335" w="-1" h="-1" measuredW="57" measuredH="21" zOrder="16" locked="false" isInGroup="-1">
       <controlProperties>
+        <href>63_configure_inventory%26bm%3B63_configure_inventory.bmml%26bm%3B63_configure_inventory.bmml%26bm%3B63_configure_inventory.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22340%2C334%2C397%2C355%22%20href%3D%2263_configure_inventory.bmml%22%20alt%3D%2263_configure_inventory%22%20id%3D%2240%22/%3E</map>
         <text>configure</text>
       </controlProperties>
     </control>

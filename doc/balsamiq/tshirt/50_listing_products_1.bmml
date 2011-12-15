@@ -8,8 +8,6 @@
     </control>
     <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="708" y="173" w="-1" h="-1" measuredW="97" measuredH="27" zOrder="1" locked="false" isInGroup="-1">
       <controlProperties>
-        <href>option_types_new%26bm%3Boption_types_new.bmml%26bm%3Boption_types_new.bmml%26bm%3Boption_types_new.bmml</href>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22701%2C169%2C798%2C196%22%20href%3D%22option_types_new.bmml%22%20alt%3D%22option_types_new%22%20id%3D%222%22/%3E</map>
         <text>New%20Product</text>
       </controlProperties>
     </control>
@@ -29,8 +27,8 @@
     </control>
     <control controlID="5" controlTypeID="com.balsamiq.mockups::Link" x="619" y="236" w="-1" h="-1" measuredW="27" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
       <controlProperties>
-        <href>90_editing_product_funky_tshirt%26bm%3B90_editing_product_funky_tshirt.bmml%26bm%3B90_editing_product_funky_tshirt.bmml%26bm%3B90_editing_product_funky_tshirt.bmml</href>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22612%2C232%2C639%2C253%22%20href%3D%2290_editing_product_funky_tshirt.bmml%22%20alt%3D%2290_editing_product_funky_tshirt%22%20id%3D%225%22/%3E</map>
+        <href>52_editing_product_funky_tshirt%26bm%3B52_editing_product_funky_tshirt.bmml%26bm%3B52_editing_product_funky_tshirt.bmml%26bm%3B52_editing_product_funky_tshirt.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22612%2C232%2C639%2C253%22%20href%3D%2252_editing_product_funky_tshirt.bmml%22%20alt%3D%2252_editing_product_funky_tshirt%22%20id%3D%225%22/%3E</map>
         <text>Edit</text>
       </controlProperties>
     </control>

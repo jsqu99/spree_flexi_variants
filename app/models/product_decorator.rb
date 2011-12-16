@@ -3,7 +3,7 @@ Product.class_eval do
   has_many :ad_hoc_option_types, :after_add => :attach_option_values
 
   # Each exclusion represents a disallowed combination of ad_hoc_option_values
-  has_many :ad_hoc_variant_exclusions
+  has_many :ad_hoc_variant_exclusions, :dependent => :destroy
 
   # allowed customizations
   has_and_belongs_to_many :product_customization_types

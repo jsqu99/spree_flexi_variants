@@ -1,2 +1,16 @@
-"0.60.x" => { :branch => "pre-deface-stable" }
+# this was pre-deface-stable.  Honestly, I'm a bit confused at the moment regarding the differences between pre-deface-stable and spree-0-60-stable
+#
+# there have been many attempts to stay current as spree has progressed
+#
+# One challenge is there was a new railtie calculator registration that caused me to have to create another branch
+#
+# Another was maintaining a deface/non-deface version
+#
+# I'm not sure how much effort I'm going to put in to sorting out these older versions as it's non-trivial.
+#
+# if your are on spree 0.60, try spree-0-60-stable, and if that isn't working, try pre-deface-stable.
+#
+#
+#
+"0.60.x" => { :branch => "spree-0-60-stable" }
 "0.70.x" => { :branch => "master" }

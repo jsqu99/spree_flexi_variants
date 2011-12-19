@@ -1,3 +1,22 @@
+SpreeFlexiVariants
+==================
+
+This is a [spree](http://spreecommerce.com) extension that solves two use cases related to variants.  I call them **Ad Hoc Options** and **Product Customizations**.
+
+Ad Hoc Options
+--------------
+
+Use these when have numerous (possibly price-altering) product options and you don't want to create variants for each combination.
+
+You can also restrict certain combinations of options from coexisting.  These are called **Ad Hoc Exclusions** and are described in more detail in the wiki.
+
+
+Product Customizations
+----------------------
+
+Use these when you want the ability to provide a highly customized product e.g. "Cut to length 5.82cm", "Engrave 'thanks for the memories'", "Upload my image".  Full control over pricing is provided by the Spree calculator mechanism.
+
+
 Version Notes
 =============
 
@@ -28,26 +47,6 @@ The current version does not allow you to later look up the variant and be able 
 
 * Fewer new models!
 
-
-SpreeFlexiVariants
-==================
-
-This is a [spree](http://spreecommerce.com) extension that solves two use cases related to variants.  I call them **Ad Hoc Options** and **Product Customizations**.
-
-Ad Hoc Options
---------------
-
-Use these when have numerous (possibly price-altering) product options and you don't want to create variants for each combination.
-
-You can also restrict certain combinations of options from coexisting.  These are called **Ad Hoc Exclusions** and are described in more detail in the wiki.
-
-
-Product Customizations
-----------------------
-
-Use these when you want the ability to provide a highly customized product e.g. "Cut to length 5.82cm", "Engrave 'thanks for the memories'", "Upload my image".  Full control over pricing is provided by the Spree calculator mechanism.
-
-
 Installation
 ------------
     rails new myapp
@@ -55,6 +54,7 @@ Installation
 
 Add to Gemfile (NOTE: spree master is currently unsupported!  The namespace changes are not yet reflected in this extension).
 
+    # see the notes in Versionfile if you are using an older version of spree
     gem 'spree', :git => 'git://github.com/spree/spree.git', :branch => '0-70-stable'
     gem 'rmagick'
     gem 'carrierwave'

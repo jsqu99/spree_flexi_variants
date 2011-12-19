@@ -1,3 +1,3 @@
 OptionType.class_eval do
-  has_one :ad_hoc_option_type, :dependent => :destroy
+  has_many :ad_hoc_option_types, :dependent => :destroy
 end

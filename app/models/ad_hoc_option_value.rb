@@ -2,6 +2,7 @@
 class AdHocOptionValue < ActiveRecord::Base
   belongs_to :ad_hoc_option_type
   belongs_to :option_value
+  has_many :excluded_ad_hoc_option_values, :dependent => :destroy
   # price_modifier
   alias :option_type :ad_hoc_option_type
 

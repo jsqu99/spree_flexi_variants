@@ -1,0 +1,9 @@
+<mockup version="1.0" skin="sketch" measuredW="522" measuredH="662" mockupW="461" mockupH="442">
+  <controls>
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::Component" x="61" y="220" w="461" h="442" measuredW="461" measuredH="442" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#option_type_form</src>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

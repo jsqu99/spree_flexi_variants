@@ -18,7 +18,7 @@
     </control>
     <control controlID="9" controlTypeID="com.balsamiq.mockups::Component" x="7" y="3" w="612" h="121" measuredW="612" measuredH="121" zOrder="3" locked="false" isInGroup="-1">
       <controlProperties>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2211%2C100%2C67%2C121%22%20href%3D%2280_listing_products_1.bmml%22%20alt%3D%2280_listing_products_1%22%20id%3D%220_0%22/%3E%0A%3Carea%20shape%3D%22rect%22%20coords%3D%2211%2C100%2C67%2C121%22%20href%3D%2280_listing_products_1.bmml%22%20alt%3D%2280_listing_products_1%22%20id%3D%220_0%22/%3E%0A%3Carea%20shape%3D%22rect%22%20coords%3D%2211%2C100%2C67%2C121%22%20href%3D%2280_listing_products_1.bmml%22%20alt%3D%2280_listing_products_1%22%20id%3D%220_0%22/%3E%0A</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2211%2C100%2C67%2C121%22%20href%3D%2280_listing_products_1.bmml%22%20alt%3D%2280_listing_products_1%22%20id%3D%220_0%22/%3E%0A%3Carea%20shape%3D%22rect%22%20coords%3D%2211%2C100%2C67%2C121%22%20href%3D%2280_listing_products_1.bmml%22%20alt%3D%2280_listing_products_1%22%20id%3D%220_0%22/%3E%0A</map>
         <override controlID="0">
           <hrefs>80_listing_products_1%26bm%3B80_listing_products_1.bmml%26bm%3B80_listing_products_1.bmml%26bm%3B80_listing_products_1.bmml%2C%2C%2C%2C</hrefs>
           <text>Products%2C%20Option%20Types%2CProperties%2CPrototypes%2CProduct%20Groups</text>

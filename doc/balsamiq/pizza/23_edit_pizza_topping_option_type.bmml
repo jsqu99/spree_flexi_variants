@@ -1,6 +1,6 @@
-<mockup version="1.0" skin="sketch" measuredW="981" measuredH="710" mockupW="980" mockupH="710">
+<mockup version="1.0" skin="sketch" measuredW="1288" measuredH="710" mockupW="1287" mockupH="710">
   <controls>
-    <control controlID="20" controlTypeID="com.balsamiq.mockups::FieldSet" x="1" y="121" w="590" h="555" measuredW="200" measuredH="170" zOrder="2" locked="false" isInGroup="-1">
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::FieldSet" x="698" y="0" w="590" h="555" measuredW="200" measuredH="170" zOrder="2" locked="false" isInGroup="-1">
       <controlProperties>
         <backgroundAlpha>0</backgroundAlpha>
         <text>Editing%20Option%20Type</text>
@@ -18,7 +18,7 @@
     </control>
     <control controlID="58" controlTypeID="com.balsamiq.mockups::Component" x="36" y="676" w="203" h="34" measuredW="203" measuredH="34" zOrder="1" locked="false" isInGroup="-1">
       <controlProperties>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2235%2C676%2C139%2C710%22%20href%3D%2226_option_types_index.bmml%22%20alt%3D%2226_option_types_index%22%20id%3D%220%22/%3E</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2235%2C676%2C139%2C710%22%20href%3D%2226_option_types_index.bmml%22%20alt%3D%2226_option_types_index%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%2235%2C676%2C139%2C710%22%20href%3D%2226_option_types_index.bmml%22%20alt%3D%2226_option_types_index%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%2235%2C676%2C139%2C710%22%20href%3D%2226_option_types_index.bmml%22%20alt%3D%2226_option_types_index%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%2235%2C676%2C139%2C710%22%20href%3D%2226_option_types_index.bmml%22%20alt%3D%2226_option_types_index%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%2235%2C676%2C139%2C710%22%20href%3D%2226_option_types_index.bmml%22%20alt%3D%2226_option_types_index%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%2235%2C676%2C139%2C710%22%20href%3D%2226_option_types_index.bmml%22%20alt%3D%2226_option_types_index%22%20id%3D%220%22/%3E</map>
         <override controlID="0">
           <href>26_option_types_index%26bm%3B26_option_types_index.bmml%26bm%3B26_option_types_index.bmml%26bm%3B26_option_types_index.bmml</href>
           <text>Update</text>

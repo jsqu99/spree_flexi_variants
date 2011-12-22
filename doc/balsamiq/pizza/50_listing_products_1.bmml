@@ -11,9 +11,9 @@
         <text>New%20Product</text>
       </controlProperties>
     </control>
-    <control controlID="3" controlTypeID="com.balsamiq.mockups::DataGrid" x="61" y="212" w="734" h="55" measuredW="367" measuredH="55" zOrder="2" locked="false" isInGroup="-1">
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::DataGrid" x="61" y="212" w="734" h="55" measuredW="282" measuredH="55" zOrder="2" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Sku%2CName%2CMaster%20Price%0AABC-0001%2CFunky%20TShirts%2C%2414.99%2C%20%7C%20Clone%20%7C%20Delete%0A%7B25L%2C%2025L%2C%2010L%2C%2020C%7D</text>
+        <text>Name%2CMaster%20Price%0AFancy%20Pizza%2C%240.00%2C%20%7C%20Clone%20%7C%20Delete%0A%7B25L%2C%2010L%2C%2020C%7D</text>
       </controlProperties>
     </control>
     <control controlID="4" controlTypeID="com.balsamiq.mockups::Component" x="7" y="4" w="612" h="121" measuredW="612" measuredH="121" zOrder="3" locked="false" isInGroup="-1">
@@ -25,10 +25,10 @@
         <src>./assets/symbols.bmml#spree_top_nav</src>
       </controlProperties>
     </control>
-    <control controlID="5" controlTypeID="com.balsamiq.mockups::Link" x="619" y="236" w="-1" h="-1" measuredW="27" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Link" x="571" y="236" w="-1" h="-1" measuredW="27" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
       <controlProperties>
-        <href>52_editing_product_funky_tshirt%26bm%3B52_editing_product_funky_tshirt.bmml%26bm%3B52_editing_product_funky_tshirt.bmml%26bm%3B52_editing_product_funky_tshirt.bmml</href>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22612%2C232%2C639%2C253%22%20href%3D%2252_editing_product_funky_tshirt.bmml%22%20alt%3D%2252_editing_product_funky_tshirt%22%20id%3D%225%22/%3E</map>
+        <href>52_editing_product_fancy_pizza%26bm%3B52_editing_product_fancy_pizza.bmml%26bm%3B52_editing_product_fancy_pizza.bmml%26bm%3B52_editing_product_fancy_pizza.bmml</href>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22564%2C232%2C591%2C253%22%20href%3D%2252_editing_product_fancy_pizza.bmml%22%20alt%3D%2252_editing_product_fancy_pizza%22%20id%3D%225%22/%3E</map>
         <text>Edit</text>
       </controlProperties>
     </control>

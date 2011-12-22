@@ -5,10 +5,10 @@
         <src>./assets/symbols.bmml#spree_top_nav</src>
       </controlProperties>
     </control>
-    <control controlID="1" controlTypeID="com.balsamiq.mockups::Title" x="61" y="171" w="-1" h="-1" measuredW="309" measuredH="33" zOrder="1" locked="false" isInGroup="-1">
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Title" x="61" y="171" w="-1" h="-1" measuredW="295" measuredH="33" zOrder="1" locked="false" isInGroup="-1">
       <controlProperties>
         <size>24</size>
-        <text>Editing%20Product%20Funky%20T-Shirt</text>
+        <text>Editing%20Product%20Fancy%20Pizza</text>
       </controlProperties>
     </control>
     <control controlID="9" controlTypeID="__group__" x="767" y="614" w="304" h="63" measuredW="304" measuredH="63" zOrder="3" locked="false" isInGroup="-1">
@@ -36,35 +36,49 @@
         <override controlID="4" x="0" y="361" w="303" h="81"/>
         <override controlID="5" x="0" y="279" w="316" h="81"/>
         <override controlID="5:1" x="303" y="0" w="13" h="81"/>
-        <override controlID="0:0" x="0" y="0" w="303" h="81">
-          <text>Images</text>
+        <override controlID="5:0" x="0" y="0" w="312" h="81">
+          <text>Option%20Types</text>
         </override>
         <override controlID="2:0" x="0" y="0" w="303" h="81">
           <text>Product%20Details</text>
         </override>
-        <override controlID="5:0" x="0" y="0" w="312" h="81">
-          <text>Option%20Types</text>
-        </override>
         <override controlID="1:0" x="0" y="0" w="303" h="81"/>
         <override controlID="4:0" x="0" y="0" w="303" h="81"/>
+        <override controlID="0:0" x="0" y="0" w="303" h="81">
+          <text>Images</text>
+        </override>
         <src>./assets/symbols.bmml#Product Detail Tab Bar</src>
       </controlProperties>
     </control>
-    <control controlID="12" controlTypeID="com.balsamiq.mockups::DataGrid" x="46" y="204" w="349" h="25" measuredW="138" measuredH="25" zOrder="4" locked="false" isInGroup="-1">
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::DataGrid" x="27" y="416" w="635" h="57" measuredW="202" measuredH="55" zOrder="4" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Name%2CPresentation%0A%7B25L%2C%2025L%7D</text>
+        <text>Name%2CPresentation%2C%0Apizza_topping%2CTopping%2C%0A%7B25L%2C%2022L%2C%2015C%7D</text>
       </controlProperties>
     </control>
-    <control controlID="13" controlTypeID="com.balsamiq.mockups::Label" x="61" y="237" w="45" h="25" measuredW="35" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::Label" x="27" y="387" w="141" h="29" measuredW="119" measuredH="22" zOrder="5" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>None</text>
+        <bold>true</bold>
+        <size>14</size>
+        <text>Add%20Option%20Types</text>
       </controlProperties>
     </control>
-    <control controlID="14" controlTypeID="com.balsamiq.mockups::Link" x="60" y="268" w="-1" h="-1" measuredW="101" measuredH="21" zOrder="6" locked="false" isInGroup="-1">
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::Component" x="528" y="442" w="65" h="24" measuredW="65" measuredH="24" zOrder="6" locked="false" isInGroup="-1">
       <controlProperties>
-        <href>60_select_product_funky_tshirt_option_types%26bm%3B60_select_product_funky_tshirt_option_types.bmml%26bm%3B60_select_product_funky_tshirt_option_types.bmml%26bm%3B60_select_product_funky_tshirt_option_types.bmml</href>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%2259%2C267%2C160%2C288%22%20href%3D%2260_select_product_funky_tshirt_option_types.bmml%22%20alt%3D%2260_select_product_funky_tshirt_option_types%22%20id%3D%2214%22/%3E</map>
-        <text>Add%20Option%20Type</text>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22551%2C442%2C592%2C463%22%20href%3D%2262_selected_pizza_topping_option_type.bmml%22%20alt%3D%2262_selected_pizza_topping_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22551%2C442%2C592%2C463%22%20href%3D%2262_selected_pizza_topping_option_type.bmml%22%20alt%3D%2262_selected_pizza_topping_option_type%22%20id%3D%220%22/%3E</map>
+        <override controlID="0:0">
+          <href>62_selected_pizza_topping_option_type%26bm%3B62_selected_pizza_topping_option_type.bmml%26bm%3B62_selected_pizza_topping_option_type.bmml%26bm%3B62_selected_pizza_topping_option_type.bmml</href>
+        </override>
+        <src>./assets/symbols.bmml#select</src>
+      </controlProperties>
+    </control>
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::DataGrid" x="27" y="204" w="635" h="54" measuredW="184" measuredH="55" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Name%2CPresentation%2C%0Apizza_size%2CSize%2C%0A%7B25L%2C%2022L%2C%2015C%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::Component" x="534" y="228" w="79" h="24" measuredW="79" measuredH="24" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#remove</src>
       </controlProperties>
     </control>
   </controls>

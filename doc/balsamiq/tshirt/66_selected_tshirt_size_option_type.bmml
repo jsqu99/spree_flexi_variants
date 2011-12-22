@@ -222,15 +222,15 @@
             <override controlID="5:0" x="0" y="0" w="162" h="81">
               <text>Option%20Types</text>
             </override>
-            <override controlID="1:0" x="0" y="0" w="157" h="81"/>
+            <override controlID="4:0" x="0" y="0" w="157" h="81"/>
             <override controlID="5:1" x="157" y="0" w="7" h="81"/>
-            <override controlID="0:0" x="0" y="0" w="157" h="81">
-              <text>Images</text>
-            </override>
+            <override controlID="1:0" x="0" y="0" w="157" h="81"/>
             <override controlID="2:0" x="0" y="0" w="157" h="81">
               <text>Product%20Details</text>
             </override>
-            <override controlID="4:0" x="0" y="0" w="157" h="81"/>
+            <override controlID="0:0" x="0" y="0" w="157" h="81">
+              <text>Images</text>
+            </override>
             <src>./assets/symbols.bmml#Product Detail Tab Bar</src>
           </controlProperties>
         </control>
@@ -254,7 +254,10 @@
     </control>
     <control controlID="87" controlTypeID="com.balsamiq.mockups::Component" x="341" y="658" w="203" h="34" measuredW="203" measuredH="34" zOrder="8" locked="false" isInGroup="-1">
       <controlProperties>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22340%2C657%2C444%2C691%22%20href%3D%2240_option_types_index.bmml%22%20alt%3D%2240_option_types_index%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22345%2C674%2C449%2C708%22%20href%3D%2240_option_types_index.bmml%22%20alt%3D%2240_option_types_index%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%2285.66666666666667%2C655%2C189.66666666666669%2C689%22%20href%3D%2240_option_types_index.bmml%22%20alt%3D%2240_option_types_index%22%20id%3D%220%22/%3E</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22340%2C657%2C444%2C691%22%20href%3D%2240_option_types_index.bmml%22%20alt%3D%2240_option_types_index%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22340%2C657%2C444%2C691%22%20href%3D%2240_option_types_index.bmml%22%20alt%3D%2240_option_types_index%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22340%2C657%2C444%2C691%22%20href%3D%2240_option_types_index.bmml%22%20alt%3D%2240_option_types_index%22%20id%3D%220%22/%3E</map>
+        <override controlID="0">
+          <text>Update</text>
+        </override>
         <src>./assets/symbols.bmml#spree_update_or_cancel</src>
       </controlProperties>
     </control>

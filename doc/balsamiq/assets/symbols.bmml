@@ -552,9 +552,9 @@
                 <text>pizza%20topping%09</text>
               </controlProperties>
             </control>
-            <control controlID="3" controlTypeID="com.balsamiq.mockups::ComboBox" x="147" y="177" w="247" h="-1" measuredW="61" measuredH="62" zOrder="3" locked="false" isInGroup="0">
+            <control controlID="3" controlTypeID="com.balsamiq.mockups::ComboBox" x="147" y="177" w="247" h="-1" measuredW="61" measuredH="48" zOrder="3" locked="false" isInGroup="0">
               <controlProperties>
-                <text>None%0ATShirtColorSkuStrategy%0ATShirtSizeSkuStrategy</text>
+                <text>None%0ATShirtSkuStrategy</text>
               </controlProperties>
             </control>
             <control controlID="4" controlTypeID="com.balsamiq.mockups::ComboBox" x="147" y="84" w="255" h="-1" measuredW="165" measuredH="78" zOrder="4" locked="false" isInGroup="0">

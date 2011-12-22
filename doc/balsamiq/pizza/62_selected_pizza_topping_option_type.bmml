@@ -36,93 +36,166 @@
         <override controlID="2:0" x="0" y="0" w="157" h="81">
           <text>Product%20Details</text>
         </override>
+        <override controlID="1:0" x="0" y="0" w="157" h="81"/>
+        <override controlID="4:0" x="0" y="0" w="157" h="81"/>
         <override controlID="0:0" x="0" y="0" w="157" h="81">
           <text>Images</text>
         </override>
-        <override controlID="1:0" x="0" y="0" w="157" h="81"/>
-        <override controlID="4:0" x="0" y="0" w="157" h="81"/>
         <src>./assets/symbols.bmml#Product Detail Tab Bar</src>
       </controlProperties>
     </control>
-    <control controlID="12" controlTypeID="com.balsamiq.mockups::DataGrid" x="8" y="605" w="891" h="67" measuredW="806" measuredH="55" zOrder="3" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>Name%2CPresentation%2CPricing%20Strategy%2CSku%20Strategy%2CInventory%20Strategy%2CMultiple%3F%2CCust.%20Text%3F%2C%20Cust.%20Image%3F%2C%0Atshirt_size%2CSize%2CFixed%20Amount%2CTShirtSizeSkuStrategy%2CN/A%2CNo%2CNo%2CNo%2C%0A%7B30L%2C%2027L%2C%200C%2C%200C%2C0C%2C0C%2C0C%2C0C%2C26C%7D</text>
-      </controlProperties>
-    </control>
-    <control controlID="13" controlTypeID="com.balsamiq.mockups::Title" x="17" y="133" w="309" h="-1" measuredW="309" measuredH="33" zOrder="4" locked="false" isInGroup="-1">
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::Title" x="17" y="133" w="309" h="-1" measuredW="309" measuredH="33" zOrder="3" locked="false" isInGroup="-1">
       <controlProperties>
         <size>24</size>
         <text>Editing%20Product%20Funky%20T-Shirt</text>
       </controlProperties>
     </control>
-    <control controlID="17" controlTypeID="com.balsamiq.mockups::Label" x="42" y="567" w="141" h="29" measuredW="119" measuredH="22" zOrder="5" locked="false" isInGroup="-1">
-      <controlProperties>
-        <bold>true</bold>
-        <size>14</size>
-        <text>Add%20Option%20Types</text>
-      </controlProperties>
-    </control>
-    <control controlID="23" controlTypeID="com.balsamiq.mockups::Component" x="808" y="639" w="65" h="18" measuredW="65" measuredH="18" zOrder="7" locked="false" isInGroup="-1">
-      <controlProperties>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22807%2C638%2C872%2C656%22%20href%3D%2266_selected_tshirt_size_option_type.bmml%22%20alt%3D%2266_selected_tshirt_size_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22831%2C639%2C872%2C660%22%20href%3D%2266_selected_tshirt_size_option_type.bmml%22%20alt%3D%2266_selected_tshirt_size_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22807%2C638%2C872%2C656%22%20href%3D%2266_selected_tshirt_size_option_type.bmml%22%20alt%3D%2266_selected_tshirt_size_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22831%2C639%2C872%2C660%22%20href%3D%2266_selected_tshirt_size_option_type.bmml%22%20alt%3D%2266_selected_tshirt_size_option_type%22%20id%3D%220%22/%3E</map>
-        <override controlID="0" x="0" y="0" w="65" h="18">
-          <href>66_selected_tshirt_size_option_type%26bm%3B66_selected_tshirt_size_option_type.bmml%26bm%3B66_selected_tshirt_size_option_type.bmml%26bm%3B66_selected_tshirt_size_option_type.bmml</href>
-        </override>
-        <override controlID="0:1" x="0" y="0" w="24" h="24"/>
-        <override controlID="0:0" x="24" y="1" w="41" h="21">
-          <href>66_selected_tshirt_size_option_type%26bm%3B66_selected_tshirt_size_option_type.bmml%26bm%3B66_selected_tshirt_size_option_type.bmml%26bm%3B66_selected_tshirt_size_option_type.bmml</href>
-        </override>
-        <src>./assets/symbols.bmml#select</src>
-      </controlProperties>
-    </control>
-    <control controlID="25" controlTypeID="com.balsamiq.mockups::DataGrid" x="8" y="167" w="944" h="55" measuredW="934" measuredH="55" zOrder="6" locked="false" isInGroup="-1">
-      <controlProperties>
-        <text>Name%2CPresentation%2CPricing%20Strategy%2CSku%20Strategy%2CInventory%20Strategy%2CMultiple%3F%2CCustom%20Text%3F%2CCustom%20Image%3F%2C%0Atshirt_color%2CColor%2CN/A%2CTShirtColorSkuStrategy%2CTShirtSizeColorInventoryStrategy%20%2CNo%2CNo%2CNo%2C%0A%7B30L%2C%2027L%2C%200C%2C%200C%2C0C%2C0C%2C0C%2C0C%2C23C%7D</text>
-      </controlProperties>
-    </control>
-    <control controlID="30" controlTypeID="com.balsamiq.mockups::Component" x="888" y="189" w="79" h="24" measuredW="79" measuredH="24" zOrder="8" locked="false" isInGroup="-1">
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::Component" x="541" y="190" w="79" h="24" measuredW="79" measuredH="24" zOrder="5" locked="false" isInGroup="-1">
       <controlProperties>
         <src>./assets/symbols.bmml#remove</src>
       </controlProperties>
     </control>
-    <control controlID="31" controlTypeID="com.balsamiq.mockups::Title" x="39" y="286" w="477" h="-1" measuredW="403" measuredH="24" zOrder="9" locked="false" isInGroup="-1">
+    <control controlID="45" controlTypeID="com.balsamiq.mockups::Component" x="541" y="214" w="79" h="24" measuredW="79" measuredH="24" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <src>./assets/symbols.bmml#remove</src>
+      </controlProperties>
+    </control>
+    <control controlID="47" controlTypeID="com.balsamiq.mockups::DataGrid" x="27" y="166" w="635" h="85" measuredW="202" measuredH="85" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Name%2CPresentation%2C%0Apizza_size%2CSize%2C%0Apizza_topping%2CTopping%2C%0A%7B25L%2C%2022L%2C%2015C%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::Title" x="24" y="297" w="477" h="-1" measuredW="422" measuredH="24" zOrder="7" locked="false" isInGroup="-1">
       <controlProperties>
         <size>16</size>
-        <text>These%20Option%20Values%20have%20been%20pre-configured%20for%20Color</text>
+        <text>These%20Option%20Values%20have%20been%20pre-configured%20for%20Topping</text>
       </controlProperties>
     </control>
-    <control controlID="32" controlTypeID="com.balsamiq.mockups::DataGrid" x="30" y="310" w="526" h="124" measuredW="302" measuredH="115" zOrder="10" locked="false" isInGroup="-1">
+    <control controlID="53" controlTypeID="com.balsamiq.mockups::TextInput" x="37" y="412" w="142" h="-1" measuredW="71" measuredH="27" zOrder="8" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Name%2CPresentation%2CSKU%20Component%2C%0Atshirt_red%2CRed%2CRED%0Atshirt_green%2CGreen%2CGRN%0Atshirt_blue%2CBlue%2CBLU%0A%7B20L%2C%2017L%2C%2015C%2C15C%7D</text>
-        <underline>true</underline>
+        <text>pepperoni</text>
       </controlProperties>
     </control>
-    <control controlID="33" controlTypeID="com.balsamiq.mockups::Component" x="437" y="334" w="79" h="24" measuredW="79" measuredH="24" zOrder="11" locked="false" isInGroup="-1">
+    <control controlID="54" controlTypeID="com.balsamiq.mockups::TextInput" x="184" y="411" w="142" h="-1" measuredW="73" measuredH="27" zOrder="9" locked="false" isInGroup="-1">
       <controlProperties>
-        <src>./assets/symbols.bmml#remove</src>
+        <text>Pepperoni</text>
       </controlProperties>
     </control>
-    <control controlID="34" controlTypeID="com.balsamiq.mockups::Component" x="437" y="364" w="79" h="24" measuredW="79" measuredH="24" zOrder="12" locked="false" isInGroup="-1">
+    <control controlID="55" controlTypeID="com.balsamiq.mockups::TextInput" x="451" y="405" w="75" h="-1" measuredW="48" measuredH="27" zOrder="10" locked="false" isInGroup="-1">
       <controlProperties>
-        <src>./assets/symbols.bmml#remove</src>
+        <text>%241.49</text>
       </controlProperties>
     </control>
-    <control controlID="35" controlTypeID="com.balsamiq.mockups::Component" x="437" y="400" w="79" h="24" measuredW="79" measuredH="24" zOrder="13" locked="false" isInGroup="-1">
+    <control controlID="56" controlTypeID="com.balsamiq.mockups::TextInput" x="451" y="435" w="75" h="-1" measuredW="47" measuredH="27" zOrder="11" locked="false" isInGroup="-1">
       <controlProperties>
-        <src>./assets/symbols.bmml#remove</src>
+        <text>%241.99</text>
       </controlProperties>
     </control>
-    <control controlID="41" controlTypeID="com.balsamiq.mockups::StickyNote" x="437" y="468" w="398" h="99" measuredW="109" measuredH="123" zOrder="14" locked="false" isInGroup="-1">
+    <control controlID="57" controlTypeID="com.balsamiq.mockups::TextInput" x="451" y="463" w="75" h="-1" measuredW="51" measuredH="27" zOrder="12" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Note%20that%20there%20is%20no%20way%20to%20configure%20the%20%27count%20on%20hand%27%20just%20yet.%20%20We%20don%27t%20have%20the%20dependent%20option%20%28tshirt_size%29%20added%20to%20the%20product%20at%20this%20point.</text>
+        <text>%242.49</text>
       </controlProperties>
     </control>
-    <control controlID="42" controlTypeID="com.balsamiq.mockups::Arrow" x="584" y="222" w="145" h="279" measuredW="150" measuredH="100" zOrder="15" locked="false" isInGroup="-1"/>
-    <control controlID="43" controlTypeID="com.balsamiq.mockups::Arrow" x="222" y="536" w="447" h="69" measuredW="150" measuredH="100" zOrder="16" locked="false" isInGroup="-1">
+    <control controlID="58" controlTypeID="com.balsamiq.mockups::Icon" x="561" y="414" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="13" locked="false" isInGroup="-1">
       <controlProperties>
-        <backgroundAlpha>1</backgroundAlpha>
-        <curvature>0</curvature>
-        <direction>bottom</direction>
+        <color>13369344</color>
+        <icon>XIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="59" controlTypeID="com.balsamiq.mockups::Icon" x="561" y="444" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13369344</color>
+        <icon>XIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="60" controlTypeID="com.balsamiq.mockups::Icon" x="561" y="472" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13369344</color>
+        <icon>XIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="61" controlTypeID="com.balsamiq.mockups::Label" x="361" y="412" w="23" h="26" measuredW="25" measuredH="21" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>10%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="62" controlTypeID="com.balsamiq.mockups::Label" x="361" y="433" w="23" h="26" measuredW="25" measuredH="21" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>14%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="63" controlTypeID="com.balsamiq.mockups::Label" x="361" y="457" w="23" h="26" measuredW="25" measuredH="21" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>18%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="64" controlTypeID="com.balsamiq.mockups::TextInput" x="37" y="504" w="142" h="-1" measuredW="49" measuredH="27" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>onions</text>
+      </controlProperties>
+    </control>
+    <control controlID="65" controlTypeID="com.balsamiq.mockups::TextInput" x="184" y="503" w="142" h="-1" measuredW="51" measuredH="27" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Onions</text>
+      </controlProperties>
+    </control>
+    <control controlID="66" controlTypeID="com.balsamiq.mockups::Icon" x="561" y="506" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13369344</color>
+        <icon>XIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="67" controlTypeID="com.balsamiq.mockups::Icon" x="561" y="536" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13369344</color>
+        <icon>XIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="68" controlTypeID="com.balsamiq.mockups::Icon" x="561" y="564" w="-1" h="-1" measuredW="16" measuredH="16" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>13369344</color>
+        <icon>XIcon%7Cxsmall</icon>
+      </controlProperties>
+    </control>
+    <control controlID="69" controlTypeID="com.balsamiq.mockups::Label" x="361" y="504" w="23" h="26" measuredW="25" measuredH="21" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>10%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="70" controlTypeID="com.balsamiq.mockups::Label" x="361" y="525" w="23" h="26" measuredW="25" measuredH="21" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>14%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="71" controlTypeID="com.balsamiq.mockups::TextInput" x="451" y="495" w="75" h="-1" measuredW="48" measuredH="27" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%241.29</text>
+      </controlProperties>
+    </control>
+    <control controlID="72" controlTypeID="com.balsamiq.mockups::TextInput" x="451" y="525" w="75" h="-1" measuredW="48" measuredH="27" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%241.79</text>
+      </controlProperties>
+    </control>
+    <control controlID="73" controlTypeID="com.balsamiq.mockups::TextInput" x="451" y="553" w="75" h="-1" measuredW="51" measuredH="27" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%242.29</text>
+      </controlProperties>
+    </control>
+    <control controlID="74" controlTypeID="com.balsamiq.mockups::DataGrid" x="27" y="352" w="543" h="28" measuredW="262" measuredH="25" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Name%2CPresentation%2CPizza%20Size%2CPrice%0A%7B75L%2C%2075L%2C40C%2C75C%7D</text>
+      </controlProperties>
+    </control>
+    <control controlID="75" controlTypeID="com.balsamiq.mockups::Label" x="361" y="553" w="23" h="26" measuredW="25" measuredH="21" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>18%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="76" controlTypeID="com.balsamiq.mockups::Component" x="184" y="618" w="203" h="34" measuredW="203" measuredH="34" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22183%2C617%2C287%2C651%22%20href%3D%2240_option_types_index.bmml%22%20alt%3D%2240_option_types_index%22%20id%3D%220%22/%3E</map>
+        <src>./assets/symbols.bmml#spree_update_or_cancel</src>
       </controlProperties>
     </control>
   </controls>

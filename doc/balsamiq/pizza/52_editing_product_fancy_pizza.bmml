@@ -5,10 +5,10 @@
         <src>./assets/symbols.bmml#spree_top_nav</src>
       </controlProperties>
     </control>
-    <control controlID="1" controlTypeID="com.balsamiq.mockups::Title" x="61" y="171" w="-1" h="-1" measuredW="309" measuredH="33" zOrder="1" locked="false" isInGroup="-1">
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Title" x="61" y="171" w="-1" h="-1" measuredW="295" measuredH="33" zOrder="1" locked="false" isInGroup="-1">
       <controlProperties>
         <size>24</size>
-        <text>Editing%20Product%20Funky%20T-Shirt</text>
+        <text>Editing%20Product%20Fancy%20Pizza</text>
       </controlProperties>
     </control>
     <control controlID="2" controlTypeID="com.balsamiq.mockups::Image" x="25" y="211" w="422" h="479" measuredW="77" measuredH="79" zOrder="2" locked="false" isInGroup="-1"/>
@@ -37,19 +37,19 @@
         <override controlID="3" x="297" y="0" w="5" h="475"/>
         <override controlID="4" x="0" y="361" w="303" h="81"/>
         <override controlID="5" x="0" y="37" w="316" h="81"/>
+        <override controlID="4:0" x="0" y="0" w="303" h="81"/>
         <override controlID="5:1" x="303" y="0" w="13" h="81"/>
-        <override controlID="0:0" x="0" y="0" w="303" h="81">
-          <text>Images</text>
-        </override>
         <override controlID="2:0" x="0" y="0" w="303" h="81">
           <href>54_edit_funky_product_option_types%26bm%3B54_edit_funky_product_option_types.bmml%26bm%3B54_edit_funky_product_option_types.bmml%26bm%3B54_edit_funky_product_option_types.bmml</href>
           <text>Option%20Types</text>
+        </override>
+        <override controlID="0:0" x="0" y="0" w="303" h="81">
+          <text>Images</text>
         </override>
         <override controlID="5:0" x="0" y="0" w="312" h="81">
           <text>Product%20Details</text>
         </override>
         <override controlID="1:0" x="0" y="0" w="303" h="81"/>
-        <override controlID="4:0" x="0" y="0" w="303" h="81"/>
         <src>./assets/symbols.bmml#Product Detail Tab Bar</src>
       </controlProperties>
     </control>

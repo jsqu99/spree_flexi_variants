@@ -1,20 +1,20 @@
 Admin::OptionTypesController.class_eval do
 
-  before_filter :create_option_pricing_configuration, :only => :update
+  before_filter :create_option_pricing_strategy, :only => :update
 
   update_response =  lambda { render configure_dynamic_admin_option_type_path(@option_type) }
 
   respond_override :update => { :html =>  { :success => update_response }}
   respond_override :update => { :html =>  { :failure => update_response }}
 
-  # 'global' option type configuration
+  # 'global' option type strategy
   def configure_dynamic
     # AJAX method for configuring an existing option type to be used as defaults for all products
     @option_type = OptionType.find(params[:id])
     @option_values= @option_type.option_values
   end
 
-  # 'per-product' option type configuration
+  # 'per-product' option type strategy
   def configure_dynamic_for_product
     # AJAX method for configuring an existing option type and associating with the current product
     @product = Product.find_by_param!(params[:product_id])
@@ -45,8 +45,8 @@ Admin::OptionTypesController.class_eval do
   end
 
   private
-  def create_option_pricing_configuration
-    klass = params[object_name].delete('option_pricing_configuration').constantize
-    @option_type.option_pricing_configuration = klass.new
+  def create_option_pricing_strategy
+    klass = params[object_name].delete('option_pricing_strategy').constantize
+    @option_type.option_pricing_strategy = klass.new
   end
 end

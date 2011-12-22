@@ -1,8 +1,8 @@
 <%= form_for([:admin, @option_type]) do |f| %>
 <fieldset>
   <legend><%= t("configure_dynamic", :option_type => @option_type.presentation) %></legend>
-  <%= f.label :option_pricing_configuration, 'Pricing Configuration' %>
-  <%= f.select :option_pricing_configuration,options_from_collection_for_select(OptionType.option_pricing_configurations, :to_s, :description) %>
+  <%= f.label :option_pricing_strategy, 'Pricing Strategy' %>
+  <%= f.select :option_pricing_strategy,options_from_collection_for_select(OptionType.option_pricing_strategies, :to_s, :description) %>
   <table class="index">
     <thead data-hook="option_header">
       <tr>

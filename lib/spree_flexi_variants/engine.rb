@@ -18,7 +18,7 @@ module SpreeFlexiVariant
         Rails.application.config.cache_classes ? require(c) : load(c)
       end
 
-      [OptionPricingConfiguration::AmountOptionPricingConfiguration, OptionPricingConfiguration::DependentOptionPricingConfiguration].map(&:register)
+      [OptionPricingStrategy::AmountOptionPricingStrategy, OptionPricingStrategy::DependentOptionPricingStrategy].map(&:register)
 
     end
 

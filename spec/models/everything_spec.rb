@@ -13,7 +13,7 @@ describe Variant do
 end
 
 describe "A dynamic OptionType (or ProductOptionType)" do
-  it "uses its pricing configuration to compute the price of each option value"
+  it "uses its pricing strategy to compute the price of each option value"
 end
 
 describe OptionType do
@@ -39,7 +39,7 @@ describe ProductOptionType do
   end
 end
 
-describe "An OptionPricingConfiguration" do
+describe "An OptionPricingStrategy" do
   context "assigned to an OptionType" do
     it "retrieves the amount configured for a given OptionValue"
   end
@@ -48,8 +48,8 @@ describe "An OptionPricingConfiguration" do
   end
 end
 
-describe OptionPricingConfiguration::AmountOptionPricingConfiguration do
-  context "configuration of a product before adding to the cart" do
+describe OptionPricingStrategy::AmountOptionPricingStrategy do
+  context "strategy of a product before adding to the cart" do
     it "retrieves all possible amounts for all of this option type's values in a hash e.g. {option_value_id: amount}"
   end
 
@@ -58,9 +58,9 @@ describe OptionPricingConfiguration::AmountOptionPricingConfiguration do
   end
 end
 
-describe OptionPricingConfiguration::DependentOptionPricingConfiguration do
+describe OptionPricingStrategy::DependentOptionPricingStrategy do
 
-  context "configuration of a product before adding to the cart" do
+  context "strategy of a product before adding to the cart" do
     it "retrieves all possible combinations in a dependency hash e.g. {option_value_id: {other_option_value_id : amount}}"
   end
 

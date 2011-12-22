@@ -2,7 +2,7 @@ class CreateOptionValuePricingDependencies < ActiveRecord::Migration
   def change
     create_table :option_value_pricing_dependencies do |t|
 
-      t.integer :dependent_option_pricing_configuration_id, :null => false
+      t.integer :dependent_option_pricing_strategy_id, :null => false
 
       # points to either option_value or product_option_value
       t.string :dependent_option_value_locatable_type

@@ -1,0 +1,2 @@
+  <%= f.label :option_pricing_strategy, 'Pricing Strategy' %>
+  <%= f.select :option_pricing_strategy,options_from_collection_for_select(OptionType.option_pricing_strategies, :to_s, :description) %>

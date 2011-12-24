@@ -1,5 +1,5 @@
 OptionType.class_eval do
-  has_one :option_pricing_strategy, :as => :pricing_strategy, :dependent => :destroy
+  has_one :option_pricing_strategy, :as => :strategy_option_type_reference, :dependent => :destroy
 
   #accepts_nested_attributes_for :option_pricing_strategy
   #attr_accessible :option_pricing_strategy

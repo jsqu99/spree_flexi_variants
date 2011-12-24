@@ -19,7 +19,7 @@
     </control>
     <control controlID="50" controlTypeID="com.balsamiq.mockups::Component" x="161" y="662" w="211" h="35" measuredW="211" measuredH="35" zOrder="2" locked="false" isInGroup="-1">
       <controlProperties>
-        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22161%2C650%2C281%2C684%22%20href%3D%2223_edit_tshirt_color_option_type.bmml%22%20alt%3D%2223_edit_tshirt_color_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22161%2C650%2C281%2C684%22%20href%3D%2223_edit_tshirt_color_option_type.bmml%22%20alt%3D%2223_edit_tshirt_color_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22161%2C650%2C281%2C684%22%20href%3D%2223_edit_tshirt_color_option_type.bmml%22%20alt%3D%2223_edit_tshirt_color_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22161%2C650%2C281%2C684%22%20href%3D%2223_edit_tshirt_color_option_type.bmml%22%20alt%3D%2223_edit_tshirt_color_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22161%2C650%2C281%2C684%22%20href%3D%2223_edit_tshirt_color_option_type.bmml%22%20alt%3D%2223_edit_tshirt_color_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22161%2C650%2C281%2C684%22%20href%3D%2223_edit_tshirt_color_option_type.bmml%22%20alt%3D%2223_edit_tshirt_color_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22161%2C650%2C281%2C684%22%20href%3D%2223_edit_tshirt_color_option_type.bmml%22%20alt%3D%2223_edit_tshirt_color_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22161%2C650%2C281%2C684%22%20href%3D%2223_edit_tshirt_color_option_type.bmml%22%20alt%3D%2223_edit_tshirt_color_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22161%2C650%2C281%2C684%22%20href%3D%2223_edit_tshirt_color_option_type.bmml%22%20alt%3D%2223_edit_tshirt_color_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22161%2C650%2C281%2C684%22%20href%3D%2223_edit_tshirt_color_option_type.bmml%22%20alt%3D%2223_edit_tshirt_color_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22161%2C650%2C281%2C684%22%20href%3D%2223_edit_tshirt_color_option_type.bmml%22%20alt%3D%2223_edit_tshirt_color_option_type%22%20id%3D%220%22/%3E</map>
+        <map>%3Carea%20shape%3D%22rect%22%20coords%3D%22161%2C650%2C281%2C684%22%20href%3D%2223_edit_tshirt_color_option_type.bmml%22%20alt%3D%2223_edit_tshirt_color_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22161%2C650%2C281%2C684%22%20href%3D%2223_edit_tshirt_color_option_type.bmml%22%20alt%3D%2223_edit_tshirt_color_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22161%2C650%2C281%2C684%22%20href%3D%2223_edit_tshirt_color_option_type.bmml%22%20alt%3D%2223_edit_tshirt_color_option_type%22%20id%3D%220%22/%3E%3Carea%20shape%3D%22rect%22%20coords%3D%22161%2C650%2C281%2C684%22%20href%3D%2223_edit_tshirt_color_option_type.bmml%22%20alt%3D%2223_edit_tshirt_color_option_type%22%20id%3D%220%22/%3E</map>
         <override controlID="0">
           <href>23_edit_tshirt_color_option_type%26bm%3B23_edit_tshirt_color_option_type.bmml%26bm%3B23_edit_tshirt_color_option_type.bmml%26bm%3B23_edit_tshirt_color_option_type.bmml</href>
         </override>
@@ -54,6 +54,20 @@
     </control>
     <control controlID="62" controlTypeID="com.balsamiq.mockups::Component" x="26" y="182" w="461" h="442" measuredW="461" measuredH="442" zOrder="8" locked="false" isInGroup="-1">
       <controlProperties>
+        <override controlID="0:9">
+          <text>TShirtSizeColorInventoryStrategy%0ANone%0ACountOnHandInventoryStrategy</text>
+        </override>
+        <override controlID="0:18">
+          <state>selected</state>
+          <text/>
+        </override>
+        <override controlID="0:1">
+          <text>TShirt%20Color</text>
+        </override>
+        <override controlID="0:16">
+          <state>up</state>
+          <text/>
+        </override>
         <override controlID="0:3">
           <text>TShirtColorSkuStrategy%0ANone%0ATShirtSizeSkuStrategy</text>
         </override>
@@ -62,16 +76,6 @@
         </override>
         <override controlID="0:2">
           <text>tshirt_color</text>
-        </override>
-        <override controlID="0:1">
-          <text>TShirt%20Color</text>
-        </override>
-        <override controlID="0:9">
-          <text>TShirtSizeColorInventoryStrategy%0ANone%0ACountOnHandInventoryStrategy</text>
-        </override>
-        <override controlID="0:18">
-          <state>selected</state>
-          <text/>
         </override>
         <src>./assets/symbols.bmml#option_type_form</src>
       </controlProperties>

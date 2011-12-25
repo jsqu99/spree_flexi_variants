@@ -1,6 +1,9 @@
 ---
 en:
-  configure_option_type: Configure option type for use in a dynamic variant
-  configure_dynamic: Option type %{option_type} is currently globally configured by default as shown below.  Modify if desired
-  configure_dynamic_for_product: Option values for %{product}:%{option_type} are currently set up as shown below.  Further configure if desired
-
+  option_pricing_strategy: Pricing Strategy
+  sku_strategy:  SKU Strategy
+  inventory_strategy: Inventory Strategy
+  is_required: Required?
+  allow_multiple: Allow Multiple Option Values?
+  allow_custom_text: text
+  allow_custom_image: image

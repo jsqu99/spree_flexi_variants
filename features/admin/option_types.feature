@@ -13,9 +13,10 @@ Feature: Admin > Option Types
     When I follow "New Option Type"
     Then I should see "New Option Type"
     When I fill in "Name" with "tshirt_size"
-    When I fill in "Presentation" with "TShirt Size"
+    # we'll fix the typo down below
+    When I fill in "Presentation" with "TShirt eziS"
     Given I have a "Fixed Amount" pricing strategy
-    When I select "Fixed Amount" from "Pricing Strategy"
+    When I select "Price adjustment (amount) per option value" from "option_pricing_strategy"
     Given I have a "SKU Strategy" select box
     Given I have an "Inventory Strategy" select box
     When I check "Required?"
@@ -23,20 +24,25 @@ Feature: Admin > Option Types
     Given I have an "allow_custom_text" check box
     Given I have an "allow_custom_image" check box
     When I press "Create"
-    Then I should see "Edit Option Type"
+    Then I should see "Editing Option Type"
 
 
     Then I should see field "Name" with value "tshirt_size"
-    Then I should see field "Presentation" with value "TShirt Size"
-    Then I should see field "Pricing Strategy" with value "Fixed Amount"
+    Then I should see field "Presentation" with value "TShirt eziS"
+    #fixed the typo from above
+    When I fill in "Presentation" with "TShirt Size"
+
+    Then I should see field "option_pricing_strategy" with value "Price adjustment (amount) per option value"
     Then the checkbox "Required?" should be "checked"
     Then the checkbox "Allow Multiple Values?" should be "unchecked"
     Then the checkbox "allow_custom_text" should be "unchecked"
     Then the checkbox "allow_custom_image" should be "unchecked"
 
+    # need to add option values next
+    Then show me the page
     When I press "Update"
 
     Then I should see the following in the option types index:
-      | tshirt_size | TShirt Size | Fixed Amount | N/A | N/A | Yes | No | No | No |
+      | tshirt_size | TShirt Size | Price adjustment (amount) per option value | N/A | N/A | Yes | No | No | No |
       #    Then show me the page
 

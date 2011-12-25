@@ -1,0 +1,49 @@
+<%= f.field_container :name do %>
+  <%= f.label :name, t(:name) %> <span class="required">*</span><br />
+  <%= f.text_field :name %>
+  <%= f.error_message_on :name %>
+<% end %>
+
+<%= f.field_container :presentation do %>
+  <%= f.label :presentation, t(:presentation) %> <span class="required">*</span><br />
+  <%= f.text_field :presentation %>
+  <%= f.error_message_on :presentation %>
+<% end %>
+
+<%= f.field_container :option_pricing_strategy do %>
+  <%= f.label :option_pricing_strategy, t(:option_pricing_strategy) %><br />
+  <%= select_tag("option_pricing_strategy", options_from_collection_for_select(OptionType.option_pricing_strategies, :name, :description)) %>
+  <%= f.error_message_on :option_pricing_strategy %>
+<% end %>
+
+<%= f.field_container :sku_strategy do %>
+  <%= f.label :sku_strategy, t(:sku_strategy) %><br />
+  <%= select_tag("sku_strategy", options_from_collection_for_select(OptionType.sku_strategies, :name, :description)) %>
+  <%= f.error_message_on :sku_strategy %>
+<% end %>
+
+<%= f.field_container :inventory_strategy do %>
+  <%= f.label :inventory_strategy, t(:inventory_strategy) %><br />
+  <%= select_tag("inventory_strategy", options_from_collection_for_select(OptionType.inventory_strategies, :name, :description)) %>
+  <%= f.error_message_on :inventory_strategy %>
+<% end %>
+
+<%= f.field_container :required do %>
+  <%= f.label :required, t(:is_required) %><br />
+  <%= f.check_box :required %>
+<% end %>
+
+<%= f.field_container :allow_multiple do %>
+  <%= f.label :allow_multiple, t(:allow_multiple) %><br />
+  <%= f.check_box :allow_multiple %>
+<% end %>
+
+<%= f.field_container :allow_custom_text do %>
+  <%= f.label :allow_custom_text, t(:allow_custom_text) %><br />
+  <%= f.check_box :allow_custom_text %>
+<% end %>
+
+<%= f.field_container :allow_custom_image do %>
+  <%= f.label :allow_custom_image, t(:allow_custom_image) %><br />
+  <%= f.check_box :allow_custom_image %>
+<% end %>

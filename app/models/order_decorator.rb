@@ -22,7 +22,7 @@ Order.class_eval do
       end
       current_item.ad_hoc_option_values = povs
 
-      current_item.price   = variant.price + povs.map(&:price_modifier).compact.sum + product_customizations.map(&:price).sum
+      current_item.price   = variant.price + povs.map(&:price_modifier).compact.sum + product_customizations.map {|pc| pc.price(variant)}.sum
       self.line_items << current_item
     end
 

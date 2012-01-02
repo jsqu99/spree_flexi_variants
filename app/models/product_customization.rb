@@ -5,8 +5,9 @@ class ProductCustomization < ActiveRecord::Base
 
   # TODO: Jeff, add 'required'
 
-  def price
-    amount = product_customization_type.calculator.compute(self)
+  # price might depend on something contained in the variant (like product property value)a
+  def price(variant=nil)
+    amount = product_customization_type.calculator.compute(self, variant)
   end
 
   def calculator

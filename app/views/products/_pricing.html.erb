@@ -3,7 +3,7 @@
   if Spree::FlexiVariants::Config[:use_javascript_pricing_updates]
 %>
 
-<% content_for :head do %>
+<%= content_for :head do %>
   <%= javascript_include_tag 'jquery.formatCurrency-1.4.0.min.js', 'i18n/jquery.formatCurrency.all.js' %>
   <%# didn't use javascript_tag here so we don't confuse deface %>
   <script type="text/javascript">

@@ -20,9 +20,13 @@
             <%= render :partial => partial_name, :locals => {:option_type=>ahot} %>
           <% else %>
             <label><%= ot.presentation %></label>
+            <% select_opts = {:class => class_str} %>
+            <% select_opts[:include_blank] = 'None' if ahot.option_values.size > 1 %>
+
             <%= select_tag "ad_hoc_option_values[#{ahot.id}]",
-              options_for_select(ad_hoc_option_value_options(ahot.option_values)),
-             :include_blank => 'None', :class => class_str %>
+                options_for_select(ad_hoc_option_value_options(ahot.option_values)),
+                select_opts
+            %>
           <% end %>
           </li>
         <% end %>  <%# each %>

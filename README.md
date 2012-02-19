@@ -4,10 +4,6 @@ SpreeFlexiVariants
 This is a [spree](http://spreecommerce.com) extension that solves two use cases related to variants.  I call them **Ad Hoc Options** and **Product Customizations**.
 
 
-The branch you are currently on (master) is an upgrade-in-progress to spree 1.0.  It does _not_ yet work
--------------------------------------------------------------------------------------------------------
-Please see the Versionfile for working spree 0.70 spree spree 0.60 versions
-
 Ad Hoc Options
 --------------
 
@@ -25,9 +21,9 @@ Use these when you want the ability to provide a highly customized product e.g. 
 Version Notes
 =============
 
-The branch you are currently on (master) is an upgrade-in-progress to spree 1.0.  It does _not_ yet work.
+The branch you are currently on (master) is an upgrade-in-progress to spree 1.0.  Consider it beta right now.
 
-Please see the Versionfile for working spree 0.70 spree spree 0.60 versions
+Please see the Versionfile for working spree 0.70 and  spree 0.60 versions
 
 Version 2
 ----------
@@ -55,6 +51,17 @@ The current version does not allow you to later look up the variant and be able 
 * Better image customization support
 
 * Fewer new models!
+
+Installation
+------------
+    # see the notes in Versionfile if you are using an older version of spree
+    gem 'rmagick'
+    gem 'carrierwave'
+    gem 'spree_flexi_variants', :git=>'git@github.com:jsqu99/spree_flexi_variants.git'
+
+    bundle install
+
+    bundle exec rails g spree_flexi_variants:install
 
 ## Examples
 

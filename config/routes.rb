@@ -1,5 +1,4 @@
-Rails.application.routes.draw do
-
+Spree::Core::Engine.routes.draw do
   match 'product_customizations/price', :to => 'product_customizations#price'
 
   match 'customize/:product_id', :to => 'products#customize', :as => 'customize'
@@ -74,5 +73,4 @@ Rails.application.routes.draw do
   end # namespace :admin
 
   match 'admin/variant_configurations/:variant_id', :to => 'admin/variant_configurations#configure'
-
-end #draw
+end

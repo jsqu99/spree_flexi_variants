@@ -3,6 +3,11 @@ SpreeFlexiVariants
 
 This is a [spree](http://spreecommerce.com) extension that solves two use cases related to variants.  I call them **Ad Hoc Options** and **Product Customizations**.
 
+
+The branch you are currently on (master) is an upgrade-in-progress to spree 1.0.  It does _not_ yet work
+-------------------------------------------------------------------------------------------------------
+Please see the Versionfile for working spree 0.70 spree spree 0.60 versions
+
 Ad Hoc Options
 --------------
 
@@ -20,8 +25,12 @@ Use these when you want the ability to provide a highly customized product e.g. 
 Version Notes
 =============
 
-This is the rails 3.1-compatible version.  It is bleeding edge, but there are no known issues at this point.
+The branch you are currently on (master) is an upgrade-in-progress to spree 1.0.  It does _not_ yet work.
 
+Please see the Versionfile for working spree 0.70 spree spree 0.60 versions
+
+Version 2
+----------
 I'm excited to announce that I'm working feverishly on a complete rewrite (currently in the v2 branch (and highly pre-alpha), if you are curious).
 
 After using this extension in a few projects, I discovered some areas for improvement.
@@ -46,25 +55,6 @@ The current version does not allow you to later look up the variant and be able 
 * Better image customization support
 
 * Fewer new models!
-
-Installation
-------------
-    rails new myapp
-    cd myapp
-
-Add to Gemfile (NOTE: spree master is currently unsupported!  The namespace changes are not yet reflected in this extension).
-
-    # see the notes in Versionfile if you are using an older version of spree
-    gem 'spree', :git => 'git://github.com/spree/spree.git', :branch => '0-70-stable'
-    gem 'rmagick'
-    gem 'carrierwave'
-    gem 'spree_flexi_variants', :git=>'git@github.com:jsqu99/spree_flexi_variants.git'
-
-    bundle install
-
-    bundle exec rails g spree:site                                 # this installs flexi's migrations as well!, via railties:install:migrations
-    bundle exec rails g spree_flexi_variants:install               # copies the assets
-    bundle exec rake db:bootstrap
 
 ## Examples
 

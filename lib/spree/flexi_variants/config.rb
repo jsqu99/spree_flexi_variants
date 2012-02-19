@@ -10,10 +10,10 @@ module Spree
     class Config
       include Singleton
       include PreferenceAccess
-    
+
       class << self
         def instance
-          return nil unless ActiveRecord::Base.connection.tables.include?('configurations')
+          return nil unless ActiveRecord::Base.connection.tables.include?('spree_configurations')
           FlexiVariantsConfiguration.find_or_create_by_name("Default spree flexi variants configuration")
         end
       end

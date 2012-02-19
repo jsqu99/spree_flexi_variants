@@ -1,7 +1,7 @@
 <tr id="<%= dom_id(f.object) %>">
 <td width="300">
     <%=f.object.variant.product.name%> <%= "(" + variant_options(f.object.variant) + ")" unless f.object.variant.option_values.empty? %>
-    <%= render :partial => 'shared/additional_line_item_fields', :locals=>{:item => f.object} %>
+    <%= render :partial => 'spree/shared/additional_line_item_fields', :locals=>{:item => f.object} %>
 </td>
 
 <td valign="top" class="price"><%= number_to_currency f.object.price %></td>

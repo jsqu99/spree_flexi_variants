@@ -19,6 +19,9 @@ Gem::Specification.new do |s|
   s.add_dependency('carrierwave')
   s.add_dependency('rmagick');
 
+  # need this b/c of controllers/spree/admin/users_controller.
+  # it has a reference to User::DestroyWithOrdersError
+  # s.add_development_dependency 'spree_auth', '~> 1.0.0'
   s.add_dependency 'spree_core', '~> 1.0.0'
 
   s.add_development_dependency 'capybara', '1.0.1'

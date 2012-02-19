@@ -2,7 +2,7 @@
 
 <% cust_dom_id = "engraving_input_#{product_customization_type.customizable_product_options.first.id}" %>
 
-<%= render :partial => "products/customizations/calculator/#{calculator_name(product_customization_type)}",
+<%= render :partial => "spree/products/customizations/calculator/#{calculator_name(product_customization_type)}",
            :locals => {:calculator=>product_customization_type.calculator} %>
 
   <% # add the 'change' listener for this particular file input, which will make use of the calculator above %>

@@ -1,6 +1,6 @@
-<%= render :partial => 'admin/shared/product_sub_menu' %>
+<%= render :partial => 'spree/admin/shared/product_sub_menu' %>
 
-<%= render :partial => 'admin/shared/product_tabs', :locals => {:current => "Ad Hoc Variant Exclusions"} %>
+<%= render :partial => 'spree/admin/shared/product_tabs', :locals => {:current => "Ad Hoc Variant Exclusions"} %>
 
 <% if @product.ad_hoc_option_types.size <= 1 %>
   <h2><%= t("ad_hoc_variant_exclusions_unavailable") %></h2>

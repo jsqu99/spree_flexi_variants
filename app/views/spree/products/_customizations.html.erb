@@ -11,13 +11,13 @@
 
       <%# render a custom partial based on the customization name? %>
 
-      <% partial_name = "products/customizations/customization_type/#{product_customization_type.name}" %>
+      <% partial_name = "spree/products/customizations/customization_type/#{product_customization_type.name}" %>
       <% if lookup.exists?(partial_name,nil,true) %>
         <%= render :partial => partial_name, :locals => {:product_customization_type => product_customization_type, :param_prefix => param_prefix} %>
       <% else %>
 
         <%# render a custom partial based on the calculator name? %>
-        <% partial_name = "products/customizations/calculator_type/#{calculator_name(product_customization_type)}" %>
+        <% partial_name = "spree/products/customizations/calculator_type/#{calculator_name(product_customization_type)}" %>
 
         <% if lookup.exists?(partial_name,nil,true) %>
           <%= render :partial => partial_name, :locals => {:product_customization_type=>product_customization_type, :param_prefix => param_prefix} %>

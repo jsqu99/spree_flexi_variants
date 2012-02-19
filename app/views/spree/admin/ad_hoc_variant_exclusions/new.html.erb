@@ -1,6 +1,6 @@
-<%= render :partial => 'admin/shared/product_sub_menu' %>
+<%= render :partial => 'spree/admin/shared/product_sub_menu' %>
 
-<%= render 'shared/error_messages', :target => @ad_hoc_variant_exclusion%>
+<%= render 'spree/shared/error_messages', :target => @ad_hoc_variant_exclusion%>
 
 <%= form_for(@ad_hoc_variant_exclusion, :url => admin_product_ad_hoc_variant_exclusions_url(@product)) do |f| %>
   <fieldset>

@@ -7,9 +7,9 @@
   <% end %>
 <% end %>
 
-<%= render :partial => 'admin/shared/product_sub_menu' %>
+<%= render :partial => 'spree/admin/shared/product_sub_menu' %>
 <h1><%= t("editing_product_customization_type") %></h1>
-<%= render 'shared/error_messages', :target => @product_customization_type %>
+<%= render 'spree/shared/error_messages', :target => @product_customization_type %>
 <%= form_for(@product_customization_type, :url => admin_product_customization_type_url(@product_customization_type), :html => { :method => :put }) do |f| %>
 <fieldset>
   <legend><%= t("editing_product_customization_type") %></legend>

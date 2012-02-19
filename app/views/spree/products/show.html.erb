@@ -17,7 +17,7 @@
   </div>
 </div>
 
-<% if Spree::FlexiVariants::Config[:use_separate_customizations_page] %>
+<% if Spree::Config[:use_separate_customizations_page] %>
   <% if @product.price %>
   <div data-hook="product_price">
     <dl id="product-price">

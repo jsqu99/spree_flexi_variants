@@ -1,4 +1,4 @@
-fieldset{
+/*fieldset{
 	background-color:#dddddd;
 
 	border-width:1px;
@@ -7,11 +7,6 @@ fieldset{
 
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 	font-size:12px;
-	/*width:250px;*/
-
-/*	margin:20px 0px 20px 0px;
-	position:relative;
-	display:block;*/
 	padding: 0px 10px 10px 10px;
 }
 
@@ -31,8 +26,6 @@ fieldset label {
   width: 120px;
 }
 #ad_hoc_options fieldset label {
-/*  margin-top: 10px;
-  display:block;*/
 }
 
 fieldset legend{
@@ -57,11 +50,12 @@ fieldset legend{
 .error {
   color: #d33;
 }
-
+*/
 /* for customization images in the line items
 we've got two versions line items: line_items & line-items
 */
 
-tbody#line_items dd p img, tbody#line-items dd p img {
+/*tbody#line_items dd p img, tbody#line-items dd p img {
   float: none;
 }
+*/

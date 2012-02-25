@@ -17,7 +17,7 @@ class Calculator::Engraving < Calculator
     ]
   end
 
-  def compute(product_customization)
+  def compute(product_customization, variant=nil)
     return 0 unless valid_configuration? product_customization
 
     # expecting only one CustomizedProductOption

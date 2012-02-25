@@ -1,0 +1,17 @@
+<% if Spree::Config[:use_separate_customizations_page] %>
+  <% if @product.price %>
+    <div data-hook="product_price" class="columns five <% if !@product.has_variants? %> alpha <% else %> omega <% end %>">
+        
+      <div id="product-price">
+        <h6 class="product-section-title"><%= t(:price) %></h6>
+        <div><span class="price selling" itemprop="price"><%= number_to_currency @product.price %></span></div>
+      </div>
+    <%= link_to "Customize", customize_path(@product) %>
+  </div>
+  <% end %>
+<% else %>
+  <div id="cart-form" data-hook="cart_form">
+    <%= render :partial => 'cart_form' %>
+  </div>
+<% end %>
+

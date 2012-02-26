@@ -21,6 +21,10 @@ module SpreeFlexiVariants
 
     config.to_prepare &method(:activate).to_proc
 
+    initializer "spree.flexi_variants.preferences", :after => "spree.environment" do |app|
+      SpreeFlexiVariants::Config = Spree::FlexiVariantsConfiguration.new
+    end
+
     # Had a good reason for this rescue below, and wish I'd commented it better when I wrote it
     # TODO - figure this out and de-ugly
     begin

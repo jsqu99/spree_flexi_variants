@@ -1,4 +1,4 @@
-<% if Spree::Config[:use_separate_customizations_page] %>
+<% if SpreeFlexiVariants::Config[:use_separate_customizations_page] %>
   <% if @product.price %>
     <div data-hook="product_price" class="columns five <% if !@product.has_variants? %> alpha <% else %> omega <% end %>">
         

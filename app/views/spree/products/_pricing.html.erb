@@ -1,5 +1,5 @@
 <%
-  if Spree::Config[:use_javascript_pricing_updates]
+  if SpreeFlexiVariants::Config[:use_javascript_pricing_updates]
 %>
 
 <%= content_for :head do %>
@@ -127,5 +127,5 @@
   //]]>
   </script>
 <% end %>
-<% # end if Spree::Config[:use_javascript_pricing_updates] %>
+<% # end if SpreeFlexiVariants::Config[:use_javascript_pricing_updates] %>
 <% end %>

@@ -1,6 +1,6 @@
 module Spree
   class Admin::VariantConfigurationsController < Admin::BaseController
-    helper :products
+    helper 'spree/products'
     def configure
       @variant = Variant.find(params[:variant_id])
 

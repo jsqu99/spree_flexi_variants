@@ -2,7 +2,7 @@
   <% #TODO: group multi-select options (e.g. toppings) %>
 
   <% item.ad_hoc_option_values.each do |pov| %>
-    <%= pov.option_value.option_type.presentation %> = <%= pov.option_value.presentation %> <%= "(#{format_price pov.price_modifier})" if pov.price_modifier > 0 %> <%= "," unless pov == item.ad_hoc_option_values.last %>
+    <%= pov.option_value.option_type.presentation %> = <%= pov.option_value.presentation %><%= "," unless pov == item.ad_hoc_option_values.last %>
   <% end %>
 <% end # unless empty? %>
 

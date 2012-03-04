@@ -17,7 +17,7 @@
 
     <% next if customization.customized_product_options.all? {|cpo| cpo.empty? } %>
 
-    <dt><%= customization.product_customization_type.presentation %> <%= "(#{format_price customization.price})" if customization.price > 0%></dt>
+    <dt><%= customization.product_customization_type.presentation %></dt>
     <dd>
           <% customization.customized_product_options.each do |option| %>
 

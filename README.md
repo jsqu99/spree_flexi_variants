@@ -1,8 +1,3 @@
-Version Notes
-=============
-
-Give the master branch a try first.  It is more feature rich and currently the only branch under development.  If you are on spree 0.60 and have any trouble with master, drop me a note, and then give the pre-deface-stable branch a try.
-
 SpreeFlexiVariants
 ==================
 
@@ -36,12 +31,19 @@ Add to Gemfile:
     gem 'carrierwave'
     gem 'spree_flexi_variants', :git=>'git@github.com:jsqu99/spree_flexi_variants.git'
 
+    # alternatively, if you want spree 0.70.x version:
+    # gem 'spree', '0.70.0'
+    # gem 'json'
+    # gem 'rmagick'
+    # gem 'carrierwave'
+    # gem 'spree_flexi_variants', :git=>'git@github.com:jsqu99/spree_flexi_variants.git', :branch => 'spree-0-70-stable'
+
     # alternatively, if you want spree 0.60.x version:
     # gem 'spree', '0.60.0'
     # gem 'json'
     # gem 'rmagick'
     # gem 'carrierwave'
-    # gem 'spree_flexi_variants', :git=>'git@github.com:jsqu99/spree_flexi_variants.git', :branch => 'pre-deface-stable'
+    # gem 'spree_flexi_variants', :git=>'git@github.com:jsqu99/spree_flexi_variants.git', :branch => 'spree-0-60-stable'
 
     bundle install
 

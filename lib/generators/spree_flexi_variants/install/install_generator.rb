@@ -5,6 +5,8 @@ module SpreeFlexiVariants
       def add_javascripts
         append_file "app/assets/javascripts/store/all.js", "//= require store/exclusions\n"
         append_file "app/assets/javascripts/store/all.js", "//= require jquery.formatCurrency-1.4.0.min\n"
+        append_file "app/assets/javascripts/admin/all.js", "//= require admin/orders/flexi_configuration\n"
+        
       end
 
       def add_stylesheets

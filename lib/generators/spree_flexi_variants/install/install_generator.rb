@@ -10,7 +10,7 @@ module SpreeFlexiVariants
       end
 
       def add_stylesheets
-        inject_into_file "app/assets/stylesheets/store/all.css", " *= require store/flexi-variants\n", :before => /\*\//, :verbose => true
+        inject_into_file "app/assets/stylesheets/store/all.css", " *= require store/spree-flexi-variants\n", :before => /\*\//, :verbose => true
       end
 
       def add_migrations

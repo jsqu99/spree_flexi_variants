@@ -25,6 +25,9 @@ module SpreeFlexiVariants
       SpreeFlexiVariants::Config = Spree::FlexiVariantsConfiguration.new
     end
 
+    initializer "spree.assets.precompile" do |app|
+        app.config.assets.precompile += ['store/spree_flexi_variants_exclusions.js']
+    end
     # Had a good reason for this rescue below, and wish I'd commented it better when I wrote it
     # TODO - figure this out and de-ugly
     begin

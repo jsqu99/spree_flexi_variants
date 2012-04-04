@@ -24,7 +24,10 @@ module SpreeFlexiVariants
     initializer "spree.flexi_variants.preferences", :after => "spree.environment" do |app|
       SpreeFlexiVariants::Config = Spree::FlexiVariantsConfiguration.new
     end
-
+    # store/flexi-variants should be removed after renaming the files
+    initializer "spree.flexi_variants.assets.precompile" do |app|
+        app.config.assets.precompile += ['store/spree_flexi_variants_exclusions.js','store/flexi-variants.*','store/spree-flexi-variants.*']
+    end
     # Had a good reason for this rescue below, and wish I'd commented it better when I wrote it
     # TODO - figure this out and de-ugly
     begin

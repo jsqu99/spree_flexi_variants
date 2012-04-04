@@ -2,40 +2,6 @@
 
   <%= stylesheet_link_tag 'store/flexi-variants' %>
 
-  <%= javascript_tag do %>
-    var cartFormValidator;
-    $(function () {
-
-      // set up the 'reset' functionality on file uploads
-      $("#cart-form form input[type=file]").each(function () {
-
-        // make a clone of the original in case the user wants to undo an upload
-        var orig = $(this);
-        var clone = $(orig).clone();
-
-        attachFileInputSwap(orig, clone);
-      });
-
-      // image customizations need multipart
-      $("#cart-form form").attr("enctype","multipart/form-data");
-
-      cartFormValidator = $("#cart-form form").validate();
-    });
-
-    // 'replacement' is always a pure, empty file input
-    function attachFileInputSwap(current, replacement) {
-        $(current).siblings("a").click(function (event) {
-          event.preventDefault();
-          $(current).replaceWith(replacement);
-
-          // need to reattach
-          var clone = $(replacement).clone();
-          attachFileInputSwap(replacement, clone);
-        });
-    }
-
-  <% end %>
-
   <% if !@product.ad_hoc_variant_exclusions.empty? %>
     <%= javascript_tag do %>
       var exclusions = [

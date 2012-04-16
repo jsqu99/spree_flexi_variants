@@ -4,10 +4,12 @@ module Spree
     belongs_to :product
     has_many :ad_hoc_option_values, :dependent => :destroy
     alias :option_values :ad_hoc_option_values
-    
+
     accepts_nested_attributes_for :ad_hoc_option_values, :allow_destroy => true
-    
-    attr_accessible :is_required, :ad_hoc_option_values_attributes, :as => :admin
+
+    # currently no controller for normal users present 
+    attr_accessible :is_required, :ad_hoc_option_values_attributes
+
     # price_modifier_type
     # is_required
     def has_price_modifier?

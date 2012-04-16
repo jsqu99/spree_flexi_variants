@@ -7,6 +7,9 @@ module Spree
 
     accepts_nested_attributes_for :ad_hoc_option_values, :allow_destroy => true
 
+    # currently no controller for normal users present 
+    attr_accessible :is_required, :ad_hoc_option_values_attributes
+
     # price_modifier_type
     # is_required
     def has_price_modifier?

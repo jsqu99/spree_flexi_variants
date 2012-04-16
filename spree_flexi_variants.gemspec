@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   # need this b/c of controllers/spree/admin/users_controller.
   # it has a reference to User::DestroyWithOrdersError
   # s.add_development_dependency 'spree_auth', '~> 1.0.0'
-  s.add_dependency 'spree_core', '~> 1.0.0'
+  s.add_dependency 'spree_core', '~> 1.1.0.rc1'
 
   s.add_development_dependency 'capybara', '1.0.1'
   s.add_development_dependency 'factory_girl'

@@ -7,7 +7,7 @@ module Spree
     
     accepts_nested_attributes_for :ad_hoc_option_values, :allow_destroy => true
     
-    attr_accessible :is_required, :as => :admin
+    attr_accessible :is_required, :ad_hoc_option_values_attributes, :as => :admin
     # price_modifier_type
     # is_required
     def has_price_modifier?

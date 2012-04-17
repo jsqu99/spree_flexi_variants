@@ -10,7 +10,9 @@ module Spree
 
     # AJAX method for selecting an existing option type and associating with the current product
     def select_ad_hoc
-      ad_hoc_option_type = AdHocOptionType.new(:option_type => OptionType.find(params[:id]))
+
+      ad_hoc_option_type = AdHocOptionType.new()
+      ad_hoc_option_type.option_type = OptionType.find params[:id]
 
       @product.ad_hoc_option_types << ad_hoc_option_type
 

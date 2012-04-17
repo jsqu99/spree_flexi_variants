@@ -23,6 +23,9 @@ module Spree
         @order.add_variant(Variant.find(variant_id), quantity, ad_hoc_option_value_ids, product_customizations) if quantity > 0
       end if params[:variants]
 
+      fire_event('spree.cart.add')
+      fire_event('spree.order.contents_changed')
+
       redirect_to cart_path
     end
 

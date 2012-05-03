@@ -73,8 +73,17 @@ module Spree
           plus_or_minus =t("subtract")
         end
 
-        price_change_text = ah_ov.price_modifier == 0 ? "" : " (#{plus_or_minus} #{format_price ah_ov.price_modifier.abs})"
+        price_change_text = ah_ov.price_modifier == 0 ? "" : " (#{plus_or_minus} #{price_difference_string})"
+
         [(ah_ov.price_modifier.nil? ? ah_ov.option_value.presentation : "#{ah_ov.option_value.presentation} #{price_change_text}"), ah_ov.id.to_s]
+      end
+    end
+
+    def price_difference_string(ah_ov)
+      if ah_ov.ad_hoc_option_type.price_depends_on_another_option?
+        "#{format_price ah_ov.price_modifier.abs}% of selected ah_ov.ad_hoc_option_type.price_affecting_option_type.presentation"
+      else
+        format_price ah_ov.price_modifier.abs
       end
     end
 

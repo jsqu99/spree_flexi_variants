@@ -29,7 +29,8 @@
 
     <%  @product.ad_hoc_option_types.each do |pot| %>
       <% pot.option_values.each do |pov| %>
-        price_modifier_map[<%= pov.id %>]= <%= pov.price_modifier %>;
+        <%# temporary 'fix' for percentage-based povs's.  basically this price updating is broken until i rework the javascript %>
+        price_modifier_map[<%= pov.id %>]= <%= pov.ad_hoc_option_type.price_affecting_option_type? ? 0 : pov.price_modifier %>;
       <% end %>
     <% end %>
 

@@ -23,7 +23,11 @@ module Spree
         end
         current_item.ad_hoc_option_values = povs
 
-        current_item.price   = variant.price + povs.map(&:price_modifier).compact.sum + product_customizations.map {|pc| pc.price(variant)}.sum
+        ahov_sum = povs.map do |pov|
+          pov.price(povs)
+        end.compact.sum
+
+        current_item.price   = variant.price + ahov_sum + product_customizations.map {|pc| pc.price(variant)}.sum
         self.line_items << current_item
       end
 

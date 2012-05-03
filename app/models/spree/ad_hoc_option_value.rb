@@ -16,5 +16,23 @@ module Spree
     def presentation
       option_value.presentation
     end
+
+    def price(selected_option_values = nil)
+      if self.ad_hoc_option_type.price_depends_on_another_option?
+        return nil unless selected_option_values.present?    # price is undefined 
+        
+        # find the driving option value
+        driving_option_value = 
+          selected_option_values.detect do |option_value| 
+            option_value.ad_hoc_option_type == self.ad_hoc_option_type.price_affecting_option_type 
+          end
+
+        return nil unless driving_option_value.present?    # price is undefined if the driving option value wasn't passed in
+
+        return driving_option_value.price * self.price_modifier / 100
+      else
+        return self.price_modifier || 0
+      end
+    end
   end
 end

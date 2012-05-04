@@ -28,7 +28,6 @@ module Spree
           end
 
         return nil unless driving_option_value.present?    # price is undefined if the driving option value wasn't passed in
-
         return driving_option_value.price * self.price_modifier / 100
       else
         return self.price_modifier || 0

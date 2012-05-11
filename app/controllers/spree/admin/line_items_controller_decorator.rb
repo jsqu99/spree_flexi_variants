@@ -6,7 +6,7 @@ module Spree
     def create
       variant = params[:add_variant_id] ? Variant.find(params[:add_variant_id]) : product.master
       if variant
-        @order.add_variant(variant, ad_hoc_option_value_ids, product_customizations, params[:add_quantity].to_i)
+        @order.add_variant(variant, params[:add_quantity].to_i, ad_hoc_option_value_ids, product_customizations)
       end
       if request.xhr?
         render :action => 'create', :layout => false

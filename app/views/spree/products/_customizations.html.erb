@@ -1,10 +1,11 @@
 <% if @product.product_customization_types %>
 
-  <div id="product-customizations">
+  <div id="product-customizations" style="overflow: auto;">
 
     <%# for finding optional partials %>
     <% lookup=ActionView::LookupContext.new(ActionController::Base.view_paths, {:formats => [:html]}) %>
 
+    <h3><%= t(:customizations) %></h3>
     <% @product.product_customization_types.each do |product_customization_type| %>
 
       <% param_prefix = "product_customizations[#{product_customization_type.id}]" %>
@@ -23,24 +24,20 @@
           <%= render :partial => partial_name, :locals => {:product_customization_type=>product_customization_type, :param_prefix => param_prefix} %>
         <% else %>
 
-          <%= field_set_tag product_customization_type.presentation do %>
+          <h6><%= product_customization_type.presentation %></h6>
 
 	        <% if product_customization_type.description && !product_customization_type.description.empty? %>
 	          <p><%=  product_customization_type.description %></p>
 	        <% end %>
-
-	        <% param_prefix = "product_customizations[#{product_customization_type.id}]" %>
-          <ol>
-	          <% product_customization_type.customizable_product_options.each do |option| %>
-
-              <li>
-	              <label><%= option.presentation %></label>
-	                <%= text_field_tag "#{param_prefix}[#{option.id}]","",:style=>"float: left;", :class=>"customization" %>
-              </li>
+          
+          <% param_prefix = "product_customizations[#{product_customization_type.id}]" %>
+          <dl>
+            <% product_customization_type.customizable_product_options.each do |option| %>
+              <dt><%= option.presentation %></dt>
+              <dd><%= text_field_tag "#{param_prefix}[#{option.id}]","",:style=>"float: left;", :class=>"customization" %></dd>
             <% end # options.each %>
-          </ol>
-        <% end %> <%# field_set_tag %>
-      <% end %> <%# else %>
+          </dl>
+        <% end %> <%# else %>
       <% end %> <%# else %>
     <% end %> <%# each customization type %>
   </div> <!-- product-customizations -->

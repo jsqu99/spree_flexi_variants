@@ -16,7 +16,7 @@
 
       <% partial_name = "spree/products/ad_hoc_options/#{ot.name.gsub(/(-)|(\s)/,"_").downcase}" %>
       <% if lookup.exists?(partial_name,nil,true) %>
-        <%= render :partial => partial_name, :locals => {:ahot=>ahot, :class_str=>class_str} %>
+        <%= render :partial => partial_name, :locals => {:option_type=>ahot, :class_str=>class_str} %>
       <% else %>
         <dt><%= ot.presentation %></dt>
         <% select_opts = {:class => class_str} %>

@@ -14,13 +14,13 @@
 
       <%# render a custom partial based on the option type name? %>
 
-      <% partial_name = "spree/products/ad_hoc_options/#{ot.name}" %>
+      <% partial_name = "spree/products/ad_hoc_options/#{ot.name.gsub(/(-)|(\s)/,"_").downcase}" %>
       <% if lookup.exists?(partial_name,nil,true) %>
-        <%= render :partial => partial_name, :locals => {:option_type=>ahot} %>
+        <%= render :partial => partial_name, :locals => {:ahot=>ahot, :class_str=>class_str} %>
       <% else %>
         <dt><%= ot.presentation %></dt>
         <% select_opts = {:class => class_str} %>
-        <% select_opts[:include_blank] = 'None' if ahot.option_values.size > 1 %>
+        <% select_opts[:prompt] = 'None' if ahot.option_values.size > 1 %>
 
         <dd>
           <%= select_tag "ad_hoc_option_values[#{ahot.id}]",

@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
-describe Order do
+describe Spree::Order do
 
   let(:order) { Factory(:order_with_totals) }  # has a line_item attached
   let(:product) { Factory(:product) }

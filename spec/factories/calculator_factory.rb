@@ -1,4 +1,4 @@
-Factory.define :product_area, :class => Calculator::ProductArea do |f|
+Factory.define :product_area, :class => Spree::Calculator::ProductArea do |f|
   f.after_create do |c|
     c.set_preference(:multiplier, 10.0)
     c.set_preference(:min_pricing_area, 20)

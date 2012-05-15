@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
-describe Order do
+describe Spree::Order do
 
   let(:order) { Factory(:order_with_totals) }  # has a line_item attached
   let(:product) { Factory(:product) }
@@ -21,7 +21,7 @@ describe Order do
       it "returns a new line item" do
         orig_items = order.line_items.clone
 
-        li= order.add_variant(product.master, @ov_ids, [], 1)
+        li= order.add_variant(product.master, 1, @ov_ids, [])
         li.should_not be_nil
         orig_items.include?(li).should be_false
       end
@@ -34,7 +34,7 @@ describe Order do
         orig_li.ad_hoc_option_values = ad_hoc_option_values
 
         orig_qty = orig_li.quantity
-        li= order.add_variant(product.master, @ov_ids, [], 1)
+        li= order.add_variant(product.master, 1, @ov_ids, [])
 
         li.id.should ==  order.line_items[0].id
         li.quantity.should == orig_qty+1
@@ -54,7 +54,7 @@ describe Order do
       it "returns a new line item" do
         orig_items = order.line_items.clone
 
-        li= order.add_variant(product.master, [], [customization], 1)
+        li= order.add_variant(product.master, 1, [], [customization])
         li.should_not be_nil
         orig_items.include?(li).should be_false
       end
@@ -72,7 +72,7 @@ describe Order do
 
         orig_qty = order.line_items[0].quantity
 
-        li= order.add_variant(product.master, [], [customization], 1)
+        li= order.add_variant(product.master, 1, [], [customization])
         li.id.should == order.line_items[0].id
         li.quantity.should == orig_qty+1
       end

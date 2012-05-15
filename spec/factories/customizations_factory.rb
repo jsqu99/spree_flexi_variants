@@ -1,10 +1,10 @@
-Factory.define :product_customization_type do |f|
+Factory.define :product_customization_type, :class => Spree::ProductCustomizationType do |f|
   f.name  { Faker::Lorem.words }
   f.presentation  { Faker::Lorem.words }
   f.description  {  Faker::Lorem.words }
 end
 
-Factory.define :customizable_product_option do |f|
+Factory.define :customizable_product_option, :class => Spree::CustomizableProductOption do |f|
   f.name  { Faker::Lorem.words }
   f.presentation  { Faker::Lorem.words }
   f.description  {  Faker::Lorem.words }
@@ -12,12 +12,12 @@ Factory.define :customizable_product_option do |f|
 end
 
 
-Factory.define :product_customization do |f|
+Factory.define :product_customization, :class => Spree::ProductCustomization do |f|
   f.association :product_customization_type
   f.association :line_item
 end
 
-Factory.define :customized_product_option do |f|
+Factory.define :customized_product_option, :class => Spree::CustomizedProductOption do |f|
   f.value { Faker::Lorem.words }
   f.association :product_customization
   f.association :customizable_product_option
@@ -39,7 +39,7 @@ Factory.define :customized_inscription, :parent => :customized_product_option do
   f.association :customizable_product_option, :factory => :customizable_inscription
 end
 
-Factory.define :engraving_calculator, :class => Calculator::Engraving do |f|
+Factory.define :engraving_calculator, :class => Spree::Calculator::Engraving do |f|
   f.after_create do |c|
     c.set_preference(:price_per_letter, 10.0)
   end
@@ -59,12 +59,12 @@ Factory.define :engraving_customization, :parent => :product_customization do |f
   f.customized_product_options { [ Factory(:customized_inscription) ]}
 end
 
-Factory.define :product_with_engraving, :parent => :product do |f|
-  cust = Factory(:engraving_customization_type)
-  f.product_customization_types [cust]
+#Factory.define :product_with_engraving, :parent => :product do |f|
+#  cust = Factory(:engraving_customization_type)
+#  f.product_customization_types [cust]
 
 #  f.after_create do |product|
 #    cust.products << product
 #  end
-end
+#end
 

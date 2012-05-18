@@ -1,6 +1,6 @@
 <% if @product.product_customization_types %>
 
-  <div id="product-customizations" style="overflow: auto;">
+  <div id="product-customizations">
 
     <%# for finding optional partials %>
     <% lookup=ActionView::LookupContext.new(ActionController::Base.view_paths, {:formats => [:html]}) %>

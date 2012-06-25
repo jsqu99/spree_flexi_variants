@@ -26,20 +26,6 @@ module Spree
         current_item.price   = variant.price + povs.map(&:price_modifier).compact.sum + product_customizations.map {|pc| pc.price(variant)}.sum
         self.line_items << current_item
       end
-
-      # populate line_items attributes for additional_fields entries
-      # that have populate => [:line_item]
-      Variant.additional_fields.select{|f| !f[:populate].nil? && f[:populate].include?(:line_item) }.each do |field|
-        value = ""
-
-        if field[:only].nil? || field[:only].include?(:variant)
-          value = variant.send(field[:name].gsub(" ", "_").downcase)
-        elsif field[:only].include?(:product)
-          value = variant.product.send(field[:name].gsub(" ", "_").downcase)
-        end
-        current_item.update_attribute(field[:name].gsub(" ", "_").downcase, value)
-      end
-
       current_item
     end
 

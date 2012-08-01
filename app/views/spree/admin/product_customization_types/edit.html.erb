@@ -21,6 +21,7 @@
         <th><%= t("name") %></th>
         <th><%= t("presentation") %></th>
         <th><%= t("description") %></th>
+        <th></th>
       </tr>
     </thead>
     <tbody id="customizable_product_options">
@@ -32,6 +33,7 @@
       <% end %>
     </tbody>
   </table>
+  <%# link_to_add_fields t("add_customizable_product_option"), "tbody#customizable_product_options", f, :customizable_product_options %>
 
 <!-- b/c of r_c removal -->
 <p class="form-buttons">

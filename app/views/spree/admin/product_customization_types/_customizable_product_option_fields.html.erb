@@ -2,4 +2,5 @@
   <td><%= f.text_field :name, :readonly => true, :disabled => true %></td>
   <td><%= f.text_field :presentation %></td>
   <td><%= f.text_area :description, {:style=>'height: auto;', :rows => 3, :cols => 25} %></td>
+  <td class="actions"><%= link_to_remove_fields t("remove"), f %></td>
 </tr>

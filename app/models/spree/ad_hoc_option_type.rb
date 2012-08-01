@@ -16,6 +16,10 @@ module Spree
       !(price_modifier_type.nil? || price_modifier_type.downcase=~/none/)
     end
 
+    def name
+      option_type.name
+    end
+
     def presentation
       option_type.presentation
     end

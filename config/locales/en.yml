@@ -45,3 +45,4 @@ en:
   customizations: 'Customizations'
   customize: 'Customize'
   reset: 'Reset'
+  position_within_product: 'Display order relative to other Ad Hoc Options (low numbers are displayed first)'

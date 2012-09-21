@@ -10,7 +10,7 @@
 	  <% ov=excl.excluded_ad_hoc_option_values.detect { |eov| eov.ad_hoc_option_value.option_type == ot } %>
 
 	  <% ov_str = ov.nil? ? "*" : ov.ad_hoc_option_value.id.to_s %>
-	  <%= "'ad_hoc_option_values_#{ot.id}':'#{ov_str}'" %>
+	  <%= raw "'ad_hoc_option_values_#{ot.id}':'#{ov_str}'" %>
 	  <% unless ot == @product.ad_hoc_option_types.last %>
 	    ,
 	  <% end %>

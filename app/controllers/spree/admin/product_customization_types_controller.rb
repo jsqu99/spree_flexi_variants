@@ -15,7 +15,8 @@ module Spree
       if @product_customization_type.customizable_product_options.empty?
         if !@product_customization_type.calculator.nil?
 
-          @product_customization_type.customizable_product_options.concat @product_customization_type.calculator.create_options
+          opts = @product_customization_type.calculator.create_options
+          @product_customization_type.customizable_product_options.concat opts if opts
 
           # for each mandatory input type
           #        @product_customization_type.calculator.required_fields.each_pair do |key, val|

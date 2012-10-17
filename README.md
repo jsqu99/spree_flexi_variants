@@ -29,8 +29,6 @@ Please see the Versionfile for working spree 1.0, 0.70 and  spree 0.60 versions
 Installation
 ------------
     # see the notes in Versionfile if you are using an older version of spree
-    gem 'rmagick'
-    gem 'carrierwave'
     gem 'spree_flexi_variants', :git=>'git@github.com:jsqu99/spree_flexi_variants.git'
 
     bundle install

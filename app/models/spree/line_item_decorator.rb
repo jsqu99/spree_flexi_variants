@@ -16,7 +16,7 @@ module Spree
 
       unless self.product_customizations.empty? 
         self.product_customizations.each do |customization| 
-          price_adjustment = (customization.price == 0) ? "" : " (#{format_price customization.price})"
+          price_adjustment = (customization.price == 0) ? "" : " (#{Spree::Money.new(customization.price).to_s})"
           str << "#{customization.product_customization_type.presentation}#{price_adjustment}"
           customization.customized_product_options.each do |option| 
             next if option.empty? 

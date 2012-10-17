@@ -8,7 +8,7 @@
 
 <% unless item.product_customizations.empty? %>
     <% item.product_customizations.each do |customization| %>
-    <%=  customization.product_customization_type.presentation %> <%= "(#{format_price customization.price})" if customization.price > 0%>
+    <%=  customization.product_customization_type.presentation %> <%= "(#{Spree::Money.new(customization.price).to_s})" if customization.price > 0%>
       <% customization.customized_product_options.each do |option| %>
          <% next if option.empty? %>
 

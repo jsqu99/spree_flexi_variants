@@ -16,7 +16,7 @@ module Spree
 
       ave.product=@product
       ave.save
-      redirect_to location_after_save
+      redirect_to admin_product_ad_hoc_variant_exclusions_url(@product)
     end
 
     # TODO how is this different than the default 'destroy'.  maybe I don't need this method
@@ -28,14 +28,6 @@ module Spree
     end
 
     protected
-    # TODO not sure I've got this method correct
-    def location_after_save
-      if @ad_hoc_variant_exclusion.created_at == @ad_hoc_variant_exclusion.updated_at
-        admin_product_ad_hoc_variant_exclusions_url(@ad_hoc_variant_exclusion.product)
-      else
-        admin_ad_hoc_variant_exclusions_url
-      end
-    end
 
     private
     def load_product

@@ -16,8 +16,8 @@ module Spree
     acts_as_list :scope => :ad_hoc_option_type
     default_scope order("position asc")
 
-    def presentation
-      option_value.presentation
-    end
+    delegate :name, :to => :option_value
+    delegate :presentation, :to => :option_value
+
   end
 end

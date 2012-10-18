@@ -89,8 +89,17 @@
       // the :prompt=>'None' in the select tag yields an empty string, which I can't use in the price calcuation
       var val=$(this).val();
 
-      if (isNumeric(val)) {
-        configuration_price+=price_modifier_map[val];
+      // now in case we are a multiple select, de-array
+      if ($.isArray(val)) {
+        $.each(val, function(index, value) {
+          if (isNumeric(value)) {
+            configuration_price+=price_modifier_map[value];
+          }
+        });
+      } else {
+        if (isNumeric(val)) {
+          configuration_price+=price_modifier_map[val];
+        }
       }
     });
 

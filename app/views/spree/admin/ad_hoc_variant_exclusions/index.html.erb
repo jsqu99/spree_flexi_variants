@@ -27,7 +27,7 @@
     <% sorted_ots = @product.ad_hoc_option_types.sort {|x,y| x.presentation <=> y.presentation} %>
 
     <% sorted_ots.each do |ot| %>
-      <th><%= t("option_value") %> for <%= t("option_type")%> <%= ot.name %> </th>
+      <th><%= t("option_value") %> for <%= t("option_type")%> <%= ot.presentation %> </th>
     <% end %>
     <th></th>
   </tr>
@@ -42,7 +42,7 @@
   <% sorted_ots.each do |ot| %>
     <% # find the exclusion ov associated w/ this ot, if any %>
     <% ov=excl.excluded_ad_hoc_option_values.detect { |eov| eov.ad_hoc_option_value.option_type == ot } %>
-    <td>      <%= ov.nil? ? "<all>" : ov.ad_hoc_option_value.presentation %> </td>
+    <td>      <%= ov.nil? ? "<all>" : ov.ad_hoc_option_value.name %> </td>
   <% end # sorted_ots.each %>
 
   <td class="actions">

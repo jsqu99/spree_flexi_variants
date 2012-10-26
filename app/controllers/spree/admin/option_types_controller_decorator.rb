@@ -12,7 +12,10 @@ module Spree
     def select_ad_hoc
 
       ad_hoc_option_type = AdHocOptionType.new()
-      ad_hoc_option_type.option_type = OptionType.find params[:id]
+
+      option_type = OptionType.find params[:id]
+      ad_hoc_option_type.option_type = option_type
+      ad_hoc_option_type.position = option_type.position
 
       @product.ad_hoc_option_types << ad_hoc_option_type
 

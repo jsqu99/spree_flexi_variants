@@ -27,7 +27,7 @@
     <% sorted_ots = @product.ad_hoc_option_types.sort {|x,y| x.presentation <=> y.presentation} %>
 
     <% sorted_ots.each do |ot| %>
-      <th><%= t("option_value") %> for <%= t("option_type")%> <%= ot.presentation %> </th>
+      <th><%= t("option_value") %> for <%= t("option_type")%> <%= ot.name %> </th>
     <% end %>
     <th></th>
   </tr>

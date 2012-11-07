@@ -53,6 +53,9 @@ Spree::Core::Engine.routes.prepend do
         collection do
           get :selected
         end
+        member do
+          get :add_option_value
+        end
       end
 
       resources :ad_hoc_variant_exclusions

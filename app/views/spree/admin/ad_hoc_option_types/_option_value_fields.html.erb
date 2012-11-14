@@ -2,5 +2,6 @@
   <td class='name'><span class="handle"></span><span> <%= f.object.option_value.name %> </span></td>
   <td class='presentation'><span>  <%= f.object.option_value.presentation %> </span></td>
   <td class='price_modifier'><%= f.text_field :price_modifier %></td>
+  <td><%= f.check_box :selected %></td>
   <td class="actions"><%= link_to_remove_fields t("remove"), f %></td>
 </tr>

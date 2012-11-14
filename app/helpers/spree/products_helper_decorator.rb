@@ -63,19 +63,28 @@ module Spree
     end
 
     def ad_hoc_option_value_options(ad_hoc_option_values)
-      options = ad_hoc_option_values.map do |ah_ov|
-
-        plus_or_minus=""
-
-        if ah_ov.price_modifier>0
-          plus_or_minus = t("add")
-        elsif ah_ov.price_modifier<0
-          plus_or_minus =t("subtract")
-        end
-
-        price_change_text = ah_ov.price_modifier == 0 ? "" : " (#{plus_or_minus} #{Spree::Money.new(ah_ov.price_modifier.abs).to_s})"
-        [(ah_ov.price_modifier.nil? ? ah_ov.option_value.presentation : "#{ah_ov.option_value.presentation} #{price_change_text}"), ah_ov.id.to_s]
+      ad_hoc_option_values.map do |ah_ov|
+        [ad_hoc_option_value_presentation_with_price_modifier(ah_ov),ah_ov.id.to_s]
       end
+    end
+
+    def price_change_text(ah_ov)
+      plus_or_minus=""
+
+      if ah_ov.price_modifier>0
+        plus_or_minus = t("add")
+      elsif ah_ov.price_modifier<0
+        plus_or_minus =t("subtract")
+      end
+
+      ah_ov.price_modifier == 0 ? "" : " (#{plus_or_minus} #{Spree::Money.new(ah_ov.price_modifier.abs).to_s})"
+    end
+
+
+    def ad_hoc_option_value_presentation_with_price_modifier(ah_ov)
+      presentation_string = ah_ov.price_modifier.nil? ? 
+                             ah_ov.option_value.presentation : 
+                             "#{ah_ov.option_value.presentation} #{price_change_text(ah_ov)}"
     end
 
     def calculator_name(product_customization_type)

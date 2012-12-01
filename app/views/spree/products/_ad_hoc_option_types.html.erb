@@ -8,7 +8,7 @@
   <dl>
     <% @product.ad_hoc_option_types.each do |ahot| %>
       <% ot=ahot.option_type %>
-      <% class_str='ad-hoc-option-select' %>
+      <% class_str = "ad-hoc-option-select #{ot.name}" %>
       <% class_str += ' required' if ahot.is_required %>
       <% class_str += ' ad_hoc' if !@product.ad_hoc_variant_exclusions.empty? %>
 
@@ -19,8 +19,8 @@
         <%= render :partial => partial_name, :locals => {:option_type=>ahot, :class_str=>class_str} %>
       <% else %>
         <dt><%= ot.presentation %></dt>
-        <% select_opts = {:class => class_str} %>
-        <% select_opts[:prompt] = 'None' if ahot.option_values.size > 1 && ahot.option_values.none? {|ov| ov.selected? }%>
+        <% select_opts = {:class => class_str, "data-placeholder" => "Choose a server"} %>
+        <% select_opts[:prompt] = 'None' if ahot.option_values.size > 1 %>
 
         <% selected_option_value = ahot.option_values.detect {|ov| ov.selected? } %>
         <dd>

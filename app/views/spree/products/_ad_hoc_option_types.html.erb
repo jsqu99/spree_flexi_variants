@@ -19,7 +19,7 @@
         <%= render :partial => partial_name, :locals => {:option_type=>ahot, :class_str=>class_str} %>
       <% else %>
         <dt><%= ot.presentation %></dt>
-        <% select_opts = {:class => class_str, "data-placeholder" => "Choose a server"} %>
+        <% select_opts = {:class => class_str, "data-placeholder" => "Выберите сервер"} %>
         <% select_opts[:prompt] = 'None' if ahot.option_values.size > 1 %>
 
         <% selected_option_value = ahot.option_values.detect {|ov| ov.selected? } %>

@@ -4,11 +4,10 @@
     <th><%= t("name") %></th>
     <th><%= t("presentation") %></th>
     <th><%= t("required") %></th>
-    <th>&nbsp;</th>
   </tr>
   <% @option_types.each do |ahot| %>
 
-    <% if ahot.option_type.id.to_s == @last_selected_option_type_id %>  
+    <% if ahot.option_type.id.to_s == @last_selected_option_type_id %>
       <% # do we need to do the 'first time' forced-edit/save of new option values? %>
 
       <%= render :partial => "form", :locals => { :f => f } %>
@@ -19,8 +18,8 @@
         <td><%= ahot.option_type.presentation %></td>
         <td><%= ahot.is_required %></td>
         <td class="actions">
-          <%= link_to_with_icon 'edit',  t("edit"), edit_admin_ad_hoc_option_type_url(ahot) %>
-          <%= link_to_with_icon 'delete',  t("remove"), remove_admin_ad_hoc_option_type_url(ahot) %>
+          <%= link_to_edit ahot, :no_text => true %>
+          <%= link_to_delete ahot, :no_text => true %>
         </td>
       </tr>
     <% end %>
@@ -31,7 +30,7 @@
 </table>
 
 <div id="option-types"></div>
-<span id="new_opt_link">     
+<span id="new_opt_link">
   <!-- THIS pulls up the 'available' list below -->
   <%= link_to icon('add') + ' ' + t("add_option_type"), available_ad_hoc_admin_product_option_types_url(@product), :remote => :true, :class => 'iconlink' %>
 </span>

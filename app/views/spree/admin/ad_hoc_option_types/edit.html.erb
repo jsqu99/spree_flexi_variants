@@ -1,19 +1,29 @@
+<% content_for :page_title do %>
+  <%= t(:editing_option_type) %>
+  "<%= @ad_hoc_option_type.option_type.presentation %>"
+<% end %>
+
 <%= render :partial => 'spree/admin/shared/product_sub_menu' %>
-<h1><%= t("editing_option_type") %> "<%= @ad_hoc_option_type.option_type.presentation %>"</h1>
 <%= render 'spree/shared/error_messages', :target => @ad_hoc_option_type %>
 <%= form_for(@ad_hoc_option_type, :url => object_url, :html => { :method => :put }) do |f| %>
 <fieldset>
   <legend><%= t("editing_option_type") %></legend>
   <%= render :partial => "form", :locals => { :f => f } %>
-  <h3><%= t("option_values") %></h3>
+  <fieldset><legend><%= t("option_values") %></legend>
   <table class="index sortable" data-sortable-link="<%= update_positions_admin_ad_hoc_option_type_ad_hoc_option_values_url(@ad_hoc_option_type) %>">
+    <colgroup>
+      <col style="width: 10%">
+      <col style="width: 30%">
+      <col style="width: 40%">
+      <col style="width: 10%">
+      <col style="width: 10%">
+    </colgroup>
     <thead>
       <tr>
         <th><%= t("name") %></th>
         <th><%= t("display") %></th>
         <th><%= t("price_modifier") %></th>
         <th><%= t("selected_by_default") %></th>
-        <th></th>
       </tr>
     </thead>
     <tbody id="option_values">
@@ -32,7 +42,7 @@
       <h4>Available Option Values</h4>
       <% @available_option_values.each do |option_value| %>
         <br/>
-        <%= link_to (icon('add') + ' ' + option_value.name + ':' + option_value.presentation), add_option_value_admin_product_ad_hoc_option_type_url(@ad_hoc_option_type.product, @ad_hoc_option_type, option_value_id: option_value.id), :class => 'iconlink' %>
+        <%= link_to (icon('icon-add') + ' ' + option_value.name + ':' + option_value.presentation), add_option_value_admin_product_ad_hoc_option_type_url(@ad_hoc_option_type.product, @ad_hoc_option_type, option_value_id: option_value.id), :class => 'iconlink' %>
       <% end %>
     </div>
   <% end %>
@@ -41,5 +51,6 @@
     <%= button t("update") %>
     <%= t("or") %> <%= link_to t("cancel"), selected_admin_product_ad_hoc_option_types_url(@ad_hoc_option_type.product) %>
   </p>
+  </fieldset>
 </fieldset>
 <% end %>

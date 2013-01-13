@@ -7,10 +7,10 @@
   <h3><%= t(:select_variant_options) %></h3>
   <dl>
     <% @product.ad_hoc_option_types.each do |ahot| %>
-      <% ot=ahot.option_type %>
+      <% ot = ahot.option_type %>
       <% class_str = "ad-hoc-option-select #{ot.name}" %>
-      <% class_str += ' required' if ahot.is_required %>
-      <% class_str += ' ad_hoc' if !@product.ad_hoc_variant_exclusions.empty? %>
+      <% class_str << ' required' if ahot.is_required %>
+      <% class_str << ' ad_hoc' if !@product.ad_hoc_variant_exclusions.empty? %>
 
       <%# render a custom partial based on the option type name? %>
 
@@ -19,13 +19,12 @@
         <%= render :partial => partial_name, :locals => {:option_type=>ahot, :class_str=>class_str} %>
       <% else %>
         <dt><%= ot.presentation %></dt>
-        <% select_opts = {:class => class_str, "data-placeholder" => "Выберите сервер"} %>
-        <% select_opts[:prompt] = 'None' if ahot.option_values.size > 1 && ahot.option_values.none? {|ov| ov.selected? }%>
+        <% select_opts = {:class => class_str} %>
         <% selected_option_value = ahot.option_values.detect {|ov| ov.selected? } %>
         <dd>
           <%= select_tag "ad_hoc_option_values[#{ahot.id}]",
-           options_for_select(ad_hoc_option_value_options(ahot.option_values), 
-                              selected_option_value.present? ? 
+           options_for_select(ad_hoc_option_value_options(ahot.option_values),
+                              selected_option_value.present? ?
                                 selected_option_value.id.to_s : nil),
             select_opts
             %>

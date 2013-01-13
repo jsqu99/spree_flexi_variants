@@ -1,7 +1,7 @@
 ---
 ru:
   required: "Требуется?"
-  price_modifier: "Цена корректировки"
+  price_modifier: "Изменение цены(можно в отрицательную сторону)"
   price_modifier_type: "Какаую стратегию модификатора цены использовать для опции этого типа?"
   add_option_values: "Добавить значения опции"
   edit_option_values: "Изменить значения опции"
@@ -44,3 +44,5 @@ ru:
   select_variant_options: 'Опции'
   customize: 'Настроить'
   reset: 'Сброс'
+  selected_by_default: 'Выбирать по умолчанию'
+  position_within_product: 'Позиция на странице продукта'

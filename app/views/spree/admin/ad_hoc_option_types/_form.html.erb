@@ -1,16 +1,36 @@
-<% # first two are read only (come from opiton_type.rb) %>
-<h3><%= t("name") %>:<%= f.object.option_type.name%></h3>
-<h3><%= t("presentation") %>:<%= f.object.option_type.presentation%></h3>
-<%= f.field_container :is_required do %>
-  <%= f.label :position, t("position_within_product") %><br />
-  <%= f.number_field :position %>
-  <%= f.error_message_on :position %>
-<% end %>
-<%= f.field_container :is_required do %>
-  <%= f.label :is_required, t("required") %> <span class="required">*</span><br />
-  <%= f.check_box :is_required %>
-  <%= f.error_message_on :is_required %>
-<% end %>
-
-
-
+<table class='index'>
+  <colgroup>
+    <col style="width: 10%">
+    <col style="width: 30%">
+    <col style="width: 40%">
+    <col style="width: 20%">
+  </colgroup>
+  <thead>
+    <tr>
+      <th><%= t("name") %></th>
+      <th><%= t("presentation") %></th>
+      <th><%= t("position_within_product") %></th>
+      <th><%= t("required") %><span class="required">*</span></th>
+    </tr>
+  </thead>
+  <tbody id="option_values">
+    <tr>
+      <td>
+        <%= f.object.option_type.name%>
+      </td>
+      <td>
+        <%= f.object.option_type.presentation%>
+      </td>
+      <td>
+        <%= f.number_field :position %>
+        <%= f.error_message_on :position %>
+      </td>
+      <td>
+        <center>
+          <%= f.check_box :is_required %>
+          <%= f.error_message_on :is_required %>
+        </center>
+      </td>
+    </tr>
+  </tbody>
+</table>

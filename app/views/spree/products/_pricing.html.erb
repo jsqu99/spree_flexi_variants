@@ -49,6 +49,10 @@
         updatePrice();
       });
 
+      $('#variants_1').change(function() {
+        updatePrice();
+      });
+
       // 'watch' our configurations
       $('.ad-hoc-option-select').change(function() {
 
@@ -124,10 +128,11 @@
 
   function updatePrice() {
 
+    var number = $('#variants_1').val()
     var cur_variant_price_diff       = compute_variant_price_diff(base_price);
     var cur_configuration_price =  compute_configuration_price();
     var cur_customization_price =  compute_customization_price();
-    var cur_price =base_price + cur_variant_price_diff + cur_configuration_price + cur_customization_price;
+    var cur_price =(base_price + cur_variant_price_diff + cur_configuration_price + cur_customization_price)*n;
 
     $('.price.selling').text(cur_price.toFixed(2)).formatCurrency({region: "<%= I18n.locale.to_s %>"});
   }

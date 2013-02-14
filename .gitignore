@@ -8,3 +8,4 @@ tmp
 nbproject
 *.swp
 doc/notes.txt
+Gemfile.lock

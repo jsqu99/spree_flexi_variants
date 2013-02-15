@@ -1,9 +1,9 @@
 module Spree
   module Admin
     BaseHelper.module_eval do
-      def link_to_remove_fields(name, f)
+      def link_to_remove_fields(name, f, options = {})
         # fixes https://github.com/jsqu99/spree_flexi_variants/issues/52 by reverting back to 'old spree' version
-        f.hidden_field(:_destroy) + link_to_with_icon(:delete, name, '#', :class => 'remove_fields')
+        f.hidden_field(:_destroy) + link_to_with_icon(:delete, name, '#', options [ :remove_fields ])
       end
     end
   end

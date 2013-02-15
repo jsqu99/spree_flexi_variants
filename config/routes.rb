@@ -33,6 +33,8 @@ Spree::Core::Engine.routes.prepend do
       end
     end
 
+    delete '/ad_hoc_option_values/:id', :to => "ad_hoc_option_values#destroy", :as => :ad_hoc_option_value
+
     resources :ad_hoc_variant_exclusions
 
     resources :products do

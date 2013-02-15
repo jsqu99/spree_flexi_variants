@@ -9,5 +9,11 @@ module Spree
         format.js  { render :text => 'Ok' }
       end
     end
+
+    def destroy
+      ad_hoc_option_value = AdHocOptionValue.find(params[:id])
+      ad_hoc_option_value.destroy
+      render :text => nil
+    end
   end
 end

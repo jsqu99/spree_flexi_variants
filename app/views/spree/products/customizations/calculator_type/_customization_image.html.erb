@@ -9,7 +9,7 @@
 
   <%= content_for :head do %>
     <%= javascript_tag do %>
-      $('#<%= cust_dom_id %>').live('change', function(e) {
+      $(document).on('change', '#<%= cust_dom_id %>', function(e) {
 
         // update the hidden price field for this file input
         $(this).siblings(".customization_price").val(calculate_customization_image_price(this));

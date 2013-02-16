@@ -10,8 +10,8 @@
 
   <%= content_for :head do %>
     <%= javascript_tag do %>
-      $('#<%= width_dom_id %> , #<%= height_dom_id %>').live('keyup', function(e) {
 
+      function product_area_keyup() { 
         var tf = $(this);
 
         delay(function(){
@@ -21,6 +21,9 @@
           updatePrice();
         }, 1000 ); // delay
       }); // keyup
+
+      $(document).on('keyup', '#<%= width_dom_id %>', product_area_keyup);
+      $(document).on('keyup', '#<%= height_dom_id %>', product_area_keyup);
     <% end %>
   <% end %>
 

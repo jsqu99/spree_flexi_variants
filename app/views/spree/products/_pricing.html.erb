@@ -124,12 +124,13 @@
 
   function updatePrice() {
 
-    var cur_variant_price_diff       = compute_variant_price_diff(base_price);
+    var cur_variant_price_diff  = compute_variant_price_diff(base_price);
     var cur_configuration_price =  compute_configuration_price();
     var cur_customization_price =  compute_customization_price();
-    var cur_price =base_price + cur_variant_price_diff + cur_configuration_price + cur_customization_price;
+    var cur_price = base_price + cur_variant_price_diff + cur_configuration_price + cur_customization_price;
 
-    $('.price.selling').text(cur_price.toFixed(2)).formatCurrency({region: "<%= I18n.locale.to_s %>"});
+    update_price_from_options( cur_price.toFixed(2) );
+    // $('.price.selling').text(cur_price.toFixed(2)).formatCurrency({region: "<%= I18n.locale.to_s %>"});
   }
 
   //]]>

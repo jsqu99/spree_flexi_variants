@@ -4,7 +4,22 @@ ENV['RAILS_ENV'] = 'test'
 require File.expand_path('../dummy/config/environment.rb',  __FILE__)
 
 require 'rspec/rails'
+
 require 'ffaker'
+
+#include spree's factories
+require 'spree_core'
+
+# need this b/c of controllers/spree/admin/users_controller.
+# it has a reference to User::DestroyWithOrdersError, and we only have a spree_core dependency in our gemspec.  This smells...must bring this up on spree group
+#class Spree::User::DestroyWithOrdersError < StandardError; end
+#require 'spree_core/testing_support/factories'
+
+# include local factories
+Dir["#{File.dirname(__FILE__)}/factories/**/*.rb"].each do |f|
+  fp =  File.expand_path(f)
+  require fp
+end
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.

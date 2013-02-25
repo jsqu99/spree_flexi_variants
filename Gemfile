@@ -1,14 +1,9 @@
 source 'http://rubygems.org'
 
-gem 'spree', '~> 1.2.4'
-
-gemspec
-
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+if RUBY_VERSION < "1.9"
+  gem "ruby-debug"
+else
+  gem "ruby-debug19"
 end
 
 group :test do

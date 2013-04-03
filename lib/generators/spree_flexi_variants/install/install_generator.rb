@@ -4,6 +4,7 @@ module SpreeFlexiVariants
 
       def add_javascripts
         append_file "app/assets/javascripts/store/all.js", "//= require store/spree_flexi_variants\n"
+        append_file "app/assets/javascripts/admin/all.js", "//= require admin/spree_flexi_variants\n"
       end
 
       def add_stylesheets

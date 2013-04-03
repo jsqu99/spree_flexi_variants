@@ -1,6 +1,7 @@
 // overrides spree core's version to include our variant configurations
 $(document).ready(function(){
 
+  $("#add_line_item_to_order").die("click"); // remove spree's version
   $("#add_line_item_to_order").live("click", function(){
     if($('#add_variant_id').val() == ''){ return false; }
     update_target = $(this).attr("data-update");

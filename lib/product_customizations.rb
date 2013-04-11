@@ -1,11 +1,11 @@
 module ProductCustomizations
 
   # given params[:customizations], return a non-persisted array of ProductCustomization objects
-  def product_customizations
+  def product_customizations(product_customizations_hash)
     customizations=[]
 
     # do we have any customizations?
-    params[:product_customizations].each do |ct_id,cv_pair|  # customization_type_id =>
+    product_customizations_hash.each do |ct_id,cv_pair|  # customization_type_id =>
       # {customized_product_option_id => <user input>,  etc.}
       next if cv_pair.empty? || cv_pair.values.all? {|v| v.empty?}
       # create a product_customization based on ct_id
@@ -29,7 +29,7 @@ module ProductCustomizations
 
       customizations << pc
 
-    end if params[:product_customizations]
+    end if product_customizations_hash
 
     customizations
   end

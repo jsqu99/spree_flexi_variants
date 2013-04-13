@@ -26,6 +26,8 @@ module Spree
         current_item.price   = variant.price + povs.map(&:price_modifier).compact.sum + product_customizations.map {|pc| pc.price(variant)}.sum
         self.line_items << current_item
       end
+      
+      self.reload
       current_item
     end
 

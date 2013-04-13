@@ -1,9 +1,9 @@
 module AdHocUtils
 
-  def ad_hoc_option_value_ids # (variant_id)
+  def ad_hoc_option_value_ids(ad_hoc_option_values_hash) # (variant_id)
     ids=[]
 
-    params[:ad_hoc_option_values].each do |ignore,pov_id|
+    ad_hoc_option_values_hash.each do |ignore,pov_id|
 
       # pov=ProductOptionValue.find(pov_id)   # we don't actually need to load these from the DB just yet.  We might already have them attached to the line item
 
@@ -15,7 +15,7 @@ module AdHocUtils
       else
         ids << pov_id unless pov_id.empty?
       end
-    end if params[:ad_hoc_option_values]
+    end if ad_hoc_option_values_hash
 
     ids
   end

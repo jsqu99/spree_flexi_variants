@@ -15,7 +15,7 @@ module Spree
 
       from_hash[:variants].each do |variant_id, quantity|
         attempt_cart_add( variant_id, 
-                          from_hash[:quantity], 
+                          quantity, 
                           ad_hoc_option_value_ids(from_hash[:ad_hoc_option_values]), 
                           product_customizations(from_hash[:product_customizations])
                          )

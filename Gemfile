@@ -15,6 +15,10 @@ group :test do
   gem 'ffaker'
   gem 'capybara', '2.0.2'
   gem 'launchy'
+  gem 'pry'
 end
 
+group :assets do
+  gem 'coffee-rails'
+end
 gemspec

@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency('json')
   s.add_dependency('carrierwave')
-  s.add_dependency('mini_magick');
+  s.add_dependency('mini_magick')
 
   s.add_dependency 'spree_core', '~> 1.3'
 
@@ -28,6 +28,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rspec-rails',  '~> 2.7'
   s.add_development_dependency 'sqlite3'
 
-  s.add_dependency 'carrierwave', '~> 0.8.0'
-  s.add_dependency 'rmagick', '~> 2.13.2'
 end

@@ -19,6 +19,7 @@ describe 'Ad Hoc Option Values', js: true do
 
     it 'removes the associated option value when clicked' do
       visit '/admin'
+save_and_open_page
       click_on 'Products'
       click_on 'Test Product'
       click_on 'Ad Hoc Option Types'

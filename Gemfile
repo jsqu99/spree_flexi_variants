@@ -1,5 +1,7 @@
 source 'http://rubygems.org'
 
+gem 'spree', '~> 1.3.2'
+
 if RUBY_VERSION < "1.9"
   gem "ruby-debug"
 else
@@ -12,4 +14,7 @@ group :test do
   gem 'factory_girl_rails', '~> 1.7.0'
   gem 'ffaker'
   gem 'capybara', '2.0.2'
+  gem 'launchy'
 end
+
+gemspec

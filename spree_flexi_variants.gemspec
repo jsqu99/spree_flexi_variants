@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.add_dependency('carrierwave')
   s.add_dependency('mini_magick');
 
-  s.add_dependency 'spree_core', '~> 1.3'
+  s.add_dependency 'spree_core', '~> 1.1'
 
   s.add_development_dependency 'capybara', '1.0.1'
   s.add_development_dependency 'factory_girl'
@@ -28,5 +28,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'sqlite3'
 
   s.add_dependency 'carrierwave', '~> 0.8.0'
-  s.add_dependency 'rmagick', '~> 2.13.2'
 end

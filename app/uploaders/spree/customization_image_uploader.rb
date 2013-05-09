@@ -3,11 +3,7 @@ require 'carrierwave'
 
 module Spree
 class CustomizationImageUploader < CarrierWave::Uploader::Base
-  include CarrierWave::RMagick
-
-  # Include RMagick or ImageScience support:
-  # include CarrierWave::RMagick
-  # include CarrierWave::ImageScience
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   storage :file

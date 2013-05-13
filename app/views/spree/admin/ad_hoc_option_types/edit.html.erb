@@ -13,15 +13,18 @@
         <th><%= t("display") %></th>
         <th><%= t("price_modifier") %></th>
         <th><%= t("selected_by_default") %></th>
-        <th></th>
+        <th class='actions'></th>
       </tr>
     </thead>
     <tbody id="option_values">
-      <tr id="none">
-        <td colspan="4"><%= @ad_hoc_option_type.option_values.empty? ? t("none") : "" %></td>
-      </tr>
-      <%= f.fields_for :ad_hoc_option_values do |option_value_form| %>
-        <%= render "option_value_fields", :f => option_value_form %>
+      <% if @ad_hoc_option_type.option_values.empty? %>
+        <tr>
+          <td colspan="4"><%= t("none") %></td>
+        </tr>
+      <% else %>
+        <%= f.fields_for :ad_hoc_option_values do |option_value_form| %>
+          <%= render "option_value_fields", :f => option_value_form %>
+        <% end %>
       <% end %>
     </tbody>
   </table>
@@ -37,9 +40,10 @@
     </div>
   <% end %>
 
-  <p class="form-buttons">
-    <%= button t("update") %>
-    <%= t("or") %> <%= link_to t("cancel"), selected_admin_product_ad_hoc_option_types_url(@ad_hoc_option_type.product) %>
-  </p>
+  <div class="form-buttons filter-actions actions">
+    <%= button t("update"), 'icon-refresh' %>
+    <span class='or'><%= t("or") %></span>
+    <%= button_link_to t("cancel"), selected_admin_product_ad_hoc_option_types_url(@ad_hoc_option_type.product), :icon => 'icon-remove' %>
+  </div>
 </fieldset>
 <% end %>

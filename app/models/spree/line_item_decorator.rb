@@ -32,5 +32,13 @@ module Spree
 
       str.join('\n')
     end
+
+    def cost_price
+      variant.cost_price + ad_hoc_option_values.map(&:cost_price).inject(0, :+)
+    end
+
+    def cost_money
+      Spree::Money.new(cost_price, :currency => currency)
+    end
   end
 end

@@ -14,6 +14,5 @@ $(document).ready(function(){
     return false;
   });
 
-  $(".product_autocomplete").product_autocomplete();
-
+  $('[data-hook="add_product_name"]').find(".variant_autocomplete").variantAutocomplete();
 });

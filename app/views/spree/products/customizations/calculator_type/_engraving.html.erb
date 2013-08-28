@@ -9,7 +9,7 @@
 
   <%= content_for :head do %>
     <%= javascript_tag do %>
-      $('#<%= cust_dom_id %>').live('keyup', function(e) {
+      $(document).on('keyup', '#<%= cust_dom_id %>', function(e) {
 
         var tf = $(this);
 

@@ -1,24 +1,17 @@
 <%= render :partial => 'spree/admin/shared/product_sub_menu' %>
 
-<div class='toolbar'>
-  <ul class='actions'>
-    <li id="new_product_customization_type_link">
-      <% # don't know why remote=> true is present on the option_type version i copied...ok, i know now....should show up above the list below...TODO%>
-      <%= button_link_to t("new_product_customization_type"), new_admin_product_customization_type_url, {:icon => 'add', :id => 'new_product_customization_type_link'} %>
-    </li>
-  </ul>
-  <br class='clear' />
-</div>
-
-<h1><%= t("product_customization_types") %></h1>
-
-<div id="new_product_customization_type"></div>
+<% content_for(:page_title, Spree.t("product_customization_types")) %>
+<% content_for(:page_actions) do %>
+  <li id="new_product_customization_type_link">
+    <%= button_link_to Spree.t("new_product_customization_type"), new_admin_product_customization_type_url, {:icon => 'add', :id => 'new_product_customization_type_link'} %>
+  </li>
+<% end %>
 
 <table class="index sortable" id='listing_product_customization_types'>
   <tr>
-    <th><%= t("name") %></th>
-    <th><%= t("presentation") %></th>
-    <th><%= t("description") %></th>
+    <th><%= Spree.t("name") %></th>
+    <th><%= Spree.t("presentation") %></th>
+    <th><%= Spree.t("description") %></th>
     <th></th>
   </tr>
   <% @product_customization_types.each do |product_customization_type| %>

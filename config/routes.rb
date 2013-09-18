@@ -38,6 +38,11 @@ Spree::Core::Engine.routes.prepend do
     resources :ad_hoc_variant_exclusions
 
     resources :products do
+      # The mere existence of 'resources :products' blows away the admin/products/search route.
+      # I have to redefine here or it doesn't work.  I want to report this but the sheer amount of effort to prove it is daunting
+      collection do
+        get :search
+      end
       resources :option_types do
         member do
           get :select

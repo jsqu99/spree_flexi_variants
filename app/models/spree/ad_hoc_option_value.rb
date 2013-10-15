@@ -6,7 +6,7 @@ module Spree
     has_many :excluded_ad_hoc_option_values, :dependent => :destroy
 
     # currently no controller for normal users present
-    attr_accessible :price_modifier, :ad_hoc_option_type_id, :option_value_id, :selected, :cost_price_modifier
+    #attr_accessible :price_modifier, :ad_hoc_option_type_id, :option_value_id, :selected, :cost_price_modifier
 
     # this opens up a can of worms..deleting option values and having historical data still intact...ugh...what to do?...add 'deleted_at' somewhere along the chain?
     # has_many :ad_hoc_option_values_line_items, :dependent => :destroy

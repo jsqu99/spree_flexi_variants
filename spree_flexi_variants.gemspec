@@ -18,5 +18,5 @@ Gem::Specification.new do |s|
 
   s.add_dependency('carrierwave')
   s.add_dependency('mini_magick')
-  s.add_dependency 'spree_core', '~> 1.3'
+  s.add_dependency 'spree_core', '>= 1.3'
 end

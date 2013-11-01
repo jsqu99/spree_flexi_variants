@@ -1,4 +1,4 @@
-Spree::Core::Engine.routes.append do
+Spree::Core::Engine.routes.add_routes do
   match 'product_customizations/price', :to => 'product_customizations#price', :via => [:get, :post]
 
   match 'customize/:product_id', :to => 'products#customize', :as => 'customize', :via => [:get, :post]

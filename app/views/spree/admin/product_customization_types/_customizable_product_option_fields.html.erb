@@ -4,5 +4,13 @@
   <td><%= f.text_area :description, {:style=>'height: auto;', :rows => 3, :cols => 25} %></td>
   <td class="actions">
     <%# link_to_remove_nested_fields t("remove"), f, :no_text => true, :nest => "product_customization_type" %>
+    <%=
+      link_to_with_icon(
+        'icon-trash', '',
+        admin_product_customization_type_path(f.object),
+        :method => :delete,
+        :class => "remove_fields no-text with-tip"
+      ) + f.hidden_field(:_destroy)
+     %>
   </td>
 </tr>

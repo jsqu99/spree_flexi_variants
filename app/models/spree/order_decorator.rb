@@ -37,10 +37,15 @@ module Spree
       end
     end
 
-    def merge!(order)
+    def merge!(order, user = nil)
       order.line_items.each do |line_item|
         self.add_variant(line_item.variant, line_item.quantity, line_item.ad_hoc_option_value_ids, line_item.product_customizations)
       end
+
+      self.associate_user!(user) if !self.user && !user.blank?
+
+      # So that the destroy doesn't take out line items which may have been re-assigned
+      order.line_items.reload
       order.destroy
     end
 

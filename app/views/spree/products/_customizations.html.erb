@@ -33,7 +33,7 @@
           <% param_prefix = "product_customizations[#{product_customization_type.id}]" %>
           <dl>
             <% product_customization_type.customizable_product_options.each do |option| %>
-              <dt><%= option.description %></dt>
+              <dt><%= option.presentation %></dt>
               <dd><%= text_field_tag "#{param_prefix}[#{option.id}]","",:style=>"float: left;", :class=>"customization" %></dd>
             <% end # options.each %>
           </dl>

@@ -30,6 +30,10 @@ module Spree
     end
 
     def contains?(variant, ad_hoc_option_value_ids, product_customizations)
+      find_line_item_by_variant(variant, ad_hoc_option_value_ids, product_customizations).present?
+    end
+
+    def find_line_item_by_variant(variant, ad_hoc_option_value_ids, product_customizations)
       line_items.detect do |li|
         li.variant_id == variant.id &&
           matching_configurations(li.ad_hoc_option_values,ad_hoc_option_value_ids) &&
@@ -37,6 +41,7 @@ module Spree
       end
     end
 
+    # TODO: justin's pull request
     def merge!(order)
       order.line_items.each do |line_item|
         self.add_variant(line_item.variant, line_item.quantity, line_item.ad_hoc_option_value_ids, line_item.product_customizations)

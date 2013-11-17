@@ -2,7 +2,9 @@ module Spree
   class ProductCustomization < ActiveRecord::Base
     belongs_to :product_customization_type
     belongs_to :line_item
-    has_many :customized_product_options, :dependent => :destroy
+    has_many :customized_product_options, dependent: :destroy
+    belongs_to :backing_class, polymorphic: true, dependent: :destroy
+
     #attr_accessible :product_customization_type_id, :line_item_id
     # TODO: Jeff, add 'required'
 

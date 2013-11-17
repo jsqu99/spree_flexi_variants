@@ -16,4 +16,10 @@
   <%= f.error_message_on :description %>
 <% end %>
 
+<%= f.field_container :backing_class_name do %>
+  <%= f.label :backing_class_name, t("backing_class_name") %><br />
+  <%= f.text_field :backing_class_name %>
+  <%= f.error_message_on :backing_class_name %>
+<% end %>
+
 <%= render "spree/admin/shared/calculator_fields", :f => f %>

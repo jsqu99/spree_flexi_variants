@@ -37,7 +37,8 @@ module SpreeFlexiVariants
                                                                     Spree::Calculator::Engraving,
                                                                     Spree::Calculator::AmountTimesConstant,
                                                                     Spree::Calculator::ProductArea,
-                                                                    Spree::Calculator::CustomizationImage
+                                                                    Spree::Calculator::CustomizationImage,
+                                                                    Spree::Calculator::NoCharge
                                                                    ]
       end
     rescue => problem

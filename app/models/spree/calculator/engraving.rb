@@ -1,3 +1,5 @@
+require_dependency 'spree/calculator'
+
 module Spree
   class Calculator::Engraving < Calculator
     preference :price_per_letter, :decimal

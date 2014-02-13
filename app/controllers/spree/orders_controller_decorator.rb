@@ -11,7 +11,7 @@ module Spree
     #
     # Adds a new item to the order (creating a new order if none already exists)
     def populate
-      populator = Spree::OrderPopulator.new(current_order(true), current_currency)
+      populator = Spree::OrderPopulator.new(current_order(create_order_if_necessary: true), current_currency)
       flexi_hash = {ad_hoc_option_value_ids: ad_hoc_option_value_ids, product_customizations: product_customizations}
 
       if populator.populate(params.slice(:products, :variants, :quantity).merge(flexi_hash))

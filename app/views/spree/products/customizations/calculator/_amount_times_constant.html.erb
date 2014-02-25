@@ -2,7 +2,7 @@
 
   <%= javascript_tag do %>
     function calculate_amount_times_constant_price(obj) {
-      return <%= calculator.preferred_multiplier %> * $(obj).val().length;
+      return <%= calculator.preferred_multiplier %> * $(obj).val();
     }
   <% end %>
 <% end %>

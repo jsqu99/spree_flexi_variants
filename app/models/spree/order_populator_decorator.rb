@@ -1,22 +1,8 @@
 module Spree
   OrderPopulator.class_eval do
-    #
-    # Parameters can be passed using the following possible parameter configurations:
-    #
-    # * Single variant/quantity pairing
-    # +:variants => { variant_id => quantity }+
-    #
-    # * Multiple products at once
-    # +:products => { product_id => variant_id, product_id => variant_id }, :quantity => quantity+
-    def populate(from_hash)
-      from_hash[:products].each do |product_id,variant_id|
-        attempt_cart_add(variant_id, from_hash[:quantity], from_hash[:ad_hoc_option_value_ids], from_hash[:product_customizations])
-      end if from_hash[:products]
 
-      from_hash[:variants].each do |variant_id, quantity|
-        attempt_cart_add(variant_id, quantity, from_hash[:ad_hoc_option_value_ids], from_hash[:product_customizations])
-      end if from_hash[:variants]
-
+    def populate(variant_id, quantity, ad_hoc_option_value_ids = [], product_customizations = [])
+      attempt_cart_add(variant_id, quantity, ad_hoc_option_value_ids, product_customizations)
       valid?
     end
 

@@ -3,12 +3,18 @@ module Spree
     # Get current line item for variant if exists
     # Add variant qty to line_item
     def add(variant, quantity = 1, currency = nil, shipment = nil, ad_hoc_option_value_ids = [], product_customizations = [])
-      line_item = order.find_line_item_by_variant(variant, ad_hoc_option_value_ids, product_customizations)
-      add_to_line_item(line_item, variant, quantity, currency, shipment, ad_hoc_option_value_ids, product_customizations)
+      line_item = add_to_line_item(variant, quantity, currency, shipment, ad_hoc_option_value_ids, product_customizations)
+      reload_totals
+      PromotionHandler::Cart.new(order, line_item).activate
+      ItemAdjustments.new(line_item).update
+      reload_totals
+      line_item
     end
 
     private
-      def add_to_line_item(line_item, variant, quantity, currency=nil, shipment=nil, ad_hoc_option_value_ids = [], product_customizations = [])
+      def add_to_line_item(variant, quantity, currency=nil, shipment=nil, ad_hoc_option_value_ids = [], product_customizations = [])
+        line_item = grab_line_item_by_variant(variant, false, )
+
         if line_item
           line_item.target_shipment = shipment
           line_item.quantity += quantity.to_i
@@ -35,15 +41,22 @@ module Spree
             line_item.currency = currency unless currency.nil?
             line_item.price    = variant.price_in(currency).amount + offset_price
           else
-            line_item.price    = variant.price + adjusted_price
+            line_item.price    = variant.price + offset_price
           end
         end
   
         line_item.save
-        order.reload
-
         line_item
       end
   
+      def grab_line_item_by_variant(variant, raise_error = false, ad_hoc_option_value_ids = [], product_customizations = [])
+        line_item = order.find_line_item_by_variant(variant, ad_hoc_option_value_ids, product_customizations)
+
+        if !line_item.present? && raise_error
+          raise ActiveRecord::RecordNotFound, "Line item not found for variant #{variant.sku}"
+        end
+
+        line_item
+      end
   end
 end

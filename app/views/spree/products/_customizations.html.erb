@@ -26,9 +26,12 @@
 
           <%= field_set_tag product_customization_type.presentation do %>
 
-            <% product_customization_type.customizable_product_options.each do |option| %>
-              <%= text_field_tag "#{param_prefix}[#{option.id}]","",:style=>"float: left;", :class=>"customization" %>
-            <% end %> <%# options.each %>
+            <dl>
+              <% product_customization_type.customizable_product_options.each do |option| %>
+                <dt><%= option.presentation %></dt>
+                <dd><%= text_field_tag "#{param_prefix}[#{option.id}]","", :class=>"customization" %></dd>
+              <% end # options.each %>
+            </dl>
 
           <% end %> <%# field_set_tag %>
 

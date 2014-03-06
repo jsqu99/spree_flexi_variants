@@ -13,7 +13,7 @@ module Spree
 
     private
       def add_to_line_item(variant, quantity, currency=nil, shipment=nil, ad_hoc_option_value_ids = [], product_customizations = [])
-        line_item = grab_line_item_by_variant(variant, false, )
+        line_item = grab_line_item_by_variant(variant, false, ad_hoc_option_value_ids, product_customizations)
 
         if line_item
           line_item.target_shipment = shipment

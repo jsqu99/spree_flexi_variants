@@ -3,7 +3,7 @@ module Spree
     belongs_to :product_customization_type
     belongs_to :line_item
     has_many :customized_product_options, :dependent => :destroy
-    #attr_accessible :product_customization_type_id, :line_item_id
+    attr_accessible :product_customization_type_id, :line_item_id
     # TODO: Jeff, add 'required'
 
     # price might depend on something contained in the variant (like product property value)a

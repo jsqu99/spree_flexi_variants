@@ -1,7 +1,9 @@
+require_dependency 'spree/calculator'
+
 module Spree
   class Calculator::CustomizationImage < Calculator
     preference :price, :decimal
-    attr_accessible :preferred_price, :decimal
+    #attr_accessible :preferred_price, :decimal
 
     def self.description
       "Product Customization Image Calculator"

@@ -6,8 +6,8 @@
         <h6 class="product-section-title"><%= t(:price) %></h6>
         <div><span class="price selling" itemprop="price"><%= number_to_currency @product.price %></span></div>
       </div>
-    <%= link_to "Customize", customize_path(@product) %>
-  </div>
+      <%= link_to "Customize", customize_path(@product) %>
+    </div>
   <% end %>
 <% else %>
   <div id="cart-form" data-hook="cart_form">

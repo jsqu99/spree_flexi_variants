@@ -33,7 +33,7 @@ module Spree
       find_line_item_by_variant(variant, ad_hoc_option_value_ids, product_customizations).present?
     end
 
-    def find_line_item_by_variant(variant, ad_hoc_option_value_ids, product_customizations)
+    def find_line_item_by_variant(variant, ad_hoc_option_value_ids = [], product_customizations = [])
       line_items.detect do |li|
         li.variant_id == variant.id &&
           matching_configurations(li.ad_hoc_option_values,ad_hoc_option_value_ids) &&

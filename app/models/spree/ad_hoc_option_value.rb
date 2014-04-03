@@ -20,10 +20,10 @@ module Spree
     delegate :name, :to => :option_value
     delegate :presentation, :to => :option_value
 
-    after_create :default_values
+    before_validation :default_values
 
     def default_values
-      update!(price_modifier: option_value.total_price)
+      price_modifier = option_value.total_price
     end
 
     def cost_price

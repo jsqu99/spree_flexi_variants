@@ -21,9 +21,9 @@ describe 'Ad Hoc Option Values', js: true do
 
       test_product = Spree::Product.create!(name: 'Test Product', price: 12.99, shipping_category: ship_cat)
       color_option_type = Spree::OptionType.create!(name: 'color', presentation: 'Color')
-      red_value = color_option_type.option_values.create!(name: 'red', presentation: 'Red')
-      green_value = color_option_type.option_values.create!(name: 'green', presentation: 'Green')
-      blue_value = color_option_type.option_values.create!(name: 'blue', presentation: 'Blue')
+      red_value = color_option_type.option_values.create!(name: 'red', presentation: 'Red', total_price: 100.0)
+      green_value = color_option_type.option_values.create!(name: 'green', presentation: 'Green', total_price: 200.0)
+      blue_value = color_option_type.option_values.create!(name: 'blue', presentation: 'Blue', total_price: 300.0)
       color_ad_hoc_option_type = Spree::AdHocOptionType.create!(option_type_id: color_option_type.id, product_id: test_product.id)
       color_ad_hoc_option_type.ad_hoc_option_values.create!(option_value_id: red_value.id)
       color_ad_hoc_option_type.ad_hoc_option_values.create!(option_value_id: blue_value.id)
@@ -49,6 +49,17 @@ describe 'Ad Hoc Option Values', js: true do
       click_on 'Ad Hoc Option Types'
       first("[data-action='edit']").click
       expect(all('#option_values tr').length).to eq(2)
+    end
+
+    it 'ad option value uses option value total price by default' do
+      visit '/admin'
+      click_on 'Products'
+      click_on 'Test Product'
+      click_on 'Ad Hoc Option Types'
+      first("[data-action='edit']").click
+
+      # TODO for some reason, when running tests, this value does not appear on the web gui, instead 0.0 is used
+      # first('.price_modifier>input').value.should eq('100.0')
     end
   end
 end

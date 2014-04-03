@@ -35,6 +35,11 @@ Installation
 
     bundle exec rails g spree_flexi_variants:install
 
+Run Test
+--------
+  rake test_app
+  bundle exec rspec
+
 ## Examples
 
 

@@ -35,20 +35,20 @@ describe 'Ad Hoc Option Values', js: true do
       click_on 'Products'
       click_on 'Test Product'
       click_on 'Ad Hoc Option Types'
-      click_on 'Edit'
+      first("[data-action='edit']").click
 
       expect(page).to have_content('Editing Option Type')
-      expect(all('#option_values tr').length).to eq(4)
+      expect(all('#option_values tr').length).to eq(3)
 
-      first(:link, 'Remove').click
+      first("[data-method='delete']").click
       expect(page).to_not have_content('No route matches')
 
       visit '/admin'
       click_on 'Products'
       click_on 'Test Product'
       click_on 'Ad Hoc Option Types'
-      click_on 'Edit'
-      expect(all('#option_values tr').length).to eq(3)
+      first("[data-action='edit']").click
+      expect(all('#option_values tr').length).to eq(2)
     end
   end
 end

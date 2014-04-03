@@ -5,22 +5,35 @@ module Spree
     belongs_to :option_value
     has_many :excluded_ad_hoc_option_values, :dependent => :destroy
 
+    validates :price_modifier, presence: true
+
     # currently no controller for normal users present
     #attr_accessible :price_modifier, :ad_hoc_option_type_id, :option_value_id, :selected, :cost_price_modifier
 
     # this opens up a can of worms..deleting option values and having historical data still intact...ugh...what to do?...add 'deleted_at' somewhere along the chain?
     # has_many :ad_hoc_option_values_line_items, :dependent => :destroy
 
-    # price_modifier
     alias :option_type :ad_hoc_option_type
     acts_as_list :scope => :ad_hoc_option_type
-    default_scope order("position asc")
+    default_scope order('position asc')
 
     delegate :name, :to => :option_value
     delegate :presentation, :to => :option_value
 
+    after_create :default_values
+
+    def default_values
+      update!(price_modifier: option_value.total_price)
+    end
+
     def cost_price
-      cost_price_modifier || price_modifier || 0
+      cost_price_modifier || price_presence(:price_modifier) || 0
+    end
+
+    private
+    def price_presence(price_field)
+      val = send(price_field)
+      val == 0.0 || !val ? nil : val
     end
   end
 end

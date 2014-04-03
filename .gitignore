@@ -10,3 +10,4 @@ nbproject
 doc/notes.txt
 Gemfile.lock
 spec/dummy
+coverage

@@ -12,6 +12,7 @@
 #
 #
 #
+"2.1.x" => { :branch => "2-1-stable" }
 "1.2.x" => { :branch => "spree-1-2-stable" }
 "1.1.x" => { :branch => "spree-1-1-stable" }
 "1.0.x" => { :branch => "spree-1-0-stable" }

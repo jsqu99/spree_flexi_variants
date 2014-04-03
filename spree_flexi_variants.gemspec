@@ -1,8 +1,8 @@
 Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.name        = 'spree_flexi_variants'
-  s.version     = '2.1.0'
-  s.summary     = 'Add gem summary here'
+  s.version     = '2.1.1'
+  s.summary     = 'Allow users to choose product options with costs. Without having to create variants for each option combination.'
   s.required_ruby_version = '>= 1.9.3'
 
   s.author            = 'Jeff Squires'

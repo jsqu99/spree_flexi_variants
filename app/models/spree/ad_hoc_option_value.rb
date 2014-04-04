@@ -23,7 +23,8 @@ module Spree
     before_validation :default_values
 
     def default_values
-      price_modifier = option_value.total_price
+      # set and save without validation
+      update_attribute :price_modifier, option_value.total_price
     end
 
     def cost_price

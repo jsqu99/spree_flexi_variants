@@ -15,7 +15,7 @@ module Spree
 
     alias :option_type :ad_hoc_option_type
     acts_as_list :scope => :ad_hoc_option_type
-    default_scope order('position asc')
+    default_scope { order('position asc') }
 
     delegate :name, :to => :option_value
     delegate :presentation, :to => :option_value

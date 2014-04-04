@@ -24,7 +24,14 @@
           <td><%= ahot.is_required %></td>
           <td class="actions">
             <%= link_to_edit ahot, no_text: true %>
-            <%= link_to_delete ahot, no_text: true %>
+            <%=
+                link_to_with_icon(
+                    'icon-trash', '',
+                    admin_ad_hoc_option_type_path(ahot),
+                    :method => :delete,
+                    :class => 'remove_fields no-text with-tip'
+                )
+            %>
           </td>
         </tr>
       <% end %>

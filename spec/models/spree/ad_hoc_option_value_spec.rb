@@ -17,6 +17,5 @@ describe Spree::AdHocOptionValue do
 
       adhoc_opt_value_white.price_modifier.to_digits.should eq(opt_value_color_white.total_price.to_digits)
     end
-
   end
 end

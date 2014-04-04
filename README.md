@@ -32,11 +32,28 @@ Installation
     gem 'spree_flexi_variants', :git=>'git@github.com:jsqu99/spree_flexi_variants.git'
 
     bundle install
-
     bundle exec rails g spree_flexi_variants:install
+
+Developer Setup
+---------------
+
+While developing this extension you can use bundlers support for local git repos (http://bundler.io/v1.5/git.html):
+
+    bundle config local.spree_flexi_variants ~/repos/spree_flexi_variants
+
+and do not forget to change Gemfile.lock before deployment:
+
+    bundle config --delete local.spree_flexi_variants
+
+When you create new migrations, you can import them to the project using this gem by:
+
+    bundle exec rake railties:install:migrations FROM=spree_flexi_variants
+
+
 
 Run Test
 --------
+
   rake test_app
   bundle exec rspec
 
@@ -60,3 +77,10 @@ See the [wiki](https://github.com/jsqu99/spree_flexi_variants/wiki) for more det
 Many, many thanks to [Brian Quinn](https://github.com/BDQ) for selflessly volunteering his time to mentor me throughout the development process.
 
 Copyright (c) 2011 Jeff Squires, released under the New BSD License
+
+
+TODO
+----
+
+- AdHocVariantExclusionsController remove / delete doesnt work
+- AdHocOptionTypesController remove / delete doesnt work

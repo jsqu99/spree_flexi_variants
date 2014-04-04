@@ -30,12 +30,23 @@ describe 'Ad Hoc Option Values', js: true do
       color_ad_hoc_option_type.ad_hoc_option_values.create!(option_value_id: green_value.id)
     end
 
-    it 'removes the associated option value when clicked' do
+    def goto_ad_hoc_option_value_edit
       visit '/admin'
       click_on 'Products'
       click_on 'Test Product'
       click_on 'Ad Hoc Option Types'
       first("[data-action='edit']").click
+    end
+
+    def goto_option_type_edit
+      visit '/admin'
+      click_on 'Products'
+      click_on 'Option Types'
+      first("[data-action='edit']").click
+    end
+
+    it 'removes the associated option value when clicked' do
+      goto_ad_hoc_option_value_edit
 
       expect(page).to have_content('Editing Option Type')
       expect(all('#option_values tr').length).to eq(3)
@@ -43,23 +54,21 @@ describe 'Ad Hoc Option Values', js: true do
       first("[data-method='delete']").click
       expect(page).to_not have_content('No route matches')
 
-      visit '/admin'
-      click_on 'Products'
-      click_on 'Test Product'
-      click_on 'Ad Hoc Option Types'
-      first("[data-action='edit']").click
+      goto_ad_hoc_option_value_edit
       expect(all('#option_values tr').length).to eq(2)
     end
 
-    it 'ad option value uses option value total price by default' do
-      visit '/admin'
-      click_on 'Products'
-      click_on 'Test Product'
-      click_on 'Ad Hoc Option Types'
-      first("[data-action='edit']").click
+    it 'ad hoc option value uses option value total price by default' do
+      goto_ad_hoc_option_value_edit
 
       # TODO for some reason, when running tests, this value does not appear on the web gui, instead 0.0 is used
       # first('.price_modifier>input').value.should eq('100.0')
+    end
+
+    it 'ad hoc option value provides attachment file field' do
+      goto_option_type_edit
+
+      expect(all("input[type='file']").length).to eq(3)
     end
   end
 end

@@ -23,10 +23,10 @@ module Spree
           line_item = order.line_items.new(quantity: quantity, variant: variant)
           line_item.target_shipment = shipment
 
-          product_customizations.map(&:save) # it is now safe to save the customizations we built
-
           line_item.product_customizations = product_customizations
           product_customizations.each {|pc| pc.line_item = line_item}
+
+          product_customizations.map(&:save) # it is now safe to save the customizations we built
 
           # find, and add the configurations, if any.  these have not been fetched from the db yet.              line_items.first.variant_id
           # we postponed it (performance reasons) until we actaully knew we needed them

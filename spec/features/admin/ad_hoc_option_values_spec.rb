@@ -61,14 +61,19 @@ describe 'Ad Hoc Option Values', js: true do
     it 'ad hoc option value uses option value total price by default' do
       goto_ad_hoc_option_value_edit
 
-      # TODO for some reason, when running tests, this value does not appear on the web gui, instead 0.0 is used
-      # first('.price_modifier>input').value.should eq('100.0')
+      first('.price_modifier>input').value.should eq('100.0')
     end
 
     it 'ad hoc option value provides attachment file field' do
       goto_option_type_edit
 
       expect(all("input[type='file']").length).to eq(3)
+    end
+
+    it 'ad hoc option value provides description field' do
+      goto_option_type_edit
+
+      expect(all('.description').length).to eq(3)
     end
   end
 end

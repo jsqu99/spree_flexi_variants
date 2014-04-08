@@ -35,7 +35,7 @@ module Spree
       if quantity > 0
         line_item = @order.contents.add(variant, quantity, currency, nil, ad_hoc_option_value_ids, product_customizations)
         unless line_item.valid?
-          errors.add(:base, line_item.errors.messages.values.join(" "))
+          errors.add(:base, line_item.errors.messages.values.join(' '))
           return false
         end
       end

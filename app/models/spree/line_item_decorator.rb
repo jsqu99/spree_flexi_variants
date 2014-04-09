@@ -4,16 +4,16 @@ module Spree
     has_many :ad_hoc_option_values, :through => :ad_hoc_option_values_line_items
     has_many :product_customizations, :dependent => :destroy
 
-    validate :ad_hoc_option_values_required
+    #validate :ad_hoc_option_values_required
 
-    def ad_hoc_option_values_required
-      required_type_ids = product.ad_hoc_option_types.select{|t| t.is_required }.map &:id
-      selected_type_ids = ad_hoc_option_values.select{|v| v.ad_hoc_option_type.is_required }.map &:id
-      valid = required_type_ids.uniq.sort == selected_type_ids.uniq.sort
-      unless valid
-        errors.add(:ad_hoc_option_values, t('.required'))
-      end
-    end
+    # def ad_hoc_option_values_required
+    #   required_type_ids = product.ad_hoc_option_types.select{|t| t.is_required }.map &:id
+    #   selected_type_ids = ad_hoc_option_values.select{|v| v.ad_hoc_option_type.is_required }.map &:id
+    #   valid = required_type_ids.uniq.sort == selected_type_ids.uniq.sort
+    #   unless valid
+    #     errors.add(:ad_hoc_option_values, I18n.t('.required'))
+    #   end
+    # end
 
     def options_text
       str = Array.new

@@ -121,6 +121,15 @@
     return price;
   }
 
+  // formatCurrency lib only know de-CH or de-DE, but we use de as default locale
+  $.formatCurrency.regions['de'] = {
+    symbol: 'Fr.',
+    positiveFormat: '%s %n',
+    negativeFormat: '%s -%n',
+    decimalSymbol: '.',
+    digitGroupSymbol: '\'',
+    groupDigits: true
+  };
 
   function updatePrice() {
 

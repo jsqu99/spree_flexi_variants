@@ -7,10 +7,9 @@
       <%= t(:not_all_combinations_available) %>
     </h4>
   <% end %>
+  <div class="panel-group" id="accordion">
 
-  <h6 class="product-section-title"><%= t(:select_variant_options) %></h6>
-  <dl>
-    <% @product.ad_hoc_option_types.each do |ahot| %>
+    <% @product.ad_hoc_option_types.sort_by{|t| t.option_type.position }.each do |ahot| %>
       <% ot=ahot.option_type %>
       <% class_str='ad-hoc-option-select' %>
       <% class_str += ' required' if ahot.is_required %>
@@ -18,25 +17,27 @@
 
       <%# render a custom partial based on the option type name? %>
 
-      <% partial_name = "spree/products/ad_hoc_options/#{ot.name.gsub(/(-)|(\s)/,"_").downcase}" %>
+      <% partial_name = "spree/products/ad_hoc_options/#{ot.name.gsub(/(-)|(\s)/,'_').downcase}" %>
       <% if lookup.exists?(partial_name,nil,true) %>
         <%= render :partial => partial_name, :locals => {:option_type=>ahot, :class_str=>class_str} %>
       <% else %>
-        <dt><%= ot.presentation %></dt>
+        <%= ot.presentation %>
         <% select_opts = {:class => class_str} %>
         <% select_opts[:prompt] = 'None' if ahot.option_values.size > 1 && ahot.option_values.none? {|ov| ov.selected? }%>
 
         <% selected_option_value = ahot.option_values.detect {|ov| ov.selected? } %>
-        <dd>
-          <%= select_tag "ad_hoc_option_values[#{ahot.id}]",
-           options_for_select(ad_hoc_option_value_options(ahot.option_values), 
-                              selected_option_value.present? ? 
-                                selected_option_value.id.to_s : nil),
-            select_opts
-            %>
-        </dd>
+
+        <%= select_tag "ad_hoc_option_values[#{ahot.id}]",
+         options_for_select(ad_hoc_option_value_options(ahot.option_values),
+                            selected_option_value.present? ?
+                              selected_option_value.id.to_s : nil),
+          select_opts
+          %>
+
       <% end %>
     <% end %>
-  </dl>
+
+  </div>
+
 </div>
 <% end %>

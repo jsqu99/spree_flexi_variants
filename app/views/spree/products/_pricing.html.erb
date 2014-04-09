@@ -86,7 +86,7 @@
 
     // for selects or checkboxes
     $("select.ad-hoc-option-select, input:checked.ad-hoc-option-select").each(function() {
-      // the :prompt=>'None' in the select tag yields an empty string, which I can't use in the price calcuation
+      // the :prompt=>'None' in the select tag yields an empty string, which I can't use in the price calculation
       var val=$(this).val();
 
       // now in case we are a multiple select, de-array
@@ -121,15 +121,24 @@
     return price;
   }
 
+  // formatCurrency lib only know de-CH or de-DE, but we use de as default locale
+  $.formatCurrency.regions['de'] = {
+    symbol: 'Fr.',
+    positiveFormat: '%s %n',
+    negativeFormat: '%s -%n',
+    decimalSymbol: '.',
+    digitGroupSymbol: '\'',
+    groupDigits: true
+  };
 
   function updatePrice() {
 
-    var cur_variant_price_diff       = compute_variant_price_diff(base_price);
+    var cur_variant_price_diff  = compute_variant_price_diff(base_price);
     var cur_configuration_price =  compute_configuration_price();
     var cur_customization_price =  compute_customization_price();
     var cur_price =base_price + cur_variant_price_diff + cur_configuration_price + cur_customization_price;
 
-    $('.price.selling').text(cur_price.toFixed(2)).formatCurrency({region: "<%= I18n.locale.to_s %>"});
+    $('.price.lead').text(cur_price.toFixed(2)).formatCurrency({region: "<%= I18n.locale.to_s %>"});
   }
 
   //]]>

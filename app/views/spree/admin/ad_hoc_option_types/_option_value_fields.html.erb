@@ -1,7 +1,7 @@
 <tr class="option_value fields" id="<%= spree_dom_id(f.object) %>">
   <td class='name'><span class="handle"></span><span> <%= f.object.option_value.name %> </span></td>
   <td class='presentation'><span>  <%= f.object.option_value.presentation %> </span></td>
-  <td class='price_modifier'><%= f.text_field :price_modifier %></td>
+  <td class='price_modifier'><%= f.text_field :price_modifier, value: f.object.price_modifier %></td>
   <td class='cost_price_modifier'><%= f.text_field :cost_price_modifier %></td>
   <td><%= f.check_box :selected %></td>
   <td class="actions">

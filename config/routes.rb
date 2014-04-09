@@ -22,14 +22,11 @@ Spree::Core::Engine.add_routes do
 
     resources :product_customization_types
 
-    resources :ad_hoc_option_types do
+    resources :ad_hoc_option_types, only: [:index, :edit, :destroy, :update] do
       resources :ad_hoc_option_values do
         collection do
           post :update_positions
         end
-      end
-      member do
-        get :remove
       end
     end
 

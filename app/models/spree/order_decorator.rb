@@ -1,7 +1,7 @@
 module Spree
   Order.class_eval do
     def add_variant(variant, quantity = 1, ad_hoc_option_value_ids=[], product_customizations=[])
-      current_item = contains?(variant, ad_hoc_option_value_ids, product_customizations)
+      current_item = find_line_item_by_variant(variant, ad_hoc_option_value_ids, product_customizations)
       if current_item
         current_item.quantity += quantity
         current_item.save

@@ -30,7 +30,7 @@ module Spree
     end
 
     def contains?(variant, ad_hoc_option_value_ids, product_customizations)
-      find_line_item_by_variant(variant, ad_hoc_option_value_ids, product_customizations).present?
+      find_line_item_by_variant(variant, ad_hoc_option_value_ids, product_customizations)
     end
 
     def find_line_item_by_variant(variant, ad_hoc_option_value_ids, product_customizations)

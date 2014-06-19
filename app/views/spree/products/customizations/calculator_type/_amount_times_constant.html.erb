@@ -26,18 +26,14 @@
 
 <%= field_set_tag product_customization_type.presentation do %>
   <% option = product_customization_type.customizable_product_options.first %>
-  <ol>
-    <li>
-  	  <label for="<%= cust_dom_id %>"><%= option.presentation %></label>
+	  <label for="<%= cust_dom_id %>"><%= option.description %></label>
 
-      <% # create a slightly shorter dom_id field below.  I wish I could make use of dom_id for all strings that had [ && ] %>
+    <% # create a slightly shorter dom_id field below.  I wish I could make use of dom_id for all strings that had [ && ] %>
 
-	    <%= text_field_tag "#{param_prefix}[#{product_customization_type.customizable_product_options.first.id}]",
-                         "",
-                         :id => cust_dom_id ,:style=>"float: left;", :class=>"customization" %>
+    <%= text_field_tag "#{param_prefix}[#{product_customization_type.customizable_product_options.first.id}]",
+                       "",
+                       :id => cust_dom_id ,:style=>"float: left;", :class=>"customization" %>
 
-      <% # the price is stored here on change, and later collected by the product-wide updatePrice() %>
-      <%= hidden_field_tag "customization_price", "0", :class => "customization_price" %>
-    </li>
-  </ol>
+    <% # the price is stored here on change, and later collected by the product-wide updatePrice() %>
+    <%= hidden_field_tag "customization_price", "0", :class => "customization_price" %>
 <% end # field_set_tag %>

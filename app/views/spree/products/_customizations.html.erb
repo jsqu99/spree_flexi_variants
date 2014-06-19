@@ -5,7 +5,7 @@
     <%# for finding optional partials %>
     <% lookup=ActionView::LookupContext.new(ActionController::Base.view_paths, {:formats => [:html]}) %>
 
-    <h3><%= t(:customizations) %></h3>
+    <h6 class="product-section-title"><%= t(:customizations) %></h6>
     <% @product.product_customization_types.each do |product_customization_type| %>
 
       <% param_prefix = "product_customizations[#{product_customization_type.id}]" %>
@@ -24,19 +24,17 @@
           <%= render :partial => partial_name, :locals => {:product_customization_type=>product_customization_type, :param_prefix => param_prefix} %>
         <% else %>
 
-          <h6><%= product_customization_type.presentation %></h6>
+          <%= field_set_tag product_customization_type.presentation do %>
 
-	        <% if product_customization_type.description && !product_customization_type.description.empty? %>
-	          <p><%=  product_customization_type.description %></p>
-	        <% end %>
-          
-          <% param_prefix = "product_customizations[#{product_customization_type.id}]" %>
-          <dl>
-            <% product_customization_type.customizable_product_options.each do |option| %>
-              <dt><%= option.presentation %></dt>
-              <dd><%= text_field_tag "#{param_prefix}[#{option.id}]","",:style=>"float: left;", :class=>"customization" %></dd>
-            <% end # options.each %>
-          </dl>
+            <dl>
+              <% product_customization_type.customizable_product_options.each do |option| %>
+                <dt><%= option.presentation %></dt>
+                <dd><%= text_field_tag "#{param_prefix}[#{option.id}]","", :class=>"customization" %></dd>
+              <% end # options.each %>
+            </dl>
+
+          <% end %> <%# field_set_tag %>
+
         <% end %> <%# else %>
       <% end %> <%# else %>
     <% end %> <%# each customization type %>

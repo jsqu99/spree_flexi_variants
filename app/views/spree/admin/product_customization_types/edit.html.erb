@@ -1,5 +1,5 @@
 <%= content_for :head do %>
-  <%= javascript_include_tag 'jquery.validate.min' %>
+  <%= javascript_include_tag 'jquery.validate/jquery.validate.min' %>
   <%= javascript_tag do %>
     $(function () {
       $('form').validate();
@@ -33,7 +33,7 @@
       <% end %>
     </tbody>
   </table>
-  <%# link_to_add_fields t("add_customizable_product_option"), "tbody#customizable_product_options", f, :customizable_product_options %>
+  <%# link_to_add_fields t("add_customizable_product_option"), "tbody#customizable_product_options" %>
 
 <!-- b/c of r_c removal -->
 <p class="form-buttons">

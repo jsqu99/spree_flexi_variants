@@ -32,7 +32,7 @@
     <li>
       <% option = product_customization_type.customizable_product_options.first %>
 
-  	  <label for="<%= width_dom_id %>"><%= option.presentation %></label>
+  	  <label for="<%= width_dom_id %>"><%= option.description %></label>
       <% # create a slightly shorter dom_id field below.  I wish I could make use of dom_id for all strings that had [ && ] %>
 	    <%= text_field_tag "#{param_prefix}[#{option.id}]",
                          "",
@@ -44,7 +44,7 @@
     <li>
       <% option = product_customization_type.customizable_product_options.second %>
 
-  	  <label for="<%= height_dom_id %>"><%= option.presentation %></label>
+  	  <label for="<%= height_dom_id %>"><%= option.description %></label>
 	    <%= text_field_tag "#{param_prefix}[#{option.id}]",
                          "",
                          :id => height_dom_id ,:style=>"float: left;", :class=>"customization" %>

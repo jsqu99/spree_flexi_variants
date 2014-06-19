@@ -16,7 +16,7 @@ module Spree
 
       ave.product=@product
       ave.save
-      redirect_to admin_product_ad_hoc_variant_exclusions_url(@product)
+      redirect_to admin_product_ad_hoc_variant_exclusions_path(@product)
     end
 
     # TODO how is this different than the default 'destroy'.  maybe I don't need this method
@@ -24,7 +24,7 @@ module Spree
       @product=@ad_hoc_variant_exclusion.product
       @ad_hoc_variant_exclusion.destroy
       flash.notice = I18n.t("notice_messages.ad_hoc_variant_exclusion_removed")
-      redirect_to admin_product_ad_hoc_variant_exclusions_url(@product)
+      redirect_to admin_product_ad_hoc_variant_exclusions_path(@product)
     end
 
     protected

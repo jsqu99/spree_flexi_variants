@@ -9,6 +9,11 @@ module Spree
     # allowed customizations
     has_and_belongs_to_many :product_customization_types
 
+    make_permalink field: :slug
+
+    def permalink
+      slug
+    end
 
     private
 

@@ -1,4 +1,4 @@
-<dl>
+<dl class='customizations'>
   <%# TODO: group multi-select options (e.g. toppings) %>
   <% item.ad_hoc_option_values.each do |pov| %>
     <dt><%= pov.option_value.option_type.presentation %></dt>
@@ -27,7 +27,7 @@
               <% if option.customization_image? %>
                 <%= image_tag(option.customization_image.thumb.url) %>
               <% else %>
-                <p><%= option.customizable_product_option.presentation %> = <%= option.value %></p>
+                <span class='customized_option'><%= option.customizable_product_option.presentation %> = <%= option.value %></span>
               <% end %>
 
             <% end %>

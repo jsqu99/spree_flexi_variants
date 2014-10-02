@@ -7,7 +7,7 @@ module Spree
     has_many :ad_hoc_variant_exclusions, :dependent => :destroy
 
     # allowed customizations
-    has_and_belongs_to_many :product_customization_types
+    has_and_belongs_to_many :product_customization_types, join_table: "spree_product_customization_types_products"
 
 
     private

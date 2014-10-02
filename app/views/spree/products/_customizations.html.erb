@@ -5,7 +5,7 @@
     <%# for finding optional partials %>
     <% lookup=ActionView::LookupContext.new(ActionController::Base.view_paths, {:formats => [:html]}) %>
 
-    <h3><%= t(:customizations) %></h3>
+    <h6 class="product-section-title"><%= t(:customizations) %></h6>
     <% @product.product_customization_types.each do |product_customization_type| %>
 
       <% param_prefix = "product_customizations[#{product_customization_type.id}]" %>
@@ -34,7 +34,7 @@
           <dl>
             <% product_customization_type.customizable_product_options.each do |option| %>
               <dt><%= option.presentation %></dt>
-              <dd><%= text_field_tag "#{param_prefix}[#{option.id}]","",:style=>"float: left;", :class=>"customization" %></dd>
+              <dd><%= text_area_tag "#{param_prefix}[#{option.id}]","",:style=>"float: left;", :class=>"customization" %></dd>
             <% end # options.each %>
           </dl>
         <% end %> <%# else %>

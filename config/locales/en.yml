@@ -9,6 +9,7 @@ en:
     option_value_removed: "Option Value Removed"
     product_customization_type_removed: "Product Customization Type Removed"
     ad_hoc_variant_exclusion_removed: "Exclusion Removed"
+  add: "Add"
   ad_hoc_variant_exclusion: 'Ad Hoc Variant Exclusion'
   ad_hoc_variant_exclusions: 'Ad Hoc Variant Exclusions'
   ad_hoc_variant_exclusions_unavailable: "You only need to configure exclusions when you have more than one ad hoc option type"

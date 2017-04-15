@@ -4,5 +4,15 @@
   <td class='price_modifier'><%= f.text_field :price_modifier %></td>
   <td class='cost_price_modifier'><%= f.text_field :cost_price_modifier %></td>
   <td><%= f.check_box :selected %></td>
-  <td class="actions"><%= link_to_remove_nested_fields t("remove"), f, :no_text => true, :nest => "ad_hoc_option_type" %></td>
+  <td class="actions">
+    <%#link_to_remove_nested_fields t("remove"), f, :no_text => true, :nest => "ad_hoc_option_type" %>
+    <%=
+      link_to_with_icon(
+        'icon-trash', '',
+        admin_ad_hoc_option_value_path(f.object),
+        :method => :delete,
+        :class => "remove_fields no-text with-tip"
+      ) + f.hidden_field(:_destroy)
+     %>
+  </td>
 </tr>

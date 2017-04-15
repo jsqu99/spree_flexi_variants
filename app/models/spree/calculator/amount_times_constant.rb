@@ -5,7 +5,7 @@ module Spree
     preference :min_amount, :integer, :default=>0
     preference :max_amount, :integer, :default=>100
 
-    attr_accessible :preferred_multiplier, :preferred_min_amount, :preferred_max_amount
+    #attr_accessible :preferred_multiplier, :preferred_min_amount, :preferred_max_amount
 
     def self.description
       "Amount Times Constant Calculator"

@@ -13,7 +13,9 @@ module Spree
     def destroy
       ad_hoc_option_value = AdHocOptionValue.find(params[:id])
       ad_hoc_option_value.destroy
-      render :text => nil
+      redirect_to edit_admin_product_ad_hoc_option_type_path(
+        ad_hoc_option_value.ad_hoc_option_type.product_id,
+        ad_hoc_option_value.ad_hoc_option_type_id)
     end
   end
 end

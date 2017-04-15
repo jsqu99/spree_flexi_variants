@@ -1,7 +1,7 @@
-Spree::Core::Engine.routes.prepend do
-  match 'product_customizations/price', :to => 'product_customizations#price'
+Spree::Core::Engine.add_routes do
+  match 'product_customizations/price', :to => 'product_customizations#price', :via => [:get, :post]
 
-  match 'customize/:product_id', :to => 'products#customize', :as => 'customize'
+  match 'customize/:product_id', :to => 'products#customize', :as => 'customize', :via => [:get, :post]
 
   namespace :admin do
 
@@ -77,5 +77,5 @@ Spree::Core::Engine.routes.prepend do
 
   end # namespace :admin
 
-  match 'admin/variant_configurations/:variant_id', :to => 'admin/variant_configurations#configure'
+  match 'admin/variant_configurations/:variant_id', :to => 'admin/variant_configurations#configure', :via => [:get, :post]
 end

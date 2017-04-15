@@ -28,20 +28,16 @@ module SpreeFlexiVariants
     initializer "spree.flexi_variants.assets.precompile" do |app|
         app.config.assets.precompile += ['store/spree_flexi_variants_exclusions.js','admin/orders/flexi_configuration.js','store/spree-flexi-variants.*']
     end
-    # Had a good reason for this rescue below, and wish I'd commented it better when I wrote it
-    # TODO - figure this out and de-ugly
-    begin
-      initializer "spree.register.calculators" do |app|
-        app.config.spree.calculators.add_class('product_customization_types')
-        app.config.spree.calculators.product_customization_types = [
+
+    initializer "spree.flexi_variants.register.calculators" do |app|
+      app.config.spree.calculators.add_class('product_customization_types')
+      app.config.spree.calculators.product_customization_types = [
                                                                     Spree::Calculator::Engraving,
                                                                     Spree::Calculator::AmountTimesConstant,
                                                                     Spree::Calculator::ProductArea,
-                                                                    Spree::Calculator::CustomizationImage
+                                                                    Spree::Calculator::CustomizationImage,
+                                                                    Spree::Calculator::NoCharge
                                                                    ]
-      end
-    rescue => problem
-      puts "intentionally ignoring problem in calculator registration #{problem}"
     end
   end
 end

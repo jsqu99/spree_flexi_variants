@@ -1,7 +1,9 @@
+require_dependency 'spree/calculator'
+
 module Spree
   class Calculator::Engraving < Calculator
     preference :price_per_letter, :decimal
-    attr_accessible :preferred_price_per_letter
+    #attr_accessible :preferred_price_per_letter
 
     def self.description
       "Engraving Calculator"
@@ -24,7 +26,7 @@ module Spree
 
       # expecting only one CustomizedProductOption
       opt = product_customization.customized_product_options.detect {|cpo| cpo.customizable_product_option.name == "inscription" } rescue ''
-      opt.value.length * preferred_price_per_letter
+      opt.value.length * (preferred_price_per_letter || 0)
     end
 
     def valid_configuration?(product_customization)
